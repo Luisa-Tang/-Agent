@@ -390,6 +390,8 @@ def _self_evolution_lines(repo_root: Path) -> List[str]:
         "- Program tree: `agent/archive/evolve/program_tree.json`",
         "- Evolve log: `agent/archive/evolve/evolve_log.jsonl`",
         "- Operator stats: `agent/archive/evolve/operator_stats.json`",
+        "- Block metrics: `agent/archive/evolve/block_metrics.json`",
+        "- Evolve Blocks v2 report: `submission/evolve_blocks_v2_report.md`",
         "",
         "Why programs rather than coordinates: the evolved artifact is a small `propose_candidate(parent, rng, context)` generator/refinement operator. Its output is converted to a static candidate and must pass official `evaluate.py` before it can affect final export.",
         "",

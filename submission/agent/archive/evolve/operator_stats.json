@@ -1,84 +1,148 @@
 {
-  "contact_threshold_mutation": {
+  "aspect_ratio_sweep_local": {
     "accepted": 0,
-    "attempts": 5,
-    "avg_runtime": 0.19933886528015138,
+    "attempts": 7,
+    "avg_runtime": 0.4813366276877267,
     "best_delta": 0.0,
     "common_failure_types": {
-      "none": 2,
-      "rejected_novelty": 3
+      "none": 7
     },
-    "mean_delta": -1.3341065008276587e-08,
-    "novelty_mean": 0.20017987559685646,
-    "official_evaluated": 2,
-    "valid_count": 2
-  },
-  "crossover": {
-    "accepted": 0,
-    "attempts": 8,
-    "avg_runtime": 0.38643842935562134,
-    "best_delta": 0.0,
-    "common_failure_types": {
-      "none": 7,
-      "rejected_novelty": 1
-    },
-    "mean_delta": -3.4960305366066313e-06,
-    "novelty_mean": 0.45616824177934434,
+    "mean_delta": -9.4574135892803e-06,
+    "novelty_mean": 0.6473620626104662,
     "official_evaluated": 7,
     "valid_count": 7
   },
-  "depth_refinement": {
+  "block_crossover": {
     "accepted": 0,
-    "attempts": 7,
-    "avg_runtime": 0.2787454809461321,
+    "attempts": 6,
+    "avg_runtime": 0.40832897027333576,
     "best_delta": 0.0,
     "common_failure_types": {
-      "none": 4,
+      "none": 5,
+      "rejected_novelty": 1
+    },
+    "mean_delta": -3.4143166982765947e-06,
+    "novelty_mean": 0.49172056098664996,
+    "official_evaluated": 5,
+    "valid_count": 5
+  },
+  "boundary_pattern_swap": {
+    "accepted": 0,
+    "attempts": 5,
+    "avg_runtime": 0.48041834831237795,
+    "best_delta": 0.0,
+    "common_failure_types": {
+      "none": 5
+    },
+    "mean_delta": -0.07050023270892132,
+    "novelty_mean": 0.8078507400870825,
+    "official_evaluated": 5,
+    "valid_count": 5
+  },
+  "boundary_slide_mutation": {
+    "accepted": 0,
+    "attempts": 8,
+    "avg_runtime": 0.4819754958152771,
+    "best_delta": 0.0,
+    "common_failure_types": {
+      "none": 8
+    },
+    "mean_delta": -1.3752614918871586e-05,
+    "novelty_mean": 0.6766935351677845,
+    "official_evaluated": 8,
+    "valid_count": 8
+  },
+  "contact_graph_breaking_refine": {
+    "accepted": 0,
+    "attempts": 6,
+    "avg_runtime": 0.3008764982223511,
+    "best_delta": 0.0,
+    "common_failure_types": {
+      "none": 3,
       "rejected_novelty": 3
     },
-    "mean_delta": -2.9239661523762705e-07,
-    "novelty_mean": 0.3217782734524807,
-    "official_evaluated": 4,
-    "valid_count": 4
+    "mean_delta": -1.55475547184795e-06,
+    "novelty_mean": 0.3802328200335681,
+    "official_evaluated": 3,
+    "valid_count": 3
   },
-  "parameter_mutation": {
+  "contact_graph_preserving_refine": {
     "accepted": 0,
-    "attempts": 10,
-    "avg_runtime": 0.44681265354156496,
+    "attempts": 7,
+    "avg_runtime": 0.4795423575810024,
     "best_delta": 0.0,
     "common_failure_types": {
-      "none": 10
+      "none": 7
     },
-    "mean_delta": -1.993432331082179e-05,
-    "novelty_mean": 0.6349333362828126,
-    "official_evaluated": 10,
-    "valid_count": 10
+    "mean_delta": -1.91067732330717e-05,
+    "novelty_mean": 0.6703900488281531,
+    "official_evaluated": 7,
+    "valid_count": 7
+  },
+  "contact_pair_relaxation": {
+    "accepted": 0,
+    "attempts": 6,
+    "avg_runtime": 0.4153525034586589,
+    "best_delta": 0.0,
+    "common_failure_types": {
+      "none": 5,
+      "rejected_novelty": 1
+    },
+    "mean_delta": -1.0071119588469142e-06,
+    "novelty_mean": 0.5456639474839703,
+    "official_evaluated": 5,
+    "valid_count": 5
   },
   "program_patch": {
     "accepted": 0,
-    "attempts": 9,
-    "avg_runtime": 0.43329646852281356,
+    "attempts": 2,
+    "avg_runtime": 0.46702277660369873,
     "best_delta": 0.0,
     "common_failure_types": {
-      "none": 9
+      "none": 2
     },
-    "mean_delta": -2.6486454936710166e-06,
-    "novelty_mean": 0.5517215616128399,
-    "official_evaluated": 9,
-    "valid_count": 9
+    "mean_delta": -0.1692262052451844,
+    "novelty_mean": 0.875,
+    "official_evaluated": 2,
+    "valid_count": 2
+  },
+  "radius_group_redistribution": {
+    "accepted": 0,
+    "attempts": 8,
+    "avg_runtime": 0.48438045382499695,
+    "best_delta": 0.0,
+    "common_failure_types": {
+      "none": 8
+    },
+    "mean_delta": -5.505707613105704e-05,
+    "novelty_mean": 0.758638834928231,
+    "official_evaluated": 8,
+    "valid_count": 8
+  },
+  "small_circle_reposition": {
+    "accepted": 0,
+    "attempts": 3,
+    "avg_runtime": 0.4801981449127197,
+    "best_delta": 0.0,
+    "common_failure_types": {
+      "none": 3
+    },
+    "mean_delta": -0.13919207258300548,
+    "novelty_mean": 0.8333333333333334,
+    "official_evaluated": 3,
+    "valid_count": 3
   },
   "solver_switch": {
     "accepted": 0,
-    "attempts": 9,
-    "avg_runtime": 0.3945353560977512,
+    "attempts": 7,
+    "avg_runtime": 0.49778577259608675,
     "best_delta": 0.0,
     "common_failure_types": {
-      "none": 8,
-      "rejected_novelty": 1
+      "none": 7
     },
-    "mean_delta": -1.0674311226785723e-05,
-    "novelty_mean": 0.5865844390562125,
-    "official_evaluated": 8,
-    "valid_count": 8
+    "mean_delta": -1.5370182733105103e-05,
+    "novelty_mean": 0.6341300802970624,
+    "official_evaluated": 7,
+    "valid_count": 7
   }
 }

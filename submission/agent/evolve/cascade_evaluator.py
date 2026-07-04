@@ -29,10 +29,10 @@ from geometry_utils import (
 from lineage import hash_packing_data, hash_text
 
 try:
-    from .novelty_filter import NoveltyDecision, NoveltyFilter
+    from .novelty_filter import NoveltyDecision, NoveltyFilter, centers_rmsd, sorted_radii_l2
     from .program_db import ProgramDatabase, ProgramRecord
 except ImportError:  # pragma: no cover - direct module execution fallback
-    from novelty_filter import NoveltyDecision, NoveltyFilter
+    from novelty_filter import NoveltyDecision, NoveltyFilter, centers_rmsd, sorted_radii_l2
     from program_db import ProgramDatabase, ProgramRecord
 
 
@@ -88,6 +88,14 @@ class CascadeEvaluator:
             return prepared
 
         valid, message = validate_packing(record.task, data.centers, data.radii, data.width, data.height, tol=1e-8)
+        parent_contact = summarize_contact_graph(
+            record.task,
+            parent_data.centers,
+            parent_data.radii,
+            parent_data.width,
+            parent_data.height,
+            tolerance=float(context.get("contact_tolerance", 5e-8) or 5e-8),
+        )
         prepared.data = data
         prepared.internal_valid = bool(valid)
         prepared.failure_type = "none" if valid else str(message)
@@ -107,8 +115,26 @@ class CascadeEvaluator:
             "internal_message": message,
             "sum_radii": data.sum_radii,
             "score_estimate": data.score,
+            "parent_contact_graph_hash": parent_contact.get("contact_graph_hash"),
+            "parent_boundary_pattern": parent_contact.get("active_boundary_pattern"),
+            "centers_rmsd_to_parent": centers_rmsd(data, parent_data),
+            "sorted_radii_l2_to_parent": sorted_radii_l2(data, parent_data),
             "stage": "E1",
         }
+        blocks_used = candidate_meta.get("blocks_used") if isinstance(candidate_meta, dict) else []
+        if not isinstance(blocks_used, list):
+            blocks_used = []
+        self.program_db.update(
+            record.program_id,
+            blocks_used=blocks_used,
+            contact_graph_hash=prepared.contact_graph.get("contact_graph_hash"),
+            boundary_pattern=prepared.contact_graph.get("active_boundary_pattern"),
+            contact_graph_changed=parent_contact.get("contact_graph_hash") != prepared.contact_graph.get("contact_graph_hash"),
+            boundary_pattern_changed=parent_contact.get("active_boundary_pattern") != prepared.contact_graph.get("active_boundary_pattern"),
+            centers_rmsd_to_parent=centers_rmsd(data, parent_data),
+            sorted_radii_l2_to_parent=sorted_radii_l2(data, parent_data),
+            cascade_stage_reached="E1_internal_geometry",
+        )
         self._append_log("E1_internal_geometry", record, prepared, context)
         if not valid:
             self._update_program_failure(record, prepared, runtime=time.time() - start)
@@ -121,6 +147,9 @@ class CascadeEvaluator:
             strategy_family=record.strategy_family,
             data=data,
             parent_data=parent_data,
+            parent_contact_hash=str(parent_contact.get("contact_graph_hash") or "none"),
+            parent_boundary_pattern=str(parent_contact.get("active_boundary_pattern") or "none"),
+            code_block_hash=(record.block_hashes or {}).get((record.block_types_changed or [""])[0], record.code_hash),
         )
         prepared.novelty = decision
         prepared.failure_type = decision.failure_type
@@ -143,6 +172,7 @@ class CascadeEvaluator:
             contact_graph_hash=prepared.contact_graph.get("contact_graph_hash"),
             boundary_pattern=prepared.contact_graph.get("active_boundary_pattern"),
             novelty_score=decision.novelty_score,
+            cascade_stage_reached="E2_novelty_quick_score",
             metadata={**record.metadata, **prepared.diagnostics, "failure_type": prepared.failure_type},
         )
         self._append_log("E2_novelty_quick_score", record, prepared, context)
@@ -225,6 +255,10 @@ class CascadeEvaluator:
             contact_graph_hash=prepared.contact_graph.get("contact_graph_hash"),
             boundary_pattern=prepared.contact_graph.get("active_boundary_pattern"),
             novelty_score=float(prepared.novelty.novelty_score if prepared.novelty else 0.0),
+            official_valid=bool(eval_result.valid),
+            official_score=float(eval_result.score),
+            score_delta=float(score_improvement),
+            cascade_stage_reached="E3_official_evaluate",
             metadata={
                 **record.metadata,
                 **prepared.diagnostics,
@@ -258,6 +292,7 @@ class CascadeEvaluator:
         prepared.diagnostics["official_skip_reason"] = reason
         self.program_db.update(
             prepared.program_record.program_id,
+            cascade_stage_reached="E3_official_skipped",
             metadata={**prepared.program_record.metadata, **prepared.diagnostics, "failure_type": reason},
         )
         self._append_log("E3_official_skipped", prepared.program_record, prepared, context)
@@ -277,7 +312,11 @@ class CascadeEvaluator:
                      context: Dict[str, Any]) -> Dict[str, Any]:
         module = self._import_program(Path(record.code_path))
         rng = np.random.default_rng(int(context.get("seed", 0) or 0))
-        result = module.propose_candidate(_parent_payload(parent_data), rng, context)
+        exec_context = dict(context)
+        exec_context.setdefault("solve_radius_lp", _radius_solver_helper(record.task, context))
+        exec_context.setdefault("repair_and_polish", _repair_polish_helper(context))
+        exec_context.setdefault("repair_and_polish_task_a", _repair_polish_task_a_helper(context))
+        result = module.propose_candidate(_parent_payload(parent_data), rng, exec_context)
         if not isinstance(result, dict):
             raise TypeError("propose_candidate must return a dict")
         return result
@@ -326,6 +365,7 @@ class CascadeEvaluator:
                 "failure_type": prepared.failure_type,
                 "runtime_seconds": runtime,
             },
+            cascade_stage_reached=prepared.diagnostics.get("stage") or prepared.failure_type,
         )
 
     def _append_log(self, phase: str, record: ProgramRecord, prepared: PreparedCandidate,
@@ -384,9 +424,48 @@ def _safe_context(context: Dict[str, Any]) -> Dict[str, Any]:
                 "height": value.get("height"),
                 "centers_shape": list(np.asarray(value.get("centers")).shape) if value.get("centers") is not None else None,
             }
+        elif callable(value):
+            safe[key] = f"<callable:{getattr(value, '__name__', 'anonymous')}>"
         else:
             safe[key] = value
     return safe
+
+
+def _radius_solver_helper(default_task: str, context: Dict[str, Any]):
+    def _solve_radius_lp(centers, container, task=None):
+        task_name = str(task or default_task).upper()
+        margin = float(context.get("lp_margin", 0.0) or 0.0)
+        if task_name == "A":
+            width, height = container
+            return solve_radii_lp("A", np.asarray(centers, dtype=float), float(width), float(height), margin=margin)
+        return solve_radii_lp("B", np.asarray(centers, dtype=float), margin=margin)
+    return _solve_radius_lp
+
+
+def _repair_polish_helper(context: Dict[str, Any]):
+    def _repair_and_polish(centers, radii, task="B", max_steps=8):
+        safety = float(context.get("safety", 2e-10) or 2e-10)
+        centers_arr = np.asarray(centers, dtype=float)
+        radii_arr = np.asarray(radii, dtype=float)
+        return safety_repair(str(task).upper(), centers_arr, radii_arr, safety=safety)
+    return _repair_and_polish
+
+
+def _repair_polish_task_a_helper(context: Dict[str, Any]):
+    def _repair_and_polish_task_a(centers, radii, width, height, max_steps=8):
+        safety = float(context.get("safety", 2e-10) or 2e-10)
+        width = float(np.clip(float(width), 0.28, 1.72))
+        height = 2.0 - width
+        centers_arr, radii_arr = safety_repair(
+            "A",
+            np.asarray(centers, dtype=float),
+            np.asarray(radii, dtype=float),
+            width,
+            height,
+            safety=safety,
+        )
+        return centers_arr, radii_arr, width, height
+    return _repair_and_polish_task_a
 
 
 def utc_now() -> str:

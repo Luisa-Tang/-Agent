@@ -1,0 +1,10 @@
+
+============================================================
+  Circle Packing in Unit Square  (n=26)
+  File : /home/wuyou/projects/AlgorithmOptimization/task_B/solution.py
+============================================================
+  Elapsed : 0.18s
+  sum_radii : 2.635976
+  Target    : 2.635990
+  Score     : 0.999995
+============================================================

@@ -28,9 +28,13 @@ class NoveltyFilter:
         self.rejected_count = 0
 
     def remember(self, code_hash: Optional[str], contact_hash: Optional[str],
-                 boundary_pattern: Optional[str], strategy_family: Optional[str]) -> None:
+                 boundary_pattern: Optional[str], strategy_family: Optional[str],
+                 block_hashes: Optional[Dict[str, str]] = None) -> None:
         if code_hash:
             self.code_hashes.add(str(code_hash))
+        for value in (block_hashes or {}).values():
+            if value:
+                self.code_hashes.add(str(value))
         if contact_hash:
             self.contact_hashes.add(str(contact_hash))
         if boundary_pattern:
@@ -41,28 +45,58 @@ class NoveltyFilter:
 
     def judge(self, code_hash: str, contact_hash: str, boundary_pattern: str,
               strategy_family: str, data: PackingData,
-              parent_data: Optional[PackingData]) -> NoveltyDecision:
-        code_new = code_hash not in self.code_hashes
+              parent_data: Optional[PackingData],
+              parent_contact_hash: Optional[str] = None,
+              parent_boundary_pattern: Optional[str] = None,
+              code_block_hash: Optional[str] = None) -> NoveltyDecision:
+        code_new = (code_block_hash or code_hash) not in self.code_hashes
+        contact_graph_changed = bool(parent_contact_hash) and str(parent_contact_hash) != str(contact_hash)
+        boundary_pattern_changed = bool(parent_boundary_pattern) and str(parent_boundary_pattern) != str(boundary_pattern)
         contact_new = contact_hash not in self.contact_hashes
         boundary_new = boundary_pattern not in self.boundary_patterns
         rmsd = centers_rmsd(data, parent_data)
-        rmsd_component = min(0.25, max(0.0, rmsd / 3e-6) * 0.25)
+        radii_l2 = sorted_radii_l2(data, parent_data)
+        centers_rmsd_novelty = min(1.0, max(0.0, rmsd / 3e-6))
+        radius_distribution_novelty = min(1.0, max(0.0, radii_l2 / 3e-7))
         repeated_family = len(self.recent_strategy_families) >= 3 and all(
             item == strategy_family for item in self.recent_strategy_families[-3:]
         )
-        score = 0.0
-        score += 0.25 if code_new else 0.0
-        score += 0.25 if contact_new else 0.0
-        score += 0.15 if boundary_new else 0.0
-        score += rmsd_component
-        score += 0.10 if not repeated_family else 0.0
+        contact_graph_novelty = 1.0 if (contact_new or contact_graph_changed) else 0.0
+        boundary_pattern_novelty = 1.0 if (boundary_new or boundary_pattern_changed) else 0.0
+        strategy_family_novelty = 0.0 if repeated_family else 1.0
+        score = (
+            0.25 * (1.0 if code_new else 0.0)
+            + 0.25 * contact_graph_novelty
+            + 0.20 * boundary_pattern_novelty
+            + 0.15 * centers_rmsd_novelty
+            + 0.10 * radius_distribution_novelty
+            + 0.05 * strategy_family_novelty
+        )
+        rejection_reason = "none"
+        if score < self.threshold:
+            if not contact_graph_novelty and not boundary_pattern_novelty and centers_rmsd_novelty < 0.05:
+                rejection_reason = "geometry_equivalent_to_archive_or_parent"
+            elif not code_new:
+                rejection_reason = "code_block_repeated"
+            else:
+                rejection_reason = "novelty_below_threshold"
         reasons = {
+            "code_block_novelty": 1.0 if code_new else 0.0,
+            "contact_graph_novelty": contact_graph_novelty,
+            "boundary_pattern_novelty": boundary_pattern_novelty,
+            "centers_rmsd_novelty": centers_rmsd_novelty,
+            "radius_distribution_novelty": radius_distribution_novelty,
+            "strategy_family_novelty": strategy_family_novelty,
             "code_hash_new": code_new,
             "contact_graph_hash_new": contact_new,
             "boundary_pattern_new": boundary_new,
+            "contact_graph_changed": contact_graph_changed,
+            "boundary_pattern_changed": boundary_pattern_changed,
             "centers_rmsd": rmsd,
-            "rmsd_component": rmsd_component,
+            "centers_rmsd_to_parent": rmsd,
+            "sorted_radii_l2_to_parent": radii_l2,
             "strategy_family_repeated": repeated_family,
+            "novelty_rejection_reason": rejection_reason,
             "threshold": self.threshold,
         }
         accepted = score >= self.threshold
@@ -81,6 +115,16 @@ def centers_rmsd(data: PackingData, parent_data: Optional[PackingData]) -> float
         return 1.0
     a = np.asarray(data.centers, dtype=float)
     b = np.asarray(parent_data.centers, dtype=float)
+    if a.shape != b.shape:
+        return 1.0
+    return float(np.sqrt(np.mean((a - b) ** 2)))
+
+
+def sorted_radii_l2(data: PackingData, parent_data: Optional[PackingData]) -> float:
+    if parent_data is None:
+        return 1.0
+    a = np.sort(np.asarray(data.radii, dtype=float))
+    b = np.sort(np.asarray(parent_data.radii, dtype=float))
     if a.shape != b.shape:
         return 1.0
     return float(np.sqrt(np.mean((a - b) ** 2)))

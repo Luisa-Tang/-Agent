@@ -25,14 +25,14 @@ try:
     from .novelty_filter import NoveltyFilter
     from .program_db import ProgramDatabase, ProgramRecord
     from .prompt_sampler import PromptSampler
-    from .strategy_bandit import StrategyBandit
+    from .strategy_bandit import StrategyBandit, V2_OPERATORS
 except ImportError:  # pragma: no cover - direct module execution fallback
     from cascade_evaluator import CascadeEvaluator
     from mutation_operators import create_child_program, create_seed_program
     from novelty_filter import NoveltyFilter
     from program_db import ProgramDatabase, ProgramRecord
     from prompt_sampler import PromptSampler
-    from strategy_bandit import StrategyBandit
+    from strategy_bandit import StrategyBandit, V2_OPERATORS
 
 
 @dataclass
@@ -44,6 +44,10 @@ class SelfEvolveConfig:
     seed: int = 42
     use_benchmark_seeds: bool = True
     use_llm: bool = False
+    evolve_blocks_v2: bool = False
+    parent_sampling: str = "balanced"
+    enable_block_crossover: bool = False
+    geometry_novelty_threshold: float = 0.35
 
 
 def run_self_evolution_search(repo_root: Path, tasks: List[str], archive: ArchiveManager,
@@ -51,11 +55,16 @@ def run_self_evolution_search(repo_root: Path, tasks: List[str], archive: Archiv
                               config: SelfEvolveConfig) -> Dict[str, Any]:
     repo_root = Path(repo_root)
     program_db = ProgramDatabase(repo_root, archive.run_id)
-    bandit = StrategyBandit()
+    operators = list(V2_OPERATORS) if config.evolve_blocks_v2 else None
+    if operators and not config.enable_block_crossover:
+        operators = [name for name in operators if name != "block_crossover"]
+    bandit = StrategyBandit(operators=operators)
     prompt_sampler = PromptSampler(repo_root, program_db.prompt_root)
     cascade = CascadeEvaluator(repo_root, adapter, archive, program_db)
     cascade.reset_log()
-    novelty = NoveltyFilter(threshold=float(config.novelty_threshold))
+    novelty = NoveltyFilter(
+        threshold=float(config.geometry_novelty_threshold if config.evolve_blocks_v2 else config.novelty_threshold)
+    )
     novelty_archive = NoveltyArchive(repo_root)
     novelty_archive.add_many(archive.records)
     rng = np.random.default_rng(int(config.seed))
@@ -80,7 +89,7 @@ def run_self_evolution_search(repo_root: Path, tasks: List[str], archive: Archiv
         }
         seed_record = create_seed_program(program_db, task, seed_metadata)
         program_data[seed_record.program_id] = current_data
-        novelty.remember(seed_record.code_hash, seed_record.contact_graph_hash, seed_record.boundary_pattern, seed_record.strategy_family)
+        novelty.remember(seed_record.code_hash, seed_record.contact_graph_hash, seed_record.boundary_pattern, seed_record.strategy_family, seed_record.block_hashes)
         task_summaries[task] = {
             "best_before": _compact_best(best_before, current_data),
             "seed_program_id": seed_record.program_id,
@@ -109,9 +118,13 @@ def run_self_evolution_search(repo_root: Path, tasks: List[str], archive: Archiv
                     stop_reason = "official_eval_budget"
                     break
                 start = time.time()
-                parent_record, parent_data = _select_parent(program_db, program_data, task, generation, batch_index, rng)
+                parent_record, parent_data, parent_mode = _select_parent(
+                    program_db, program_data, task, generation, batch_index, rng, config
+                )
                 operator = bandit.select(generation * batch_size + batch_index, task)
                 context = _operator_context(task, operator, generation, batch_index, config, rng, program_db, program_data)
+                context["parent_sampling_mode"] = parent_mode
+                context["parent_program_id"] = parent_record.program_id
                 prompt = prompt_sampler.build_prompt(
                     task=task,
                     operator=operator,
@@ -162,6 +175,7 @@ def run_self_evolution_search(repo_root: Path, tasks: List[str], archive: Archiv
                         (prepared.contact_graph or {}).get("contact_graph_hash"),
                         (prepared.contact_graph or {}).get("active_boundary_pattern"),
                         child_record.strategy_family,
+                        child_record.block_hashes,
                     )
                 bandit.record_attempt(
                     operator=operator,
@@ -192,6 +206,7 @@ def run_self_evolution_search(repo_root: Path, tasks: List[str], archive: Archiv
     novelty_path = novelty_archive.write()
     operator_stats_path = bandit.write(repo_root)
     tree_path = program_db.write_tree()
+    block_metric_paths = program_db.write_block_metrics()
     summary = {
         "run_id": archive.run_id,
         "config": asdict(config),
@@ -205,6 +220,8 @@ def run_self_evolution_search(repo_root: Path, tasks: List[str], archive: Archiv
         "program_db_path": str(program_db.path),
         "program_tree_path": str(tree_path),
         "operator_stats_path": str(operator_stats_path),
+        "block_metrics_path": str(block_metric_paths["json"]),
+        "block_metrics_jsonl_path": str(block_metric_paths["jsonl"]),
         "novelty_archive_path": str(novelty_path),
         "evolve_log_path": str(cascade.log_path),
     }
@@ -212,6 +229,8 @@ def run_self_evolution_search(repo_root: Path, tasks: List[str], archive: Archiv
     summary_path.write_text(json.dumps(sanitize_json(summary), indent=2, sort_keys=True) + "\n", encoding="utf-8")
     summary["summary_path"] = str(summary_path)
     write_self_evolution_report(repo_root, summary)
+    if config.evolve_blocks_v2:
+        write_evolve_blocks_v2_report(repo_root, summary)
     return summary
 
 
@@ -241,30 +260,56 @@ def _operator_context(task: str, operator: str, generation: int, batch_index: in
         "target_delta": float(target_deltas[(generation + batch_index) % len(target_deltas)]),
         "width_direction": float(-1.0 if (generation + batch_index) % 2 else 1.0),
         "use_llm": bool(config.use_llm),
+        "evolve_blocks_v2": bool(config.evolve_blocks_v2),
+        "enable_fast_refine": bool(config.evolve_blocks_v2),
+        "max_refine_steps": 6,
+        "safety_shrink": 1e-10,
+        "small_circle_count": 2 + ((generation + batch_index) % 2),
+        "gap_probe_scale": float([0.02, 0.035, 0.05][(generation + batch_index) % 3]),
+        "edge_band": float([2e-8, 1e-7, 5e-7][(generation + batch_index) % 3]),
+        "aspect_delta": float(target_deltas[(generation + batch_index) % len(target_deltas)]),
     }
-    if operator == "crossover":
+    if operator in {"crossover", "block_crossover"}:
         mate = _select_mate(program_db, program_data, task, generation, batch_index)
         if mate is not None:
             context["mate"] = _packing_payload(mate)
+        context["mate_program_paths"] = _select_mate_program_paths(program_db, program_data, task, generation, batch_index)
     return context
 
 
 def _select_parent(program_db: ProgramDatabase, program_data: Dict[str, PackingData],
                    task: str, generation: int, batch_index: int,
-                   rng: np.random.Generator) -> Tuple[ProgramRecord, PackingData]:
+                   rng: np.random.Generator,
+                   config: SelfEvolveConfig) -> Tuple[ProgramRecord, PackingData, str]:
     valid = [record for record in program_db.by_task(task) if record.valid and record.program_id in program_data]
     if not valid:
         raise RuntimeError(f"No valid parent program for Task {task}")
-    if generation % 4 == 0:
+    mode = _parent_sampling_mode(config, rng)
+    if mode == "exploit":
         record = max(valid, key=lambda item: (float(item.score), float(item.novelty_score)))
-    elif generation % 4 == 1:
+    elif mode == "diverse":
         elites = [item for item in program_db.diverse_elites(task, limit=8) if item.program_id in program_data]
         record = elites[(generation + batch_index) % len(elites)] if elites else valid[(generation + batch_index) % len(valid)]
-    elif generation % 4 == 2:
-        record = max(valid, key=lambda item: (float(item.novelty_score), float(item.score)))
     else:
-        record = valid[int(rng.integers(0, len(valid)))]
-    return record, program_data[record.program_id]
+        risky = sorted(valid, key=lambda item: (float(item.novelty_score), -float(item.score)), reverse=True)
+        top = risky[: max(1, min(6, len(risky)))]
+        record = top[int(rng.integers(0, len(top)))]
+    return record, program_data[record.program_id], mode
+
+
+def _parent_sampling_mode(config: SelfEvolveConfig, rng: np.random.Generator) -> str:
+    if not config.evolve_blocks_v2:
+        return "exploit" if rng.random() < 0.5 else "diverse"
+    if config.parent_sampling == "exploit":
+        return "exploit"
+    if config.parent_sampling == "diverse":
+        return "diverse"
+    value = float(rng.random())
+    if value < 0.50:
+        return "exploit"
+    if value < 0.80:
+        return "diverse"
+    return "risky_novelty"
 
 
 def _select_mate(program_db: ProgramDatabase, program_data: Dict[str, PackingData],
@@ -276,6 +321,21 @@ def _select_mate(program_db: ProgramDatabase, program_data: Dict[str, PackingDat
     if not candidates:
         return None
     return program_data[candidates[(generation + batch_index + 1) % len(candidates)].program_id]
+
+
+def _select_mate_program_paths(program_db: ProgramDatabase, program_data: Dict[str, PackingData],
+                               task: str, generation: int, batch_index: int) -> Dict[str, str]:
+    candidates = [
+        record for record in program_db.diverse_elites(task, limit=12)
+        if record.valid and record.program_id in program_data
+    ]
+    if not candidates:
+        return {}
+    return {
+        "geometry": str(candidates[(generation + batch_index) % len(candidates)].code_path),
+        "radius": str(candidates[(generation + batch_index + 1) % len(candidates)].code_path),
+        "refine": str(candidates[(generation + batch_index + 2) % len(candidates)].code_path),
+    }
 
 
 def _recent_failures(program_db: ProgramDatabase, task: str, limit: int) -> List[ProgramRecord]:
@@ -386,6 +446,7 @@ def write_self_evolution_report(repo_root: Path, summary: Dict[str, Any]) -> Pat
         f"- Program tree: `{_rel(repo_root, Path(summary.get('program_tree_path', '')) )}`",
         f"- Evolve log: `{_rel(repo_root, Path(summary.get('evolve_log_path', '')) )}`",
         f"- Operator stats: `{_rel(repo_root, Path(summary.get('operator_stats_path', '')) )}`",
+        f"- Block metrics: `{_rel(repo_root, Path(summary.get('block_metrics_path', '')) )}`",
         "",
         "Each program record stores `program_id`, parent, task, operator, code path/hash, score, sum radii, official evaluator path, contact graph hash, boundary pattern, novelty score, strategy family, timestamp, and metadata.",
         "",
@@ -450,6 +511,144 @@ def write_self_evolution_report(repo_root: Path, summary: Dict[str, Any]) -> Pat
     )
     path.write_text("\n".join(lines), encoding="utf-8")
     return path
+
+
+def write_evolve_blocks_v2_report(repo_root: Path, summary: Dict[str, Any]) -> Path:
+    repo_root = Path(repo_root)
+    path = repo_root / "submission" / "evolve_blocks_v2_report.md"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    block_metrics = _load_json(Path(summary.get("block_metrics_path") or ""))
+    block_stats = block_metrics.get("block_stats") or {}
+    operator_stats = summary.get("operator_stats") or {}
+    lines = [
+        "# Evolve Blocks v2 Report",
+        "",
+        "Evolve Blocks v1 produced official-valid candidates but no accepted improvements. The v2 upgrade narrows evolution to named blocks: Task A aspect, geometry, radius, refine, and safety; Task B geometry, radius, refine, and safety.",
+        "",
+        "## What Changed",
+        "",
+        "- Candidate programs now expose named EVOLVE-BLOCK sections.",
+        "- Mutation operators target geometry or refine blocks instead of rewriting the whole function.",
+        "- Geometry novelty combines code-block novelty, contact graph change, boundary pattern change, center RMSD, radius-distribution change, and strategy-family novelty.",
+        "- Parent sampling supports balanced exploit/diverse/risky-novelty modes.",
+        "- `block_crossover` combines program blocks rather than splicing final coordinates.",
+        "",
+        "## Run Summary",
+        "",
+        f"- Generated programs: `{summary.get('generated_program_count')}`",
+        f"- Novelty rejected: `{summary.get('novelty_rejected_count')}`",
+        f"- Official evaluate calls: `{summary.get('official_eval_count')}`",
+        f"- Accepted improvements: `{summary.get('accepted_improvement_count')}`",
+        f"- Block metrics JSON: `{_rel(repo_root, Path(summary.get('block_metrics_path', '')) )}`",
+        f"- Block metrics JSONL: `{_rel(repo_root, Path(summary.get('block_metrics_jsonl_path', '')) )}`",
+        "",
+        "| Task | Best before | Best after | Improved | Exceeded denominator | Gap to 1.0 |",
+        "|---|---:|---:|---:|---:|---:|",
+    ]
+    for task, item in sorted((summary.get("tasks") or {}).items()):
+        before = item.get("best_before") or {}
+        after = item.get("best_after") or {}
+        lines.append(
+            f"| {task} | {float(before.get('score') or 0.0):.12f} | "
+            f"{float(after.get('score') or 0.0):.12f} | "
+            f"{item.get('improved_over_start')} | {item.get('exceeded_denominator')} | "
+            f"{float(item.get('gap_to_denominator') or 0.0):.3e} |"
+        )
+    lines.extend(["", "## Block-Level Metrics", ""])
+    lines.append("| Block changed | Attempts | Valid rate | Best delta | Accepted improvements | Mean contact changed | Mean boundary changed | Mean center RMSD |")
+    lines.append("|---|---:|---:|---:|---:|---:|---:|---:|")
+    if block_stats:
+        for block, stat in sorted(block_stats.items()):
+            lines.append(
+                f"| `{block}` | {int(stat.get('attempts') or 0)} | "
+                f"{float(stat.get('valid_rate') or 0.0):.3f} | "
+                f"{float(stat.get('best_delta') or 0.0):.3e} | "
+                f"{int(stat.get('accepted_improvements') or 0)} | "
+                f"{float(stat.get('mean_contact_graph_changed') or 0.0):.3f} | "
+                f"{float(stat.get('mean_boundary_pattern_changed') or 0.0):.3f} | "
+                f"{float(stat.get('mean_centers_rmsd') or 0.0):.3e} |"
+            )
+    else:
+        lines.append("| none | 0 | 0 | 0 | 0 | 0 | 0 | 0 |")
+    lines.extend(["", "## Operator Ablation", ""])
+    lines.append("| Operator | Attempts | Official evals | Valid | Best delta | Mean delta | Novelty mean | Common failures |")
+    lines.append("|---|---:|---:|---:|---:|---:|---:|---|")
+    for operator, stat in sorted(operator_stats.items()):
+        lines.append(
+            f"| `{operator}` | {int(stat.get('attempts') or 0)} | "
+            f"{int(stat.get('official_evaluated') or 0)} | {int(stat.get('valid_count') or 0)} | "
+            f"{float(stat.get('best_delta') or 0.0):.3e} | {float(stat.get('mean_delta') or 0.0):.3e} | "
+            f"{float(stat.get('novelty_mean') or 0.0):.3f} | `{stat.get('common_failure_types') or {}}` |"
+        )
+    best_operator_line = _best_operator_interpretation(operator_stats)
+    best_block_line = _best_block_interpretation(block_stats)
+    lines.extend(
+        [
+            "",
+            "## Interpretation",
+            "",
+            f"- {best_operator_line}",
+            f"- {best_block_line}",
+            "- Final replacement policy did not change: no candidate can overwrite `solution.py` unless official evaluator score improves.",
+            "- Official evaluator files and task descriptions are not modified.",
+            "",
+        ]
+    )
+    path.write_text("\n".join(lines), encoding="utf-8")
+    return path
+
+
+def _load_json(path: Path) -> Dict[str, Any]:
+    try:
+        if path.exists():
+            return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+    return {}
+
+
+def _best_operator_interpretation(operator_stats: Dict[str, Any]) -> str:
+    if not operator_stats:
+        return "No operator statistics were recorded."
+    best_by_delta = max(
+        operator_stats.items(),
+        key=lambda pair: (float(pair[1].get("best_delta") or 0.0), float(pair[1].get("novelty_mean") or 0.0)),
+    )
+    best_delta = float(best_by_delta[1].get("best_delta") or 0.0)
+    if best_delta > 0.0:
+        return f"Most effective operator by positive best delta: `{best_by_delta[0]}` ({best_delta:.3e})."
+    closest = max(
+        operator_stats.items(),
+        key=lambda pair: float(pair[1].get("mean_delta") or 0.0),
+    )
+    return (
+        "No operator produced a positive delta; closest average result was "
+        f"`{closest[0]}` with mean delta {float(closest[1].get('mean_delta') or 0.0):.3e}."
+    )
+
+
+def _best_block_interpretation(block_stats: Dict[str, Any]) -> str:
+    if not block_stats:
+        return "No block statistics were recorded."
+    best_by_delta = max(
+        block_stats.items(),
+        key=lambda pair: (float(pair[1].get("best_delta") or 0.0), float(pair[1].get("mean_contact_graph_changed") or 0.0)),
+    )
+    best_delta = float(best_by_delta[1].get("best_delta") or 0.0)
+    if best_delta > 0.0:
+        return f"Most promising block by positive best delta: `{best_by_delta[0]}` ({best_delta:.3e})."
+    most_novel = max(
+        block_stats.items(),
+        key=lambda pair: (
+            float(pair[1].get("mean_contact_graph_changed") or 0.0),
+            float(pair[1].get("mean_boundary_pattern_changed") or 0.0),
+        ),
+    )
+    return (
+        "No block produced a positive delta; strongest geometry novelty came from "
+        f"`{most_novel[0]}` with mean contact-change rate "
+        f"{float(most_novel[1].get('mean_contact_graph_changed') or 0.0):.3f}."
+    )
 
 
 def _rel(repo_root: Path, path: Path) -> str:

@@ -29,6 +29,16 @@ class PromptSampler:
         template_name = {
             "depth_refinement": "depth_refine.md",
             "crossover": "crossover.md",
+            "block_crossover": "crossover_blocks.md",
+            "boundary_slide_mutation": "mutate_geometry_block.md",
+            "contact_pair_relaxation": "mutate_geometry_block.md",
+            "small_circle_reposition": "mutate_geometry_block.md",
+            "boundary_pattern_swap": "mutate_geometry_block.md",
+            "radius_group_redistribution": "mutate_geometry_block.md",
+            "aspect_ratio_sweep_local": "mutate_geometry_block.md",
+            "contact_graph_breaking_refine": "mutate_geometry_block.md",
+            "contact_graph_preserving_refine": "mutate_refiner_block.md",
+            "solver_switch": "mutate_radius_solver_block.md",
         }.get(operator, "mutate_program.md")
         template = (self.template_root / template_name).read_text(encoding="utf-8")
         payload = {
@@ -103,6 +113,10 @@ def _redact_context(context: Dict[str, Any]) -> Dict[str, Any]:
                 "width": value.get("width"),
                 "height": value.get("height"),
             }
+        elif key == "mate_program_paths" and isinstance(value, dict):
+            redacted[key] = dict(value)
+        elif callable(value):
+            redacted[key] = f"<callable:{getattr(value, '__name__', 'anonymous')}>"
         else:
             redacted[key] = value
     return redacted

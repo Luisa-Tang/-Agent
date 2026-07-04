@@ -18,6 +18,19 @@ OPERATORS = [
     "crossover",
     "depth_refinement",
 ]
+V2_OPERATORS = [
+    "boundary_slide_mutation",
+    "contact_pair_relaxation",
+    "small_circle_reposition",
+    "boundary_pattern_swap",
+    "radius_group_redistribution",
+    "aspect_ratio_sweep_local",
+    "contact_graph_preserving_refine",
+    "contact_graph_breaking_refine",
+    "block_crossover",
+    "solver_switch",
+    "program_patch",
+]
 
 
 @dataclass
@@ -34,21 +47,25 @@ class OperatorStats:
 
 
 class StrategyBandit:
-    def __init__(self):
-        self.stats: Dict[str, OperatorStats] = {name: OperatorStats() for name in OPERATORS}
-        self._delta_totals: Dict[str, float] = {name: 0.0 for name in OPERATORS}
-        self._runtime_totals: Dict[str, float] = {name: 0.0 for name in OPERATORS}
-        self._novelty_totals: Dict[str, float] = {name: 0.0 for name in OPERATORS}
-        self._failures: Dict[str, Counter] = {name: Counter() for name in OPERATORS}
+    def __init__(self, operators: Optional[Iterable[str]] = None):
+        self.operators = list(operators or OPERATORS)
+        self.stats: Dict[str, OperatorStats] = {name: OperatorStats() for name in self.operators}
+        self._delta_totals: Dict[str, float] = {name: 0.0 for name in self.operators}
+        self._runtime_totals: Dict[str, float] = {name: 0.0 for name in self.operators}
+        self._novelty_totals: Dict[str, float] = {name: 0.0 for name in self.operators}
+        self._failures: Dict[str, Counter] = {name: Counter() for name in self.operators}
 
     def select(self, generation: int, task: str) -> str:
         total = sum(stat.attempts for stat in self.stats.values()) + 1
-        best_name = OPERATORS[generation % len(OPERATORS)]
+        operators = self.operators
+        if task.upper() == "B":
+            operators = [name for name in operators if name != "aspect_ratio_sweep_local"] or operators
+        best_name = operators[generation % len(operators)]
         best_score = -1e18
-        for name in OPERATORS:
+        for name in operators:
             stat = self.stats[name]
             if stat.attempts == 0:
-                score = 1.0 + 0.03 * ((generation + len(task)) % len(OPERATORS))
+                score = 1.0 + 0.03 * ((generation + len(task)) % len(operators))
             else:
                 validity_bonus = 0.15 * (stat.valid_count / max(1, stat.official_evaluated))
                 novelty_bonus = 0.12 * stat.novelty_mean
@@ -96,4 +113,3 @@ class StrategyBandit:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(self.to_dict(), indent=2, sort_keys=True) + "\n", encoding="utf-8")
         return path
-

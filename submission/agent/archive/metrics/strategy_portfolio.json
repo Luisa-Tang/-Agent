@@ -6,7 +6,7 @@
   "strategy_portfolio_stats": {
     "benchmark_seed_dominikkamp": {
       "attempts": 2,
-      "avg_runtime": 0.18,
+      "avg_runtime": 0.195,
       "avg_score_delta": 0.9999970622798878,
       "best_score": 0.99999736745286,
       "common_failure_types": {
@@ -17,14 +17,14 @@
       "novelty_bonus": 0.01,
       "plateau_penalty": 0.0,
       "repeated_code_penalty": 0.0,
-      "runtime_penalty": 0.003,
-      "ucb_score": 1.256997062279888,
+      "runtime_penalty": 0.0032500000000000003,
+      "ucb_score": 1.256747062279888,
       "valid_count": 2,
       "validity_rate": 1.0
     },
     "hexagonal_or_staggered_initialization": {
       "attempts": 2,
-      "avg_runtime": 0.185,
+      "avg_runtime": 0.19,
       "avg_score_delta": -0.12947775668055317,
       "best_score": 0.9151434423354281,
       "common_failure_types": {
@@ -36,14 +36,14 @@
       "novelty_bonus": 0.01,
       "plateau_penalty": 0.0,
       "repeated_code_penalty": 0.0,
-      "runtime_penalty": 0.0030833333333333333,
-      "ucb_score": 0.2569166666666667,
+      "runtime_penalty": 0.0031666666666666666,
+      "ucb_score": 0.25683333333333336,
       "valid_count": 2,
       "validity_rate": 1.0
     },
     "perturb_best_and_repair": {
       "attempts": 4,
-      "avg_runtime": 0.18500000000000003,
+      "avg_runtime": 0.18,
       "avg_score_delta": -8.724063056103626e-06,
       "best_score": 0.9999969021274452,
       "common_failure_types": {
@@ -54,14 +54,14 @@
       "novelty_bonus": 0.006,
       "plateau_penalty": 0.05,
       "repeated_code_penalty": 0.02,
-      "runtime_penalty": 0.0030833333333333338,
-      "ucb_score": 0.1829166666666667,
+      "runtime_penalty": 0.003,
+      "ucb_score": 0.18300000000000002,
       "valid_count": 4,
       "validity_rate": 1.0
     },
     "scipy_slsqp_joint": {
       "attempts": 2,
-      "avg_runtime": 0.175,
+      "avg_runtime": 0.18,
       "avg_score_delta": -0.015380409120421823,
       "best_score": 0.9853618657620588,
       "common_failure_types": {
@@ -72,39 +72,21 @@
       "novelty_bonus": 0.01,
       "plateau_penalty": 0.0,
       "repeated_code_penalty": 0.0,
-      "runtime_penalty": 0.0029166666666666664,
-      "ucb_score": 0.25708333333333333,
+      "runtime_penalty": 0.003,
+      "ucb_score": 0.257,
       "valid_count": 2,
       "validity_rate": 1.0
     },
-    "self_evolve_contact_threshold_mutation": {
-      "attempts": 2,
-      "avg_runtime": 0.0,
-      "avg_score_delta": -3.335266252069147e-08,
-      "best_score": 0.9999973148692879,
-      "common_failure_types": {
-        "none": 2
-      },
-      "expected_improvement": 0.0,
-      "last_used_iteration": 99013,
-      "novelty_bonus": 0.01,
-      "plateau_penalty": 0.0,
-      "repeated_code_penalty": 0.0,
-      "runtime_penalty": 0.0,
-      "ucb_score": 0.26,
-      "valid_count": 2,
-      "validity_rate": 1.0
-    },
-    "self_evolve_crossover": {
+    "self_evolve_aspect_ratio_sweep_local": {
       "attempts": 7,
       "avg_runtime": 0.0,
-      "avg_score_delta": -3.995463470407579e-06,
-      "best_score": 0.9999973592263415,
+      "avg_score_delta": -9.4574135892803e-06,
+      "best_score": 0.9999959050564255,
       "common_failure_types": {
         "none": 7
       },
       "expected_improvement": 0.0,
-      "last_used_iteration": 99023,
+      "last_used_iteration": 99036,
       "novelty_bonus": 0.00375,
       "plateau_penalty": 0.0,
       "repeated_code_penalty": 0.025,
@@ -113,76 +95,184 @@
       "valid_count": 7,
       "validity_rate": 1.0
     },
-    "self_evolve_depth_refinement": {
-      "attempts": 4,
+    "self_evolve_block_crossover": {
+      "attempts": 5,
       "avg_runtime": 0.0,
-      "avg_score_delta": -5.116940766658473e-07,
-      "best_score": 0.9999973652748952,
+      "avg_score_delta": -4.097180037931913e-06,
+      "best_score": 0.9999971347380889,
       "common_failure_types": {
-        "none": 4
+        "none": 5
       },
       "expected_improvement": 0.0,
-      "last_used_iteration": 99017,
-      "novelty_bonus": 0.006,
+      "last_used_iteration": 99030,
+      "novelty_bonus": 0.005,
       "plateau_penalty": 0.0,
-      "repeated_code_penalty": 0.01,
+      "repeated_code_penalty": 0.015,
       "runtime_penalty": 0.0,
-      "ucb_score": 0.246,
-      "valid_count": 4,
+      "ucb_score": 0.24,
+      "valid_count": 5,
       "validity_rate": 1.0
     },
-    "self_evolve_parameter_mutation": {
-      "attempts": 10,
+    "self_evolve_boundary_pattern_swap": {
+      "attempts": 5,
       "avg_runtime": 0.0,
-      "avg_score_delta": -1.993432331082179e-05,
-      "best_score": 0.9999970924365987,
+      "avg_score_delta": -0.07050023270892132,
+      "best_score": 0.9999963052481893,
       "common_failure_types": {
-        "none": 10
+        "none": 5
       },
       "expected_improvement": 0.0,
-      "last_used_iteration": 99022,
-      "novelty_bonus": 0.002727272727272727,
+      "last_used_iteration": 99029,
+      "novelty_bonus": 0.005,
       "plateau_penalty": 0.0,
-      "repeated_code_penalty": 0.04,
+      "repeated_code_penalty": 0.015,
       "runtime_penalty": 0.0,
-      "ucb_score": 0.21272727272727274,
-      "valid_count": 10,
+      "ucb_score": 0.24,
+      "valid_count": 5,
       "validity_rate": 1.0
     },
-    "self_evolve_program_patch": {
-      "attempts": 9,
-      "avg_runtime": 0.0,
-      "avg_score_delta": -2.6486454936710166e-06,
-      "best_score": 0.9999972705624822,
-      "common_failure_types": {
-        "none": 9
-      },
-      "expected_improvement": 0.0,
-      "last_used_iteration": 99024,
-      "novelty_bonus": 0.003,
-      "plateau_penalty": 0.0,
-      "repeated_code_penalty": 0.035,
-      "runtime_penalty": 0.0,
-      "ucb_score": 0.218,
-      "valid_count": 9,
-      "validity_rate": 1.0
-    },
-    "self_evolve_solver_switch": {
+    "self_evolve_boundary_slide_mutation": {
       "attempts": 8,
       "avg_runtime": 0.0,
-      "avg_score_delta": -1.200860013013394e-05,
-      "best_score": 0.9999964313319353,
+      "avg_score_delta": -1.3752614918871586e-05,
+      "best_score": 0.9999971946591472,
       "common_failure_types": {
         "none": 8
       },
       "expected_improvement": 0.0,
-      "last_used_iteration": 99024,
+      "last_used_iteration": 99037,
       "novelty_bonus": 0.003333333333333333,
       "plateau_penalty": 0.0,
       "repeated_code_penalty": 0.03,
       "runtime_penalty": 0.0,
       "ucb_score": 0.22333333333333336,
       "valid_count": 8,
+      "validity_rate": 1.0
+    },
+    "self_evolve_contact_graph_breaking_refine": {
+      "attempts": 3,
+      "avg_runtime": 0.0,
+      "avg_score_delta": -3.1095109436959e-06,
+      "best_score": 0.9999958549188572,
+      "common_failure_types": {
+        "none": 3
+      },
+      "expected_improvement": 0.0,
+      "last_used_iteration": 99030,
+      "novelty_bonus": 0.0075,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.005,
+      "runtime_penalty": 0.0,
+      "ucb_score": 0.2525,
+      "valid_count": 3,
+      "validity_rate": 1.0
+    },
+    "self_evolve_contact_graph_preserving_refine": {
+      "attempts": 7,
+      "avg_runtime": 0.0,
+      "avg_score_delta": -1.91067732330717e-05,
+      "best_score": 0.9999965921952546,
+      "common_failure_types": {
+        "none": 7
+      },
+      "expected_improvement": 0.0,
+      "last_used_iteration": 99028,
+      "novelty_bonus": 0.00375,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.025,
+      "runtime_penalty": 0.0,
+      "ucb_score": 0.22874999999999998,
+      "valid_count": 7,
+      "validity_rate": 1.0
+    },
+    "self_evolve_contact_pair_relaxation": {
+      "attempts": 5,
+      "avg_runtime": 0.0,
+      "avg_score_delta": -1.2085343506162972e-06,
+      "best_score": 0.9999972580012652,
+      "common_failure_types": {
+        "none": 5
+      },
+      "expected_improvement": 0.0,
+      "last_used_iteration": 99026,
+      "novelty_bonus": 0.005,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.015,
+      "runtime_penalty": 0.0,
+      "ucb_score": 0.24,
+      "valid_count": 5,
+      "validity_rate": 1.0
+    },
+    "self_evolve_program_patch": {
+      "attempts": 2,
+      "avg_runtime": 0.0,
+      "avg_score_delta": -0.1692262052451844,
+      "best_score": 0.8536141674604313,
+      "common_failure_types": {
+        "none": 2
+      },
+      "expected_improvement": 0.0,
+      "last_used_iteration": 99020,
+      "novelty_bonus": 0.01,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.0,
+      "runtime_penalty": 0.0,
+      "ucb_score": 0.26,
+      "valid_count": 2,
+      "validity_rate": 1.0
+    },
+    "self_evolve_radius_group_redistribution": {
+      "attempts": 8,
+      "avg_runtime": 0.0,
+      "avg_score_delta": -5.505707613105704e-05,
+      "best_score": 0.9999964901899674,
+      "common_failure_types": {
+        "none": 8
+      },
+      "expected_improvement": 0.0,
+      "last_used_iteration": 99035,
+      "novelty_bonus": 0.003333333333333333,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.03,
+      "runtime_penalty": 0.0,
+      "ucb_score": 0.22333333333333336,
+      "valid_count": 8,
+      "validity_rate": 1.0
+    },
+    "self_evolve_small_circle_reposition": {
+      "attempts": 3,
+      "avg_runtime": 0.0,
+      "avg_score_delta": -0.13919207258300548,
+      "best_score": 0.8718512082198777,
+      "common_failure_types": {
+        "none": 3
+      },
+      "expected_improvement": 0.0,
+      "last_used_iteration": 99034,
+      "novelty_bonus": 0.0075,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.005,
+      "runtime_penalty": 0.0,
+      "ucb_score": 0.2525,
+      "valid_count": 3,
+      "validity_rate": 1.0
+    },
+    "self_evolve_solver_switch": {
+      "attempts": 7,
+      "avg_runtime": 0.0,
+      "avg_score_delta": -1.5370182733105103e-05,
+      "best_score": 0.9999970614618618,
+      "common_failure_types": {
+        "none": 7
+      },
+      "expected_improvement": 0.0,
+      "last_used_iteration": 99031,
+      "novelty_bonus": 0.00375,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.025,
+      "runtime_penalty": 0.0,
+      "ucb_score": 0.22874999999999998,
+      "valid_count": 7,
       "validity_rate": 1.0
     }
   }

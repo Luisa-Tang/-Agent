@@ -99,7 +99,9 @@ def build_demo_data() -> Dict[str, Any]:
                     "program_db": "agent/archive/evolve/program_db.jsonl",
                     "program_tree": "agent/archive/evolve/program_tree.json",
                     "operator_stats": "agent/archive/evolve/operator_stats.json",
+                    "block_metrics": "agent/archive/evolve/block_metrics.json",
                     "report": "submission/self_evolution_report.md",
+                    "blocks_v2_report": "submission/evolve_blocks_v2_report.md",
                 },
             },
             "tasks": final_tasks,
@@ -363,6 +365,8 @@ def load_self_evolution_summary() -> Dict[str, Any]:
         }
     tree_path = REPO_ROOT / "agent" / "archive" / "evolve" / "program_tree.json"
     tree = load_json_file(tree_path)
+    block_path = REPO_ROOT / "agent" / "archive" / "evolve" / "block_metrics.json"
+    block_metrics = load_json_file(block_path)
     operator_stats = payload.get("operator_stats") or load_json_file(REPO_ROOT / "agent" / "archive" / "evolve" / "operator_stats.json")
     tasks = {}
     for task, item in (payload.get("tasks") or {}).items():
@@ -399,6 +403,11 @@ def load_self_evolution_summary() -> Dict[str, Any]:
             "path": rel(tree_path),
             "node_count": len(tree.get("nodes") or []),
             "edge_count": len(tree.get("edges") or []),
+        },
+        "block_metrics": {
+            "path": rel(block_path),
+            "block_stats": block_metrics.get("block_stats") or {},
+            "program_count": block_metrics.get("program_count"),
         },
     }
 
