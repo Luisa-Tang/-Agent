@@ -110,7 +110,7 @@ Human contributions and Agent actions are audited with evidence artifacts.
 
 The Agent uses template-based generation. Each candidate is a complete Python module with literal NumPy arrays for centers and radii, plus a small safety repair routine. Candidate search combines conservative grid layouts, hexagonal/staggered initializations, SLSQP joint optimization over centers and radii, multi-start SLSQP, and local perturbation around the best valid candidate. It can also convert tracked public benchmark geometry into static candidates and submit them to the same official evaluator path. For fixed centers, the Agent solves a linear program to maximize radii under boundary and pairwise non-overlap constraints, then applies a tiny final shrink/repair.
 
-LLM use is optional. When `--use-llm` is passed and `OPENAI_API_KEY` is set, the Agent asks a configured Chat Completions-compatible endpoint to choose among the existing deterministic strategies. The LLM is not allowed to modify official evaluators, and final exported `solution.py` files remain standalone with no network or LLM dependency.
+LLM use is optional. When `--use-llm` is passed and `DEEPSEEK_API_KEY` or a compatible fallback key is set, the Agent asks the configured Chat Completions-compatible endpoint to choose among the existing deterministic strategies. The LLM is not allowed to modify official evaluators, and final exported `solution.py` files remain standalone with no network or LLM dependency.
 
 ## 4. External Benchmark Warm-start
 

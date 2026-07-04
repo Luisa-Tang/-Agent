@@ -118,8 +118,9 @@ def generate_report(repo_root: Path, archive, output_path: Path,
     )
     lines.append("")
     lines.append(
-        "LLM use is optional. When `--use-llm` is passed and `OPENAI_API_KEY` is "
-        "set, the Agent asks a configured Chat Completions-compatible endpoint to "
+        "LLM use is optional. When `--use-llm` is passed and `DEEPSEEK_API_KEY` "
+        "or a compatible fallback key is set, the Agent asks the configured "
+        "Chat Completions-compatible endpoint to "
         "choose among the existing deterministic strategies. The LLM is not allowed "
         "to modify official evaluators, and final exported `solution.py` files remain "
         "standalone with no network or LLM dependency."
