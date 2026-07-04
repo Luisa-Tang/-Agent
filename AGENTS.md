@@ -28,6 +28,21 @@ You are working on an AlgorithmOptimization competition project. The goal is not
 * Prefer robust legal packings over risky high-scoring packings that may fail due to floating-point tolerance.
 * Do not depend on unavailable services for final evaluation. The final solution.py files must run without LLM API access.
 
+
+## Project-local skills
+
+The directory `agent/skills/` contains Agent-Learning-Hub-style reusable procedures. These skills are not separate personas and should not be treated as role-play prompts. They are operational playbooks for the orchestrator and specialist tools.
+
+The orchestrator should consult these skills before the corresponding stage:
+
+* `agent/skills/packing-slsqp/SKILL.md` before SLSQP candidate generation or numeric improvement.
+* `agent/skills/packing-repair/SKILL.md` before repairing invalid, overlapping, boundary-violating, or fragile candidates.
+* `agent/skills/evaluator-feedback/SKILL.md` after every official evaluator run and before choosing the next action.
+* `agent/skills/static-export/SKILL.md` before exporting final `task_A/solution.py` or `task_B/solution.py`.
+* `agent/skills/archive-observability/SKILL.md` whenever recording candidate lineage, raw outputs, strategy statistics, geometry metrics, or report traces.
+
+Each iteration should log which skills were used. Final reports should describe the skill-based reusable-procedure layer as part of the manager + specialist tools architecture.
+
 ## Engineering expectations
 
 * Use Python 3.

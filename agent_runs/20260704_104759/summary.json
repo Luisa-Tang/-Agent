@@ -1,0 +1,452 @@
+{
+  "archive_jsonl": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_104759/archive.jsonl",
+  "best": {
+    "A": {
+      "candidate_id": "A_003_perturb_best_and_repair",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_104759/candidates/task_A/A_003_perturb_best_and_repair.py",
+      "decision": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
+      "diagnostics": {
+        "boundary_margin": 2.0000000000575113e-07,
+        "internal_message": "none",
+        "internal_valid": true,
+        "margin": 2e-07,
+        "maxiter": 120,
+        "message": "Optimization terminated successfully",
+        "nit": 10,
+        "optimizer": "SLSQP",
+        "overlap_margin": 1.9995344291423578e-07,
+        "parent_sum_radii": 2.0999983959999997,
+        "score_estimate": 0.9902222227473237,
+        "seed_offset": 159,
+        "source": "perturbed best valid candidate then SLSQP/LP repair",
+        "success": true,
+        "sum_radii": 2.3427073434645282
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 0.9138409972314672,
+        "min_boundary_margin": 2.0000000000575113e-07,
+        "min_pairwise_margin": 1.9995344291423578e-07,
+        "score": 0.9902222227473237,
+        "sum_radii": 2.3427073434645282,
+        "width": 1.0861590027685328
+      },
+      "height": 0.9138409972314672,
+      "iteration": 3,
+      "llm_decision": {
+        "enabled": false,
+        "error": null,
+        "raw_excerpt": null,
+        "reason": "LLM disabled; using deterministic local policy.",
+        "strategy": "perturb_best_and_repair",
+        "used": false
+      },
+      "local_policy_strategy": "perturb_best_and_repair",
+      "parent_candidate_id": "A_000_baseline_safe_grid",
+      "raw_failure_type": "none",
+      "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_104759/outputs/task_A/A_003_perturb_best_and_repair.txt",
+      "score": 0.990222,
+      "score_improvement": 0.10258900000000004,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "perturb_best_and_repair",
+      "sum_radii": 2.342707,
+      "task": "A",
+      "trace": {
+        "action": {
+          "diagnostics": {
+            "boundary_margin": 2.0000000000575113e-07,
+            "internal_message": "none",
+            "internal_valid": true,
+            "margin": 2e-07,
+            "maxiter": 120,
+            "message": "Optimization terminated successfully",
+            "nit": 10,
+            "optimizer": "SLSQP",
+            "overlap_margin": 1.9995344291423578e-07,
+            "parent_sum_radii": 2.0999983959999997,
+            "score_estimate": 0.9902222227473237,
+            "seed_offset": 159,
+            "source": "perturbed best valid candidate then SLSQP/LP repair",
+            "success": true,
+            "sum_radii": 2.3427073434645282
+          },
+          "generated_code_bytes": 4360,
+          "geometry_metrics": {
+            "height": 0.9138409972314672,
+            "min_boundary_margin": 2.0000000000575113e-07,
+            "min_pairwise_margin": 1.9995344291423578e-07,
+            "score": 0.9902222227473237,
+            "sum_radii": 2.3427073434645282,
+            "width": 1.0861590027685328
+          },
+          "optimizer_or_repair": "archive-best perturbation with LP radius recomputation",
+          "skills_used": [
+            "archive-observability",
+            "packing-repair",
+            "evaluator-feedback"
+          ],
+          "strategy": "perturb_best_and_repair"
+        },
+        "next_observation": {
+          "elapsed": "0.17s",
+          "failure_type": "none",
+          "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_104759/outputs/task_A/A_003_perturb_best_and_repair.txt",
+          "returncode": 0,
+          "score": 0.990222,
+          "sum_radii": 2.342707,
+          "valid": true
+        },
+        "observation": {
+          "best_archive_state": {
+            "candidate_id": "A_000_baseline_safe_grid",
+            "failure_type": "low_score",
+            "height": 1.0,
+            "score": 0.887633,
+            "score_improvement": 0.887633,
+            "strategy": "baseline_safe_grid",
+            "sum_radii": 2.099998,
+            "valid": true,
+            "width": 1.0
+          },
+          "iteration": 3,
+          "last_evaluator_result": {
+            "candidate_id": "A_002_scipy_slsqp_joint",
+            "failure_type": "low_score",
+            "height": 1.2997604782127243,
+            "score": 7.6e-05,
+            "score_improvement": -0.887557,
+            "strategy": "scipy_slsqp_joint",
+            "sum_radii": 0.000179,
+            "valid": true,
+            "width": 0.7002395217872757
+          },
+          "no_improve_count": 2,
+          "strategy_stats": {
+            "baseline_safe_grid": {
+              "attempts": 1,
+              "average_score_improvement": 0.887633,
+              "best_score": 0.887633,
+              "valid_attempts": 1,
+              "validity_rate": 1.0
+            },
+            "hexagonal_or_staggered_initialization": {
+              "attempts": 1,
+              "average_score_improvement": -0.06173799999999996,
+              "best_score": 0.825895,
+              "valid_attempts": 1,
+              "validity_rate": 1.0
+            },
+            "scipy_slsqp_joint": {
+              "attempts": 1,
+              "average_score_improvement": -0.887557,
+              "best_score": 7.6e-05,
+              "valid_attempts": 1,
+              "validity_rate": 1.0
+            }
+          },
+          "task": "A"
+        },
+        "thought_decision": {
+          "llm_decision": {
+            "enabled": false,
+            "error": null,
+            "raw_excerpt": null,
+            "reason": "LLM disabled; using deterministic local policy.",
+            "strategy": "perturb_best_and_repair",
+            "used": false
+          },
+          "local_policy_strategy": "perturb_best_and_repair",
+          "reason": "Exploit the best archive candidate after plateau or no-improvement rounds.",
+          "selected_strategy": "perturb_best_and_repair"
+        }
+      },
+      "valid": true,
+      "width": 1.0861590027685328
+    },
+    "B": {
+      "candidate_id": "B_004_perturb_best_and_repair",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_104759/candidates/task_B/B_004_perturb_best_and_repair.py",
+      "decision": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
+      "diagnostics": {
+        "boundary_margin": 2.0000000000575113e-07,
+        "internal_message": "none",
+        "internal_valid": true,
+        "margin": 2e-07,
+        "maxiter": 120,
+        "message": "Optimization terminated successfully",
+        "nit": 6,
+        "optimizer": "SLSQP",
+        "overlap_margin": 1.9994806971235235e-07,
+        "parent_sum_radii": 2.6020109982900963,
+        "score_estimate": 0.9871160774599866,
+        "seed_offset": 212,
+        "source": "perturbed best valid candidate then SLSQP/LP repair",
+        "success": true,
+        "sum_radii": 2.6020281090237503
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.0000000000575113e-07,
+        "min_pairwise_margin": 1.9994806971235235e-07,
+        "score": 0.9871160774599866,
+        "sum_radii": 2.6020281090237503,
+        "width": null
+      },
+      "height": null,
+      "iteration": 4,
+      "llm_decision": {
+        "enabled": false,
+        "error": null,
+        "raw_excerpt": null,
+        "reason": "LLM disabled; using deterministic local policy.",
+        "strategy": "perturb_best_and_repair",
+        "used": false
+      },
+      "local_policy_strategy": "perturb_best_and_repair",
+      "parent_candidate_id": "B_003_multi_start_slsqp",
+      "raw_failure_type": "none",
+      "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_104759/outputs/task_B/B_004_perturb_best_and_repair.txt",
+      "score": 0.987116,
+      "score_improvement": 5.999999999950489e-06,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "perturb_best_and_repair",
+      "sum_radii": 2.602028,
+      "task": "B",
+      "trace": {
+        "action": {
+          "diagnostics": {
+            "boundary_margin": 2.0000000000575113e-07,
+            "internal_message": "none",
+            "internal_valid": true,
+            "margin": 2e-07,
+            "maxiter": 120,
+            "message": "Optimization terminated successfully",
+            "nit": 6,
+            "optimizer": "SLSQP",
+            "overlap_margin": 1.9994806971235235e-07,
+            "parent_sum_radii": 2.6020109982900963,
+            "score_estimate": 0.9871160774599866,
+            "seed_offset": 212,
+            "source": "perturbed best valid candidate then SLSQP/LP repair",
+            "success": true,
+            "sum_radii": 2.6020281090237503
+          },
+          "generated_code_bytes": 4563,
+          "geometry_metrics": {
+            "height": null,
+            "min_boundary_margin": 2.0000000000575113e-07,
+            "min_pairwise_margin": 1.9994806971235235e-07,
+            "score": 0.9871160774599866,
+            "sum_radii": 2.6020281090237503,
+            "width": null
+          },
+          "optimizer_or_repair": "archive-best perturbation with LP radius recomputation",
+          "skills_used": [
+            "archive-observability",
+            "packing-repair",
+            "evaluator-feedback"
+          ],
+          "strategy": "perturb_best_and_repair"
+        },
+        "next_observation": {
+          "elapsed": "0.19s",
+          "failure_type": "none",
+          "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_104759/outputs/task_B/B_004_perturb_best_and_repair.txt",
+          "returncode": 0,
+          "score": 0.987116,
+          "sum_radii": 2.602028,
+          "valid": true
+        },
+        "observation": {
+          "best_archive_state": {
+            "candidate_id": "B_003_multi_start_slsqp",
+            "failure_type": "none",
+            "height": null,
+            "score": 0.98711,
+            "score_improvement": 0.003238999999999992,
+            "strategy": "multi_start_slsqp",
+            "sum_radii": 2.602011,
+            "valid": true,
+            "width": null
+          },
+          "iteration": 4,
+          "last_evaluator_result": {
+            "candidate_id": "B_003_multi_start_slsqp",
+            "failure_type": "none",
+            "height": null,
+            "score": 0.98711,
+            "score_improvement": 0.003238999999999992,
+            "strategy": "multi_start_slsqp",
+            "sum_radii": 2.602011,
+            "valid": true,
+            "width": null
+          },
+          "no_improve_count": 0,
+          "strategy_stats": {
+            "baseline_safe_grid": {
+              "attempts": 1,
+              "average_score_improvement": 0.821955,
+              "best_score": 0.821955,
+              "valid_attempts": 1,
+              "validity_rate": 1.0
+            },
+            "hexagonal_or_staggered_initialization": {
+              "attempts": 1,
+              "average_score_improvement": 0.09318800000000005,
+              "best_score": 0.915143,
+              "valid_attempts": 1,
+              "validity_rate": 1.0
+            },
+            "multi_start_slsqp": {
+              "attempts": 1,
+              "average_score_improvement": 0.003238999999999992,
+              "best_score": 0.98711,
+              "valid_attempts": 1,
+              "validity_rate": 1.0
+            },
+            "scipy_slsqp_joint": {
+              "attempts": 1,
+              "average_score_improvement": 0.06872800000000001,
+              "best_score": 0.983871,
+              "valid_attempts": 1,
+              "validity_rate": 1.0
+            }
+          },
+          "task": "B"
+        },
+        "thought_decision": {
+          "llm_decision": {
+            "enabled": false,
+            "error": null,
+            "raw_excerpt": null,
+            "reason": "LLM disabled; using deterministic local policy.",
+            "strategy": "perturb_best_and_repair",
+            "used": false
+          },
+          "local_policy_strategy": "perturb_best_and_repair",
+          "reason": "Exploit the best archive candidate after plateau or no-improvement rounds.",
+          "selected_strategy": "perturb_best_and_repair"
+        }
+      },
+      "valid": true,
+      "width": null
+    }
+  },
+  "num_records": 10,
+  "run_id": "20260704_104759",
+  "strategy_stats": {
+    "baseline_safe_grid": {
+      "attempts": 2,
+      "average_score_improvement": 0.854794,
+      "best_score": 0.887633,
+      "valid_attempts": 2,
+      "validity_rate": 1.0
+    },
+    "hexagonal_or_staggered_initialization": {
+      "attempts": 2,
+      "average_score_improvement": 0.015725000000000044,
+      "best_score": 0.915143,
+      "valid_attempts": 2,
+      "validity_rate": 1.0
+    },
+    "multi_start_slsqp": {
+      "attempts": 1,
+      "average_score_improvement": 0.003238999999999992,
+      "best_score": 0.98711,
+      "valid_attempts": 1,
+      "validity_rate": 1.0
+    },
+    "perturb_best_and_repair": {
+      "attempts": 3,
+      "average_score_improvement": 0.03419833333333333,
+      "best_score": 0.990222,
+      "valid_attempts": 3,
+      "validity_rate": 1.0
+    },
+    "scipy_slsqp_joint": {
+      "attempts": 2,
+      "average_score_improvement": -0.4094145,
+      "best_score": 0.983871,
+      "valid_attempts": 2,
+      "validity_rate": 1.0
+    }
+  },
+  "strategy_stats_by_task": {
+    "A": {
+      "baseline_safe_grid": {
+        "attempts": 1,
+        "average_score_improvement": 0.887633,
+        "best_score": 0.887633,
+        "valid_attempts": 1,
+        "validity_rate": 1.0
+      },
+      "hexagonal_or_staggered_initialization": {
+        "attempts": 1,
+        "average_score_improvement": -0.06173799999999996,
+        "best_score": 0.825895,
+        "valid_attempts": 1,
+        "validity_rate": 1.0
+      },
+      "perturb_best_and_repair": {
+        "attempts": 2,
+        "average_score_improvement": 0.05129450000000002,
+        "best_score": 0.990222,
+        "valid_attempts": 2,
+        "validity_rate": 1.0
+      },
+      "scipy_slsqp_joint": {
+        "attempts": 1,
+        "average_score_improvement": -0.887557,
+        "best_score": 7.6e-05,
+        "valid_attempts": 1,
+        "validity_rate": 1.0
+      }
+    },
+    "B": {
+      "baseline_safe_grid": {
+        "attempts": 1,
+        "average_score_improvement": 0.821955,
+        "best_score": 0.821955,
+        "valid_attempts": 1,
+        "validity_rate": 1.0
+      },
+      "hexagonal_or_staggered_initialization": {
+        "attempts": 1,
+        "average_score_improvement": 0.09318800000000005,
+        "best_score": 0.915143,
+        "valid_attempts": 1,
+        "validity_rate": 1.0
+      },
+      "multi_start_slsqp": {
+        "attempts": 1,
+        "average_score_improvement": 0.003238999999999992,
+        "best_score": 0.98711,
+        "valid_attempts": 1,
+        "validity_rate": 1.0
+      },
+      "perturb_best_and_repair": {
+        "attempts": 1,
+        "average_score_improvement": 5.999999999950489e-06,
+        "best_score": 0.987116,
+        "valid_attempts": 1,
+        "validity_rate": 1.0
+      },
+      "scipy_slsqp_joint": {
+        "attempts": 1,
+        "average_score_improvement": 0.06872800000000001,
+        "best_score": 0.983871,
+        "valid_attempts": 1,
+        "validity_rate": 1.0
+      }
+    }
+  }
+}

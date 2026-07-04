@@ -40,7 +40,7 @@ def generate_report(repo_root: Path, archive, output_path: Path,
     lines.append("- **FeedbackReflector**: `agent/run.py` maps failures and plateau behavior to the next strategy; `agent/llm_reflector.py` can optionally ask a compatible Chat Completions endpoint for a strategy suggestion.")
     lines.append("- **ArchiveManager**: `agent/archive.py` stores metadata, raw evaluator output, code snapshots, and best valid candidates.")
     lines.append("- **Exporter / Reporter**: `agent/run.py` exports final solutions and `agent/report_data.py` creates this report.")
-    lines.append("- **Specialist tools**: `skills/` documents SLSQP search, repair, evaluator feedback, and static export skills used by the manager loop.")
+    lines.append("- **Specialist tools**: `agent/skills/` contains project-local reusable procedures for SLSQP search, repair, evaluator feedback, static export, and archive observability.")
     lines.append("")
     lines.append("### Workflow vs Agent")
     lines.append("")
@@ -61,6 +61,16 @@ def generate_report(repo_root: Path, archive, output_path: Path,
     lines.append(
         "`agent/run.py` is the manager. It delegates to specialist tools: SLSQP candidate generation, fixed-center LP repair, evaluator feedback parsing, archive/statistics memory, and static solution export. "
         "The evaluator governs code evolution: only candidates accepted by official scripts can become final exports."
+    )
+    lines.append("")
+    lines.append("### Skill-Based Reusable Procedures")
+    lines.append("")
+    lines.append(
+        "The `agent/skills/` layer contains reusable procedures, not personas: "
+        "`packing-slsqp`, `packing-repair`, `evaluator-feedback`, `static-export`, "
+        "and `archive-observability`. The manager records which procedures were "
+        "consulted in each iteration through `skills_used`, so the report can audit "
+        "what specialist workflow shaped each candidate."
     )
     lines.append("")
     lines.append("## 3. Code Generation Strategy")
@@ -126,6 +136,17 @@ def generate_report(repo_root: Path, archive, output_path: Path,
             f"{float(rec.get('score') or 0.0):.6f} | {float(rec.get('sum_radii') or 0.0):.6f} | "
             f"{rec.get('failure_type')} |"
         )
+    lines.append("")
+    lines.append("### Skill Usage Summary")
+    lines.append("")
+    lines.append("| Skill | Iteration uses |")
+    lines.append("|---|---:|")
+    skill_counts = {}
+    for rec in records:
+        for skill in rec.get("skills_used") or []:
+            skill_counts[skill] = skill_counts.get(skill, 0) + 1
+    for skill, count in sorted(skill_counts.items()):
+        lines.append(f"| {skill} | {count} |")
     lines.append("")
     lines.append("### Strategy Archive Statistics")
     lines.append("")

@@ -12,7 +12,7 @@ This repository contains a deterministic local Agent system that generates `solu
 - **FeedbackReflector**: `agent/run.py` maps failures and plateau behavior to the next strategy; `agent/llm_reflector.py` can optionally ask a compatible Chat Completions endpoint for a strategy suggestion.
 - **ArchiveManager**: `agent/archive.py` stores metadata, raw evaluator output, code snapshots, and best valid candidates.
 - **Exporter / Reporter**: `agent/run.py` exports final solutions and `agent/report_data.py` creates this report.
-- **Specialist tools**: `skills/` documents SLSQP search, repair, evaluator feedback, and static export skills used by the manager loop.
+- **Specialist tools**: `agent/skills/` contains project-local reusable procedures for SLSQP search, repair, evaluator feedback, static export, and archive observability.
 
 ### Workflow vs Agent
 
@@ -28,6 +28,10 @@ The workflow is the fixed reproducible harness: parse context, generate a candid
 ### Manager + Specialist Tools Pattern
 
 `agent/run.py` is the manager. It delegates to specialist tools: SLSQP candidate generation, fixed-center LP repair, evaluator feedback parsing, archive/statistics memory, and static solution export. The evaluator governs code evolution: only candidates accepted by official scripts can become final exports.
+
+### Skill-Based Reusable Procedures
+
+The `agent/skills/` layer contains reusable procedures, not personas: `packing-slsqp`, `packing-repair`, `evaluator-feedback`, `static-export`, and `archive-observability`. The manager records which procedures were consulted in each iteration through `skills_used`, so the report can audit what specialist workflow shaped each candidate.
 
 ## 3. Code Generation Strategy
 
@@ -77,6 +81,15 @@ The loop terminates after the configured iteration budget or time budget. The ar
 | B | 6 | `B_006_perturb_best_and_repair` | perturb_best_and_repair | True | 0.989352 | 2.607923 | plateau |
 | B | 7 | `B_007_perturb_best_and_repair` | perturb_best_and_repair | True | 0.989352 | 2.607923 | plateau |
 
+### Skill Usage Summary
+
+| Skill | Iteration uses |
+|---|---:|
+| archive-observability | 16 |
+| evaluator-feedback | 16 |
+| packing-repair | 12 |
+| packing-slsqp | 4 |
+
 ### Strategy Archive Statistics
 
 | Strategy | Attempts | Validity rate | Best score | Avg score improvement |
@@ -101,7 +114,7 @@ The loop terminates after the configured iteration budget or time budget. The ar
   Circle Packing in Rectangle  (n=21)
   File : /home/wuyou/projects/AlgorithmOptimization/task_A/solution.py
 ============================================================
-  Elapsed : 0.19s
+  Elapsed : 0.18s
   sum_radii : 2.349608
   Target    : 2.365840
   Score     : 0.993139

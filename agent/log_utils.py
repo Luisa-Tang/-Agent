@@ -44,6 +44,7 @@ def append_human_iteration(path: Path, record: Dict[str, Any], improved: bool) -
         f"  observe: last={observation.get('last_evaluator_result')} | best={observation.get('best_archive_state')}",
         f"  think: selected={thought.get('selected_strategy', record['strategy'])} | reason={thought.get('reason', record.get('decision', ''))}",
         f"  act: {action.get('optimizer_or_repair', record['strategy'])} | code_bytes={action.get('generated_code_bytes', 0)}",
+        f"  skills_used: {', '.join(record.get('skills_used') or action.get('skills_used') or [])}",
         f"  next_observe: valid={next_observation.get('valid', record['valid'])} | score={float(next_observation.get('score') or 0.0):.6f} | failure={next_observation.get('failure_type', record.get('failure_type'))}",
         f"  strategy: {record['strategy']}",
         f"  local_policy_strategy: {record.get('local_policy_strategy', record['strategy'])}",

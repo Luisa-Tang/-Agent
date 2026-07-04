@@ -128,9 +128,11 @@ def run_task_loop(task: str, args: argparse.Namespace, generator: CandidateGener
             feedback=last_record,
         )
         metrics = safety_metrics(candidate.data)
+        skills_used = skills_for_iteration(strategy, eval_result=None)
         action = {
             "strategy": strategy,
             "optimizer_or_repair": action_summary(strategy),
+            "skills_used": skills_used,
             "generated_code_bytes": len(candidate.code.encode("utf-8")),
             "geometry_metrics": metrics,
             "diagnostics": candidate.diagnostics,
@@ -142,6 +144,8 @@ def run_task_loop(task: str, args: argparse.Namespace, generator: CandidateGener
 
         score_improvement = float(eval_result.score) - float(previous_best.get("score") or 0.0) if previous_best else float(eval_result.score)
         effective_failure = effective_failure_type(eval_result, score_improvement, no_improve)
+        skills_used = skills_for_iteration(strategy, eval_result=eval_result, effective_failure=effective_failure)
+        action["skills_used"] = skills_used
         next_observation = {
             "valid": eval_result.valid,
             "score": eval_result.score,
@@ -173,6 +177,7 @@ def run_task_loop(task: str, args: argparse.Namespace, generator: CandidateGener
             "geometry_metrics": metrics,
             "local_policy_strategy": local_strategy,
             "llm_decision": llm_decision.to_record(),
+            "skills_used": skills_used,
             "trace": {
                 "observation": observation,
                 "thought_decision": thought,
@@ -208,8 +213,22 @@ def run_task_loop(task: str, args: argparse.Namespace, generator: CandidateGener
         f"final_valid: {final_eval.valid}\n"
         f"final_score: {final_eval.score:.6f}\n"
         f"final_sum_radii: {float(final_eval.sum_radii or 0.0):.6f}\n"
-        f"failure_type: {final_eval.failure_type}\n",
+        f"failure_type: {final_eval.failure_type}\n"
+        f"skills_used: static-export, evaluator-feedback, archive-observability\n",
     )
+
+
+def skills_for_iteration(strategy: str, eval_result=None, effective_failure: Optional[str] = None) -> list:
+    skills = ["archive-observability"]
+    if strategy in {"scipy_slsqp_joint", "multi_start_slsqp"}:
+        skills.append("packing-slsqp")
+    if strategy in {"perturb_best_and_repair", "baseline_safe_grid", "hexagonal_or_staggered_initialization"}:
+        skills.append("packing-repair")
+    skills.append("evaluator-feedback")
+    if effective_failure in {"overlap", "boundary_violation", "negative_radius", "nonfinite", "perimeter_error"}:
+        if "packing-repair" not in skills:
+            skills.append("packing-repair")
+    return skills
 
 
 def choose_strategy(iteration: int, best_record: Optional[Dict],
@@ -336,6 +355,9 @@ def create_submission(repo_root: Path, archive: ArchiveManager, evaluate_all_out
     skills_src = repo_root / "skills"
     if skills_src.exists():
         shutil.copytree(skills_src, submission / "skills", dirs_exist_ok=True)
+    project_skills_src = repo_root / "agent" / "skills"
+    if project_skills_src.exists():
+        shutil.copytree(project_skills_src, submission / "agent" / "skills", dirs_exist_ok=True)
 
     requirements = repo_root / "requirements.txt"
     if requirements.exists():
