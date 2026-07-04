@@ -69,6 +69,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--parent-sampling", choices=["balanced", "exploit", "diverse"], default="balanced")
     parser.add_argument("--enable-block-crossover", action="store_true")
     parser.add_argument("--geometry-novelty-threshold", type=float, default=0.35)
+    parser.add_argument("--evolve-islands", choices=["safe", "risky", "hybrid"], default="safe")
+    parser.add_argument("--risky-ratio", type=float, default=0.4)
+    parser.add_argument("--allow-pre-repair-invalid", action="store_true")
     parser.add_argument("--time-limit", type=int, default=None, help="Optional whole-run wall clock limit in seconds")
     parser.add_argument("--use-llm", action="store_true", help="Enable optional LLM strategy reflection")
     parser.add_argument("--llm-base-url", default="https://api.deepseek.com")
@@ -104,6 +107,7 @@ def main() -> int:
         f"breakthrough_search={args.breakthrough_search}, "
         f"self_evolve_search={args.self_evolve_search}, "
         f"evolve_blocks_v2={args.evolve_blocks_v2}, "
+        f"evolve_islands={args.evolve_islands}, "
         f"use_llm={args.use_llm}, llm_model={args.llm_model}"
     )
 
@@ -155,6 +159,9 @@ def main() -> int:
                 parent_sampling=str(args.parent_sampling),
                 enable_block_crossover=bool(args.enable_block_crossover),
                 geometry_novelty_threshold=float(args.geometry_novelty_threshold),
+                evolve_islands=str(args.evolve_islands),
+                risky_ratio=float(args.risky_ratio),
+                allow_pre_repair_invalid=bool(args.allow_pre_repair_invalid),
             ),
         )
         print(f"self_evolution_summary={self_evolve_summary.get('summary_path')}")

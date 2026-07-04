@@ -36,6 +36,16 @@ class ProgramRecord:
     sorted_radii_l2_to_parent: float = 0.0
     score_delta: float = 0.0
     cascade_stage_reached: str = "created"
+    island_name: str = "safe_polish"
+    raw_valid: bool = True
+    repair_attempted: bool = False
+    repair_success: bool = False
+    max_violation_before_repair: float = 0.0
+    max_violation_after_repair: float = 0.0
+    contact_graph_edit_distance: int = 0
+    boundary_pattern_edit_distance: int = 0
+    small_circle_reassigned: bool = False
+    aspect_ratio_bucket_changed: bool = False
     novelty_score: float = 0.0
     strategy_family: str = "self_evolve"
     created_at: str = ""
@@ -145,6 +155,9 @@ class ProgramDatabase:
                         "mean_contact_graph_changed": 0.0,
                         "mean_boundary_pattern_changed": 0.0,
                         "mean_centers_rmsd": 0.0,
+                        "repair_attempted": 0,
+                        "repair_success": 0,
+                        "small_circle_reassigned": 0,
                         "accepted_improvements": 0,
                     },
                 )
@@ -156,6 +169,12 @@ class ProgramDatabase:
                 item["mean_contact_graph_changed"] += 1.0 if row.get("contact_graph_changed") else 0.0
                 item["mean_boundary_pattern_changed"] += 1.0 if row.get("boundary_pattern_changed") else 0.0
                 item["mean_centers_rmsd"] += float(row.get("centers_rmsd_to_parent") or 0.0)
+                if row.get("repair_attempted"):
+                    item["repair_attempted"] += 1
+                if row.get("repair_success"):
+                    item["repair_success"] += 1
+                if row.get("small_circle_reassigned"):
+                    item["small_circle_reassigned"] += 1
                 if delta > 0.0 and row.get("official_valid"):
                     item["accepted_improvements"] += 1
         for item in aggregate.values():
@@ -199,6 +218,16 @@ class ProgramDatabase:
             "official_valid": record.official_valid,
             "official_score": record.official_score,
             "cascade_stage_reached": record.cascade_stage_reached,
+            "island_name": record.island_name,
+            "raw_valid": record.raw_valid,
+            "repair_attempted": record.repair_attempted,
+            "repair_success": record.repair_success,
+            "max_violation_before_repair": record.max_violation_before_repair,
+            "max_violation_after_repair": record.max_violation_after_repair,
+            "contact_graph_edit_distance": record.contact_graph_edit_distance,
+            "boundary_pattern_edit_distance": record.boundary_pattern_edit_distance,
+            "small_circle_reassigned": record.small_circle_reassigned,
+            "aspect_ratio_bucket_changed": record.aspect_ratio_bucket_changed,
             "valid": record.valid,
             "score": record.score,
             "sum_radii": record.sum_radii,

@@ -6,7 +6,7 @@
   "strategy_portfolio_stats": {
     "benchmark_seed_dominikkamp": {
       "attempts": 2,
-      "avg_runtime": 0.195,
+      "avg_runtime": 0.175,
       "avg_score_delta": 0.9999970622798878,
       "best_score": 0.99999736745286,
       "common_failure_types": {
@@ -17,14 +17,14 @@
       "novelty_bonus": 0.01,
       "plateau_penalty": 0.0,
       "repeated_code_penalty": 0.0,
-      "runtime_penalty": 0.0032500000000000003,
-      "ucb_score": 1.256747062279888,
+      "runtime_penalty": 0.0029166666666666664,
+      "ucb_score": 1.2570803956132213,
       "valid_count": 2,
       "validity_rate": 1.0
     },
     "hexagonal_or_staggered_initialization": {
       "attempts": 2,
-      "avg_runtime": 0.19,
+      "avg_runtime": 0.18,
       "avg_score_delta": -0.12947775668055317,
       "best_score": 0.9151434423354281,
       "common_failure_types": {
@@ -36,14 +36,14 @@
       "novelty_bonus": 0.01,
       "plateau_penalty": 0.0,
       "repeated_code_penalty": 0.0,
-      "runtime_penalty": 0.0031666666666666666,
-      "ucb_score": 0.25683333333333336,
+      "runtime_penalty": 0.003,
+      "ucb_score": 0.257,
       "valid_count": 2,
       "validity_rate": 1.0
     },
     "perturb_best_and_repair": {
       "attempts": 4,
-      "avg_runtime": 0.18,
+      "avg_runtime": 0.1825,
       "avg_score_delta": -8.724063056103626e-06,
       "best_score": 0.9999969021274452,
       "common_failure_types": {
@@ -54,8 +54,8 @@
       "novelty_bonus": 0.006,
       "plateau_penalty": 0.05,
       "repeated_code_penalty": 0.02,
-      "runtime_penalty": 0.003,
-      "ucb_score": 0.18300000000000002,
+      "runtime_penalty": 0.0030416666666666665,
+      "ucb_score": 0.18295833333333336,
       "valid_count": 4,
       "validity_rate": 1.0
     },
@@ -77,34 +77,34 @@
       "valid_count": 2,
       "validity_rate": 1.0
     },
-    "self_evolve_aspect_ratio_sweep_local": {
-      "attempts": 7,
+    "self_evolve_aspect_ratio_island": {
+      "attempts": 4,
       "avg_runtime": 0.0,
-      "avg_score_delta": -9.4574135892803e-06,
-      "best_score": 0.9999959050564255,
+      "avg_score_delta": -0.07440167257389327,
+      "best_score": 0.9681058075604214,
       "common_failure_types": {
-        "none": 7
+        "none": 4
       },
       "expected_improvement": 0.0,
-      "last_used_iteration": 99036,
-      "novelty_bonus": 0.00375,
+      "last_used_iteration": 99043,
+      "novelty_bonus": 0.006,
       "plateau_penalty": 0.0,
-      "repeated_code_penalty": 0.025,
+      "repeated_code_penalty": 0.01,
       "runtime_penalty": 0.0,
-      "ucb_score": 0.22874999999999998,
-      "valid_count": 7,
+      "ucb_score": 0.246,
+      "valid_count": 4,
       "validity_rate": 1.0
     },
-    "self_evolve_block_crossover": {
+    "self_evolve_boundary_gap_refill": {
       "attempts": 5,
       "avg_runtime": 0.0,
-      "avg_score_delta": -4.097180037931913e-06,
-      "best_score": 0.9999971347380889,
+      "avg_score_delta": -0.04939423391336828,
+      "best_score": 0.9692342051549419,
       "common_failure_types": {
         "none": 5
       },
       "expected_improvement": 0.0,
-      "last_used_iteration": 99030,
+      "last_used_iteration": 99036,
       "novelty_bonus": 0.005,
       "plateau_penalty": 0.0,
       "repeated_code_penalty": 0.015,
@@ -114,69 +114,51 @@
       "validity_rate": 1.0
     },
     "self_evolve_boundary_pattern_swap": {
-      "attempts": 5,
+      "attempts": 17,
       "avg_runtime": 0.0,
-      "avg_score_delta": -0.07050023270892132,
-      "best_score": 0.9999963052481893,
+      "avg_score_delta": -0.07630268452469752,
+      "best_score": 0.9999965516005438,
       "common_failure_types": {
-        "none": 5
+        "none": 17
       },
       "expected_improvement": 0.0,
-      "last_used_iteration": 99029,
-      "novelty_bonus": 0.005,
+      "last_used_iteration": 99042,
+      "novelty_bonus": 0.0016666666666666666,
       "plateau_penalty": 0.0,
-      "repeated_code_penalty": 0.015,
+      "repeated_code_penalty": 0.06,
       "runtime_penalty": 0.0,
-      "ucb_score": 0.24,
-      "valid_count": 5,
+      "ucb_score": 0.19166666666666665,
+      "valid_count": 17,
       "validity_rate": 1.0
     },
     "self_evolve_boundary_slide_mutation": {
-      "attempts": 8,
+      "attempts": 6,
       "avg_runtime": 0.0,
-      "avg_score_delta": -1.3752614918871586e-05,
-      "best_score": 0.9999971946591472,
+      "avg_score_delta": -0.011074043951862475,
+      "best_score": 0.9999968406143981,
       "common_failure_types": {
-        "none": 8
+        "none": 6
       },
       "expected_improvement": 0.0,
-      "last_used_iteration": 99037,
-      "novelty_bonus": 0.003333333333333333,
+      "last_used_iteration": 99039,
+      "novelty_bonus": 0.004285714285714286,
       "plateau_penalty": 0.0,
-      "repeated_code_penalty": 0.03,
+      "repeated_code_penalty": 0.02,
       "runtime_penalty": 0.0,
-      "ucb_score": 0.22333333333333336,
-      "valid_count": 8,
+      "ucb_score": 0.2342857142857143,
+      "valid_count": 6,
       "validity_rate": 1.0
     },
-    "self_evolve_contact_graph_breaking_refine": {
-      "attempts": 3,
-      "avg_runtime": 0.0,
-      "avg_score_delta": -3.1095109436959e-06,
-      "best_score": 0.9999958549188572,
-      "common_failure_types": {
-        "none": 3
-      },
-      "expected_improvement": 0.0,
-      "last_used_iteration": 99030,
-      "novelty_bonus": 0.0075,
-      "plateau_penalty": 0.0,
-      "repeated_code_penalty": 0.005,
-      "runtime_penalty": 0.0,
-      "ucb_score": 0.2525,
-      "valid_count": 3,
-      "validity_rate": 1.0
-    },
-    "self_evolve_contact_graph_preserving_refine": {
+    "self_evolve_contact_edge_break_then_repair": {
       "attempts": 7,
       "avg_runtime": 0.0,
-      "avg_score_delta": -1.91067732330717e-05,
-      "best_score": 0.9999965921952546,
+      "avg_score_delta": -0.004286449467468859,
+      "best_score": 0.9999898202707433,
       "common_failure_types": {
         "none": 7
       },
       "expected_improvement": 0.0,
-      "last_used_iteration": 99028,
+      "last_used_iteration": 99043,
       "novelty_bonus": 0.00375,
       "plateau_penalty": 0.0,
       "repeated_code_penalty": 0.025,
@@ -185,16 +167,34 @@
       "valid_count": 7,
       "validity_rate": 1.0
     },
-    "self_evolve_contact_pair_relaxation": {
+    "self_evolve_contact_graph_breaking_refine": {
+      "attempts": 4,
+      "avg_runtime": 0.0,
+      "avg_score_delta": -0.0022567745982594867,
+      "best_score": 0.9999973255851197,
+      "common_failure_types": {
+        "none": 4
+      },
+      "expected_improvement": 0.0,
+      "last_used_iteration": 99031,
+      "novelty_bonus": 0.006,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.01,
+      "runtime_penalty": 0.0,
+      "ucb_score": 0.246,
+      "valid_count": 4,
+      "validity_rate": 1.0
+    },
+    "self_evolve_contact_graph_preserving_refine": {
       "attempts": 5,
       "avg_runtime": 0.0,
-      "avg_score_delta": -1.2085343506162972e-06,
-      "best_score": 0.9999972580012652,
+      "avg_score_delta": -0.015113068898538185,
+      "best_score": 0.9999970612032242,
       "common_failure_types": {
         "none": 5
       },
       "expected_improvement": 0.0,
-      "last_used_iteration": 99026,
+      "last_used_iteration": 99040,
       "novelty_bonus": 0.005,
       "plateau_penalty": 0.0,
       "repeated_code_penalty": 0.015,
@@ -203,16 +203,88 @@
       "valid_count": 5,
       "validity_rate": 1.0
     },
-    "self_evolve_program_patch": {
+    "self_evolve_contact_pair_relaxation": {
+      "attempts": 4,
+      "avg_runtime": 0.0,
+      "avg_score_delta": -0.0313993842976594,
+      "best_score": 0.9999956816129505,
+      "common_failure_types": {
+        "none": 4
+      },
+      "expected_improvement": 0.0,
+      "last_used_iteration": 99045,
+      "novelty_bonus": 0.006,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.01,
+      "runtime_penalty": 0.0,
+      "ucb_score": 0.246,
+      "valid_count": 4,
+      "validity_rate": 1.0
+    },
+    "self_evolve_destroy_repair_k_small": {
+      "attempts": 5,
+      "avg_runtime": 0.0,
+      "avg_score_delta": -0.049124207560280485,
+      "best_score": 0.99999696329879,
+      "common_failure_types": {
+        "none": 5
+      },
+      "expected_improvement": 0.0,
+      "last_used_iteration": 99034,
+      "novelty_bonus": 0.005,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.015,
+      "runtime_penalty": 0.0,
+      "ucb_score": 0.24,
+      "valid_count": 5,
+      "validity_rate": 1.0
+    },
+    "self_evolve_gap_insertion_search": {
+      "attempts": 4,
+      "avg_runtime": 0.0,
+      "avg_score_delta": -0.055200788953529784,
+      "best_score": 0.9714777458216157,
+      "common_failure_types": {
+        "none": 4
+      },
+      "expected_improvement": 0.0,
+      "last_used_iteration": 99034,
+      "novelty_bonus": 0.006,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.01,
+      "runtime_penalty": 0.0,
+      "ucb_score": 0.246,
+      "valid_count": 4,
+      "validity_rate": 1.0
+    },
+    "self_evolve_radius_group_redistribution": {
+      "attempts": 5,
+      "avg_runtime": 0.0,
+      "avg_score_delta": -0.0017994887808838733,
+      "best_score": 0.99999696329879,
+      "common_failure_types": {
+        "none": 5
+      },
+      "expected_improvement": 0.0,
+      "last_used_iteration": 99040,
+      "novelty_bonus": 0.005,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.015,
+      "runtime_penalty": 0.0,
+      "ucb_score": 0.24,
+      "valid_count": 5,
+      "validity_rate": 1.0
+    },
+    "self_evolve_small_circle_reposition": {
       "attempts": 2,
       "avg_runtime": 0.0,
-      "avg_score_delta": -0.1692262052451844,
-      "best_score": 0.8536141674604313,
+      "avg_score_delta": -0.18950855524521037,
+      "best_score": 0.8470730936601608,
       "common_failure_types": {
         "none": 2
       },
       "expected_improvement": 0.0,
-      "last_used_iteration": 99020,
+      "last_used_iteration": 99027,
       "novelty_bonus": 0.01,
       "plateau_penalty": 0.0,
       "repeated_code_penalty": 0.0,
@@ -221,52 +293,34 @@
       "valid_count": 2,
       "validity_rate": 1.0
     },
-    "self_evolve_radius_group_redistribution": {
-      "attempts": 8,
+    "self_evolve_small_circle_swap": {
+      "attempts": 5,
       "avg_runtime": 0.0,
-      "avg_score_delta": -5.505707613105704e-05,
-      "best_score": 0.9999964901899674,
+      "avg_score_delta": -0.05238664855430149,
+      "best_score": 0.9927221643808041,
       "common_failure_types": {
-        "none": 8
+        "none": 5
       },
       "expected_improvement": 0.0,
-      "last_used_iteration": 99035,
-      "novelty_bonus": 0.003333333333333333,
+      "last_used_iteration": 99036,
+      "novelty_bonus": 0.005,
       "plateau_penalty": 0.0,
-      "repeated_code_penalty": 0.03,
+      "repeated_code_penalty": 0.015,
       "runtime_penalty": 0.0,
-      "ucb_score": 0.22333333333333336,
-      "valid_count": 8,
-      "validity_rate": 1.0
-    },
-    "self_evolve_small_circle_reposition": {
-      "attempts": 3,
-      "avg_runtime": 0.0,
-      "avg_score_delta": -0.13919207258300548,
-      "best_score": 0.8718512082198777,
-      "common_failure_types": {
-        "none": 3
-      },
-      "expected_improvement": 0.0,
-      "last_used_iteration": 99034,
-      "novelty_bonus": 0.0075,
-      "plateau_penalty": 0.0,
-      "repeated_code_penalty": 0.005,
-      "runtime_penalty": 0.0,
-      "ucb_score": 0.2525,
-      "valid_count": 3,
+      "ucb_score": 0.24,
+      "valid_count": 5,
       "validity_rate": 1.0
     },
     "self_evolve_solver_switch": {
       "attempts": 7,
       "avg_runtime": 0.0,
-      "avg_score_delta": -1.5370182733105103e-05,
-      "best_score": 0.9999970614618618,
+      "avg_score_delta": -0.0015700372027421488,
+      "best_score": 0.9999965622043876,
       "common_failure_types": {
         "none": 7
       },
       "expected_improvement": 0.0,
-      "last_used_iteration": 99031,
+      "last_used_iteration": 99041,
       "novelty_bonus": 0.00375,
       "plateau_penalty": 0.0,
       "repeated_code_penalty": 0.025,

@@ -11,11 +11,11 @@
         "source_metadata": {
           "local_path": "benchmarks/dominikkamp/square_n26.txt",
           "official_evaluator_result": {
-            "elapsed": "0.20s",
+            "elapsed": "0.17s",
             "exact_score": 0.99999736745286,
             "exact_sum_radii": 2.6359830606320647,
             "failure_type": "none",
-            "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+            "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
             "returncode": 0,
             "score": 0.99999736745286,
             "sum_radii": 2.6359830606320647,
@@ -31,8 +31,8 @@
       },
       "official_score": 0.99999736745286,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": null,
@@ -67,6 +67,10 @@
     },
     {
       "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_evolve_B_P_00009"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
       "to": "B_evolve_B_P_00010"
     },
     {
@@ -95,10 +99,6 @@
     },
     {
       "from": "B_000_benchmark_seed_dominikkamp",
-      "to": "B_evolve_B_P_00025"
-    },
-    {
-      "from": "B_000_benchmark_seed_dominikkamp",
       "to": "B_evolve_B_P_00026"
     },
     {
@@ -111,11 +111,19 @@
     },
     {
       "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_evolve_B_P_00033"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
       "to": "B_evolve_B_P_00034"
     },
     {
       "from": "B_000_benchmark_seed_dominikkamp",
       "to": "B_evolve_B_P_00039"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_evolve_B_P_00041"
     },
     {
       "from": "B_000_benchmark_seed_dominikkamp",
@@ -132,10 +140,6 @@
     {
       "from": "B_000_benchmark_seed_dominikkamp",
       "to": "B_evolve_B_P_00049"
-    },
-    {
-      "from": "B_000_benchmark_seed_dominikkamp",
-      "to": "B_evolve_B_P_00050"
     },
     {
       "from": "B_000_benchmark_seed_dominikkamp",
@@ -164,6 +168,50 @@
     {
       "from": "B_000_benchmark_seed_dominikkamp",
       "to": "B_evolve_B_P_00065"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_evolve_B_P_00066"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_evolve_B_P_00071"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_evolve_B_P_00072"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_evolve_B_P_00073"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_evolve_B_P_00074"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_evolve_B_P_00079"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_evolve_B_P_00080"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_evolve_B_P_00081"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_evolve_B_P_00082"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_evolve_B_P_00088"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_evolve_B_P_00089"
     }
   ],
   "nodes": [
@@ -177,11 +225,11 @@
         "source_metadata": {
           "local_path": "benchmarks/dominikkamp/square_n26.txt",
           "official_evaluator_result": {
-            "elapsed": "0.20s",
+            "elapsed": "0.17s",
             "exact_score": 0.99999736745286,
             "exact_sum_radii": 2.6359830606320647,
             "failure_type": "none",
-            "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+            "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
             "returncode": 0,
             "score": 0.99999736745286,
             "sum_radii": 2.6359830606320647,
@@ -197,8 +245,8 @@
       },
       "official_score": 0.99999736745286,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": null,
@@ -215,8 +263,8 @@
       },
       "official_score": 0.9151434423354281,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_001_hexagonal_or_staggered_initialization.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_001_hexagonal_or_staggered_initialization.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_001_hexagonal_or_staggered_initialization.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_001_hexagonal_or_staggered_initialization.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
@@ -233,8 +281,8 @@
       },
       "official_score": 0.9838714405568733,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_002_scipy_slsqp_joint.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_002_scipy_slsqp_joint.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_002_scipy_slsqp_joint.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_002_scipy_slsqp_joint.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
@@ -251,8 +299,8 @@
       },
       "official_score": 0.999963766045536,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_003_perturb_best_and_repair.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_003_perturb_best_and_repair.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_003_perturb_best_and_repair.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_003_perturb_best_and_repair.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
@@ -269,8 +317,8 @@
       },
       "official_score": 0.9999969021274452,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_004_perturb_best_and_repair.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_004_perturb_best_and_repair.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_004_perturb_best_and_repair.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_004_perturb_best_and_repair.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
@@ -278,377 +326,395 @@
     },
     {
       "candidate_id": "B_evolve_B_P_00007",
-      "code_hash": "1b36c7450b9bf0647a10ee5200ef518d3a6d358eadd75a2f43a12bd4bb7469a8",
-      "data_hash": "8f653cbaf7a64fddec72285bd0ca70d3e38bfd38f707637671b83cd49e056c1b",
+      "code_hash": "1a1b002582619dee242d1ebfd08b41b23b349c0b4f5a9d87dd4704c8ea4a6a25",
+      "data_hash": "2dc88ada864bd080a9e3ad9121a39323f575c5e159fc53827927ba9796e30c25",
       "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
       "input_artifacts": {
         "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00007.py"
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00007.py"
       },
-      "official_score": 0.9999070170696142,
+      "official_score": 0.9910597416950433,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00007.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00007.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00007.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00007.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_radius_group_redistribution"
+      "strategy": "self_evolve_small_circle_swap"
     },
     {
       "candidate_id": "B_evolve_B_P_00008",
-      "code_hash": "0901a3ecba0cd7055fe7e8b3ff0544205615f2830f020681c0673ba041b95b7e",
-      "data_hash": "1edfbd17a277ddc40ed9a1abfbc381bd817f9e2046d2c6ed733cf38733042e7d",
+      "code_hash": "1f0460db1684c681bee930f7e5526373e1fa6476b8574cf4f5c3c715927a8a77",
+      "data_hash": "a3f0cad6e28b3b7cfa73ba7ae6c78243996d66645b4f1903cc54e09dba14de4a",
       "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
       "input_artifacts": {
         "parent_program_id": "B_P_00007",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00008.py"
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00008.py"
       },
-      "official_score": 0.9999054417176075,
+      "official_score": 0.9864574756088825,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00008.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00008.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_contact_graph_preserving_refine"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00010",
-      "code_hash": "8821e258215858b16d05f1728a4a0b75a7b2586dd26caea92aa4b29e742a1a8c",
-      "data_hash": "5f533ce465170d73de142b58919c4bf7f5dc9e10606bffc046a1083b9c941de7",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00010.py"
-      },
-      "official_score": 0.9999944947195891,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00010.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00010.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_block_crossover"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00015",
-      "code_hash": "51c362e9a8e1ca2973b9bc45067b89baeb358697e79235f7eaa09d20559989f6",
-      "data_hash": "2ce62ca777e65761bfd633aad81327350721dd303f5ba6e0687bb319da91daa2",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00015.py"
-      },
-      "official_score": 0.999970610139777,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00015.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00015.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_radius_group_redistribution"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00016",
-      "code_hash": "81fe710eefa88103cd51d77e8d6552e8e7799d0de6f0659e284acd6169a44f52",
-      "data_hash": "44fc19a6fd29cd3cb3a76ed4996fafd7fd7fb3ea7f5234ecc8abb69e4c3907dd",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00016.py"
-      },
-      "official_score": 0.9999889001041605,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00016.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00016.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_contact_graph_preserving_refine"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00017",
-      "code_hash": "6bd168a8be3d559fbecb2c558ef10c4589da437d521c525a3c9ed68b9b36f556",
-      "data_hash": "c06d4ef7829b2016275e86b259b42c56adf1de128531fa30f80eb274a51a128d",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00015",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00017.py"
-      },
-      "official_score": 0.9999710010918557,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00017.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00017.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_solver_switch"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00018",
-      "code_hash": "7769ff72c2982c96720f811cd2fe55101ab43912fe6126b5064579b40d21d659",
-      "data_hash": "1b4f4a50be71bf09602b06f4495b6563a2b4b9b633b80f8f87173333d5842c3e",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00018.py"
-      },
-      "official_score": 0.9999966070543662,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00018.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00018.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_contact_pair_relaxation"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00023",
-      "code_hash": "8f15256005eb4714529cd26500185f4dd1711b94997efc5b41e6ce869fa243a8",
-      "data_hash": "88c2715bd51f924c5e53285acdec82ed89100ed8876078ac0afe34cf858814f4",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00023.py"
-      },
-      "official_score": 0.9999972580012652,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00023.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00023.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_contact_pair_relaxation"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00024",
-      "code_hash": "1bf990196efb7fd06e0df1f1979ffa5e47dd277597dd53581fbc66fef1a2c38c",
-      "data_hash": "885c867eff7c71d8eb0ff7aedb67a7b9759a0551d393f694e75c3a75139c3b84",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00010",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00024.py"
-      },
-      "official_score": 0.9999937773995663,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00024.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00024.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_contact_graph_preserving_refine"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00025",
-      "code_hash": "ffb807c46b5a691cce8d98690f4c8f77a1a03514100cd8f8fb1ec461394e9edd",
-      "data_hash": "9ab4a5a5f7205cc5e00792c589e9e1d782e3e65d168dac06fa9d9404fb58021e",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00025.py"
-      },
-      "official_score": 0.9999971946591472,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00025.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00025.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_boundary_slide_mutation"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00026",
-      "code_hash": "ad247f264c185c8a4914b9e101a02631d459baeaa2929f4c73c857a3d8008c37",
-      "data_hash": "9aef8e0a84ab771f68c6fac7d9e0b489bcb5c9954252353a7586d410043cba61",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00026.py"
-      },
-      "official_score": 0.9999970612032242,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00026.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00026.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_solver_switch"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00031",
-      "code_hash": "871cf36c80a03383e3376ec9dd059cbbff73d83fa5204dd19c5853e84b1b2ff9",
-      "data_hash": "fd2df5dd7f4011a9ee4ac9dcd92d98934448a3c5fb9229f20e36252e6a4e31b1",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00015",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00031.py"
-      },
-      "official_score": 0.9999711185624538,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00031.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00031.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_boundary_slide_mutation"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00032",
-      "code_hash": "dbbaa9b30e391b573a62b10ffc7e0b906ecb60d5ec7fb6a5b9516660a6beb32c",
-      "data_hash": "2d073a8a665560bc613aec273cf1586d86734bf7a077add4e02c03876212c9b1",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00032.py"
-      },
-      "official_score": 0.9999965921952546,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00032.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00032.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_contact_graph_preserving_refine"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00034",
-      "code_hash": "c4f4e1cb5a1fed86ea7b865a1d89c9dcbcc9a01456d9bf17603726ebd6f4e6c7",
-      "data_hash": "c247b95580028aac93fddb77e9b080864a984ce048570acb4ef33942280b4539",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00034.py"
-      },
-      "official_score": 0.9953950988173429,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00034.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00034.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00008.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00008.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
       "strategy": "self_evolve_boundary_pattern_swap"
     },
     {
-      "candidate_id": "B_evolve_B_P_00039",
-      "code_hash": "39af23d1420e9ece9c3e7327ae2fd1bdfcac56a53141b9613f6d01f1e8083f59",
-      "data_hash": "de139ea4edd882ea99d91f93a23141bbb5974bd089ce630abeedd695c93a4d6c",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00018",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00039.py"
-      },
-      "official_score": 0.9999958549188572,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00039.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00039.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_contact_graph_breaking_refine"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00042",
-      "code_hash": "00d6b939ba00d3e51329f41520f615edae05bd2450612603e9be305ee0ef5c9c",
-      "data_hash": "90cce0c70c24b071cdb654cdda0f9d04d3da0e77d8e36dccd404cfc54710816c",
+      "candidate_id": "B_evolve_B_P_00009",
+      "code_hash": "bbff5ef41499da7a57a2f79276e86b643d56430020a1b3c87f4e3811fa4470da",
+      "data_hash": "1430a5e5a51424a75d30a4d23312341d3ad1075a48e3dd784408e0486efcfc59",
       "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
       "input_artifacts": {
         "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00042.py"
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00009.py"
       },
-      "official_score": 0.8536141674604313,
+      "official_score": 0.874407226309382,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00042.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00042.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00009.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00009.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_program_patch"
+      "strategy": "self_evolve_boundary_pattern_swap"
     },
     {
-      "candidate_id": "B_evolve_B_P_00047",
-      "code_hash": "c4f6e9855e42d0ae7c31947d96df38542af32caebfb064dc2af6399582659268",
-      "data_hash": "a6eecfcaa1977d6b74945610a4df691639f58f518e8ecc1019e15fc65f49760c",
+      "candidate_id": "B_evolve_B_P_00010",
+      "code_hash": "50bed8e8c938eb0fa522ebf66756210554ce8bc3025d04e57aad7265635ee767",
+      "data_hash": "66332e65748d6b6f03ff7b38dcd5a9c9db8058e3494a47f8b52c316cf518000d",
       "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
       "input_artifacts": {
-        "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00047.py"
+        "parent_program_id": "B_P_00009",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00010.py"
       },
-      "official_score": 0.9999970614618618,
+      "official_score": 0.8744070127198057,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00047.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00047.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_solver_switch"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00048",
-      "code_hash": "b2b0df51f930e291642712ce87fd3b83fce6951edfefbe676df7154c5b5994a4",
-      "data_hash": "88b3626267f6f5e82851b26427da3d534a0eed6764d2cf52a41842220e773a23",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00048.py"
-      },
-      "official_score": 0.9998765303066678,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00048.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00048.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_radius_group_redistribution"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00049",
-      "code_hash": "9640dd6d6195ae9b6ade5488e000130605ef4f5045bc0914d2102ae80c646f65",
-      "data_hash": "88c2715bd51f924c5e53285acdec82ed89100ed8876078ac0afe34cf858814f4",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00049.py"
-      },
-      "official_score": 0.9999972580012652,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00049.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00049.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00010.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00010.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
       "strategy": "self_evolve_contact_pair_relaxation"
     },
     {
-      "candidate_id": "B_evolve_B_P_00050",
-      "code_hash": "023d21217a088f1e8ae9b8704f52b507a5dc68b8e9e822c6b687c685bc719d30",
-      "data_hash": "dc9281b9883fa2a2bc600eb24d5d051334c2be4a0ebfd0b6624ab836a250cf92",
+      "candidate_id": "B_evolve_B_P_00015",
+      "code_hash": "beef7cc0cb393809313ee192f6b4cb1032f08de3f8f249ba899f16f2bfd5b291",
+      "data_hash": "e7d0f026266469cae22b049708f6cacd9457d3a2dea7008c7ee086e082afc92d",
       "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
       "input_artifacts": {
         "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00050.py"
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00015.py"
       },
-      "official_score": 0.9999901786966422,
+      "official_score": 0.9999973255851197,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00050.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00050.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00015.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00015.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_contact_graph_breaking_refine"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00016",
+      "code_hash": "547908b99963c8c9b0ba46be813768da864fb1f0594aedfa222457c0f3d2a105",
+      "data_hash": "acdd590b81e68dcdb84356d6810efffc58972e76a484e6797b7a17715ca5c727",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00007",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00016.py"
+      },
+      "official_score": 0.9910538082948737,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00016.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00016.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_radius_group_redistribution"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00017",
+      "code_hash": "48e03848b0e370316c7a54f4d082c7bcfbc250f747e0a63ac95abed239779523",
+      "data_hash": "ce1d1090ae2593a98b7890dd347c2ab7c6994dc0d1a4096224216902effc4b99",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00017.py"
+      },
+      "official_score": 0.9476641101231824,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00017.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00017.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_small_circle_swap"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00018",
+      "code_hash": "2f06b31674b53c2b6e8bf9be34e33fee7b0d159715f9b6b86442ebc39b4c2a84",
+      "data_hash": "70d931004778e575c9d3b6ecc5bf7a972d722c5bd8fafd487768e499ed6b847a",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00018.py"
+      },
+      "official_score": 0.9999964636962553,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00018.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00018.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
       "strategy": "self_evolve_contact_graph_preserving_refine"
     },
     {
-      "candidate_id": "B_evolve_B_P_00055",
-      "code_hash": "63ccb111b15701805a8f53bd291cd82568bb576356511bc9e8978b98c075036e",
-      "data_hash": "9d810c706c409d45bb251684d4c468713b218a97fa3bba370eda2d8ba515b4db",
+      "candidate_id": "B_evolve_B_P_00023",
+      "code_hash": "73c6588634b6b3e2ab2030fcd53aae7ee82408f304a5235d6549bc4cb9a8b640",
+      "data_hash": "43f3027f9dd489579adaeb82d47a974abf04aaa6ca555cfce5e878a330b60afb",
       "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
       "input_artifacts": {
-        "parent_program_id": "B_P_00032",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00055.py"
+        "parent_program_id": "B_P_00007",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00023.py"
       },
-      "official_score": 0.9999291345473825,
+      "official_score": 0.9891878755417112,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00055.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00055.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00023.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00023.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_solver_switch"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00024",
+      "code_hash": "cb0bb9e1fc94249140fb4684acb759af3c36caee77117abc7e7600d63241190c",
+      "data_hash": "ccda9dd65c4c243fe087ae64e67f01ae3112eec521013db68e65135aaea3df38",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00024.py"
+      },
+      "official_score": 0.8719564367370861,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00024.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00024.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_boundary_pattern_swap"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00026",
+      "code_hash": "21c113b908659ba88a1f939b4459389043086f3f8690f1db3f15e15ffd97dc84",
+      "data_hash": "9aef8e0a84ab771f68c6fac7d9e0b489bcb5c9954252353a7586d410043cba61",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00026.py"
+      },
+      "official_score": 0.9999970612032242,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00026.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00026.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_contact_graph_preserving_refine"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00031",
+      "code_hash": "7ea1d7af186ea2ac6a9e16b6dbaa6e14e4eff6b80f2e9b84346f33ea5bd6277b",
+      "data_hash": "e730e51395be6f569cdb5c76530b25a711917b8d57381ddbf94321ad826731a6",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00018",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00031.py"
+      },
+      "official_score": 0.9462394382227984,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00031.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00031.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_boundary_gap_refill"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00032",
+      "code_hash": "a4e0fcb3f3d83b6428d9fd423d06fda565e52ca4ac000e38109aadebab093d45",
+      "data_hash": "f27d6747940685aa24ace0b5d9b3e7272bf58ca4c6fc42164ecc649d7caa21fc",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00016",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00032.py"
+      },
+      "official_score": 0.9910534297628047,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00032.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00032.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_contact_graph_breaking_refine"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00033",
+      "code_hash": "7dba06acf829ff275819953452e93d796e7bf640baa7e7116c3e6c0c9e792d69",
+      "data_hash": "4ff8adcc76aad38b2a9e8c103e081c869ce91384ed7b8e822e6660b7a886058a",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00016",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00033.py"
+      },
+      "official_score": 0.9426879713095668,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00033.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00033.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_boundary_gap_refill"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00034",
+      "code_hash": "a9009e668fafc73471e785d1561e9983b05ab16e32c42795b2443247ce710218",
+      "data_hash": "e4a980fa2d2c827aa6206394bb0f970150270fdd4cacca21ebcb76c26ad8b859",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00034.py"
+      },
+      "official_score": 0.9927221643808041,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00034.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00034.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_small_circle_swap"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00039",
+      "code_hash": "e10f281e7e55b07c2f8141299d94cb920efcb3d273d365eb8fceab15764ac431",
+      "data_hash": "6eaae4e6a7aa089317598e6a7504f70ec27165f114a5b10aa3b8d96db4766cb3",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00034",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00039.py"
+      },
+      "official_score": 0.9927218559753699,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00039.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00039.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_boundary_slide_mutation"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00041",
+      "code_hash": "2c4f9a68f31426e8e8b33633bb7c842066a0ece0137669d858d1f518360bb818",
+      "data_hash": "7798fca509be934527aa1a13135fa815a18402cc5568f95ddda8572b0b094ae7",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00041.py"
+      },
+      "official_score": 0.9999219546232315,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00041.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00041.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_contact_edge_break_then_repair"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00042",
+      "code_hash": "3afc9b0b4bc0ea23c6dcd670e69d250f7c6fb79788e613ff6f36be8c1431a469",
+      "data_hash": "0361f9c5d3dc1e7006df6b9b96ce28a2ea0671c8ca7237191bd913710f2c8c8b",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00042.py"
+      },
+      "official_score": 0.9999756701853763,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00042.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00042.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_solver_switch"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00047",
+      "code_hash": "6a44cff013b6e2e063b09a2ed77179c6627c689b8e67e0c518aa711095896897",
+      "data_hash": "a998879d86d9b01b0b75be7351a78fbdd8e7ab79a9556cb4af3f5ffd34cca550",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00047.py"
+      },
+      "official_score": 0.99999696329879,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00047.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00047.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_radius_group_redistribution"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00048",
+      "code_hash": "7da593d8b29f704d255fa08414efdc9cc26f6501203f986e5cacbe97950c2c38",
+      "data_hash": "2ad9663966ed6e7f60e8128907e722efb3550c11cfbb2b1adff53b4bf0f2a8a7",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00048.py"
+      },
+      "official_score": 0.99999696329879,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00048.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00048.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_destroy_repair_k_small"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00049",
+      "code_hash": "6db44ffad5c71a38568f48fbd743c3e5d628a0a2abdc69a0318ce542cd2dae35",
+      "data_hash": "8f1dbb08f98d8994b549f9e127f84865d1774884e3b75c74ea46af5f41ef6237",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00049.py"
+      },
+      "official_score": 0.9999926695488937,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00049.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00049.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_boundary_slide_mutation"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00055",
+      "code_hash": "28b1166056c2da905a195d4f50072e3d171c294b70a6d354c0b7a8814e7f81a7",
+      "data_hash": "cddbcd2be5c02ce38101f508a6a5c4a3bf70558dbe90f782da84fa0e6242cf7a",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00055.py"
+      },
+      "official_score": 0.9999291942011594,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00055.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00055.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
@@ -656,111 +722,309 @@
     },
     {
       "candidate_id": "B_evolve_B_P_00056",
-      "code_hash": "d1d44f794ea0431b1b73d45644e99ad752528f150aa2b6e08b7d5710b3e1aba7",
-      "data_hash": "88c2715bd51f924c5e53285acdec82ed89100ed8876078ac0afe34cf858814f4",
+      "code_hash": "f692c8a8ed27e8160c127c9e4f07fbe795c3630a9b2e7bd3b12ac7a1696db013",
+      "data_hash": "b50d0f4d7f0c9a049db4dd4b571da0462cb38b30efe9890fed86413f8e31471e",
       "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
       "input_artifacts": {
         "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00056.py"
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00056.py"
       },
-      "official_score": 0.9999972580012652,
+      "official_score": 0.9997711428172397,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00056.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00056.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00056.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00056.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_contact_pair_relaxation"
+      "strategy": "self_evolve_contact_edge_break_then_repair"
     },
     {
       "candidate_id": "B_evolve_B_P_00057",
-      "code_hash": "7b0783bb498423b932b9bc2f17eb940678e98cf7d70e7f32c87225577c1363dd",
-      "data_hash": "e17313e25b5bfcf93180cc4300a1eee6728ab719577121170cd88d82d3f207e7",
+      "code_hash": "c8f741ca7ec1c8e10fae47879272be809c373b020b8e8f4062ada815d13ec931",
+      "data_hash": "b26aa566da06eeff0702892fa557095b1ae500fb26e09e422844016fb6558c15",
       "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
       "input_artifacts": {
         "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00057.py"
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00057.py"
       },
-      "official_score": 0.9999948229041947,
+      "official_score": 0.9953950988096211,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00057.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00057.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_boundary_slide_mutation"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00058",
-      "code_hash": "ea973e409f56e394aa1639b2985a4e8b9019344d0651ad01b59817f854b4ba5f",
-      "data_hash": "17d86e47e737636636f226aa35ccc4057e04f85d43c70c0ccd7762622e81e4f5",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00023",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00058.py"
-      },
-      "official_score": 0.9999965304715349,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00058.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00058.txt",
-        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
-      },
-      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_contact_graph_preserving_refine"
-    },
-    {
-      "candidate_id": "B_evolve_B_P_00063",
-      "code_hash": "845d0d19cd70c929d82fad2288384d7b477b4e50157c5e6ff07517e7d1771922",
-      "data_hash": "31294572a515be9a00a103af57564a2d84d09493f8c341a657c340c5c3d00432",
-      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
-      "input_artifacts": {
-        "parent_program_id": "B_P_00058",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00063.py"
-      },
-      "official_score": 0.8744063743587528,
-      "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00063.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00063.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00057.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00057.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
       "strategy": "self_evolve_boundary_pattern_swap"
     },
     {
+      "candidate_id": "B_evolve_B_P_00058",
+      "code_hash": "6b30d0c38c0ac2121351fab72ceea49afac992071dd55a378c2b59b2ebbd639e",
+      "data_hash": "32ccb2f1246f0b168a01adb74e68174ba43dbb558970c5c432cbdcbc58ccad02",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00015",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00058.py"
+      },
+      "official_score": 0.9485761485600063,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00058.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00058.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_boundary_gap_refill"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00063",
+      "code_hash": "e5e4e1986f5354ed00bfb6695c1bdd4620af6d875d8e4c313f008baf5473f991",
+      "data_hash": "ba6808e2dc8e88b0baebb47c97a60e42d4bd6cf3f00201c9ca44fc82aa8ab1db",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00063.py"
+      },
+      "official_score": 0.9999670547848746,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00063.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00063.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_radius_group_redistribution"
+    },
+    {
       "candidate_id": "B_evolve_B_P_00064",
-      "code_hash": "6b4b6ef8898f316c5cec9048cd005e47171230814a4c9822a246cab89406ed6a",
+      "code_hash": "7490b47183af16d2d88757190cc9339574667dd853e056f7a552a1471186d8ac",
       "data_hash": "adaafdb83575374cbc3a3e4c9f31c8c6ac69f15e9dc76a795b4fe196be4c8da2",
       "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
       "input_artifacts": {
         "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00064.py"
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00064.py"
       },
       "official_score": 0.9999971347380889,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00064.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00064.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00064.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00064.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "strategy": "self_evolve_block_crossover"
+      "strategy": "self_evolve_contact_graph_breaking_refine"
     },
     {
       "candidate_id": "B_evolve_B_P_00065",
-      "code_hash": "d7dfad6487e7c4191853b0efddf6d35df812b2c49ac34c2edd6ca9fcd828a047",
-      "data_hash": "94d5a35cc2373c07950b4005d7481acd6633c6f19b1b0f4edae3c30c5907f551",
+      "code_hash": "8e27a9bf51f89d7642dc7d8ed35032a77591fbb5f50d37b4c186ed4e3f6f8332",
+      "data_hash": "584e4a1b87989e8b90da1eeca56c834a9b6ab4300fd55a3a49de33efed5d295a",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00015",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00065.py"
+      },
+      "official_score": 0.9953950762699392,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00065.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00065.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_boundary_pattern_swap"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00066",
+      "code_hash": "7826e9b9217d367fb4d419b3b935f0a0ec49f782d6b90e253b1f837c3e1e2240",
+      "data_hash": "b8f7e2bc8ece2794468403a6f3d1bfa1b43c63c5e7afbd14c471e189518e4122",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00064",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00066.py"
+      },
+      "official_score": 0.9999968073645152,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00066.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00066.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_boundary_slide_mutation"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00071",
+      "code_hash": "d739fedd44ef4a2541501c163de99170153bda85f66d6eaac76ff66b46e31e63",
+      "data_hash": "8a63a4ce37bfb88b5ecdb9b967f26342abf5c732a0aea0619e6efb40eb637cc6",
       "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
       "input_artifacts": {
         "parent_program_id": "B_P_00002",
-        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_140811/B_P_00065.py"
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00071.py"
       },
-      "official_score": 0.9999943660393132,
+      "official_score": 0.9403835478598143,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/candidates/task_B/B_evolve_B_P_00065.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_140811/outputs/task_B/B_evolve_B_P_00065.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00071.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00071.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_destroy_repair_k_small"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00072",
+      "code_hash": "94ddef5d0bfd40a825671d92eb8038cc8ea70364f0cac6ebc97b093beb61ad17",
+      "data_hash": "0e93aa209fc03cec215fa6069d9f2284cee204b3edb7109b1e9116aa25ced595",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00015",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00072.py"
+      },
+      "official_score": 0.9999965622043876,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00072.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00072.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
       "strategy": "self_evolve_solver_switch"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00073",
+      "code_hash": "c84b2dec96dd177443260c6a6750a3053e11cc6479580ccf4f8a90cb81101ffa",
+      "data_hash": "c120696918e5ef6e5c074a27a0fd00465c7e1f9495cd60759b43b8398ecbe6e3",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00073.py"
+      },
+      "official_score": 0.946277294104201,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00073.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00073.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_boundary_gap_refill"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00074",
+      "code_hash": "ff2869f6fcb068957426c1f5fdf3f2655e197b1848116bb3aae5253ae255a6ee",
+      "data_hash": "59f2ca0a3c3bcad082a8e174e84d013112a90e8df67756d31325835a54150c9a",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00031",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00074.py"
+      },
+      "official_score": 0.8601826185826454,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00074.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00074.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_boundary_pattern_swap"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00079",
+      "code_hash": "f131ca78f247f723dc689f5698e7a743375854419419d4503bc1f32baa535f5d",
+      "data_hash": "7c8dfd27ae592725bc86738750a551ab2ed9a3d95d3ffcc86f06295aa9a0192f",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00079.py"
+      },
+      "official_score": 0.8717077999722952,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00079.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00079.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_boundary_pattern_swap"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00080",
+      "code_hash": "59d9ff61dc6b3e2ed00f06c18d3f9b78376a429a0f55b0f8cdaccfa56d9c8381",
+      "data_hash": "aeeeb9f856a63abb1ed0ed4e826f5d6c17261de1b468dbdc8635d6097e78ba3e",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00064",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00080.py"
+      },
+      "official_score": 0.9999968406143981,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00080.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00080.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_boundary_slide_mutation"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00081",
+      "code_hash": "52425a4dd945a649cf5d2342e15c360b81443df215af22b2828a8244a769955f",
+      "data_hash": "571c972efe4241f43b8fac5559d1e5741ef6947be2fde02ce37262ef79f4a8be",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00031",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00081.py"
+      },
+      "official_score": 0.9522306085253215,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00081.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00081.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_contact_graph_preserving_refine"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00082",
+      "code_hash": "c53c6cfcf705ea474d099201dfe24f0cad0a8df7002e0cd5997db6d5a8a3b736",
+      "data_hash": "e84650fb6e49a2e914dfad2c3841ab7ad55d3c3f3a2e17333bdb60d9a0eee78c",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00082.py"
+      },
+      "official_score": 0.9956126684486234,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00082.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00082.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_boundary_pattern_swap"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00088",
+      "code_hash": "caa1781dd76bf41dc6494e83fc5dbc4661dbc72e322e5e85e4768ce17726daff",
+      "data_hash": "3fec47c2000da21c3e230d6070ef28b851c73e4e1cfd787776d42407694a5af7",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00088.py"
+      },
+      "official_score": 0.871276946194052,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00088.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00088.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_boundary_pattern_swap"
+    },
+    {
+      "candidate_id": "B_evolve_B_P_00089",
+      "code_hash": "74f0c7bc4335301cafd4161b4a38278efdd40ab5db8e8b56dc648ce2b690c606",
+      "data_hash": "ef69ed2f4b57899e6aad9063649e0169e95abb95ee8b7939df80e608111a97e5",
+      "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+      "input_artifacts": {
+        "parent_program_id": "B_P_00002",
+        "program_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_144016/B_P_00089.py"
+      },
+      "official_score": 0.9999898202707433,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/candidates/task_B/B_evolve_B_P_00089.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_144016/outputs/task_B/B_evolve_B_P_00089.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "self_evolve_contact_edge_break_then_repair"
     }
   ],
   "replay_hint": "Run the code_snapshot for any node through the corresponding official evaluate.py.",

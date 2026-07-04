@@ -37,6 +37,15 @@ V2_GEOMETRY_OPERATORS = {
 }
 V2_REFINE_OPERATORS = {"contact_graph_preserving_refine"}
 V2_OPERATORS = V2_GEOMETRY_OPERATORS | V2_REFINE_OPERATORS | {"block_crossover"}
+V3_RISKY_OPERATORS = {
+    "destroy_repair_k_small",
+    "gap_insertion_search",
+    "small_circle_swap",
+    "boundary_gap_refill",
+    "contact_edge_break_then_repair",
+    "aspect_ratio_island",
+}
+V3_OPERATORS = V2_OPERATORS | V3_RISKY_OPERATORS
 
 
 def template_program_code(task: str) -> str:
@@ -130,6 +139,14 @@ def mutate_v2_blocks(parent_code: str, task: str, operator: str,
         return _block_crossover(parent_code, context)
     if operator == "aspect_ratio_sweep_local" and task == "A":
         return replace_named_block(parent_code, "aspect", _aspect_ratio_sweep_block()), ["aspect"]
+    if operator == "aspect_ratio_island" and task == "A":
+        code = replace_named_block(parent_code, "aspect", _aspect_ratio_island_block())
+        code = replace_named_block(code, "geometry", _gap_refill_block(task, operator))
+        return code, ["aspect", "geometry"]
+    if operator in {"destroy_repair_k_small", "gap_insertion_search", "small_circle_swap", "boundary_gap_refill"}:
+        return replace_named_block(parent_code, "geometry", _gap_refill_block(task, operator)), ["geometry"]
+    if operator == "contact_edge_break_then_repair":
+        return replace_named_block(parent_code, "geometry", _contact_edge_break_then_repair_block(task)), ["geometry"]
     if operator in V2_GEOMETRY_OPERATORS:
         return replace_named_block(parent_code, "geometry", _geometry_v2_block(task, operator)), ["geometry"]
     if operator in V2_REFINE_OPERATORS:
@@ -403,6 +420,102 @@ def _aspect_ratio_sweep_block() -> str:
     metadata["parameters"] = {"aspect_delta": delta, "width_direction": direction}'''
 
 
+def _aspect_ratio_island_block() -> str:
+    return '''    old_width = float(width)
+    old_height = float(height)
+    deltas = context.get("aspect_bucket_deltas") or [1e-5, 3e-5, 1e-4, 3e-4]
+    delta = float(deltas[int(context.get("generation", 0) or 0) % len(deltas)])
+    direction = float(context.get("width_direction", 1.0) or 1.0)
+    width = float(np.clip(width + direction * delta, 0.28, 1.72))
+    height = 2.0 - width
+    centers[:, 0] *= width / max(old_width, 1e-12)
+    centers[:, 1] *= height / max(old_height, 1e-12)
+    old_bucket = int(np.floor(old_width / 3e-5))
+    new_bucket = int(np.floor(width / 3e-5))
+    metadata["blocks_used"].append("aspect:aspect_ratio_island")
+    metadata["operator_name"] = "aspect_ratio_island"
+    metadata["old_width"] = old_width
+    metadata["new_width"] = width
+    metadata["width_delta"] = width - old_width
+    metadata["aspect_bucket"] = new_bucket
+    metadata["aspect_ratio_bucket_changed"] = bool(old_bucket != new_bucket)
+    metadata["parameters"] = {"aspect_delta": delta, "width_direction": direction}'''
+
+
+def _gap_refill_block(task: str, operator: str) -> str:
+    task = task.upper()
+    if task == "A":
+        call = "gap_helper(centers=centers, radii=radii, width=width, height=height, k=k, mode=mode)"
+    else:
+        call = "gap_helper(centers=centers, radii=radii, width=1.0, height=1.0, k=k, mode=mode)"
+    default_k = "3" if operator in {"destroy_repair_k_small", "gap_insertion_search"} else "2"
+    return f'''    mode = "{operator}"
+    k = int(context.get("destroy_k", {default_k}) or {default_k})
+    if mode == "small_circle_swap":
+        k = max(2, min(k, 3))
+    elif mode == "boundary_gap_refill":
+        k = max(1, min(k, 2))
+    else:
+        k = max(2, min(k, 4))
+    gap_helper = context.get("gap_refill")
+    if callable(gap_helper):
+        centers, gap_meta = {call}
+    else:
+        order = np.argsort(radii)[:k]
+        gap_meta = {{"removed_indices": [int(i) for i in order], "gap_ids": [], "small_circle_reassigned": True}}
+        for idx in order:
+            centers[idx] += rng.normal(0.0, float(context.get("gap_probe_scale", 0.035) or 0.035), size=2)
+    changed_indices = [int(i) for i in gap_meta.get("removed_indices", [])]
+    metadata["blocks_used"].append("geometry:{operator}")
+    metadata["strategy_family"] = "{operator}"
+    metadata["operator_name"] = "{operator}"
+    metadata["intended_contact_change"] = "destroy small-circle placement and refill high-scoring gaps"
+    metadata["intended_boundary_change"] = "possible boundary gap refill"
+    metadata["changed_indices"] = changed_indices
+    metadata["removed_indices"] = changed_indices
+    metadata["inserted_gap_ids"] = list(gap_meta.get("gap_ids", []))
+    metadata["gap_sources"] = list(gap_meta.get("gap_sources", []))
+    metadata["small_circle_reassigned"] = bool(gap_meta.get("small_circle_reassigned", False))
+    metadata["top_gap_score"] = float(gap_meta.get("top_gap_score", 0.0) or 0.0)
+    metadata["top_gap_radius"] = float(gap_meta.get("top_gap_radius", 0.0) or 0.0)
+    metadata["parameters"] = {{"destroy_k": k, "mode": mode}}'''
+
+
+def _contact_edge_break_then_repair_block(task: str) -> str:
+    if task.upper() == "A":
+        clip_comment = "# risky island intentionally allows pre-repair out-of-bounds before cascade repair"
+    else:
+        clip_comment = "# risky island intentionally allows pre-repair out-of-bounds before cascade repair"
+    return f'''    n = len(radii)
+    changed_indices = []
+    if n > 1:
+        pairs = []
+        for i in range(n):
+            for j in range(i + 1, n):
+                d = float(np.linalg.norm(centers[i] - centers[j]))
+                local_degree = 1.0
+                stress = float(radii[i] + radii[j]) / max(d, 1e-12) / local_degree
+                pairs.append((abs(d - float(radii[i] + radii[j])), stress, i, j))
+        pairs.sort(key=lambda item: (item[0], item[1]))
+        _m, _stress, i, j = pairs[int(context.get("pair_rank", 0) or 0) % len(pairs)]
+        direction = centers[i] - centers[j]
+        norm = float(np.linalg.norm(direction))
+        if norm > 1e-12:
+            direction = direction / norm
+            eps = float(context.get("edge_break_eps", context.get("sigma", 1e-5)) or 1e-5)
+            centers[i] += eps * direction
+            centers[j] -= eps * direction
+            changed_indices = [int(i), int(j)]
+    {clip_comment}
+    metadata["blocks_used"].append("geometry:contact_edge_break_then_repair")
+    metadata["strategy_family"] = "contact_edge_break_then_repair"
+    metadata["operator_name"] = "contact_edge_break_then_repair"
+    metadata["intended_contact_change"] = "break one low-value tight edge before LP repair"
+    metadata["intended_boundary_change"] = "possible"
+    metadata["changed_indices"] = changed_indices
+    metadata["parameters"] = {{"edge_break_eps": float(context.get("edge_break_eps", context.get("sigma", 1e-5)) or 1e-5)}}'''
+
+
 def _aspect_geometry_rescale_block() -> str:
     return '''    centers[:, 0] = np.clip(centers[:, 0], 1e-9, width - 1e-9)
     centers[:, 1] = np.clip(centers[:, 1], 1e-9, height - 1e-9)
@@ -557,6 +670,12 @@ def _strategy_family(operator: str) -> str:
         "contact_graph_preserving_refine": "contact_graph_preserving_refine",
         "contact_graph_breaking_refine": "contact_graph_breaking_refine",
         "block_crossover": "block_crossover",
+        "destroy_repair_k_small": "destroy_repair_k_small",
+        "gap_insertion_search": "gap_insertion_search",
+        "small_circle_swap": "small_circle_swap",
+        "boundary_gap_refill": "boundary_gap_refill",
+        "contact_edge_break_then_repair": "contact_edge_break_then_repair",
+        "aspect_ratio_island": "aspect_ratio_island",
     }
     return mapping.get(operator, "self_evolve")
 

@@ -392,6 +392,7 @@ def _self_evolution_lines(repo_root: Path) -> List[str]:
         "- Operator stats: `agent/archive/evolve/operator_stats.json`",
         "- Block metrics: `agent/archive/evolve/block_metrics.json`",
         "- Evolve Blocks v2 report: `submission/evolve_blocks_v2_report.md`",
+        "- Evolve Blocks v3 risky-structure report: `submission/evolve_blocks_v3_risky_structure_report.md`",
         "",
         "Why programs rather than coordinates: the evolved artifact is a small `propose_candidate(parent, rng, context)` generator/refinement operator. Its output is converted to a static candidate and must pass official `evaluate.py` before it can affect final export.",
         "",
@@ -417,6 +418,26 @@ def _self_evolution_lines(repo_root: Path) -> List[str]:
             f"- Accepted improvements: `{payload.get('accepted_improvement_count')}`",
         ]
     )
+    risk = payload.get("risk_summary") or {}
+    if risk:
+        lines.extend(
+            [
+                "",
+                "#### Risky Structure Search",
+                "",
+                f"- Island counts: `{risk.get('island_counts') or {}}`",
+                "| Task | Repair attempted | Repair success | Raw invalid | New contact graphs | New boundary patterns | Best risky delta |",
+                "|---|---:|---:|---:|---:|---:|---:|",
+            ]
+        )
+        for task, item in sorted((risk.get("tasks") or {}).items()):
+            lines.append(
+                f"| {task} | {int(item.get('repair_attempted') or 0)} | "
+                f"{int(item.get('repair_success') or 0)} | {int(item.get('raw_invalid') or 0)} | "
+                f"{int(item.get('new_contact_graph_count') or 0)} | "
+                f"{int(item.get('new_boundary_pattern_count') or 0)} | "
+                f"{float(item.get('best_risky_candidate_delta') or 0.0):.3e} |"
+            )
     operator_stats = payload.get("operator_stats") or {}
     if operator_stats:
         lines.extend(["", "| Operator | Attempts | Valid | Best delta | Novelty mean | Common failures |", "|---|---:|---:|---:|---:|---|"])

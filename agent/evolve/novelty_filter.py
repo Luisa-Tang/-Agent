@@ -48,7 +48,12 @@ class NoveltyFilter:
               parent_data: Optional[PackingData],
               parent_contact_hash: Optional[str] = None,
               parent_boundary_pattern: Optional[str] = None,
-              code_block_hash: Optional[str] = None) -> NoveltyDecision:
+              code_block_hash: Optional[str] = None,
+              island_name: str = "safe_polish",
+              small_circle_reassigned: bool = False,
+              aspect_ratio_bucket_changed: bool = False,
+              centers_rmsd_threshold: float = 3e-6,
+              radii_l2_threshold: float = 1e-7) -> NoveltyDecision:
         code_new = (code_block_hash or code_hash) not in self.code_hashes
         contact_graph_changed = bool(parent_contact_hash) and str(parent_contact_hash) != str(contact_hash)
         boundary_pattern_changed = bool(parent_boundary_pattern) and str(parent_boundary_pattern) != str(boundary_pattern)
@@ -72,8 +77,29 @@ class NoveltyFilter:
             + 0.10 * radius_distribution_novelty
             + 0.05 * strategy_family_novelty
         )
+        hard_equivalent = (
+            not contact_graph_changed
+            and not boundary_pattern_changed
+            and rmsd < float(centers_rmsd_threshold)
+            and radii_l2 < float(radii_l2_threshold)
+        )
+        risky_mode = str(island_name or "safe_polish") in {"risky_structure", "aspect_ratio_island"}
+        risky_has_structure_signal = (
+            contact_graph_changed
+            or boundary_pattern_changed
+            or rmsd > float(centers_rmsd_threshold)
+            or bool(small_circle_reassigned)
+            or bool(aspect_ratio_bucket_changed)
+        )
+        accepted = score >= self.threshold
         rejection_reason = "none"
-        if score < self.threshold:
+        if hard_equivalent:
+            accepted = False
+            rejection_reason = "geometry_hard_equivalent_to_parent"
+        elif risky_mode and not risky_has_structure_signal:
+            accepted = False
+            rejection_reason = "risky_structure_without_structure_signal"
+        elif score < self.threshold:
             if not contact_graph_novelty and not boundary_pattern_novelty and centers_rmsd_novelty < 0.05:
                 rejection_reason = "geometry_equivalent_to_archive_or_parent"
             elif not code_new:
@@ -96,10 +122,14 @@ class NoveltyFilter:
             "centers_rmsd_to_parent": rmsd,
             "sorted_radii_l2_to_parent": radii_l2,
             "strategy_family_repeated": repeated_family,
+            "island_name": str(island_name or "safe_polish"),
+            "small_circle_reassigned": bool(small_circle_reassigned),
+            "aspect_ratio_bucket_changed": bool(aspect_ratio_bucket_changed),
+            "hard_equivalent_gate": hard_equivalent,
+            "risky_structure_signal": risky_has_structure_signal,
             "novelty_rejection_reason": rejection_reason,
             "threshold": self.threshold,
         }
-        accepted = score >= self.threshold
         if not accepted:
             self.rejected_count += 1
         return NoveltyDecision(

@@ -31,6 +31,15 @@ V2_OPERATORS = [
     "solver_switch",
     "program_patch",
 ]
+V3_RISKY_OPERATORS = [
+    "destroy_repair_k_small",
+    "gap_insertion_search",
+    "small_circle_swap",
+    "boundary_gap_refill",
+    "contact_edge_break_then_repair",
+    "aspect_ratio_island",
+]
+V3_OPERATORS = V2_OPERATORS + V3_RISKY_OPERATORS
 
 
 @dataclass
@@ -55,11 +64,24 @@ class StrategyBandit:
         self._novelty_totals: Dict[str, float] = {name: 0.0 for name in self.operators}
         self._failures: Dict[str, Counter] = {name: Counter() for name in self.operators}
 
-    def select(self, generation: int, task: str) -> str:
+    def select(self, generation: int, task: str, allowed_operators: Optional[Iterable[str]] = None) -> str:
         total = sum(stat.attempts for stat in self.stats.values()) + 1
-        operators = self.operators
+        allowed_list = list(allowed_operators or self.operators)
+        allowed = set(allowed_list)
+        operators = [name for name in allowed_list if name in self.stats]
+        if not operators:
+            operators = list(allowed) if allowed else self.operators
+            for name in operators:
+                self.stats.setdefault(name, OperatorStats())
+                self._delta_totals.setdefault(name, 0.0)
+                self._runtime_totals.setdefault(name, 0.0)
+                self._novelty_totals.setdefault(name, 0.0)
+                self._failures.setdefault(name, Counter())
         if task.upper() == "B":
-            operators = [name for name in operators if name != "aspect_ratio_sweep_local"] or operators
+            operators = [
+                name for name in operators
+                if name not in {"aspect_ratio_sweep_local", "aspect_ratio_island"}
+            ] or operators
         best_name = operators[generation % len(operators)]
         best_score = -1e18
         for name in operators:

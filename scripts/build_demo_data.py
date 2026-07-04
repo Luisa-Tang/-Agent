@@ -102,6 +102,7 @@ def build_demo_data() -> Dict[str, Any]:
                     "block_metrics": "agent/archive/evolve/block_metrics.json",
                     "report": "submission/self_evolution_report.md",
                     "blocks_v2_report": "submission/evolve_blocks_v2_report.md",
+                    "blocks_v3_report": "submission/evolve_blocks_v3_risky_structure_report.md",
                 },
             },
             "tasks": final_tasks,
@@ -397,6 +398,7 @@ def load_self_evolution_summary() -> Dict[str, Any]:
         "official_eval_count": payload.get("official_eval_count"),
         "accepted_improvement_count": payload.get("accepted_improvement_count"),
         "best_operator": best_operator,
+        "risk_summary": payload.get("risk_summary") or {},
         "tasks": tasks,
         "operator_stats": operator_stats,
         "program_evolution_tree": {

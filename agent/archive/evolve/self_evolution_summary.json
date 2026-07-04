@@ -3,167 +3,233 @@
   "block_metrics_jsonl_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/block_metrics.jsonl",
   "block_metrics_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/block_metrics.json",
   "config": {
+    "allow_pre_repair_invalid": true,
     "batch_size": 4,
-    "enable_block_crossover": true,
+    "enable_block_crossover": false,
     "evolve_blocks_v2": true,
-    "generations": 30,
+    "evolve_islands": "hybrid",
+    "generations": 50,
     "geometry_novelty_threshold": 0.35,
-    "max_official_evals": 60,
+    "max_official_evals": 80,
     "novelty_threshold": 0.25,
     "parent_sampling": "balanced",
+    "risky_ratio": 0.4,
     "seed": 42,
     "use_benchmark_seeds": true,
     "use_llm": false
   },
   "evolve_log_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/evolve_log.jsonl",
-  "generated_program_count": 67,
+  "generated_program_count": 89,
   "novelty_archive_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/metrics/novelty_archive.json",
-  "novelty_rejected_count": 5,
-  "official_eval_count": 60,
+  "novelty_rejected_count": 7,
+  "official_eval_count": 80,
   "operator_stats": {
+    "aspect_ratio_island": {
+      "accepted": 0,
+      "attempts": 4,
+      "avg_runtime": 0.6453670859336853,
+      "best_delta": 0.0,
+      "common_failure_types": {
+        "none": 4
+      },
+      "mean_delta": -0.07440167257389327,
+      "novelty_mean": 0.8125,
+      "official_evaluated": 4,
+      "valid_count": 4
+    },
     "aspect_ratio_sweep_local": {
       "accepted": 0,
-      "attempts": 7,
-      "avg_runtime": 0.4813366276877267,
+      "attempts": 0,
+      "avg_runtime": 0.0,
       "best_delta": 0.0,
-      "common_failure_types": {
-        "none": 7
-      },
-      "mean_delta": -9.4574135892803e-06,
-      "novelty_mean": 0.6473620626104662,
-      "official_evaluated": 7,
-      "valid_count": 7
+      "common_failure_types": {},
+      "mean_delta": 0.0,
+      "novelty_mean": 0.0,
+      "official_evaluated": 0,
+      "valid_count": 0
     },
-    "block_crossover": {
+    "boundary_gap_refill": {
       "accepted": 0,
-      "attempts": 6,
-      "avg_runtime": 0.40832897027333576,
+      "attempts": 5,
+      "avg_runtime": 0.6341044425964355,
       "best_delta": 0.0,
       "common_failure_types": {
-        "none": 5,
-        "rejected_novelty": 1
+        "none": 5
       },
-      "mean_delta": -3.4143166982765947e-06,
-      "novelty_mean": 0.49172056098664996,
+      "mean_delta": -0.04939423391336828,
+      "novelty_mean": 0.85,
       "official_evaluated": 5,
       "valid_count": 5
     },
     "boundary_pattern_swap": {
       "accepted": 0,
-      "attempts": 5,
-      "avg_runtime": 0.48041834831237795,
+      "attempts": 19,
+      "avg_runtime": 0.5213334434910825,
       "best_delta": 0.0,
       "common_failure_types": {
-        "none": 5
+        "none": 17,
+        "rejected_novelty": 2
       },
-      "mean_delta": -0.07050023270892132,
-      "novelty_mean": 0.8078507400870825,
-      "official_evaluated": 5,
-      "valid_count": 5
+      "mean_delta": -0.06827082299578198,
+      "novelty_mean": 0.6468941950172988,
+      "official_evaluated": 17,
+      "valid_count": 17
     },
     "boundary_slide_mutation": {
       "accepted": 0,
-      "attempts": 8,
-      "avg_runtime": 0.4819754958152771,
-      "best_delta": 0.0,
-      "common_failure_types": {
-        "none": 8
-      },
-      "mean_delta": -1.3752614918871586e-05,
-      "novelty_mean": 0.6766935351677845,
-      "official_evaluated": 8,
-      "valid_count": 8
-    },
-    "contact_graph_breaking_refine": {
-      "accepted": 0,
       "attempts": 6,
-      "avg_runtime": 0.3008764982223511,
+      "avg_runtime": 0.5403195222218832,
       "best_delta": 0.0,
       "common_failure_types": {
-        "none": 3,
-        "rejected_novelty": 3
+        "none": 6
       },
-      "mean_delta": -1.55475547184795e-06,
-      "novelty_mean": 0.3802328200335681,
-      "official_evaluated": 3,
-      "valid_count": 3
+      "mean_delta": -0.011074043951862475,
+      "novelty_mean": 0.6673663196042797,
+      "official_evaluated": 6,
+      "valid_count": 6
     },
-    "contact_graph_preserving_refine": {
+    "contact_edge_break_then_repair": {
       "accepted": 0,
       "attempts": 7,
-      "avg_runtime": 0.4795423575810024,
+      "avg_runtime": 0.5684117589678083,
       "best_delta": 0.0,
       "common_failure_types": {
         "none": 7
       },
-      "mean_delta": -1.91067732330717e-05,
-      "novelty_mean": 0.6703900488281531,
+      "mean_delta": -0.004286449467468859,
+      "novelty_mean": 0.709467993972261,
       "official_evaluated": 7,
       "valid_count": 7
     },
-    "contact_pair_relaxation": {
+    "contact_graph_breaking_refine": {
       "accepted": 0,
       "attempts": 6,
-      "avg_runtime": 0.4153525034586589,
+      "avg_runtime": 0.4274819294611613,
+      "best_delta": 0.0,
+      "common_failure_types": {
+        "none": 4,
+        "rejected_novelty": 2
+      },
+      "mean_delta": -0.0015045163988396577,
+      "novelty_mean": 0.522074740992134,
+      "official_evaluated": 4,
+      "valid_count": 4
+    },
+    "contact_graph_preserving_refine": {
+      "accepted": 0,
+      "attempts": 6,
+      "avg_runtime": 0.5023403962453207,
       "best_delta": 0.0,
       "common_failure_types": {
         "none": 5,
         "rejected_novelty": 1
       },
-      "mean_delta": -1.0071119588469142e-06,
-      "novelty_mean": 0.5456639474839703,
+      "mean_delta": -0.012594224082115154,
+      "novelty_mean": 0.6134379123400674,
       "official_evaluated": 5,
       "valid_count": 5
     },
+    "contact_pair_relaxation": {
+      "accepted": 0,
+      "attempts": 5,
+      "avg_runtime": 0.48412432670593264,
+      "best_delta": 0.0,
+      "common_failure_types": {
+        "none": 4,
+        "rejected_novelty": 1
+      },
+      "mean_delta": -0.02511950743812752,
+      "novelty_mean": 0.5776486164702402,
+      "official_evaluated": 4,
+      "valid_count": 4
+    },
+    "destroy_repair_k_small": {
+      "accepted": 0,
+      "attempts": 5,
+      "avg_runtime": 0.6167872905731201,
+      "best_delta": 0.0,
+      "common_failure_types": {
+        "none": 5
+      },
+      "mean_delta": -0.049124207560280485,
+      "novelty_mean": 0.85,
+      "official_evaluated": 5,
+      "valid_count": 5
+    },
+    "gap_insertion_search": {
+      "accepted": 0,
+      "attempts": 4,
+      "avg_runtime": 0.5934581160545349,
+      "best_delta": 0.0,
+      "common_failure_types": {
+        "none": 4
+      },
+      "mean_delta": -0.055200788953529784,
+      "novelty_mean": 0.7625,
+      "official_evaluated": 4,
+      "valid_count": 4
+    },
     "program_patch": {
       "accepted": 0,
+      "attempts": 0,
+      "avg_runtime": 0.0,
+      "best_delta": 0.0,
+      "common_failure_types": {},
+      "mean_delta": 0.0,
+      "novelty_mean": 0.0,
+      "official_evaluated": 0,
+      "valid_count": 0
+    },
+    "radius_group_redistribution": {
+      "accepted": 0,
+      "attempts": 6,
+      "avg_runtime": 0.4837220509847005,
+      "best_delta": 0.0,
+      "common_failure_types": {
+        "none": 5,
+        "rejected_novelty": 1
+      },
+      "mean_delta": -0.0014995739840698945,
+      "novelty_mean": 0.6489053160403532,
+      "official_evaluated": 5,
+      "valid_count": 5
+    },
+    "small_circle_reposition": {
+      "accepted": 0,
       "attempts": 2,
-      "avg_runtime": 0.46702277660369873,
+      "avg_runtime": 0.509099006652832,
       "best_delta": 0.0,
       "common_failure_types": {
         "none": 2
       },
-      "mean_delta": -0.1692262052451844,
+      "mean_delta": -0.18950855524521037,
       "novelty_mean": 0.875,
       "official_evaluated": 2,
       "valid_count": 2
     },
-    "radius_group_redistribution": {
+    "small_circle_swap": {
       "accepted": 0,
-      "attempts": 8,
-      "avg_runtime": 0.48438045382499695,
+      "attempts": 5,
+      "avg_runtime": 0.6224474906921387,
       "best_delta": 0.0,
       "common_failure_types": {
-        "none": 8
+        "none": 5
       },
-      "mean_delta": -5.505707613105704e-05,
-      "novelty_mean": 0.758638834928231,
-      "official_evaluated": 8,
-      "valid_count": 8
-    },
-    "small_circle_reposition": {
-      "accepted": 0,
-      "attempts": 3,
-      "avg_runtime": 0.4801981449127197,
-      "best_delta": 0.0,
-      "common_failure_types": {
-        "none": 3
-      },
-      "mean_delta": -0.13919207258300548,
-      "novelty_mean": 0.8333333333333334,
-      "official_evaluated": 3,
-      "valid_count": 3
+      "mean_delta": -0.05238664855430149,
+      "novelty_mean": 0.8099999999999999,
+      "official_evaluated": 5,
+      "valid_count": 5
     },
     "solver_switch": {
       "accepted": 0,
       "attempts": 7,
-      "avg_runtime": 0.49778577259608675,
+      "avg_runtime": 0.5553320135389056,
       "best_delta": 0.0,
       "common_failure_types": {
         "none": 7
       },
-      "mean_delta": -1.5370182733105103e-05,
-      "novelty_mean": 0.6341300802970624,
+      "mean_delta": -0.0015700372027421488,
+      "novelty_mean": 0.7216402581155751,
       "official_evaluated": 7,
       "valid_count": 7
     }
@@ -171,7 +237,46 @@
   "operator_stats_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/operator_stats.json",
   "program_db_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/program_db.jsonl",
   "program_tree_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/program_tree.json",
-  "run_id": "20260704_140811",
+  "risk_summary": {
+    "island_counts": {
+      "aspect_ratio_island": 7,
+      "migration": 19,
+      "risky_structure": 29,
+      "safe_polish": 34
+    },
+    "tasks": {
+      "A": {
+        "best_risky_candidate_delta": -2.055063718087169e-07,
+        "best_risky_program_id": "A_P_00054",
+        "new_boundary_pattern_count": 28,
+        "new_contact_graph_count": 36,
+        "official_valid_by_island": {
+          "aspect_ratio_island": 6,
+          "migration": 8,
+          "risky_structure": 13,
+          "safe_polish": 15
+        },
+        "raw_invalid": 3,
+        "repair_attempted": 44,
+        "repair_success": 44
+      },
+      "B": {
+        "best_risky_candidate_delta": -4.186774038572594e-08,
+        "best_risky_program_id": "B_P_00015",
+        "new_boundary_pattern_count": 32,
+        "new_contact_graph_count": 35,
+        "official_valid_by_island": {
+          "migration": 9,
+          "risky_structure": 15,
+          "safe_polish": 16
+        },
+        "raw_invalid": 6,
+        "repair_attempted": 43,
+        "repair_success": 43
+      }
+    }
+  },
+  "run_id": "20260704_144016",
   "stop_reason": "official_eval_budget",
   "tasks": {
     "A": {
@@ -196,28 +301,44 @@
         "sum_radii": 2.365832327833825,
         "width": 0.9767311079968606
       },
+      "best_risky_candidate_delta": -2.055063718087169e-07,
+      "best_risky_program_id": "A_P_00054",
       "exceeded_denominator": false,
       "gap_to_denominator": 3.2428930843986237e-06,
-      "generated_programs": 34,
+      "generated_programs": 45,
       "improved_over_start": false,
-      "novelty_rejected": 0,
-      "official_evals": 33,
+      "new_boundary_pattern_count": 28,
+      "new_contact_graph_count": 36,
+      "novelty_rejected": 3,
+      "official_evals": 41,
       "official_skipped": 0,
-      "operator_attempts": {
-        "aspect_ratio_sweep_local": 7,
-        "block_crossover": 3,
-        "boundary_pattern_swap": 3,
-        "boundary_slide_mutation": 5,
-        "contact_graph_breaking_refine": 2,
-        "contact_graph_preserving_refine": 1,
-        "contact_pair_relaxation": 1,
-        "program_patch": 1,
-        "radius_group_redistribution": 5,
-        "small_circle_reposition": 3,
-        "solver_switch": 2
+      "official_valid_by_island": {
+        "aspect_ratio_island": 6,
+        "migration": 8,
+        "risky_structure": 13,
+        "safe_polish": 15
       },
+      "operator_attempts": {
+        "aspect_ratio_island": 4,
+        "boundary_gap_refill": 1,
+        "boundary_pattern_swap": 8,
+        "boundary_slide_mutation": 2,
+        "contact_edge_break_then_repair": 4,
+        "contact_graph_breaking_refine": 2,
+        "contact_graph_preserving_refine": 3,
+        "contact_pair_relaxation": 4,
+        "destroy_repair_k_small": 3,
+        "gap_insertion_search": 4,
+        "radius_group_redistribution": 2,
+        "small_circle_reposition": 2,
+        "small_circle_swap": 2,
+        "solver_switch": 3
+      },
+      "raw_invalid": 3,
+      "repair_attempted": 44,
+      "repair_success": 44,
       "seed_program_id": "A_P_00001",
-      "valid_official": 33
+      "valid_official": 41
     },
     "B": {
       "accepted_improvements": 0,
@@ -241,26 +362,40 @@
         "sum_radii": 2.6359830606320647,
         "width": null
       },
+      "best_risky_candidate_delta": -4.186774038572594e-08,
+      "best_risky_program_id": "B_P_00015",
       "exceeded_denominator": false,
       "gap_to_denominator": 2.6325471399468725e-06,
-      "generated_programs": 33,
+      "generated_programs": 44,
       "improved_over_start": false,
-      "novelty_rejected": 5,
-      "official_evals": 27,
+      "new_boundary_pattern_count": 32,
+      "new_contact_graph_count": 35,
+      "novelty_rejected": 4,
+      "official_evals": 39,
       "official_skipped": 0,
-      "operator_attempts": {
-        "block_crossover": 3,
-        "boundary_pattern_swap": 2,
-        "boundary_slide_mutation": 3,
-        "contact_graph_breaking_refine": 4,
-        "contact_graph_preserving_refine": 6,
-        "contact_pair_relaxation": 5,
-        "program_patch": 1,
-        "radius_group_redistribution": 3,
-        "solver_switch": 5
+      "official_valid_by_island": {
+        "migration": 9,
+        "risky_structure": 15,
+        "safe_polish": 16
       },
+      "operator_attempts": {
+        "boundary_gap_refill": 4,
+        "boundary_pattern_swap": 11,
+        "boundary_slide_mutation": 4,
+        "contact_edge_break_then_repair": 3,
+        "contact_graph_breaking_refine": 4,
+        "contact_graph_preserving_refine": 3,
+        "contact_pair_relaxation": 1,
+        "destroy_repair_k_small": 2,
+        "radius_group_redistribution": 4,
+        "small_circle_swap": 3,
+        "solver_switch": 4
+      },
+      "raw_invalid": 6,
+      "repair_attempted": 43,
+      "repair_success": 43,
       "seed_program_id": "B_P_00002",
-      "valid_official": 27
+      "valid_official": 39
     }
   }
 }

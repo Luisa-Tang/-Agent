@@ -16,7 +16,7 @@ import numpy as np
 
 from archive import ArchiveManager, sanitize_json
 from candidate_generators import solution_code_for
-from contact_graph import summarize_contact_graph
+from contact_graph import contact_graph_edit_distance, summarize_contact_graph
 from evaluator_adapter import EvaluatorAdapter, EvalResult
 from geometry_utils import (
     PackingData,
@@ -29,9 +29,11 @@ from geometry_utils import (
 from lineage import hash_packing_data, hash_text
 
 try:
+    from .gap_graph import refill_small_circles
     from .novelty_filter import NoveltyDecision, NoveltyFilter, centers_rmsd, sorted_radii_l2
     from .program_db import ProgramDatabase, ProgramRecord
 except ImportError:  # pragma: no cover - direct module execution fallback
+    from gap_graph import refill_small_circles
     from novelty_filter import NoveltyDecision, NoveltyFilter, centers_rmsd, sorted_radii_l2
     from program_db import ProgramDatabase, ProgramRecord
 
@@ -79,6 +81,7 @@ class CascadeEvaluator:
 
         try:
             proposed = self._run_program(record, parent_data, context)
+            raw_metrics = self._raw_candidate_metrics(record.task, proposed, parent_data)
             data, candidate_meta = self._candidate_data(record.task, proposed, parent_data, context)
         except Exception as exc:
             prepared.failure_type = "program_runtime_error"
@@ -108,9 +111,23 @@ class CascadeEvaluator:
             data.height,
             tolerance=float(context.get("contact_tolerance", 5e-8) or 5e-8),
         )
+        edit_metrics = contact_graph_edit_distance(parent_contact, prepared.contact_graph)
+        post_violation = _max_violation(record.task, data.centers, data.radii, data.width, data.height)
+        repair_attempted = bool(context.get("allow_pre_repair_invalid")) or not bool(raw_metrics.get("raw_valid"))
+        repair_success = bool(repair_attempted and valid and post_violation <= 1e-8)
         prepared.diagnostics = {
             "candidate_metadata": candidate_meta,
             "operator_context": _safe_context(context),
+            "island_name": str(context.get("island_name") or "safe_polish"),
+            "raw_valid": bool(raw_metrics.get("raw_valid")),
+            "repair_attempted": repair_attempted,
+            "repair_success": repair_success,
+            "pre_repair_valid": bool(raw_metrics.get("raw_valid")),
+            "pre_repair_max_violation": float(raw_metrics.get("max_violation_before_repair") or 0.0),
+            "post_repair_max_violation": float(post_violation),
+            "max_violation_before_repair": float(raw_metrics.get("max_violation_before_repair") or 0.0),
+            "max_violation_after_repair": float(post_violation),
+            "contact_graph_edit_distance": edit_metrics,
             "internal_valid": bool(valid),
             "internal_message": message,
             "sum_radii": data.sum_radii,
@@ -133,6 +150,16 @@ class CascadeEvaluator:
             boundary_pattern_changed=parent_contact.get("active_boundary_pattern") != prepared.contact_graph.get("active_boundary_pattern"),
             centers_rmsd_to_parent=centers_rmsd(data, parent_data),
             sorted_radii_l2_to_parent=sorted_radii_l2(data, parent_data),
+            island_name=str(context.get("island_name") or "safe_polish"),
+            raw_valid=bool(raw_metrics.get("raw_valid")),
+            repair_attempted=repair_attempted,
+            repair_success=repair_success,
+            max_violation_before_repair=float(raw_metrics.get("max_violation_before_repair") or 0.0),
+            max_violation_after_repair=float(post_violation),
+            contact_graph_edit_distance=int(edit_metrics.get("edge_edit_distance") or 0),
+            boundary_pattern_edit_distance=int(edit_metrics.get("boundary_pattern_edit_distance") or 0),
+            small_circle_reassigned=bool(candidate_meta.get("small_circle_reassigned")),
+            aspect_ratio_bucket_changed=bool(candidate_meta.get("aspect_ratio_bucket_changed")),
             cascade_stage_reached="E1_internal_geometry",
         )
         self._append_log("E1_internal_geometry", record, prepared, context)
@@ -150,6 +177,11 @@ class CascadeEvaluator:
             parent_contact_hash=str(parent_contact.get("contact_graph_hash") or "none"),
             parent_boundary_pattern=str(parent_contact.get("active_boundary_pattern") or "none"),
             code_block_hash=(record.block_hashes or {}).get((record.block_types_changed or [""])[0], record.code_hash),
+            island_name=str(context.get("island_name") or "safe_polish"),
+            small_circle_reassigned=bool(candidate_meta.get("small_circle_reassigned")),
+            aspect_ratio_bucket_changed=bool(candidate_meta.get("aspect_ratio_bucket_changed")),
+            centers_rmsd_threshold=float(context.get("risky_centers_rmsd_threshold", 3e-6) or 3e-6),
+            radii_l2_threshold=float(context.get("risky_radii_l2_threshold", 1e-7) or 1e-7),
         )
         prepared.novelty = decision
         prepared.failure_type = decision.failure_type
@@ -316,6 +348,7 @@ class CascadeEvaluator:
         exec_context.setdefault("solve_radius_lp", _radius_solver_helper(record.task, context))
         exec_context.setdefault("repair_and_polish", _repair_polish_helper(context))
         exec_context.setdefault("repair_and_polish_task_a", _repair_polish_task_a_helper(context))
+        exec_context.setdefault("gap_refill", _gap_refill_helper(context))
         result = module.propose_candidate(_parent_payload(parent_data), rng, exec_context)
         if not isinstance(result, dict):
             raise TypeError("propose_candidate must return a dict")
@@ -351,6 +384,29 @@ class CascadeEvaluator:
         radii = solve_radii_lp(task, centers, margin=margin)
         centers, radii = safety_repair(task, centers, radii, safety=safety)
         return PackingData(task=task, centers=centers, radii=radii), metadata
+
+    def _raw_candidate_metrics(self, task: str, proposed: Dict[str, Any],
+                               parent_data: PackingData) -> Dict[str, Any]:
+        task = task.upper()
+        centers = np.asarray(proposed.get("centers"), dtype=float)
+        if centers.shape != parent_data.centers.shape:
+            raise ValueError(f"proposed centers shape {centers.shape} != {parent_data.centers.shape}")
+        radii = np.asarray(proposed.get("radii", parent_data.radii), dtype=float)
+        if radii.shape != parent_data.radii.shape:
+            radii = np.asarray(parent_data.radii, dtype=float)
+        if task == "A":
+            width = float(proposed.get("width", parent_data.width))
+            width = float(np.clip(width, 0.28, 1.72))
+            height = 2.0 - width
+        else:
+            width = None
+            height = None
+        valid, message = validate_packing(task, centers, radii, width, height, tol=1e-8)
+        return {
+            "raw_valid": bool(valid),
+            "raw_message": message,
+            "max_violation_before_repair": _max_violation(task, centers, radii, width, height),
+        }
 
     def _update_program_failure(self, record: ProgramRecord, prepared: PreparedCandidate,
                                 runtime: float) -> None:
@@ -466,6 +522,66 @@ def _repair_polish_task_a_helper(context: Dict[str, Any]):
         )
         return centers_arr, radii_arr, width, height
     return _repair_and_polish_task_a
+
+
+def _gap_refill_helper(context: Dict[str, Any]):
+    def _gap_refill(centers, radii, width, height, k=3, mode="destroy_repair"):
+        rng = np.random.default_rng(int(context.get("seed", 0) or 0) + 7919)
+        radii_arr = np.asarray(radii, dtype=float)
+        k_int = max(1, min(int(k), len(radii_arr)))
+        if mode == "boundary_gap_refill":
+            margins = np.minimum.reduce([
+                np.asarray(centers, dtype=float)[:, 0],
+                float(width) - np.asarray(centers, dtype=float)[:, 0],
+                np.asarray(centers, dtype=float)[:, 1],
+                float(height) - np.asarray(centers, dtype=float)[:, 1],
+            ])
+            order = np.argsort(margins)[:k_int]
+        elif mode == "small_circle_swap":
+            order = np.argsort(radii_arr)[: max(2, k_int)]
+        else:
+            order = np.argsort(radii_arr)[:k_int]
+        new_centers, meta = refill_small_circles(
+            np.asarray(centers, dtype=float),
+            radii_arr,
+            float(width),
+            float(height),
+            removed_indices=[int(i) for i in order],
+            rng=rng,
+            mode=str(mode),
+            random_samples=int(context.get("gap_random_samples", 64) or 64),
+        )
+        return new_centers, meta
+    return _gap_refill
+
+
+def _max_violation(task: str, centers: np.ndarray, radii: np.ndarray,
+                   width: Optional[float] = None,
+                   height: Optional[float] = None) -> float:
+    centers = np.asarray(centers, dtype=float)
+    radii = np.asarray(radii, dtype=float)
+    if not (np.isfinite(centers).all() and np.isfinite(radii).all()):
+        return float("inf")
+    if task.upper() == "A":
+        w = float(width)
+        h = float(height)
+    else:
+        w = 1.0
+        h = 1.0
+    boundary_violation = np.maximum.reduce([
+        radii - centers[:, 0],
+        radii - (w - centers[:, 0]),
+        radii - centers[:, 1],
+        radii - (h - centers[:, 1]),
+        np.zeros_like(radii),
+    ])
+    max_violation = float(np.max(boundary_violation)) if boundary_violation.size else 0.0
+    n = len(radii)
+    for i in range(n):
+        for j in range(i + 1, n):
+            overlap = float(radii[i] + radii[j] - np.linalg.norm(centers[i] - centers[j]))
+            max_violation = max(max_violation, overlap)
+    return max(0.0, max_violation)
 
 
 def utc_now() -> str:

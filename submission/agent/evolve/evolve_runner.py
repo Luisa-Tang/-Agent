@@ -25,14 +25,14 @@ try:
     from .novelty_filter import NoveltyFilter
     from .program_db import ProgramDatabase, ProgramRecord
     from .prompt_sampler import PromptSampler
-    from .strategy_bandit import StrategyBandit, V2_OPERATORS
+    from .strategy_bandit import StrategyBandit, V2_OPERATORS, V3_OPERATORS, V3_RISKY_OPERATORS
 except ImportError:  # pragma: no cover - direct module execution fallback
     from cascade_evaluator import CascadeEvaluator
     from mutation_operators import create_child_program, create_seed_program
     from novelty_filter import NoveltyFilter
     from program_db import ProgramDatabase, ProgramRecord
     from prompt_sampler import PromptSampler
-    from strategy_bandit import StrategyBandit, V2_OPERATORS
+    from strategy_bandit import StrategyBandit, V2_OPERATORS, V3_OPERATORS, V3_RISKY_OPERATORS
 
 
 @dataclass
@@ -48,6 +48,9 @@ class SelfEvolveConfig:
     parent_sampling: str = "balanced"
     enable_block_crossover: bool = False
     geometry_novelty_threshold: float = 0.35
+    evolve_islands: str = "safe"
+    risky_ratio: float = 0.4
+    allow_pre_repair_invalid: bool = False
 
 
 def run_self_evolution_search(repo_root: Path, tasks: List[str], archive: ArchiveManager,
@@ -55,7 +58,7 @@ def run_self_evolution_search(repo_root: Path, tasks: List[str], archive: Archiv
                               config: SelfEvolveConfig) -> Dict[str, Any]:
     repo_root = Path(repo_root)
     program_db = ProgramDatabase(repo_root, archive.run_id)
-    operators = list(V2_OPERATORS) if config.evolve_blocks_v2 else None
+    operators = _operator_universe(config)
     if operators and not config.enable_block_crossover:
         operators = [name for name in operators if name != "block_crossover"]
     bandit = StrategyBandit(operators=operators)
@@ -118,11 +121,14 @@ def run_self_evolution_search(repo_root: Path, tasks: List[str], archive: Archiv
                     stop_reason = "official_eval_budget"
                     break
                 start = time.time()
+                island_name = _select_island(config, task, generation, batch_index, rng)
                 parent_record, parent_data, parent_mode = _select_parent(
-                    program_db, program_data, task, generation, batch_index, rng, config
+                    program_db, program_data, task, generation, batch_index, rng, config, island_name
                 )
-                operator = bandit.select(generation * batch_size + batch_index, task)
+                allowed = _operators_for_island(config, task, island_name)
+                operator = bandit.select(generation * batch_size + batch_index, task, allowed_operators=allowed)
                 context = _operator_context(task, operator, generation, batch_index, config, rng, program_db, program_data)
+                context["island_name"] = island_name
                 context["parent_sampling_mode"] = parent_mode
                 context["parent_program_id"] = parent_record.program_id
                 prompt = prompt_sampler.build_prompt(
@@ -207,6 +213,9 @@ def run_self_evolution_search(repo_root: Path, tasks: List[str], archive: Archiv
     operator_stats_path = bandit.write(repo_root)
     tree_path = program_db.write_tree()
     block_metric_paths = program_db.write_block_metrics()
+    risk_summary = _risk_summary(program_db)
+    for task, item in risk_summary.get("tasks", {}).items():
+        task_summaries.setdefault(task, {}).update(item)
     summary = {
         "run_id": archive.run_id,
         "config": asdict(config),
@@ -215,6 +224,7 @@ def run_self_evolution_search(repo_root: Path, tasks: List[str], archive: Archiv
         "novelty_rejected_count": int(novelty.rejected_count),
         "official_eval_count": official_count,
         "accepted_improvement_count": accepted_count,
+        "risk_summary": risk_summary,
         "tasks": task_summaries,
         "operator_stats": bandit.to_dict(),
         "program_db_path": str(program_db.path),
@@ -231,6 +241,8 @@ def run_self_evolution_search(repo_root: Path, tasks: List[str], archive: Archiv
     write_self_evolution_report(repo_root, summary)
     if config.evolve_blocks_v2:
         write_evolve_blocks_v2_report(repo_root, summary)
+    if config.evolve_islands in {"risky", "hybrid"} or config.allow_pre_repair_invalid:
+        write_evolve_blocks_v3_report(repo_root, summary)
     return summary
 
 
@@ -261,14 +273,24 @@ def _operator_context(task: str, operator: str, generation: int, batch_index: in
         "width_direction": float(-1.0 if (generation + batch_index) % 2 else 1.0),
         "use_llm": bool(config.use_llm),
         "evolve_blocks_v2": bool(config.evolve_blocks_v2),
+        "evolve_islands": str(config.evolve_islands),
+        "allow_pre_repair_invalid": bool(config.allow_pre_repair_invalid),
         "enable_fast_refine": bool(config.evolve_blocks_v2),
         "max_refine_steps": 6,
         "safety_shrink": 1e-10,
         "small_circle_count": 2 + ((generation + batch_index) % 2),
+        "destroy_k": 2 + ((generation + 2 * batch_index) % 3),
+        "gap_random_samples": 64 + 16 * ((generation + batch_index) % 3),
+        "edge_break_eps": float([1e-5, 3e-5, 1e-4, 3e-4][(generation + batch_index) % 4]),
         "gap_probe_scale": float([0.02, 0.035, 0.05][(generation + batch_index) % 3]),
         "edge_band": float([2e-8, 1e-7, 5e-7][(generation + batch_index) % 3]),
         "aspect_delta": float(target_deltas[(generation + batch_index) % len(target_deltas)]),
+        "aspect_bucket_deltas": [1e-5, 3e-5, 1e-4, 3e-4],
+        "risky_centers_rmsd_threshold": 3e-6,
+        "risky_radii_l2_threshold": 1e-7,
     }
+    if operator == "aspect_ratio_island":
+        context["aspect_delta"] = float([1e-5, 3e-5, 1e-4, 3e-4][(generation + batch_index) % 4])
     if operator in {"crossover", "block_crossover"}:
         mate = _select_mate(program_db, program_data, task, generation, batch_index)
         if mate is not None:
@@ -280,11 +302,12 @@ def _operator_context(task: str, operator: str, generation: int, batch_index: in
 def _select_parent(program_db: ProgramDatabase, program_data: Dict[str, PackingData],
                    task: str, generation: int, batch_index: int,
                    rng: np.random.Generator,
-                   config: SelfEvolveConfig) -> Tuple[ProgramRecord, PackingData, str]:
+                   config: SelfEvolveConfig,
+                   island_name: str = "safe_polish") -> Tuple[ProgramRecord, PackingData, str]:
     valid = [record for record in program_db.by_task(task) if record.valid and record.program_id in program_data]
     if not valid:
         raise RuntimeError(f"No valid parent program for Task {task}")
-    mode = _parent_sampling_mode(config, rng)
+    mode = _parent_sampling_mode(config, rng, island_name)
     if mode == "exploit":
         record = max(valid, key=lambda item: (float(item.score), float(item.novelty_score)))
     elif mode == "diverse":
@@ -297,7 +320,8 @@ def _select_parent(program_db: ProgramDatabase, program_data: Dict[str, PackingD
     return record, program_data[record.program_id], mode
 
 
-def _parent_sampling_mode(config: SelfEvolveConfig, rng: np.random.Generator) -> str:
+def _parent_sampling_mode(config: SelfEvolveConfig, rng: np.random.Generator,
+                          island_name: str = "safe_polish") -> str:
     if not config.evolve_blocks_v2:
         return "exploit" if rng.random() < 0.5 else "diverse"
     if config.parent_sampling == "exploit":
@@ -305,11 +329,73 @@ def _parent_sampling_mode(config: SelfEvolveConfig, rng: np.random.Generator) ->
     if config.parent_sampling == "diverse":
         return "diverse"
     value = float(rng.random())
+    if island_name in {"risky_structure", "aspect_ratio_island"}:
+        if value < 0.40:
+            return "exploit"
+        if value < 0.70:
+            return "diverse"
+        return "risky_novelty"
     if value < 0.50:
         return "exploit"
     if value < 0.80:
         return "diverse"
     return "risky_novelty"
+
+
+def _operator_universe(config: SelfEvolveConfig) -> Optional[List[str]]:
+    if not config.evolve_blocks_v2:
+        return None
+    if config.evolve_islands in {"risky", "hybrid"} or config.allow_pre_repair_invalid:
+        operators = list(V3_OPERATORS)
+    else:
+        operators = list(V2_OPERATORS)
+    if not config.enable_block_crossover:
+        operators = [name for name in operators if name != "block_crossover"]
+    return operators
+
+
+def _select_island(config: SelfEvolveConfig, task: str, generation: int,
+                   batch_index: int, rng: np.random.Generator) -> str:
+    mode = str(config.evolve_islands or "safe")
+    if mode == "safe":
+        return "safe_polish"
+    if mode == "risky":
+        return "aspect_ratio_island" if task.upper() == "A" and (generation + batch_index) % 4 == 0 else "risky_structure"
+    value = float(rng.random())
+    risky_ratio = float(np.clip(config.risky_ratio, 0.0, 0.8))
+    migration_ratio = 0.20
+    safe_ratio = max(0.0, 1.0 - risky_ratio - migration_ratio)
+    if value < safe_ratio:
+        return "safe_polish"
+    if value < safe_ratio + risky_ratio:
+        return "aspect_ratio_island" if task.upper() == "A" and (generation + batch_index) % 3 == 0 else "risky_structure"
+    return "migration"
+
+
+def _operators_for_island(config: SelfEvolveConfig, task: str, island_name: str) -> List[str]:
+    safe = [
+        "boundary_slide_mutation",
+        "contact_pair_relaxation",
+        "small_circle_reposition",
+        "radius_group_redistribution",
+        "contact_graph_preserving_refine",
+        "solver_switch",
+    ]
+    risky = list(V3_RISKY_OPERATORS) + [
+        "boundary_pattern_swap",
+        "contact_graph_breaking_refine",
+        "small_circle_reposition",
+    ]
+    migration = ["block_crossover"] if config.enable_block_crossover else ["boundary_pattern_swap"]
+    if island_name == "safe_polish":
+        allowed = safe
+    elif island_name == "migration":
+        allowed = migration
+    else:
+        allowed = risky
+    if task.upper() == "B":
+        allowed = [name for name in allowed if name not in {"aspect_ratio_sweep_local", "aspect_ratio_island"}]
+    return allowed or safe
 
 
 def _select_mate(program_db: ProgramDatabase, program_data: Dict[str, PackingData],
@@ -425,6 +511,57 @@ def _program_archive_record(record: ProgramRecord, prepared, official_result: Di
         "code_snapshot": official_result.get("code_snapshot"),
         "contact_graph": prepared.contact_graph,
         "geometry_metrics": prepared.geometry_metrics,
+    }
+
+
+def _risk_summary(program_db: ProgramDatabase) -> Dict[str, Any]:
+    tasks: Dict[str, Any] = {}
+    island_counts: Dict[str, int] = {}
+    for record in program_db.records:
+        island = str(record.island_name or "safe_polish")
+        island_counts[island] = island_counts.get(island, 0) + 1
+        item = tasks.setdefault(
+            record.task,
+            {
+                "repair_attempted": 0,
+                "repair_success": 0,
+                "raw_invalid": 0,
+                "official_valid_by_island": {},
+                "new_contact_graph_count": 0,
+                "new_boundary_pattern_count": 0,
+                "distinct_contact_graphs": set(),
+                "distinct_boundary_patterns": set(),
+                "best_risky_candidate_delta": None,
+                "best_risky_program_id": None,
+            },
+        )
+        if record.repair_attempted:
+            item["repair_attempted"] += 1
+        if record.repair_success:
+            item["repair_success"] += 1
+        if not record.raw_valid:
+            item["raw_invalid"] += 1
+        if record.official_valid:
+            by_island = item["official_valid_by_island"]
+            by_island[island] = int(by_island.get(island, 0)) + 1
+        if record.contact_graph_changed and record.contact_graph_hash:
+            item["distinct_contact_graphs"].add(str(record.contact_graph_hash))
+        if record.boundary_pattern_changed and record.boundary_pattern:
+            item["distinct_boundary_patterns"].add(str(record.boundary_pattern))
+        official_evaluated = str(record.cascade_stage_reached) == "E3_official_evaluate" or record.official_score > 0.0
+        if island in {"risky_structure", "aspect_ratio_island", "migration"} and official_evaluated:
+            delta = float(record.score_delta or 0.0)
+            if item["best_risky_candidate_delta"] is None or delta > float(item["best_risky_candidate_delta"]):
+                item["best_risky_candidate_delta"] = delta
+                item["best_risky_program_id"] = record.program_id
+    for item in tasks.values():
+        item["new_contact_graph_count"] = len(item.pop("distinct_contact_graphs"))
+        item["new_boundary_pattern_count"] = len(item.pop("distinct_boundary_patterns"))
+        if item["best_risky_candidate_delta"] is None:
+            item["best_risky_candidate_delta"] = 0.0
+    return {
+        "island_counts": island_counts,
+        "tasks": tasks,
     }
 
 
@@ -591,6 +728,88 @@ def write_evolve_blocks_v2_report(repo_root: Path, summary: Dict[str, Any]) -> P
             f"- {best_block_line}",
             "- Final replacement policy did not change: no candidate can overwrite `solution.py` unless official evaluator score improves.",
             "- Official evaluator files and task descriptions are not modified.",
+            "",
+        ]
+    )
+    path.write_text("\n".join(lines), encoding="utf-8")
+    return path
+
+
+def write_evolve_blocks_v3_report(repo_root: Path, summary: Dict[str, Any]) -> Path:
+    repo_root = Path(repo_root)
+    path = repo_root / "submission" / "evolve_blocks_v3_risky_structure_report.md"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    risk = summary.get("risk_summary") or {}
+    operator_stats = summary.get("operator_stats") or {}
+    lines = [
+        "# Evolve Blocks v3 Risky Structure Report",
+        "",
+        "Evolve Blocks v2 showed very high official validity but no accepted improvement. V3 adds a separate risky structure island that is allowed to create temporarily invalid candidates, then repairs them through fixed-center LP and safety polishing before any official evaluator call.",
+        "",
+        "## What Changed",
+        "",
+        "- `safe_polish_island` keeps the existing LP/refine behavior around strong parents.",
+        "- `risky_structure_island` uses destroy-repair operators for small-circle reassignment, gap insertion, boundary refill, and contact-edge breaking.",
+        "- `aspect_ratio_island` is Task A specific and sweeps width buckets before repair.",
+        "- `gap_graph` ranks candidate empty regions from circle/circle gaps, boundary gaps, and random empty samples.",
+        "- Cascade evaluation now records raw validity, pre/post repair violation, repair success, contact graph edit distance, and boundary pattern edit distance.",
+        "",
+        "## Run Summary",
+        "",
+        f"- Stop reason: `{summary.get('stop_reason')}`",
+        f"- Generated programs: `{summary.get('generated_program_count')}`",
+        f"- Novelty rejected: `{summary.get('novelty_rejected_count')}`",
+        f"- Official evaluate calls: `{summary.get('official_eval_count')}`",
+        f"- Accepted improvements: `{summary.get('accepted_improvement_count')}`",
+        f"- Island counts: `{risk.get('island_counts') or {}}`",
+        "",
+        "| Task | Best before | Best after | Improved | Gap to 1.0 | Repair attempted | Repair success | Raw invalid | New contact graphs | New boundary patterns | Best risky delta |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
+    ]
+    risk_tasks = risk.get("tasks") or {}
+    for task, item in sorted((summary.get("tasks") or {}).items()):
+        before = item.get("best_before") or {}
+        after = item.get("best_after") or {}
+        ritem = risk_tasks.get(task) or item
+        lines.append(
+            f"| {task} | {float(before.get('score') or 0.0):.12f} | "
+            f"{float(after.get('score') or 0.0):.12f} | {item.get('improved_over_start')} | "
+            f"{float(item.get('gap_to_denominator') or 0.0):.3e} | "
+            f"{int(ritem.get('repair_attempted') or 0)} | {int(ritem.get('repair_success') or 0)} | "
+            f"{int(ritem.get('raw_invalid') or 0)} | {int(ritem.get('new_contact_graph_count') or 0)} | "
+            f"{int(ritem.get('new_boundary_pattern_count') or 0)} | "
+            f"{float(ritem.get('best_risky_candidate_delta') or 0.0):.3e} |"
+        )
+    lines.extend(["", "## Risky Operators", ""])
+    lines.append("| Operator | Attempts | Official evals | Valid | Best delta | Mean delta | Novelty mean | Common failures |")
+    lines.append("|---|---:|---:|---:|---:|---:|---:|---|")
+    risky_names = {
+        "destroy_repair_k_small",
+        "gap_insertion_search",
+        "small_circle_swap",
+        "boundary_gap_refill",
+        "contact_edge_break_then_repair",
+        "aspect_ratio_island",
+        "block_crossover",
+    }
+    for operator, stat in sorted(operator_stats.items()):
+        if operator not in risky_names:
+            continue
+        lines.append(
+            f"| `{operator}` | {int(stat.get('attempts') or 0)} | "
+            f"{int(stat.get('official_evaluated') or 0)} | {int(stat.get('valid_count') or 0)} | "
+            f"{float(stat.get('best_delta') or 0.0):.3e} | {float(stat.get('mean_delta') or 0.0):.3e} | "
+            f"{float(stat.get('novelty_mean') or 0.0):.3f} | `{stat.get('common_failure_types') or {}}` |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Interpretation",
+            "",
+            "- V3 deliberately reduces the bias toward candidates that are valid before repair.",
+            "- A candidate still cannot overwrite `solution.py` unless the official evaluator accepts it and its score improves the archive best.",
+            "- Official evaluator files and task descriptions remain protected and unchanged.",
+            "- The final submitted solution remains static NumPy code with no network, LLM, or external-file dependency.",
             "",
         ]
     )
