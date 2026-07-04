@@ -40,6 +40,7 @@ def generate_report(repo_root: Path, archive, output_path: Path,
     lines.append("- **EvaluatorAdapter**: `agent/evaluator_adapter.py` writes candidates into the official task directories and runs `evaluate.py` as the source of truth.")
     lines.append("- **FeedbackReflector**: `agent/run.py` maps failures and plateau behavior to the next strategy; `agent/llm_reflector.py` can optionally ask a compatible Chat Completions endpoint for a strategy suggestion.")
     lines.append("- **ArchiveManager**: `agent/archive.py` stores metadata, raw evaluator output, code snapshots, and best valid candidates.")
+    lines.append("- **GeoEvolve-lite**: optional `agent/evolve/` harness evolves candidate-generating programs, novelty filters them, runs cascade evaluation, and exports only official-valid improvements.")
     lines.append("- **Exporter / Reporter**: `agent/run.py` exports final solutions and `agent/report_data.py` creates this report.")
     lines.append("- **Specialist tools**: `agent/skills/` contains project-local reusable procedures for SLSQP search, repair, evaluator feedback, static export, and archive observability.")
     lines.append("")
@@ -158,6 +159,10 @@ def generate_report(repo_root: Path, archive, output_path: Path,
     lines.append("### Score Breakthrough Harness")
     lines.append("")
     lines.extend(_breakthrough_lines(repo_root))
+    lines.append("")
+    lines.append("### Self-Evolution Harness")
+    lines.append("")
+    lines.extend(_self_evolution_lines(repo_root))
     lines.append("")
     lines.append("## 5. Feedback Utilization")
     lines.append("")
@@ -371,6 +376,56 @@ def _breakthrough_lines(repo_root: Path) -> List[str]:
             f"{int(item.get('official_evaluated_count') or 0)} | "
             f"{int(item.get('valid_count') or 0)} |"
         )
+    return lines
+
+
+def _self_evolution_lines(repo_root: Path) -> List[str]:
+    payload = _load_json(repo_root / "agent" / "archive" / "evolve" / "self_evolution_summary.json")
+    if not payload:
+        return ["Self-evolution search was not run for this report. Optional mode: `--self-evolve-search`."]
+    lines = [
+        "The optional GeoEvolve-lite harness follows OpenEvolve/ShinkaEvolve/CodeEvolve-inspired ideas without importing those frameworks: a program database, EVOLVE-BLOCK mutations, novelty rejection, cascade evaluation, and an operator bandit.",
+        "- Detailed report: `submission/self_evolution_report.md`",
+        "- Program DB: `agent/archive/evolve/program_db.jsonl`",
+        "- Program tree: `agent/archive/evolve/program_tree.json`",
+        "- Evolve log: `agent/archive/evolve/evolve_log.jsonl`",
+        "- Operator stats: `agent/archive/evolve/operator_stats.json`",
+        "",
+        "Why programs rather than coordinates: the evolved artifact is a small `propose_candidate(parent, rng, context)` generator/refinement operator. Its output is converted to a static candidate and must pass official `evaluate.py` before it can affect final export.",
+        "",
+        "| Task | Best before | Best after | Improved | Exceeded 1.0 | Gap to 1.0 | Official evals | Valid official |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|",
+    ]
+    for task, item in sorted((payload.get("tasks") or {}).items()):
+        before = item.get("best_before") or {}
+        after = item.get("best_after") or {}
+        lines.append(
+            f"| {task} | {float(before.get('score') or 0.0):.12f} | "
+            f"{float(after.get('score') or 0.0):.12f} | "
+            f"{item.get('improved_over_start')} | {item.get('exceeded_denominator')} | "
+            f"{float(item.get('gap_to_denominator') or 0.0):.3e} | "
+            f"{int(item.get('official_evals') or 0)} | {int(item.get('valid_official') or 0)} |"
+        )
+    lines.extend(
+        [
+            "",
+            f"- Generated programs: `{payload.get('generated_program_count')}`",
+            f"- Novelty rejected: `{payload.get('novelty_rejected_count')}`",
+            f"- Official evaluate calls: `{payload.get('official_eval_count')}`",
+            f"- Accepted improvements: `{payload.get('accepted_improvement_count')}`",
+        ]
+    )
+    operator_stats = payload.get("operator_stats") or {}
+    if operator_stats:
+        lines.extend(["", "| Operator | Attempts | Valid | Best delta | Novelty mean | Common failures |", "|---|---:|---:|---:|---:|---|"])
+        for operator, stat in sorted(operator_stats.items()):
+            lines.append(
+                f"| `{operator}` | {int(stat.get('attempts') or 0)} | "
+                f"{int(stat.get('valid_count') or 0)} | "
+                f"{float(stat.get('best_delta') or 0.0):.3e} | "
+                f"{float(stat.get('novelty_mean') or 0.0):.3f} | "
+                f"`{stat.get('common_failure_types') or {}}` |"
+            )
     return lines
 
 

@@ -1,0 +1,84 @@
+{
+  "contact_threshold_mutation": {
+    "accepted": 0,
+    "attempts": 5,
+    "avg_runtime": 0.19933886528015138,
+    "best_delta": 0.0,
+    "common_failure_types": {
+      "none": 2,
+      "rejected_novelty": 3
+    },
+    "mean_delta": -1.3341065008276587e-08,
+    "novelty_mean": 0.20017987559685646,
+    "official_evaluated": 2,
+    "valid_count": 2
+  },
+  "crossover": {
+    "accepted": 0,
+    "attempts": 8,
+    "avg_runtime": 0.38643842935562134,
+    "best_delta": 0.0,
+    "common_failure_types": {
+      "none": 7,
+      "rejected_novelty": 1
+    },
+    "mean_delta": -3.4960305366066313e-06,
+    "novelty_mean": 0.45616824177934434,
+    "official_evaluated": 7,
+    "valid_count": 7
+  },
+  "depth_refinement": {
+    "accepted": 0,
+    "attempts": 7,
+    "avg_runtime": 0.2787454809461321,
+    "best_delta": 0.0,
+    "common_failure_types": {
+      "none": 4,
+      "rejected_novelty": 3
+    },
+    "mean_delta": -2.9239661523762705e-07,
+    "novelty_mean": 0.3217782734524807,
+    "official_evaluated": 4,
+    "valid_count": 4
+  },
+  "parameter_mutation": {
+    "accepted": 0,
+    "attempts": 10,
+    "avg_runtime": 0.44681265354156496,
+    "best_delta": 0.0,
+    "common_failure_types": {
+      "none": 10
+    },
+    "mean_delta": -1.993432331082179e-05,
+    "novelty_mean": 0.6349333362828126,
+    "official_evaluated": 10,
+    "valid_count": 10
+  },
+  "program_patch": {
+    "accepted": 0,
+    "attempts": 9,
+    "avg_runtime": 0.43329646852281356,
+    "best_delta": 0.0,
+    "common_failure_types": {
+      "none": 9
+    },
+    "mean_delta": -2.6486454936710166e-06,
+    "novelty_mean": 0.5517215616128399,
+    "official_evaluated": 9,
+    "valid_count": 9
+  },
+  "solver_switch": {
+    "accepted": 0,
+    "attempts": 9,
+    "avg_runtime": 0.3945353560977512,
+    "best_delta": 0.0,
+    "common_failure_types": {
+      "none": 8,
+      "rejected_novelty": 1
+    },
+    "mean_delta": -1.0674311226785723e-05,
+    "novelty_mean": 0.5865844390562125,
+    "official_evaluated": 8,
+    "valid_count": 8
+  }
+}

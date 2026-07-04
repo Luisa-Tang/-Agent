@@ -1,0 +1,3918 @@
+{
+  "edges": [
+    {
+      "from": "A_P_00001",
+      "to": "A_P_00003"
+    },
+    {
+      "from": "A_P_00001",
+      "to": "A_P_00004"
+    },
+    {
+      "from": "A_P_00001",
+      "to": "A_P_00005"
+    },
+    {
+      "from": "A_P_00001",
+      "to": "A_P_00006"
+    },
+    {
+      "from": "B_P_00002",
+      "to": "B_P_00007"
+    },
+    {
+      "from": "B_P_00002",
+      "to": "B_P_00008"
+    },
+    {
+      "from": "B_P_00002",
+      "to": "B_P_00009"
+    },
+    {
+      "from": "B_P_00002",
+      "to": "B_P_00010"
+    },
+    {
+      "from": "A_P_00005",
+      "to": "A_P_00011"
+    },
+    {
+      "from": "A_P_00006",
+      "to": "A_P_00012"
+    },
+    {
+      "from": "A_P_00012",
+      "to": "A_P_00013"
+    },
+    {
+      "from": "A_P_00011",
+      "to": "A_P_00014"
+    },
+    {
+      "from": "B_P_00008",
+      "to": "B_P_00015"
+    },
+    {
+      "from": "B_P_00007",
+      "to": "B_P_00016"
+    },
+    {
+      "from": "B_P_00010",
+      "to": "B_P_00017"
+    },
+    {
+      "from": "B_P_00017",
+      "to": "B_P_00018"
+    },
+    {
+      "from": "A_P_00001",
+      "to": "A_P_00019"
+    },
+    {
+      "from": "A_P_00001",
+      "to": "A_P_00020"
+    },
+    {
+      "from": "A_P_00001",
+      "to": "A_P_00021"
+    },
+    {
+      "from": "A_P_00001",
+      "to": "A_P_00022"
+    },
+    {
+      "from": "B_P_00002",
+      "to": "B_P_00023"
+    },
+    {
+      "from": "B_P_00002",
+      "to": "B_P_00024"
+    },
+    {
+      "from": "B_P_00002",
+      "to": "B_P_00025"
+    },
+    {
+      "from": "B_P_00002",
+      "to": "B_P_00026"
+    },
+    {
+      "from": "A_P_00003",
+      "to": "A_P_00027"
+    },
+    {
+      "from": "A_P_00020",
+      "to": "A_P_00028"
+    },
+    {
+      "from": "A_P_00019",
+      "to": "A_P_00029"
+    },
+    {
+      "from": "A_P_00012",
+      "to": "A_P_00030"
+    },
+    {
+      "from": "B_P_00015",
+      "to": "B_P_00031"
+    },
+    {
+      "from": "B_P_00025",
+      "to": "B_P_00032"
+    },
+    {
+      "from": "B_P_00007",
+      "to": "B_P_00033"
+    },
+    {
+      "from": "B_P_00024",
+      "to": "B_P_00034"
+    },
+    {
+      "from": "A_P_00001",
+      "to": "A_P_00035"
+    },
+    {
+      "from": "A_P_00001",
+      "to": "A_P_00036"
+    },
+    {
+      "from": "A_P_00001",
+      "to": "A_P_00037"
+    },
+    {
+      "from": "A_P_00001",
+      "to": "A_P_00038"
+    },
+    {
+      "from": "B_P_00002",
+      "to": "B_P_00039"
+    },
+    {
+      "from": "B_P_00002",
+      "to": "B_P_00040"
+    },
+    {
+      "from": "B_P_00002",
+      "to": "B_P_00041"
+    },
+    {
+      "from": "B_P_00002",
+      "to": "B_P_00042"
+    },
+    {
+      "from": "A_P_00029",
+      "to": "A_P_00043"
+    },
+    {
+      "from": "A_P_00021",
+      "to": "A_P_00044"
+    },
+    {
+      "from": "A_P_00043",
+      "to": "A_P_00045"
+    },
+    {
+      "from": "A_P_00001",
+      "to": "A_P_00046"
+    },
+    {
+      "from": "B_P_00024",
+      "to": "B_P_00047"
+    },
+    {
+      "from": "B_P_00040",
+      "to": "B_P_00048"
+    },
+    {
+      "from": "B_P_00039",
+      "to": "B_P_00049"
+    },
+    {
+      "from": "B_P_00002",
+      "to": "B_P_00050"
+    }
+  ],
+  "nodes": [
+    {
+      "boundary_pattern": "left:15,16,19,20|right:0,4,8,11,13|bottom:0,3,9,20|top:5,11,15,17",
+      "code_hash": "c18d67254a76e7bd029972b4b5239ddc9260ea1137ec9d263788ea99c8e69837",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00001.py",
+      "contact_graph_hash": "736cb82a03549e01",
+      "created_at": "2026-07-04T13:35:39Z",
+      "metadata": {
+        "best_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "boundary_pattern": "left:15,16,19,20|right:0,4,8,11,13|bottom:0,3,9,20|top:5,11,15,17",
+        "contact_graph_hash": "736cb82a03549e01",
+        "score": 0.9999967571069156,
+        "source": "current best static solution",
+        "sum_radii": 2.365832327833825
+      },
+      "novelty_score": 1.0,
+      "official_eval_path": null,
+      "operator": "seed_parent_program",
+      "parent_program_id": null,
+      "program_id": "A_P_00001",
+      "score": 0.9999967571069156,
+      "strategy_family": "seed_parent_program",
+      "sum_radii": 2.365832327833825,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22",
+      "code_hash": "8ae9ca7ce63f1701798097a02a180c05e2843491b7265fe01a05ff51c10af168",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00002.py",
+      "contact_graph_hash": "8dae3c4e6bea6bd1",
+      "created_at": "2026-07-04T13:35:39Z",
+      "metadata": {
+        "best_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "boundary_pattern": "left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22",
+        "contact_graph_hash": "8dae3c4e6bea6bd1",
+        "score": 0.99999736745286,
+        "source": "current best static solution",
+        "sum_radii": 2.6359830606320647
+      },
+      "novelty_score": 1.0,
+      "official_eval_path": null,
+      "operator": "seed_parent_program",
+      "parent_program_id": null,
+      "program_id": "B_P_00002",
+      "score": 0.99999736745286,
+      "strategy_family": "seed_parent_program",
+      "sum_radii": 2.6359830606320647,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:16|right:0|bottom:3,20|top:11,15",
+      "code_hash": "9feaeaeeb1b114ec2292cfc0f147074bb7d0d608ddef9eb4ec0b6a9c8687f0a2",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00003.py",
+      "contact_graph_hash": "e9aba9b0ae46c921",
+      "created_at": "2026-07-04T13:35:39Z",
+      "metadata": {
+        "candidate_metadata": {
+          "sigma": 1e-05,
+          "strategy_family": "parameter_mutation",
+          "width_sigma": 1e-05
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 9.873138914654131e-06,
+            "code_hash_new": true,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.25,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 1.0,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00003",
+        "official_runtime_seconds": 0.37865185737609863,
+        "operator_context": {
+          "batch_index": 0,
+          "contact_scale": 0.2,
+          "contact_threshold": 1e-07,
+          "contact_tolerance": 5e-08,
+          "generation": 0,
+          "lp_margin": 0.0,
+          "operator": "parameter_mutation",
+          "safety": 2e-10,
+          "seed": 43,
+          "sigma": 1e-05,
+          "solver": "lp",
+          "solver_switch_jitter": 5e-06,
+          "target_delta": 1e-08,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-05
+        },
+        "parent_code_hash": "c18d67254a76e7bd029972b4b5239ddc9260ea1137ec9d263788ea99c8e69837",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00003.md",
+        "score_estimate": 0.9999237892096018,
+        "stage": "E1",
+        "sum_radii": 2.365659697463644
+      },
+      "novelty_score": 1.0,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00003.txt",
+      "operator": "parameter_mutation",
+      "parent_program_id": "A_P_00001",
+      "program_id": "A_P_00003",
+      "score": 0.9999237892096018,
+      "strategy_family": "parameter_mutation",
+      "sum_radii": 2.365659697463644,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:19|right:0,8|bottom:9|top:5,15",
+      "code_hash": "79593e3afa04e9190e8138702b74eb3ed8cc8c201fe225e9426a82d248eb4ba4",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00004.py",
+      "contact_graph_hash": "643c7086e3ad5711",
+      "created_at": "2026-07-04T13:35:39Z",
+      "metadata": {
+        "candidate_metadata": {
+          "solver": "lp_safe",
+          "strategy_family": "solver_switch"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 1.153567573304762e-06,
+            "code_hash_new": true,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.09613063110873017,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.8461306311087302,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00004",
+        "official_runtime_seconds": 0.3859884738922119,
+        "operator_context": {
+          "batch_index": 1,
+          "contact_scale": 0.35,
+          "contact_threshold": 5e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 0,
+          "lp_margin": 1e-11,
+          "operator": "solver_switch",
+          "safety": 2e-10,
+          "seed": 80,
+          "sigma": 3e-06,
+          "solver": "lp_safe",
+          "solver_switch_jitter": 1.5e-06,
+          "target_delta": 3e-08,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-06
+        },
+        "parent_code_hash": "c18d67254a76e7bd029972b4b5239ddc9260ea1137ec9d263788ea99c8e69837",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00004.md",
+        "score_estimate": 0.9999883329267214,
+        "stage": "E1",
+        "sum_radii": 2.3658123975713545
+      },
+      "novelty_score": 0.8461306311087302,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00004.txt",
+      "operator": "solver_switch",
+      "parent_program_id": "A_P_00001",
+      "program_id": "A_P_00004",
+      "score": 0.9999883329267214,
+      "strategy_family": "solver_switch",
+      "sum_radii": 2.3658123975713545,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:15,16,19,20|right:0,4,8,11,13|bottom:0,3,9,20|top:5,11,15,17",
+      "code_hash": "df33438564e09c4a4f58758e172b17312304cae6810e3e20ac317a59fde35157",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00005.py",
+      "contact_graph_hash": "736cb82a03549e01",
+      "created_at": "2026-07-04T13:35:40Z",
+      "metadata": {
+        "candidate_metadata": {
+          "contact_threshold": 1e-08,
+          "strategy_family": "contact_threshold_mutation"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": false,
+            "centers_rmsd": 3.4714433976792302e-09,
+            "code_hash_new": true,
+            "contact_graph_hash_new": false,
+            "rmsd_component": 0.0002892869498066025,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.35028928694980666,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00005",
+        "official_runtime_seconds": 0.3932952880859375,
+        "operator_context": {
+          "batch_index": 2,
+          "contact_scale": 0.5,
+          "contact_threshold": 1e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 0,
+          "lp_margin": 3e-11,
+          "operator": "contact_threshold_mutation",
+          "safety": 2e-10,
+          "seed": 117,
+          "sigma": 1e-06,
+          "solver": "lp_zero_margin",
+          "solver_switch_jitter": 5e-07,
+          "target_delta": 1e-07,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-06
+        },
+        "parent_code_hash": "c18d67254a76e7bd029972b4b5239ddc9260ea1137ec9d263788ea99c8e69837",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00005.md",
+        "score_estimate": 0.9999967429851627,
+        "stage": "E1",
+        "sum_radii": 2.3658322944240173
+      },
+      "novelty_score": 0.35028928694980666,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00005.txt",
+      "operator": "contact_threshold_mutation",
+      "parent_program_id": "A_P_00001",
+      "program_id": "A_P_00005",
+      "score": 0.9999967429851627,
+      "strategy_family": "contact_threshold_mutation",
+      "sum_radii": 2.3658322944240173,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:16,19|right:0,4,8|bottom:3,9,20|top:5,11,15,17",
+      "code_hash": "7c15c12cb158af15b77df3037c28fd42c51be17bf7c30ebf9378749972761fff",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00006.py",
+      "contact_graph_hash": "09dc6ac6dca3a074",
+      "created_at": "2026-07-04T13:35:40Z",
+      "metadata": {
+        "candidate_metadata": {
+          "llm_used": false,
+          "sigma": 3e-07,
+          "strategy_family": "program_patch_fallback"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": "LLM program patch disabled for this run.",
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 1.2247448713551133e-07,
+            "code_hash_new": true,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.010206207261292611,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.7602062072612926,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00006",
+        "official_runtime_seconds": 0.3903830051422119,
+        "operator_context": {
+          "batch_index": 3,
+          "contact_scale": 0.2,
+          "contact_threshold": 5e-09,
+          "contact_tolerance": 5e-08,
+          "generation": 0,
+          "lp_margin": 1e-10,
+          "operator": "program_patch",
+          "safety": 2e-10,
+          "seed": 154,
+          "sigma": 3e-07,
+          "solver": "lp",
+          "solver_switch_jitter": 1.5e-07,
+          "target_delta": 3e-07,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-07
+        },
+        "parent_code_hash": "c18d67254a76e7bd029972b4b5239ddc9260ea1137ec9d263788ea99c8e69837",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00006.md",
+        "score_estimate": 0.9999959899837084,
+        "stage": "E1",
+        "sum_radii": 2.365830512943057
+      },
+      "novelty_score": 0.7602062072612926,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00006.txt",
+      "operator": "program_patch",
+      "parent_program_id": "A_P_00001",
+      "program_id": "A_P_00006",
+      "score": 0.9999959899837084,
+      "strategy_family": "program_patch",
+      "sum_radii": 2.365830512943057,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22",
+      "code_hash": "80a38e1ae420e61f154de98d4e1e3939cc132fb02d4dff0b38f2a24661de436e",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00007.py",
+      "contact_graph_hash": "8dae3c4e6bea6bd1",
+      "created_at": "2026-07-04T13:35:41Z",
+      "metadata": {
+        "candidate_metadata": {
+          "mate_available": true,
+          "strategy_family": "crossover"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": false,
+            "centers_rmsd": 3.2030111871945664e-17,
+            "code_hash_new": true,
+            "contact_graph_hash_new": false,
+            "rmsd_component": 2.6691759893288053e-12,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.3500000000026692,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00007",
+        "official_runtime_seconds": 0.38367795944213867,
+        "operator_context": {
+          "batch_index": 0,
+          "contact_scale": 0.2,
+          "contact_threshold": 1e-07,
+          "contact_tolerance": 5e-08,
+          "generation": 0,
+          "lp_margin": 0.0,
+          "mate": {
+            "available": true,
+            "centers_shape": [
+              26,
+              2
+            ],
+            "height": null,
+            "width": null
+          },
+          "operator": "crossover",
+          "safety": 2e-10,
+          "seed": 44,
+          "sigma": 1e-05,
+          "solver": "lp",
+          "solver_switch_jitter": 5e-06,
+          "target_delta": 1e-08,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-05
+        },
+        "parent_code_hash": "8ae9ca7ce63f1701798097a02a180c05e2843491b7265fe01a05ff51c10af168",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00007.md",
+        "score_estimate": 0.9999973592263415,
+        "stage": "E1",
+        "sum_radii": 2.6359830389470438
+      },
+      "novelty_score": 0.3500000000026692,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00007.txt",
+      "operator": "crossover",
+      "parent_program_id": "B_P_00002",
+      "program_id": "B_P_00007",
+      "score": 0.9999973592263415,
+      "strategy_family": "crossover",
+      "sum_radii": 2.6359830389470438,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22",
+      "code_hash": "89e9e466900ceff375175eb23118cab3024addadea264fa6810ee034153eba71",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00008.py",
+      "contact_graph_hash": "8dae3c4e6bea6bd1",
+      "created_at": "2026-07-04T13:35:41Z",
+      "metadata": {
+        "candidate_metadata": {
+          "strategy_family": "depth_refinement",
+          "target_delta": 3e-08
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": false,
+            "centers_rmsd": 6.826757884575021e-10,
+            "code_hash_new": true,
+            "contact_graph_hash_new": false,
+            "rmsd_component": 5.688964903812517e-05,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.35005688964903814,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00008",
+        "official_runtime_seconds": 0.37447524070739746,
+        "operator_context": {
+          "batch_index": 1,
+          "contact_scale": 0.35,
+          "contact_threshold": 5e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 0,
+          "lp_margin": 1e-11,
+          "operator": "depth_refinement",
+          "safety": 2e-10,
+          "seed": 81,
+          "sigma": 3e-06,
+          "solver": "lp_safe",
+          "solver_switch_jitter": 1.5e-06,
+          "target_delta": 3e-08,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-06
+        },
+        "parent_code_hash": "8ae9ca7ce63f1701798097a02a180c05e2843491b7265fe01a05ff51c10af168",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00008.md",
+        "score_estimate": 0.9999973652748952,
+        "stage": "E1",
+        "sum_radii": 2.6359830548909713
+      },
+      "novelty_score": 0.35005688964903814,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00008.txt",
+      "operator": "depth_refinement",
+      "parent_program_id": "B_P_00002",
+      "program_id": "B_P_00008",
+      "score": 0.9999973652748952,
+      "strategy_family": "depth_refinement",
+      "sum_radii": 2.6359830548909713,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0|right:9,13|bottom:3,15|top:19",
+      "code_hash": "9c803e3e7275501bf8acecbba5fc6be8ba451420801507dfcf8073b1b9c09b4d",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00009.py",
+      "contact_graph_hash": "1cb2ac150080434d",
+      "created_at": "2026-07-04T13:35:41Z",
+      "metadata": {
+        "candidate_metadata": {
+          "sigma": 1e-06,
+          "strategy_family": "parameter_mutation"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 1.0985871628882887e-06,
+            "code_hash_new": true,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.09154893024069072,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.8415489302406908,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00009",
+        "official_runtime_seconds": 0.3904433250427246,
+        "operator_context": {
+          "batch_index": 2,
+          "contact_scale": 0.5,
+          "contact_threshold": 1e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 0,
+          "lp_margin": 3e-11,
+          "operator": "parameter_mutation",
+          "safety": 2e-10,
+          "seed": 118,
+          "sigma": 1e-06,
+          "solver": "lp_zero_margin",
+          "solver_switch_jitter": 5e-07,
+          "target_delta": 1e-07,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-06
+        },
+        "parent_code_hash": "8ae9ca7ce63f1701798097a02a180c05e2843491b7265fe01a05ff51c10af168",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00009.md",
+        "score_estimate": 0.9999889894946566,
+        "stage": "E1",
+        "sum_radii": 2.63596097641802
+      },
+      "novelty_score": 0.8415489302406908,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00009.txt",
+      "operator": "parameter_mutation",
+      "parent_program_id": "B_P_00002",
+      "program_id": "B_P_00009",
+      "score": 0.9999889894946566,
+      "strategy_family": "parameter_mutation",
+      "sum_radii": 2.63596097641802,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,11,22,25|bottom:3,15,21|top:7,19",
+      "code_hash": "6ade93cb3e7e41f0b57fd4968e1446c627fe851563c60127aa000c3050d3efcd",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00010.py",
+      "contact_graph_hash": "3af4b574483e7792",
+      "created_at": "2026-07-04T13:35:42Z",
+      "metadata": {
+        "candidate_metadata": {
+          "solver": "lp",
+          "strategy_family": "solver_switch"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 1.3820900648069476e-07,
+            "code_hash_new": true,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.011517417206724563,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.7615174172067246,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00010",
+        "official_runtime_seconds": 0.39742159843444824,
+        "operator_context": {
+          "batch_index": 3,
+          "contact_scale": 0.2,
+          "contact_threshold": 5e-09,
+          "contact_tolerance": 5e-08,
+          "generation": 0,
+          "lp_margin": 1e-10,
+          "operator": "solver_switch",
+          "safety": 2e-10,
+          "seed": 155,
+          "sigma": 3e-07,
+          "solver": "lp",
+          "solver_switch_jitter": 1.5e-07,
+          "target_delta": 3e-07,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-07
+        },
+        "parent_code_hash": "8ae9ca7ce63f1701798097a02a180c05e2843491b7265fe01a05ff51c10af168",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00010.md",
+        "score_estimate": 0.9999964313319353,
+        "stage": "E1",
+        "sum_radii": 2.635980593026668
+      },
+      "novelty_score": 0.7615174172067246,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00010.txt",
+      "operator": "solver_switch",
+      "parent_program_id": "B_P_00002",
+      "program_id": "B_P_00010",
+      "score": 0.9999964313319353,
+      "strategy_family": "solver_switch",
+      "sum_radii": 2.635980593026668,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:16,19|right:0,4,8|bottom:3,9,20|top:5,11,15,17",
+      "code_hash": "7c15c12cb158af15b77df3037c28fd42c51be17bf7c30ebf9378749972761fff",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00011.py",
+      "contact_graph_hash": "c79d58eebb8da64d",
+      "created_at": "2026-07-04T13:35:42Z",
+      "metadata": {
+        "candidate_metadata": {
+          "llm_used": false,
+          "sigma": 3e-06,
+          "strategy_family": "program_patch_fallback"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": "LLM program patch disabled for this run.",
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": false,
+            "centers_rmsd": 1.224744871394004e-06,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.10206207261616701,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.45206207261616704,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00011",
+        "official_runtime_seconds": 0.39454102516174316,
+        "operator_context": {
+          "batch_index": 0,
+          "contact_scale": 0.35,
+          "contact_threshold": 5e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 1,
+          "lp_margin": 1e-11,
+          "operator": "program_patch",
+          "safety": 2e-10,
+          "seed": 1052,
+          "sigma": 3e-06,
+          "solver": "lp_safe",
+          "solver_switch_jitter": 1.5e-06,
+          "target_delta": 3e-08,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-06
+        },
+        "parent_code_hash": "df33438564e09c4a4f58758e172b17312304cae6810e3e20ac317a59fde35157",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00011.md",
+        "score_estimate": 0.9999891209750774,
+        "stage": "E1",
+        "sum_radii": 2.365814261967677
+      },
+      "novelty_score": 0.45206207261616704,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00011.txt",
+      "operator": "program_patch",
+      "parent_program_id": "A_P_00005",
+      "program_id": "A_P_00011",
+      "score": 0.9999891209750774,
+      "strategy_family": "program_patch",
+      "sum_radii": 2.365814261967677,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:16,19|right:0,4|bottom:0,3,9,20|top:5,11,15,17",
+      "code_hash": "03d8c86276892a92b59104878fd62e28a60b9c5483231cd2dc58eec39843d544",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00012.py",
+      "contact_graph_hash": "b162127aa591fe2c",
+      "created_at": "2026-07-04T13:35:43Z",
+      "metadata": {
+        "candidate_metadata": {
+          "strategy_family": "depth_refinement",
+          "target_delta": 1e-07
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 2.1717619208941647e-09,
+            "code_hash_new": true,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.00018098016007451372,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.7501809801600745,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00012",
+        "official_runtime_seconds": 0.41312384605407715,
+        "operator_context": {
+          "batch_index": 1,
+          "contact_scale": 0.5,
+          "contact_threshold": 1e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 1,
+          "lp_margin": 3e-11,
+          "operator": "depth_refinement",
+          "safety": 2e-10,
+          "seed": 1089,
+          "sigma": 1e-06,
+          "solver": "lp_zero_margin",
+          "solver_switch_jitter": 5e-07,
+          "target_delta": 1e-07,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-06
+        },
+        "parent_code_hash": "7c15c12cb158af15b77df3037c28fd42c51be17bf7c30ebf9378749972761fff",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00012.md",
+        "score_estimate": 0.9999958132296709,
+        "stage": "E1",
+        "sum_radii": 2.3658300947712845
+      },
+      "novelty_score": 0.7501809801600745,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00012.txt",
+      "operator": "depth_refinement",
+      "parent_program_id": "A_P_00006",
+      "program_id": "A_P_00012",
+      "score": 0.9999958132296709,
+      "strategy_family": "depth_refinement",
+      "sum_radii": 2.3658300947712845,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:16,19|right:0,4|bottom:0,3,9,20|top:5,11,15,17",
+      "code_hash": "df33438564e09c4a4f58758e172b17312304cae6810e3e20ac317a59fde35157",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00013.py",
+      "contact_graph_hash": "b162127aa591fe2c",
+      "created_at": "2026-07-04T13:35:43Z",
+      "metadata": {
+        "candidate_metadata": {
+          "contact_threshold": 5e-09,
+          "strategy_family": "contact_threshold_mutation"
+        },
+        "failure_type": "rejected_novelty",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": false,
+          "reasons": {
+            "boundary_pattern_new": false,
+            "centers_rmsd": 6.883551606563847e-10,
+            "code_hash_new": false,
+            "contact_graph_hash_new": false,
+            "rmsd_component": 5.7362930054698726e-05,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.10005736293005471,
+          "threshold": 0.25
+        },
+        "official_skip_reason": "rejected_novelty",
+        "operator_context": {
+          "batch_index": 2,
+          "contact_scale": 0.2,
+          "contact_threshold": 5e-09,
+          "contact_tolerance": 5e-08,
+          "generation": 1,
+          "lp_margin": 1e-10,
+          "operator": "contact_threshold_mutation",
+          "safety": 2e-10,
+          "seed": 1126,
+          "sigma": 3e-07,
+          "solver": "lp",
+          "solver_switch_jitter": 1.5e-07,
+          "target_delta": 3e-07,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-07
+        },
+        "parent_code_hash": "03d8c86276892a92b59104878fd62e28a60b9c5483231cd2dc58eec39843d544",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00013.md",
+        "score_estimate": 0.9999958145083354,
+        "stage": "E1",
+        "sum_radii": 2.3658300977964
+      },
+      "novelty_score": 0.10005736293005471,
+      "official_eval_path": null,
+      "operator": "contact_threshold_mutation",
+      "parent_program_id": "A_P_00012",
+      "program_id": "A_P_00013",
+      "score": 0.9999958145083354,
+      "strategy_family": "contact_threshold_mutation",
+      "sum_radii": 2.3658300977964,
+      "task": "A",
+      "valid": false
+    },
+    {
+      "boundary_pattern": "left:16,19|right:0,4,8|bottom:9,20|top:5,11,15,17",
+      "code_hash": "271c807bc7962030d854a5e49160522cbe56b7bcf9aeb03adbb33564a6b6f59f",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00014.py",
+      "contact_graph_hash": "c6f37ec6740eb086",
+      "created_at": "2026-07-04T13:35:43Z",
+      "metadata": {
+        "candidate_metadata": {
+          "mate_available": true,
+          "strategy_family": "crossover"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 3.50787340926128e-07,
+            "code_hash_new": true,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.029232278410510668,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.7792322784105107,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00014",
+        "official_runtime_seconds": 0.3599667549133301,
+        "operator_context": {
+          "batch_index": 3,
+          "contact_scale": 0.35,
+          "contact_threshold": 1e-07,
+          "contact_tolerance": 5e-08,
+          "generation": 1,
+          "lp_margin": 3e-10,
+          "mate": {
+            "available": true,
+            "centers_shape": [
+              21,
+              2
+            ],
+            "height": 1.0232688920031394,
+            "width": 0.9767311079968606
+          },
+          "operator": "crossover",
+          "safety": 2e-10,
+          "seed": 1163,
+          "sigma": 1e-07,
+          "solver": "lp_safe",
+          "solver_switch_jitter": 5e-08,
+          "target_delta": 1e-06,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-07
+        },
+        "parent_code_hash": "7c15c12cb158af15b77df3037c28fd42c51be17bf7c30ebf9378749972761fff",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00014.md",
+        "score_estimate": 0.9999897238886677,
+        "stage": "E1",
+        "sum_radii": 2.3658156883647656
+      },
+      "novelty_score": 0.7792322784105107,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00014.txt",
+      "operator": "crossover",
+      "parent_program_id": "A_P_00011",
+      "program_id": "A_P_00014",
+      "score": 0.9999897238886677,
+      "strategy_family": "crossover",
+      "sum_radii": 2.3658156883647656,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,11|right:12,13,16|bottom:15|top:2,7,22",
+      "code_hash": "9c803e3e7275501bf8acecbba5fc6be8ba451420801507dfcf8073b1b9c09b4d",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00015.py",
+      "contact_graph_hash": "79ff5055dfdcfb8b",
+      "created_at": "2026-07-04T13:35:44Z",
+      "metadata": {
+        "candidate_metadata": {
+          "sigma": 3e-06,
+          "strategy_family": "parameter_mutation"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 2.4938152262414752e-06,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.20781793552012293,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.707817935520123,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00015",
+        "official_runtime_seconds": 0.3894932270050049,
+        "operator_context": {
+          "batch_index": 0,
+          "contact_scale": 0.35,
+          "contact_threshold": 5e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 1,
+          "lp_margin": 1e-11,
+          "operator": "parameter_mutation",
+          "safety": 2e-10,
+          "seed": 1053,
+          "sigma": 3e-06,
+          "solver": "lp_safe",
+          "solver_switch_jitter": 1.5e-06,
+          "target_delta": 3e-08,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-06
+        },
+        "parent_code_hash": "89e9e466900ceff375175eb23118cab3024addadea264fa6810ee034153eba71",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00015.md",
+        "score_estimate": 0.9999756839297078,
+        "stage": "E1",
+        "sum_radii": 2.6359259030818705
+      },
+      "novelty_score": 0.707817935520123,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00015.txt",
+      "operator": "parameter_mutation",
+      "parent_program_id": "B_P_00008",
+      "program_id": "B_P_00015",
+      "score": 0.9999756839297078,
+      "strategy_family": "parameter_mutation",
+      "sum_radii": 2.6359259030818705,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:11,23,25|right:3,9,12,13|bottom:15,20|top:12",
+      "code_hash": "6ade93cb3e7e41f0b57fd4968e1446c627fe851563c60127aa000c3050d3efcd",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00016.py",
+      "contact_graph_hash": "a699e03b1658663d",
+      "created_at": "2026-07-04T13:35:44Z",
+      "metadata": {
+        "candidate_metadata": {
+          "solver": "lp_zero_margin",
+          "strategy_family": "solver_switch"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 3.6859218128604156e-07,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.03071601510717013,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5307160151071701,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00016",
+        "official_runtime_seconds": 0.40458106994628906,
+        "operator_context": {
+          "batch_index": 1,
+          "contact_scale": 0.5,
+          "contact_threshold": 1e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 1,
+          "lp_margin": 3e-11,
+          "operator": "solver_switch",
+          "safety": 2e-10,
+          "seed": 1090,
+          "sigma": 1e-06,
+          "solver": "lp_zero_margin",
+          "solver_switch_jitter": 5e-07,
+          "target_delta": 1e-07,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-06
+        },
+        "parent_code_hash": "80a38e1ae420e61f154de98d4e1e3939cc132fb02d4dff0b38f2a24661de436e",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00016.md",
+        "score_estimate": 0.9999948656299007,
+        "stage": "E1",
+        "sum_radii": 2.635976465851762
+      },
+      "novelty_score": 0.5307160151071701,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00016.txt",
+      "operator": "solver_switch",
+      "parent_program_id": "B_P_00007",
+      "program_id": "B_P_00016",
+      "score": 0.9999756839297078,
+      "strategy_family": "solver_switch",
+      "sum_radii": 2.6359259030818705,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,11,22,23,25|right:12,13|bottom:3,15,21|top:7,19",
+      "code_hash": "b583779816e4165222263f4505f7333f9a9c9213f763e91bc8c0338181bbfe7d",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00017.py",
+      "contact_graph_hash": "6570c76c04f743d7",
+      "created_at": "2026-07-04T13:35:45Z",
+      "metadata": {
+        "candidate_metadata": {
+          "llm_used": false,
+          "sigma": 3e-07,
+          "strategy_family": "program_patch_fallback"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": "LLM program patch disabled for this run.",
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 1.1766968108428264e-07,
+            "code_hash_new": true,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.009805806757023553,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.7598058067570236,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00017",
+        "official_runtime_seconds": 0.3840813636779785,
+        "operator_context": {
+          "batch_index": 2,
+          "contact_scale": 0.2,
+          "contact_threshold": 5e-09,
+          "contact_tolerance": 5e-08,
+          "generation": 1,
+          "lp_margin": 1e-10,
+          "operator": "program_patch",
+          "safety": 2e-10,
+          "seed": 1127,
+          "sigma": 3e-07,
+          "solver": "lp",
+          "solver_switch_jitter": 1.5e-07,
+          "target_delta": 3e-07,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-07
+        },
+        "parent_code_hash": "6ade93cb3e7e41f0b57fd4968e1446c627fe851563c60127aa000c3050d3efcd",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00017.md",
+        "score_estimate": 0.9999961863476247,
+        "stage": "E1",
+        "sum_radii": 2.6359799472504752
+      },
+      "novelty_score": 0.7598058067570236,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00017.txt",
+      "operator": "program_patch",
+      "parent_program_id": "B_P_00010",
+      "program_id": "B_P_00017",
+      "score": 0.9999961863476247,
+      "strategy_family": "program_patch",
+      "sum_radii": 2.6359799472504752,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,22|right:9,12,13|bottom:15|top:19",
+      "code_hash": "80a38e1ae420e61f154de98d4e1e3939cc132fb02d4dff0b38f2a24661de436e",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00018.py",
+      "contact_graph_hash": "b9c5e65987ac1709",
+      "created_at": "2026-07-04T13:35:45Z",
+      "metadata": {
+        "candidate_metadata": {
+          "mate_available": true,
+          "strategy_family": "crossover"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 2.504717490882098e-07,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.020872645757350816,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5208726457573508,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00018",
+        "official_runtime_seconds": 0.3833603858947754,
+        "operator_context": {
+          "batch_index": 3,
+          "contact_scale": 0.35,
+          "contact_threshold": 1e-07,
+          "contact_tolerance": 5e-08,
+          "generation": 1,
+          "lp_margin": 3e-10,
+          "mate": {
+            "available": true,
+            "centers_shape": [
+              26,
+              2
+            ],
+            "height": null,
+            "width": null
+          },
+          "operator": "crossover",
+          "safety": 2e-10,
+          "seed": 1164,
+          "sigma": 1e-07,
+          "solver": "lp_safe",
+          "solver_switch_jitter": 5e-08,
+          "target_delta": 1e-06,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-07
+        },
+        "parent_code_hash": "b583779816e4165222263f4505f7333f9a9c9213f763e91bc8c0338181bbfe7d",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00018.md",
+        "score_estimate": 0.9999952797061092,
+        "stage": "E1",
+        "sum_radii": 2.635977557352507
+      },
+      "novelty_score": 0.5208726457573508,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00018.txt",
+      "operator": "crossover",
+      "parent_program_id": "B_P_00017",
+      "program_id": "B_P_00018",
+      "score": 0.9999952797061092,
+      "strategy_family": "crossover",
+      "sum_radii": 2.635977557352507,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:16,19,20|bottom:0,3,9,20|top:5,11,15,17",
+      "code_hash": "03d8c86276892a92b59104878fd62e28a60b9c5483231cd2dc58eec39843d544",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00019.py",
+      "contact_graph_hash": "9b8549e81d606133",
+      "created_at": "2026-07-04T13:35:45Z",
+      "metadata": {
+        "candidate_metadata": {
+          "strategy_family": "depth_refinement",
+          "target_delta": 1e-07
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 2.171761663767328e-09,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.00018098013864727733,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5001809801386473,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00019",
+        "official_runtime_seconds": 0.3882882595062256,
+        "operator_context": {
+          "batch_index": 0,
+          "contact_scale": 0.5,
+          "contact_threshold": 1e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 2,
+          "lp_margin": 3e-11,
+          "operator": "depth_refinement",
+          "safety": 2e-10,
+          "seed": 2061,
+          "sigma": 1e-06,
+          "solver": "lp_zero_margin",
+          "solver_switch_jitter": 5e-07,
+          "target_delta": 1e-07,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-06
+        },
+        "parent_code_hash": "c18d67254a76e7bd029972b4b5239ddc9260ea1137ec9d263788ea99c8e69837",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00019.md",
+        "score_estimate": 0.9999965835753135,
+        "stage": "E1",
+        "sum_radii": 2.3658319172858198
+      },
+      "novelty_score": 0.5001809801386473,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00019.txt",
+      "operator": "depth_refinement",
+      "parent_program_id": "A_P_00001",
+      "program_id": "A_P_00019",
+      "score": 0.9999965835753135,
+      "strategy_family": "depth_refinement",
+      "sum_radii": 2.3658319172858198,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:19|right:8|bottom:20|top:5,11,17",
+      "code_hash": "9feaeaeeb1b114ec2292cfc0f147074bb7d0d608ddef9eb4ec0b6a9c8687f0a2",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00020.py",
+      "contact_graph_hash": "f10423f539a0d35d",
+      "created_at": "2026-07-04T13:35:46Z",
+      "metadata": {
+        "candidate_metadata": {
+          "sigma": 3e-07,
+          "strategy_family": "parameter_mutation",
+          "width_sigma": 3e-07
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 2.913008541854007e-07,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.024275071182116723,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5242750711821168,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00020",
+        "official_runtime_seconds": 0.4242231845855713,
+        "operator_context": {
+          "batch_index": 1,
+          "contact_scale": 0.2,
+          "contact_threshold": 5e-09,
+          "contact_tolerance": 5e-08,
+          "generation": 2,
+          "lp_margin": 1e-10,
+          "operator": "parameter_mutation",
+          "safety": 2e-10,
+          "seed": 2098,
+          "sigma": 3e-07,
+          "solver": "lp",
+          "solver_switch_jitter": 1.5e-07,
+          "target_delta": 3e-07,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-07
+        },
+        "parent_code_hash": "c18d67254a76e7bd029972b4b5239ddc9260ea1137ec9d263788ea99c8e69837",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00020.md",
+        "score_estimate": 0.9999941269767283,
+        "stage": "E1",
+        "sum_radii": 2.3658261053666227
+      },
+      "novelty_score": 0.5242750711821168,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00020.txt",
+      "operator": "parameter_mutation",
+      "parent_program_id": "A_P_00001",
+      "program_id": "A_P_00020",
+      "score": 0.9999941269767283,
+      "strategy_family": "parameter_mutation",
+      "sum_radii": 2.3658261053666227,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:15,16,20|right:0,4,8,13|bottom:0,3,9,20|top:5,11,15,17",
+      "code_hash": "79593e3afa04e9190e8138702b74eb3ed8cc8c201fe225e9426a82d248eb4ba4",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00021.py",
+      "contact_graph_hash": "6db34359d64a2b84",
+      "created_at": "2026-07-04T13:35:46Z",
+      "metadata": {
+        "candidate_metadata": {
+          "solver": "lp_safe",
+          "strategy_family": "solver_switch"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 4.357593582188543e-08,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.003631327985157119,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5036313279851572,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00021",
+        "official_runtime_seconds": 0.36397218704223633,
+        "operator_context": {
+          "batch_index": 2,
+          "contact_scale": 0.35,
+          "contact_threshold": 1e-07,
+          "contact_tolerance": 5e-08,
+          "generation": 2,
+          "lp_margin": 3e-10,
+          "operator": "solver_switch",
+          "safety": 2e-10,
+          "seed": 2135,
+          "sigma": 1e-07,
+          "solver": "lp_safe",
+          "solver_switch_jitter": 5e-08,
+          "target_delta": 1e-06,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-07
+        },
+        "parent_code_hash": "c18d67254a76e7bd029972b4b5239ddc9260ea1137ec9d263788ea99c8e69837",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00021.md",
+        "score_estimate": 0.9999963932648673,
+        "stage": "E1",
+        "sum_radii": 2.3658314670417537
+      },
+      "novelty_score": 0.5036313279851572,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00021.txt",
+      "operator": "solver_switch",
+      "parent_program_id": "A_P_00001",
+      "program_id": "A_P_00021",
+      "score": 0.9999963932648673,
+      "strategy_family": "solver_switch",
+      "sum_radii": 2.3658314670417537,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:16,19,20|right:0,4,8,11|bottom:0,3,9,20|top:5,11,15,17",
+      "code_hash": "7c15c12cb158af15b77df3037c28fd42c51be17bf7c30ebf9378749972761fff",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00022.py",
+      "contact_graph_hash": "9266190f1e99745f",
+      "created_at": "2026-07-04T13:35:47Z",
+      "metadata": {
+        "candidate_metadata": {
+          "llm_used": false,
+          "sigma": 3e-08,
+          "strategy_family": "program_patch_fallback"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": "LLM program patch disabled for this run.",
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 1.2247448715832445e-08,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.0010206207263193704,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5010206207263194,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00022",
+        "official_runtime_seconds": 0.3510854244232178,
+        "operator_context": {
+          "batch_index": 3,
+          "contact_scale": 0.5,
+          "contact_threshold": 5e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 2,
+          "lp_margin": 0.0,
+          "operator": "program_patch",
+          "safety": 2e-10,
+          "seed": 2172,
+          "sigma": 3e-08,
+          "solver": "lp_zero_margin",
+          "solver_switch_jitter": 1.5e-08,
+          "target_delta": 1e-08,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-08
+        },
+        "parent_code_hash": "c18d67254a76e7bd029972b4b5239ddc9260ea1137ec9d263788ea99c8e69837",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00022.md",
+        "score_estimate": 0.999996667245256,
+        "stage": "E1",
+        "sum_radii": 2.3658321152355164
+      },
+      "novelty_score": 0.5010206207263194,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00022.txt",
+      "operator": "program_patch",
+      "parent_program_id": "A_P_00001",
+      "program_id": "A_P_00022",
+      "score": 0.999996667245256,
+      "strategy_family": "program_patch",
+      "sum_radii": 2.3658321152355164,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22",
+      "code_hash": "e5b6ed33d18d6da25ec94f99ee6fa3cccc71bea3a9bbb062eeba26dd58aef338",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00023.py",
+      "contact_graph_hash": "8dae3c4e6bea6bd1",
+      "created_at": "2026-07-04T13:35:47Z",
+      "metadata": {
+        "candidate_metadata": {
+          "contact_threshold": 1e-08,
+          "strategy_family": "contact_threshold_mutation"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": false,
+            "centers_rmsd": 3.80179547947813e-09,
+            "code_hash_new": true,
+            "contact_graph_hash_new": false,
+            "rmsd_component": 0.00031681628995651077,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.3503168162899565,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00023",
+        "official_runtime_seconds": 0.35599422454833984,
+        "operator_context": {
+          "batch_index": 0,
+          "contact_scale": 0.5,
+          "contact_threshold": 1e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 2,
+          "lp_margin": 3e-11,
+          "operator": "contact_threshold_mutation",
+          "safety": 2e-10,
+          "seed": 2062,
+          "sigma": 1e-06,
+          "solver": "lp_zero_margin",
+          "solver_switch_jitter": 5e-07,
+          "target_delta": 1e-07,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-06
+        },
+        "parent_code_hash": "8ae9ca7ce63f1701798097a02a180c05e2843491b7265fe01a05ff51c10af168",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00023.md",
+        "score_estimate": 0.9999973148692879,
+        "stage": "E1",
+        "sum_radii": 2.6359829220222943
+      },
+      "novelty_score": 0.3503168162899565,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00023.txt",
+      "operator": "contact_threshold_mutation",
+      "parent_program_id": "B_P_00002",
+      "program_id": "B_P_00023",
+      "score": 0.9999973148692879,
+      "strategy_family": "contact_threshold_mutation",
+      "sum_radii": 2.6359829220222943,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,11,22,23,25|right:3,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22",
+      "code_hash": "80a38e1ae420e61f154de98d4e1e3939cc132fb02d4dff0b38f2a24661de436e",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00024.py",
+      "contact_graph_hash": "bcf300291cc898f3",
+      "created_at": "2026-07-04T13:35:48Z",
+      "metadata": {
+        "candidate_metadata": {
+          "mate_available": true,
+          "strategy_family": "crossover"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 3.108402084575703e-08,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.0025903350704797527,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5025903350704798,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00024",
+        "official_runtime_seconds": 0.3801751136779785,
+        "operator_context": {
+          "batch_index": 1,
+          "contact_scale": 0.2,
+          "contact_threshold": 5e-09,
+          "contact_tolerance": 5e-08,
+          "generation": 2,
+          "lp_margin": 1e-10,
+          "mate": {
+            "available": true,
+            "centers_shape": [
+              26,
+              2
+            ],
+            "height": null,
+            "width": null
+          },
+          "operator": "crossover",
+          "safety": 2e-10,
+          "seed": 2099,
+          "sigma": 3e-07,
+          "solver": "lp",
+          "solver_switch_jitter": 1.5e-07,
+          "target_delta": 3e-07,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-07
+        },
+        "parent_code_hash": "8ae9ca7ce63f1701798097a02a180c05e2843491b7265fe01a05ff51c10af168",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00024.md",
+        "score_estimate": 0.9999971475962292,
+        "stage": "E1",
+        "sum_radii": 2.635982481092184
+      },
+      "novelty_score": 0.5025903350704798,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00024.txt",
+      "operator": "crossover",
+      "parent_program_id": "B_P_00002",
+      "program_id": "B_P_00024",
+      "score": 0.9999971475962292,
+      "strategy_family": "crossover",
+      "sum_radii": 2.635982481092184,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,11,22,23,25|right:3,9,16|bottom:15,20|top:7,12",
+      "code_hash": "9c803e3e7275501bf8acecbba5fc6be8ba451420801507dfcf8073b1b9c09b4d",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00025.py",
+      "contact_graph_hash": "432eec1c0b88c383",
+      "created_at": "2026-07-04T13:35:48Z",
+      "metadata": {
+        "candidate_metadata": {
+          "sigma": 1e-07,
+          "strategy_family": "parameter_mutation"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 1.1279180620810625e-07,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.009399317184008854,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5093993171840089,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00025",
+        "official_runtime_seconds": 0.3938605785369873,
+        "operator_context": {
+          "batch_index": 2,
+          "contact_scale": 0.35,
+          "contact_threshold": 1e-07,
+          "contact_tolerance": 5e-08,
+          "generation": 2,
+          "lp_margin": 3e-10,
+          "operator": "parameter_mutation",
+          "safety": 2e-10,
+          "seed": 2136,
+          "sigma": 1e-07,
+          "solver": "lp_safe",
+          "solver_switch_jitter": 5e-08,
+          "target_delta": 1e-06,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-07
+        },
+        "parent_code_hash": "8ae9ca7ce63f1701798097a02a180c05e2843491b7265fe01a05ff51c10af168",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00025.md",
+        "score_estimate": 0.9999964591911947,
+        "stage": "E1",
+        "sum_radii": 2.6359806664633973
+      },
+      "novelty_score": 0.5093993171840089,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00025.txt",
+      "operator": "parameter_mutation",
+      "parent_program_id": "B_P_00002",
+      "program_id": "B_P_00025",
+      "score": 0.9999964591911947,
+      "strategy_family": "parameter_mutation",
+      "sum_radii": 2.6359806664633973,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22",
+      "code_hash": "89e9e466900ceff375175eb23118cab3024addadea264fa6810ee034153eba71",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00026.py",
+      "contact_graph_hash": "8dae3c4e6bea6bd1",
+      "created_at": "2026-07-04T13:35:49Z",
+      "metadata": {
+        "candidate_metadata": {
+          "strategy_family": "depth_refinement",
+          "target_delta": 1e-08
+        },
+        "failure_type": "rejected_novelty",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": false,
+          "reasons": {
+            "boundary_pattern_new": false,
+            "centers_rmsd": 2.2755859698899852e-10,
+            "code_hash_new": false,
+            "contact_graph_hash_new": false,
+            "rmsd_component": 1.8963216415749875e-05,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.10001896321641575,
+          "threshold": 0.25
+        },
+        "official_skip_reason": "rejected_novelty",
+        "operator_context": {
+          "batch_index": 3,
+          "contact_scale": 0.5,
+          "contact_threshold": 5e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 2,
+          "lp_margin": 0.0,
+          "operator": "depth_refinement",
+          "safety": 2e-10,
+          "seed": 2173,
+          "sigma": 3e-08,
+          "solver": "lp_zero_margin",
+          "solver_switch_jitter": 1.5e-08,
+          "target_delta": 1e-08,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-08
+        },
+        "parent_code_hash": "8ae9ca7ce63f1701798097a02a180c05e2843491b7265fe01a05ff51c10af168",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00026.md",
+        "score_estimate": 0.9999973613108473,
+        "stage": "E1",
+        "sum_radii": 2.6359830444417804
+      },
+      "novelty_score": 0.10001896321641575,
+      "official_eval_path": null,
+      "operator": "depth_refinement",
+      "parent_program_id": "B_P_00002",
+      "program_id": "B_P_00026",
+      "score": 0.9999973613108473,
+      "strategy_family": "depth_refinement",
+      "sum_radii": 2.6359830444417804,
+      "task": "B",
+      "valid": false
+    },
+    {
+      "boundary_pattern": "left:16|right:0|bottom:3,20|top:11,15",
+      "code_hash": "79593e3afa04e9190e8138702b74eb3ed8cc8c201fe225e9426a82d248eb4ba4",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00027.py",
+      "contact_graph_hash": "e9aba9b0ae46c921",
+      "created_at": "2026-07-04T13:35:49Z",
+      "metadata": {
+        "candidate_metadata": {
+          "solver": "lp",
+          "strategy_family": "solver_switch"
+        },
+        "failure_type": "rejected_novelty",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": false,
+          "reasons": {
+            "boundary_pattern_new": false,
+            "centers_rmsd": 9.023738815800518e-08,
+            "code_hash_new": false,
+            "contact_graph_hash_new": false,
+            "rmsd_component": 0.007519782346500431,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.10751978234650043,
+          "threshold": 0.25
+        },
+        "official_skip_reason": "rejected_novelty",
+        "operator_context": {
+          "batch_index": 0,
+          "contact_scale": 0.2,
+          "contact_threshold": 5e-09,
+          "contact_tolerance": 5e-08,
+          "generation": 3,
+          "lp_margin": 1e-10,
+          "operator": "solver_switch",
+          "safety": 2e-10,
+          "seed": 3070,
+          "sigma": 3e-07,
+          "solver": "lp",
+          "solver_switch_jitter": 1.5e-07,
+          "target_delta": 3e-07,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-07
+        },
+        "parent_code_hash": "9feaeaeeb1b114ec2292cfc0f147074bb7d0d608ddef9eb4ec0b6a9c8687f0a2",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00027.md",
+        "score_estimate": 0.9999238869674646,
+        "stage": "E1",
+        "sum_radii": 2.3656599287431064
+      },
+      "novelty_score": 0.10751978234650043,
+      "official_eval_path": null,
+      "operator": "solver_switch",
+      "parent_program_id": "A_P_00003",
+      "program_id": "A_P_00027",
+      "score": 0.9999238869674646,
+      "strategy_family": "solver_switch",
+      "sum_radii": 2.3656599287431064,
+      "task": "A",
+      "valid": false
+    },
+    {
+      "boundary_pattern": "left:19|right:8|bottom:20|top:5,11,15,17",
+      "code_hash": "7c15c12cb158af15b77df3037c28fd42c51be17bf7c30ebf9378749972761fff",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00028.py",
+      "contact_graph_hash": "2e4d9ff33cfeef3a",
+      "created_at": "2026-07-04T13:35:49Z",
+      "metadata": {
+        "candidate_metadata": {
+          "llm_used": false,
+          "sigma": 1e-07,
+          "strategy_family": "program_patch_fallback"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": "LLM program patch disabled for this run.",
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 4.08248290495413e-08,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.003402069087461775,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5034020690874618,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00028",
+        "official_runtime_seconds": 0.37786316871643066,
+        "operator_context": {
+          "batch_index": 1,
+          "contact_scale": 0.35,
+          "contact_threshold": 1e-07,
+          "contact_tolerance": 5e-08,
+          "generation": 3,
+          "lp_margin": 3e-10,
+          "operator": "program_patch",
+          "safety": 2e-10,
+          "seed": 3107,
+          "sigma": 1e-07,
+          "solver": "lp_safe",
+          "solver_switch_jitter": 5e-08,
+          "target_delta": 1e-06,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-07
+        },
+        "parent_code_hash": "9feaeaeeb1b114ec2292cfc0f147074bb7d0d608ddef9eb4ec0b6a9c8687f0a2",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00028.md",
+        "score_estimate": 0.9999940050942386,
+        "stage": "E1",
+        "sum_radii": 2.3658258170121536
+      },
+      "novelty_score": 0.5034020690874618,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00028.txt",
+      "operator": "program_patch",
+      "parent_program_id": "A_P_00020",
+      "program_id": "A_P_00028",
+      "score": 0.9999940050942386,
+      "strategy_family": "program_patch",
+      "sum_radii": 2.3658258170121536,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:16,19|bottom:0,3,9,20|top:5,11,15,17",
+      "code_hash": "9feaeaeeb1b114ec2292cfc0f147074bb7d0d608ddef9eb4ec0b6a9c8687f0a2",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00029.py",
+      "contact_graph_hash": "b33913441b864b51",
+      "created_at": "2026-07-04T13:35:49Z",
+      "metadata": {
+        "candidate_metadata": {
+          "sigma": 3e-08,
+          "strategy_family": "parameter_mutation",
+          "width_sigma": 3e-08
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 3.1937368531949914e-08,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.002661447377662493,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5026614473776625,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00029",
+        "official_runtime_seconds": 0.39115071296691895,
+        "operator_context": {
+          "batch_index": 2,
+          "contact_scale": 0.5,
+          "contact_threshold": 5e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 3,
+          "lp_margin": 0.0,
+          "operator": "parameter_mutation",
+          "safety": 2e-10,
+          "seed": 3144,
+          "sigma": 3e-08,
+          "solver": "lp_zero_margin",
+          "solver_switch_jitter": 1.5e-08,
+          "target_delta": 1e-08,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-08
+        },
+        "parent_code_hash": "03d8c86276892a92b59104878fd62e28a60b9c5483231cd2dc58eec39843d544",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00029.md",
+        "score_estimate": 0.9999964294948247,
+        "stage": "E1",
+        "sum_radii": 2.365831552756036
+      },
+      "novelty_score": 0.5026614473776625,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00029.txt",
+      "operator": "parameter_mutation",
+      "parent_program_id": "A_P_00019",
+      "program_id": "A_P_00029",
+      "score": 0.9999964294948247,
+      "strategy_family": "parameter_mutation",
+      "sum_radii": 2.365831552756036,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:16,19|right:0,4|bottom:0,3,9,20|top:5,11,15,17",
+      "code_hash": "df33438564e09c4a4f58758e172b17312304cae6810e3e20ac317a59fde35157",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00030.py",
+      "contact_graph_hash": "b162127aa591fe2c",
+      "created_at": "2026-07-04T13:35:49Z",
+      "metadata": {
+        "candidate_metadata": {
+          "contact_threshold": 1e-08,
+          "strategy_family": "contact_threshold_mutation"
+        },
+        "failure_type": "rejected_novelty",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": false,
+          "reasons": {
+            "boundary_pattern_new": false,
+            "centers_rmsd": 1.8803291155117363e-09,
+            "code_hash_new": false,
+            "contact_graph_hash_new": false,
+            "rmsd_component": 0.00015669409295931134,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.10015669409295931,
+          "threshold": 0.25
+        },
+        "official_skip_reason": "rejected_novelty",
+        "operator_context": {
+          "batch_index": 3,
+          "contact_scale": 0.2,
+          "contact_threshold": 1e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 3,
+          "lp_margin": 1e-11,
+          "operator": "contact_threshold_mutation",
+          "safety": 2e-10,
+          "seed": 3181,
+          "sigma": 1e-05,
+          "solver": "lp",
+          "solver_switch_jitter": 5e-06,
+          "target_delta": 3e-08,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-05
+        },
+        "parent_code_hash": "03d8c86276892a92b59104878fd62e28a60b9c5483231cd2dc58eec39843d544",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00030.md",
+        "score_estimate": 0.9999958190323561,
+        "stage": "E1",
+        "sum_radii": 2.3658301084995093
+      },
+      "novelty_score": 0.10015669409295931,
+      "official_eval_path": null,
+      "operator": "contact_threshold_mutation",
+      "parent_program_id": "A_P_00012",
+      "program_id": "A_P_00030",
+      "score": 0.9999958190323561,
+      "strategy_family": "contact_threshold_mutation",
+      "sum_radii": 2.3658301084995093,
+      "task": "A",
+      "valid": false
+    },
+    {
+      "boundary_pattern": "left:11|right:12,13,16|bottom:15,20|top:2,7,22",
+      "code_hash": "80a38e1ae420e61f154de98d4e1e3939cc132fb02d4dff0b38f2a24661de436e",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00031.py",
+      "contact_graph_hash": "5711e86b09c8dafe",
+      "created_at": "2026-07-04T13:35:50Z",
+      "metadata": {
+        "candidate_metadata": {
+          "mate_available": true,
+          "strategy_family": "crossover"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 5.261500128395605e-07,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.04384583440329671,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5438458344032967,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00031",
+        "official_runtime_seconds": 0.35426998138427734,
+        "operator_context": {
+          "batch_index": 0,
+          "contact_scale": 0.2,
+          "contact_threshold": 5e-09,
+          "contact_tolerance": 5e-08,
+          "generation": 3,
+          "lp_margin": 1e-10,
+          "mate": {
+            "available": true,
+            "centers_shape": [
+              26,
+              2
+            ],
+            "height": null,
+            "width": null
+          },
+          "operator": "crossover",
+          "safety": 2e-10,
+          "seed": 3071,
+          "sigma": 3e-07,
+          "solver": "lp",
+          "solver_switch_jitter": 1.5e-07,
+          "target_delta": 3e-07,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-07
+        },
+        "parent_code_hash": "9c803e3e7275501bf8acecbba5fc6be8ba451420801507dfcf8073b1b9c09b4d",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00031.md",
+        "score_estimate": 0.9999791821628932,
+        "stage": "E1",
+        "sum_radii": 2.635935124389565
+      },
+      "novelty_score": 0.5438458344032967,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00031.txt",
+      "operator": "crossover",
+      "parent_program_id": "B_P_00015",
+      "program_id": "B_P_00031",
+      "score": 0.9999791821628932,
+      "strategy_family": "crossover",
+      "sum_radii": 2.635935124389565,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,11,22,23,25|right:3,9,16|bottom:15,20|top:7,12",
+      "code_hash": "89e9e466900ceff375175eb23118cab3024addadea264fa6810ee034153eba71",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00032.py",
+      "contact_graph_hash": "87df971721e81804",
+      "created_at": "2026-07-04T13:35:50Z",
+      "metadata": {
+        "candidate_metadata": {
+          "strategy_family": "depth_refinement",
+          "target_delta": 1e-06
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": false,
+            "centers_rmsd": 2.2755860464563188e-08,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.0018963217053802656,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.3518963217053803,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00032",
+        "official_runtime_seconds": 0.3838460445404053,
+        "operator_context": {
+          "batch_index": 1,
+          "contact_scale": 0.35,
+          "contact_threshold": 1e-07,
+          "contact_tolerance": 5e-08,
+          "generation": 3,
+          "lp_margin": 3e-10,
+          "operator": "depth_refinement",
+          "safety": 2e-10,
+          "seed": 3108,
+          "sigma": 1e-07,
+          "solver": "lp_safe",
+          "solver_switch_jitter": 5e-08,
+          "target_delta": 1e-06,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-07
+        },
+        "parent_code_hash": "9c803e3e7275501bf8acecbba5fc6be8ba451420801507dfcf8073b1b9c09b4d",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00032.md",
+        "score_estimate": 0.999996440263365,
+        "stage": "E1",
+        "sum_radii": 2.6359806165698276
+      },
+      "novelty_score": 0.3518963217053803,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00032.txt",
+      "operator": "depth_refinement",
+      "parent_program_id": "B_P_00025",
+      "program_id": "B_P_00032",
+      "score": 0.999996440263365,
+      "strategy_family": "depth_refinement",
+      "sum_radii": 2.6359806165698276,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22",
+      "code_hash": "b583779816e4165222263f4505f7333f9a9c9213f763e91bc8c0338181bbfe7d",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00033.py",
+      "contact_graph_hash": "291e84b44ef51d5c",
+      "created_at": "2026-07-04T13:35:50Z",
+      "metadata": {
+        "candidate_metadata": {
+          "llm_used": false,
+          "sigma": 3e-08,
+          "strategy_family": "program_patch_fallback"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": "LLM program patch disabled for this run.",
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": false,
+            "centers_rmsd": 1.1766968105426578e-08,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.0009805806754522148,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.35098058067545224,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00033",
+        "official_runtime_seconds": 0.3723304271697998,
+        "operator_context": {
+          "batch_index": 2,
+          "contact_scale": 0.5,
+          "contact_threshold": 5e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 3,
+          "lp_margin": 0.0,
+          "operator": "program_patch",
+          "safety": 2e-10,
+          "seed": 3145,
+          "sigma": 3e-08,
+          "solver": "lp_zero_margin",
+          "solver_switch_jitter": 1.5e-08,
+          "target_delta": 1e-08,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-08
+        },
+        "parent_code_hash": "80a38e1ae420e61f154de98d4e1e3939cc132fb02d4dff0b38f2a24661de436e",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00033.md",
+        "score_estimate": 0.9999972705624822,
+        "stage": "E1",
+        "sum_radii": 2.6359828052299976
+      },
+      "novelty_score": 0.35098058067545224,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00033.txt",
+      "operator": "program_patch",
+      "parent_program_id": "B_P_00007",
+      "program_id": "B_P_00033",
+      "score": 0.9999972705624822,
+      "strategy_family": "program_patch",
+      "sum_radii": 2.6359828052299976,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,23|right:13,16|bottom:3,21|top:2,7,12",
+      "code_hash": "6ade93cb3e7e41f0b57fd4968e1446c627fe851563c60127aa000c3050d3efcd",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00034.py",
+      "contact_graph_hash": "b6739cf5c80d2849",
+      "created_at": "2026-07-04T13:35:51Z",
+      "metadata": {
+        "candidate_metadata": {
+          "solver": "lp",
+          "strategy_family": "solver_switch"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 4.260822357006382e-06,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.25,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.75,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00034",
+        "official_runtime_seconds": 0.3798842430114746,
+        "operator_context": {
+          "batch_index": 3,
+          "contact_scale": 0.2,
+          "contact_threshold": 1e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 3,
+          "lp_margin": 1e-11,
+          "operator": "solver_switch",
+          "safety": 2e-10,
+          "seed": 3182,
+          "sigma": 1e-05,
+          "solver": "lp",
+          "solver_switch_jitter": 5e-06,
+          "target_delta": 3e-08,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-05
+        },
+        "parent_code_hash": "80a38e1ae420e61f154de98d4e1e3939cc132fb02d4dff0b38f2a24661de436e",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00034.md",
+        "score_estimate": 0.9999611604694908,
+        "stage": "E1",
+        "sum_radii": 2.635887619385973
+      },
+      "novelty_score": 0.75,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00034.txt",
+      "operator": "solver_switch",
+      "parent_program_id": "B_P_00024",
+      "program_id": "B_P_00034",
+      "score": 0.9999611604694908,
+      "strategy_family": "solver_switch",
+      "sum_radii": 2.635887619385973,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "right:8|bottom:0,20|top:5,11,17",
+      "code_hash": "9feaeaeeb1b114ec2292cfc0f147074bb7d0d608ddef9eb4ec0b6a9c8687f0a2",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00035.py",
+      "contact_graph_hash": "1de20865796cec14",
+      "created_at": "2026-07-04T13:35:51Z",
+      "metadata": {
+        "candidate_metadata": {
+          "sigma": 1e-07,
+          "strategy_family": "parameter_mutation",
+          "width_sigma": 1e-07
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 1.009944808257956e-07,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.008416206735482967,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.508416206735483,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00035",
+        "official_runtime_seconds": 0.3785665035247803,
+        "operator_context": {
+          "batch_index": 0,
+          "contact_scale": 0.35,
+          "contact_threshold": 1e-07,
+          "contact_tolerance": 5e-08,
+          "generation": 4,
+          "lp_margin": 3e-10,
+          "operator": "parameter_mutation",
+          "safety": 2e-10,
+          "seed": 4079,
+          "sigma": 1e-07,
+          "solver": "lp_safe",
+          "solver_switch_jitter": 5e-08,
+          "target_delta": 1e-06,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-07
+        },
+        "parent_code_hash": "c18d67254a76e7bd029972b4b5239ddc9260ea1137ec9d263788ea99c8e69837",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00035.md",
+        "score_estimate": 0.9999958062323567,
+        "stage": "E1",
+        "sum_radii": 2.3658300782167587
+      },
+      "novelty_score": 0.508416206735483,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00035.txt",
+      "operator": "parameter_mutation",
+      "parent_program_id": "A_P_00001",
+      "program_id": "A_P_00035",
+      "score": 0.9999958062323567,
+      "strategy_family": "parameter_mutation",
+      "sum_radii": 2.3658300782167587,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:16,19,20|right:0,4,8|bottom:0,3,9,20|top:5,11,15,17",
+      "code_hash": "271c807bc7962030d854a5e49160522cbe56b7bcf9aeb03adbb33564a6b6f59f",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00036.py",
+      "contact_graph_hash": "0ee74f0e365df4bd",
+      "created_at": "2026-07-04T13:35:52Z",
+      "metadata": {
+        "candidate_metadata": {
+          "mate_available": true,
+          "strategy_family": "crossover"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 2.7774602995099403e-08,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.0023145502495916168,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5023145502495916,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00036",
+        "official_runtime_seconds": 0.43019628524780273,
+        "operator_context": {
+          "batch_index": 1,
+          "contact_scale": 0.5,
+          "contact_threshold": 5e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 4,
+          "lp_margin": 0.0,
+          "mate": {
+            "available": true,
+            "centers_shape": [
+              21,
+              2
+            ],
+            "height": 1.0232688920031394,
+            "width": 0.9767311079968606
+          },
+          "operator": "crossover",
+          "safety": 2e-10,
+          "seed": 4116,
+          "sigma": 3e-08,
+          "solver": "lp_zero_margin",
+          "solver_switch_jitter": 1.5e-08,
+          "target_delta": 1e-08,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-08
+        },
+        "parent_code_hash": "c18d67254a76e7bd029972b4b5239ddc9260ea1137ec9d263788ea99c8e69837",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00036.md",
+        "score_estimate": 0.9999966130832408,
+        "stage": "E1",
+        "sum_radii": 2.3658319870968545
+      },
+      "novelty_score": 0.5023145502495916,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00036.txt",
+      "operator": "crossover",
+      "parent_program_id": "A_P_00001",
+      "program_id": "A_P_00036",
+      "score": 0.9999966130832408,
+      "strategy_family": "crossover",
+      "sum_radii": 2.3658319870968545,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:16,19|right:0,4,11,13|bottom:3,9,20|top:5,15,17",
+      "code_hash": "79593e3afa04e9190e8138702b74eb3ed8cc8c201fe225e9426a82d248eb4ba4",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00037.py",
+      "contact_graph_hash": "a0c49cd1e1751414",
+      "created_at": "2026-07-04T13:35:52Z",
+      "metadata": {
+        "candidate_metadata": {
+          "solver": "lp",
+          "strategy_family": "solver_switch"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 3.5887546172458334e-06,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.25,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.75,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00037",
+        "official_runtime_seconds": 0.35779762268066406,
+        "operator_context": {
+          "batch_index": 2,
+          "contact_scale": 0.2,
+          "contact_threshold": 1e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 4,
+          "lp_margin": 1e-11,
+          "operator": "solver_switch",
+          "safety": 2e-10,
+          "seed": 4153,
+          "sigma": 1e-05,
+          "solver": "lp",
+          "solver_switch_jitter": 5e-06,
+          "target_delta": 3e-08,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-05
+        },
+        "parent_code_hash": "c18d67254a76e7bd029972b4b5239ddc9260ea1137ec9d263788ea99c8e69837",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00037.md",
+        "score_estimate": 0.9999714860963749,
+        "stage": "E1",
+        "sum_radii": 2.3657725406662475
+      },
+      "novelty_score": 0.75,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00037.txt",
+      "operator": "solver_switch",
+      "parent_program_id": "A_P_00001",
+      "program_id": "A_P_00037",
+      "score": 0.9999714860963749,
+      "strategy_family": "solver_switch",
+      "sum_radii": 2.3657725406662475,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:15,16,19,20|right:0,4,8,11,13|bottom:0,3,9,20|top:5,11,15,17",
+      "code_hash": "df33438564e09c4a4f58758e172b17312304cae6810e3e20ac317a59fde35157",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00038.py",
+      "contact_graph_hash": "736cb82a03549e01",
+      "created_at": "2026-07-04T13:35:53Z",
+      "metadata": {
+        "candidate_metadata": {
+          "contact_threshold": 5e-09,
+          "strategy_family": "contact_threshold_mutation"
+        },
+        "failure_type": "rejected_novelty",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": false,
+          "reasons": {
+            "boundary_pattern_new": false,
+            "centers_rmsd": 9.506126580615307e-10,
+            "code_hash_new": false,
+            "contact_graph_hash_new": false,
+            "rmsd_component": 7.921772150512756e-05,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.10007921772150513,
+          "threshold": 0.25
+        },
+        "official_skip_reason": "rejected_novelty",
+        "operator_context": {
+          "batch_index": 3,
+          "contact_scale": 0.35,
+          "contact_threshold": 5e-09,
+          "contact_tolerance": 5e-08,
+          "generation": 4,
+          "lp_margin": 3e-11,
+          "operator": "contact_threshold_mutation",
+          "safety": 2e-10,
+          "seed": 4190,
+          "sigma": 3e-06,
+          "solver": "lp_safe",
+          "solver_switch_jitter": 1.5e-06,
+          "target_delta": 1e-07,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-06
+        },
+        "parent_code_hash": "c18d67254a76e7bd029972b4b5239ddc9260ea1137ec9d263788ea99c8e69837",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00038.md",
+        "score_estimate": 0.9999967527648348,
+        "stage": "E1",
+        "sum_radii": 2.3658323175611566
+      },
+      "novelty_score": 0.10007921772150513,
+      "official_eval_path": null,
+      "operator": "contact_threshold_mutation",
+      "parent_program_id": "A_P_00001",
+      "program_id": "A_P_00038",
+      "score": 0.9999967527648348,
+      "strategy_family": "contact_threshold_mutation",
+      "sum_radii": 2.3658323175611566,
+      "task": "A",
+      "valid": false
+    },
+    {
+      "boundary_pattern": "left:0,11,22,23,25|right:3,12,13,16|bottom:3,11,15,21|top:2,7,19",
+      "code_hash": "b583779816e4165222263f4505f7333f9a9c9213f763e91bc8c0338181bbfe7d",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00039.py",
+      "contact_graph_hash": "a7c3d91ca66eb79f",
+      "created_at": "2026-07-04T13:35:53Z",
+      "metadata": {
+        "candidate_metadata": {
+          "llm_used": false,
+          "sigma": 1e-07,
+          "strategy_family": "program_patch_fallback"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": "LLM program patch disabled for this run.",
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 3.922322703249917e-08,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.003268602252708264,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5032686022527083,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00039",
+        "official_runtime_seconds": 0.38041234016418457,
+        "operator_context": {
+          "batch_index": 0,
+          "contact_scale": 0.35,
+          "contact_threshold": 1e-07,
+          "contact_tolerance": 5e-08,
+          "generation": 4,
+          "lp_margin": 3e-10,
+          "operator": "program_patch",
+          "safety": 2e-10,
+          "seed": 4080,
+          "sigma": 1e-07,
+          "solver": "lp_safe",
+          "solver_switch_jitter": 5e-08,
+          "target_delta": 1e-06,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-07
+        },
+        "parent_code_hash": "8ae9ca7ce63f1701798097a02a180c05e2843491b7265fe01a05ff51c10af168",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00039.md",
+        "score_estimate": 0.9999970673300504,
+        "stage": "E1",
+        "sum_radii": 2.6359822695113397
+      },
+      "novelty_score": 0.5032686022527083,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00039.txt",
+      "operator": "program_patch",
+      "parent_program_id": "B_P_00002",
+      "program_id": "B_P_00039",
+      "score": 0.9999970673300504,
+      "strategy_family": "program_patch",
+      "sum_radii": 2.6359822695113397,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,11,22,23,25|right:3,9,13,16|bottom:11,15,20,21|top:2,7,12,22",
+      "code_hash": "9c803e3e7275501bf8acecbba5fc6be8ba451420801507dfcf8073b1b9c09b4d",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00040.py",
+      "contact_graph_hash": "65ded69825a8ee8e",
+      "created_at": "2026-07-04T13:35:53Z",
+      "metadata": {
+        "candidate_metadata": {
+          "sigma": 3e-08,
+          "strategy_family": "parameter_mutation"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 2.8092385176621624e-08,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.0023410320980518018,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5023410320980518,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00040",
+        "official_runtime_seconds": 0.3784770965576172,
+        "operator_context": {
+          "batch_index": 1,
+          "contact_scale": 0.5,
+          "contact_threshold": 5e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 4,
+          "lp_margin": 0.0,
+          "operator": "parameter_mutation",
+          "safety": 2e-10,
+          "seed": 4117,
+          "sigma": 3e-08,
+          "solver": "lp_zero_margin",
+          "solver_switch_jitter": 1.5e-08,
+          "target_delta": 1e-08,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-08
+        },
+        "parent_code_hash": "8ae9ca7ce63f1701798097a02a180c05e2843491b7265fe01a05ff51c10af168",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00040.md",
+        "score_estimate": 0.9999970924365987,
+        "stage": "E1",
+        "sum_radii": 2.63598233569195
+      },
+      "novelty_score": 0.5023410320980518,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00040.txt",
+      "operator": "parameter_mutation",
+      "parent_program_id": "B_P_00002",
+      "program_id": "B_P_00040",
+      "score": 0.9999970924365987,
+      "strategy_family": "parameter_mutation",
+      "sum_radii": 2.63598233569195,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22",
+      "code_hash": "89e9e466900ceff375175eb23118cab3024addadea264fa6810ee034153eba71",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00041.py",
+      "contact_graph_hash": "8dae3c4e6bea6bd1",
+      "created_at": "2026-07-04T13:35:54Z",
+      "metadata": {
+        "candidate_metadata": {
+          "strategy_family": "depth_refinement",
+          "target_delta": 3e-08
+        },
+        "failure_type": "rejected_novelty",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": false,
+          "reasons": {
+            "boundary_pattern_new": false,
+            "centers_rmsd": 6.826757884575021e-10,
+            "code_hash_new": false,
+            "contact_graph_hash_new": false,
+            "rmsd_component": 5.688964903812517e-05,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.10005688964903812,
+          "threshold": 0.25
+        },
+        "official_skip_reason": "rejected_novelty",
+        "operator_context": {
+          "batch_index": 2,
+          "contact_scale": 0.2,
+          "contact_threshold": 1e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 4,
+          "lp_margin": 1e-11,
+          "operator": "depth_refinement",
+          "safety": 2e-10,
+          "seed": 4154,
+          "sigma": 1e-05,
+          "solver": "lp",
+          "solver_switch_jitter": 5e-06,
+          "target_delta": 3e-08,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-05
+        },
+        "parent_code_hash": "8ae9ca7ce63f1701798097a02a180c05e2843491b7265fe01a05ff51c10af168",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00041.md",
+        "score_estimate": 0.9999973652748952,
+        "stage": "E1",
+        "sum_radii": 2.6359830548909713
+      },
+      "novelty_score": 0.10005688964903812,
+      "official_eval_path": null,
+      "operator": "depth_refinement",
+      "parent_program_id": "B_P_00002",
+      "program_id": "B_P_00041",
+      "score": 0.9999973652748952,
+      "strategy_family": "depth_refinement",
+      "sum_radii": 2.6359830548909713,
+      "task": "B",
+      "valid": false
+    },
+    {
+      "boundary_pattern": "left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22",
+      "code_hash": "80a38e1ae420e61f154de98d4e1e3939cc132fb02d4dff0b38f2a24661de436e",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00042.py",
+      "contact_graph_hash": "8dae3c4e6bea6bd1",
+      "created_at": "2026-07-04T13:35:54Z",
+      "metadata": {
+        "candidate_metadata": {
+          "mate_available": true,
+          "strategy_family": "crossover"
+        },
+        "failure_type": "rejected_novelty",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": false,
+          "reasons": {
+            "boundary_pattern_new": false,
+            "centers_rmsd": 3.2030111871945664e-17,
+            "code_hash_new": false,
+            "contact_graph_hash_new": false,
+            "rmsd_component": 2.6691759893288053e-12,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.10000000000266918,
+          "threshold": 0.25
+        },
+        "official_skip_reason": "rejected_novelty",
+        "operator_context": {
+          "batch_index": 3,
+          "contact_scale": 0.35,
+          "contact_threshold": 5e-09,
+          "contact_tolerance": 5e-08,
+          "generation": 4,
+          "lp_margin": 3e-11,
+          "mate": {
+            "available": true,
+            "centers_shape": [
+              26,
+              2
+            ],
+            "height": null,
+            "width": null
+          },
+          "operator": "crossover",
+          "safety": 2e-10,
+          "seed": 4191,
+          "sigma": 3e-06,
+          "solver": "lp_safe",
+          "solver_switch_jitter": 1.5e-06,
+          "target_delta": 1e-07,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-06
+        },
+        "parent_code_hash": "8ae9ca7ce63f1701798097a02a180c05e2843491b7265fe01a05ff51c10af168",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00042.md",
+        "score_estimate": 0.9999973592458439,
+        "stage": "E1",
+        "sum_radii": 2.635983038998452
+      },
+      "novelty_score": 0.10000000000266918,
+      "official_eval_path": null,
+      "operator": "crossover",
+      "parent_program_id": "B_P_00002",
+      "program_id": "B_P_00042",
+      "score": 0.9999973592458439,
+      "strategy_family": "crossover",
+      "sum_radii": 2.635983038998452,
+      "task": "B",
+      "valid": false
+    },
+    {
+      "boundary_pattern": "left:16,19|bottom:0,3,9,20|top:11,15,17",
+      "code_hash": "79593e3afa04e9190e8138702b74eb3ed8cc8c201fe225e9426a82d248eb4ba4",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00043.py",
+      "contact_graph_hash": "17792c32e1438ea1",
+      "created_at": "2026-07-04T13:35:54Z",
+      "metadata": {
+        "candidate_metadata": {
+          "solver": "lp_zero_margin",
+          "strategy_family": "solver_switch"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 1.0324604783704985e-08,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.0008603837319754153,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5008603837319754,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00043",
+        "official_runtime_seconds": 0.3927290439605713,
+        "operator_context": {
+          "batch_index": 0,
+          "contact_scale": 0.5,
+          "contact_threshold": 5e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 5,
+          "lp_margin": 0.0,
+          "operator": "solver_switch",
+          "safety": 2e-10,
+          "seed": 5088,
+          "sigma": 3e-08,
+          "solver": "lp_zero_margin",
+          "solver_switch_jitter": 1.5e-08,
+          "target_delta": 1e-08,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-08
+        },
+        "parent_code_hash": "9feaeaeeb1b114ec2292cfc0f147074bb7d0d608ddef9eb4ec0b6a9c8687f0a2",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00043.md",
+        "score_estimate": 0.9999963808370033,
+        "stage": "E1",
+        "sum_radii": 2.365831437639416
+      },
+      "novelty_score": 0.5008603837319754,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00043.txt",
+      "operator": "solver_switch",
+      "parent_program_id": "A_P_00029",
+      "program_id": "A_P_00043",
+      "score": 0.9999963808370033,
+      "strategy_family": "solver_switch",
+      "sum_radii": 2.365831437639416,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:15,16,19|right:0,4,13|bottom:3",
+      "code_hash": "9feaeaeeb1b114ec2292cfc0f147074bb7d0d608ddef9eb4ec0b6a9c8687f0a2",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00044.py",
+      "contact_graph_hash": "faf5fd0396885d98",
+      "created_at": "2026-07-04T13:35:54Z",
+      "metadata": {
+        "candidate_metadata": {
+          "sigma": 1e-05,
+          "strategy_family": "parameter_mutation",
+          "width_sigma": 1e-05
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 1.0018875053577761e-05,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.25,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.75,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00044",
+        "official_runtime_seconds": 0.36489319801330566,
+        "operator_context": {
+          "batch_index": 1,
+          "contact_scale": 0.2,
+          "contact_threshold": 1e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 5,
+          "lp_margin": 1e-11,
+          "operator": "parameter_mutation",
+          "safety": 2e-10,
+          "seed": 5125,
+          "sigma": 1e-05,
+          "solver": "lp",
+          "solver_switch_jitter": 5e-06,
+          "target_delta": 3e-08,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-05
+        },
+        "parent_code_hash": "79593e3afa04e9190e8138702b74eb3ed8cc8c201fe225e9426a82d248eb4ba4",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00044.md",
+        "score_estimate": 0.9999059486261975,
+        "stage": "E1",
+        "sum_radii": 2.365617489497803
+      },
+      "novelty_score": 0.75,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00044.txt",
+      "operator": "parameter_mutation",
+      "parent_program_id": "A_P_00021",
+      "program_id": "A_P_00044",
+      "score": 0.9999059486261975,
+      "strategy_family": "parameter_mutation",
+      "sum_radii": 2.365617489497803,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:19|right:0,4,8|bottom:3,9,20|top:11,15,17",
+      "code_hash": "7c15c12cb158af15b77df3037c28fd42c51be17bf7c30ebf9378749972761fff",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00045.py",
+      "contact_graph_hash": "94a9b8342200fafe",
+      "created_at": "2026-07-04T13:35:55Z",
+      "metadata": {
+        "candidate_metadata": {
+          "llm_used": false,
+          "sigma": 3e-06,
+          "strategy_family": "program_patch_fallback"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": "LLM program patch disabled for this run.",
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 1.224744871396877e-06,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.10206207261640642,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.6020620726164064,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00045",
+        "official_runtime_seconds": 0.3775050640106201,
+        "operator_context": {
+          "batch_index": 2,
+          "contact_scale": 0.35,
+          "contact_threshold": 5e-09,
+          "contact_tolerance": 5e-08,
+          "generation": 5,
+          "lp_margin": 3e-11,
+          "operator": "program_patch",
+          "safety": 2e-10,
+          "seed": 5162,
+          "sigma": 3e-06,
+          "solver": "lp_safe",
+          "solver_switch_jitter": 1.5e-06,
+          "target_delta": 1e-07,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-06
+        },
+        "parent_code_hash": "79593e3afa04e9190e8138702b74eb3ed8cc8c201fe225e9426a82d248eb4ba4",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00045.md",
+        "score_estimate": 0.9999885752747629,
+        "stage": "E1",
+        "sum_radii": 2.365812970928045
+      },
+      "novelty_score": 0.6020620726164064,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00045.txt",
+      "operator": "program_patch",
+      "parent_program_id": "A_P_00043",
+      "program_id": "A_P_00045",
+      "score": 0.9999885752747629,
+      "strategy_family": "program_patch",
+      "sum_radii": 2.365812970928045,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:15|right:8,11,13|bottom:9|top:17",
+      "code_hash": "79593e3afa04e9190e8138702b74eb3ed8cc8c201fe225e9426a82d248eb4ba4",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/A_P_00046.py",
+      "contact_graph_hash": "d6e578e961b92a06",
+      "created_at": "2026-07-04T13:35:55Z",
+      "metadata": {
+        "candidate_metadata": {
+          "solver": "lp_zero_margin",
+          "strategy_family": "solver_switch"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 3.466127282358488e-07,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.028884394019654067,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5288843940196541,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "A_evolve_A_P_00046",
+        "official_runtime_seconds": 0.3923914432525635,
+        "operator_context": {
+          "batch_index": 3,
+          "contact_scale": 0.5,
+          "contact_threshold": 1e-07,
+          "contact_tolerance": 5e-08,
+          "generation": 5,
+          "lp_margin": 1e-10,
+          "operator": "solver_switch",
+          "safety": 2e-10,
+          "seed": 5199,
+          "sigma": 1e-06,
+          "solver": "lp_zero_margin",
+          "solver_switch_jitter": 5e-07,
+          "target_delta": 3e-07,
+          "task": "A",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-06
+        },
+        "parent_code_hash": "c18d67254a76e7bd029972b4b5239ddc9260ea1137ec9d263788ea99c8e69837",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/A_P_00046.md",
+        "score_estimate": 0.9999939502360163,
+        "stage": "E1",
+        "sum_radii": 2.3658256872263768
+      },
+      "novelty_score": 0.5288843940196541,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_A/A_evolve_A_P_00046.txt",
+      "operator": "solver_switch",
+      "parent_program_id": "A_P_00001",
+      "program_id": "A_P_00046",
+      "score": 0.9999939502360163,
+      "strategy_family": "solver_switch",
+      "sum_radii": 2.3658256872263768,
+      "task": "A",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:11,22,25|right:3,16|bottom:3,15,21|top:2,7,12,19,22",
+      "code_hash": "9c803e3e7275501bf8acecbba5fc6be8ba451420801507dfcf8073b1b9c09b4d",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00047.py",
+      "contact_graph_hash": "69c46164d0e29788",
+      "created_at": "2026-07-04T13:35:55Z",
+      "metadata": {
+        "candidate_metadata": {
+          "sigma": 3e-08,
+          "strategy_family": "parameter_mutation"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 3.4481069879858976e-08,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.002873422489988248,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5028734224899882,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00047",
+        "official_runtime_seconds": 0.3697090148925781,
+        "operator_context": {
+          "batch_index": 0,
+          "contact_scale": 0.5,
+          "contact_threshold": 5e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 5,
+          "lp_margin": 0.0,
+          "operator": "parameter_mutation",
+          "safety": 2e-10,
+          "seed": 5089,
+          "sigma": 3e-08,
+          "solver": "lp_zero_margin",
+          "solver_switch_jitter": 1.5e-08,
+          "target_delta": 1e-08,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-08
+        },
+        "parent_code_hash": "80a38e1ae420e61f154de98d4e1e3939cc132fb02d4dff0b38f2a24661de436e",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00047.md",
+        "score_estimate": 0.9999969539739031,
+        "stage": "E1",
+        "sum_radii": 2.635981970705669
+      },
+      "novelty_score": 0.5028734224899882,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00047.txt",
+      "operator": "parameter_mutation",
+      "parent_program_id": "B_P_00024",
+      "program_id": "B_P_00047",
+      "score": 0.9999969539739031,
+      "strategy_family": "parameter_mutation",
+      "sum_radii": 2.635981970705669,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,11,22,23,25|right:3,9,13,16|bottom:11,15,20,21|top:2,7,12,22",
+      "code_hash": "89e9e466900ceff375175eb23118cab3024addadea264fa6810ee034153eba71",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00048.py",
+      "contact_graph_hash": "65ded69825a8ee8e",
+      "created_at": "2026-07-04T13:35:56Z",
+      "metadata": {
+        "candidate_metadata": {
+          "strategy_family": "depth_refinement",
+          "target_delta": 3e-08
+        },
+        "failure_type": "rejected_novelty",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": false,
+          "reasons": {
+            "boundary_pattern_new": false,
+            "centers_rmsd": 6.826757852526771e-10,
+            "code_hash_new": false,
+            "contact_graph_hash_new": false,
+            "rmsd_component": 5.6889648771056426e-05,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.10005688964877106,
+          "threshold": 0.25
+        },
+        "official_skip_reason": "rejected_novelty",
+        "operator_context": {
+          "batch_index": 1,
+          "contact_scale": 0.2,
+          "contact_threshold": 1e-08,
+          "contact_tolerance": 5e-08,
+          "generation": 5,
+          "lp_margin": 1e-11,
+          "operator": "depth_refinement",
+          "safety": 2e-10,
+          "seed": 5126,
+          "sigma": 1e-05,
+          "solver": "lp",
+          "solver_switch_jitter": 5e-06,
+          "target_delta": 3e-08,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-05
+        },
+        "parent_code_hash": "9c803e3e7275501bf8acecbba5fc6be8ba451420801507dfcf8073b1b9c09b4d",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00048.md",
+        "score_estimate": 0.9999970934133192,
+        "stage": "E1",
+        "sum_radii": 2.6359823382665755
+      },
+      "novelty_score": 0.10005688964877106,
+      "official_eval_path": null,
+      "operator": "depth_refinement",
+      "parent_program_id": "B_P_00040",
+      "program_id": "B_P_00048",
+      "score": 0.9999970934133192,
+      "strategy_family": "depth_refinement",
+      "sum_radii": 2.6359823382665755,
+      "task": "B",
+      "valid": false
+    },
+    {
+      "boundary_pattern": "left:0,11,22,23,25|right:3,12,13,16|bottom:3,11,15,21|top:2,7,19",
+      "code_hash": "80a38e1ae420e61f154de98d4e1e3939cc132fb02d4dff0b38f2a24661de436e",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00049.py",
+      "contact_graph_hash": "cb8f872c0adf2475",
+      "created_at": "2026-07-04T13:35:56Z",
+      "metadata": {
+        "candidate_metadata": {
+          "mate_available": true,
+          "strategy_family": "crossover"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": null,
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": false,
+            "centers_rmsd": 5.883484058241917e-09,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.0004902903381868264,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.3504902903381868,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00049",
+        "official_runtime_seconds": 0.35363078117370605,
+        "operator_context": {
+          "batch_index": 2,
+          "contact_scale": 0.35,
+          "contact_threshold": 5e-09,
+          "contact_tolerance": 5e-08,
+          "generation": 5,
+          "lp_margin": 3e-11,
+          "mate": {
+            "available": true,
+            "centers_shape": [
+              26,
+              2
+            ],
+            "height": null,
+            "width": null
+          },
+          "operator": "crossover",
+          "safety": 2e-10,
+          "seed": 5163,
+          "sigma": 3e-06,
+          "solver": "lp_safe",
+          "solver_switch_jitter": 1.5e-06,
+          "target_delta": 1e-07,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": -1.0,
+          "width_sigma": 3e-06
+        },
+        "parent_code_hash": "b583779816e4165222263f4505f7333f9a9c9213f763e91bc8c0338181bbfe7d",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00049.md",
+        "score_estimate": 0.999997077570357,
+        "stage": "E1",
+        "sum_radii": 2.6359822965046855
+      },
+      "novelty_score": 0.3504902903381868,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00049.txt",
+      "operator": "crossover",
+      "parent_program_id": "B_P_00039",
+      "program_id": "B_P_00049",
+      "score": 0.999997077570357,
+      "strategy_family": "crossover",
+      "sum_radii": 2.6359822965046855,
+      "task": "B",
+      "valid": true
+    },
+    {
+      "boundary_pattern": "left:0,11,23,25|right:3,9,12,13,16|bottom:3,11,15,21|top:2,7,19",
+      "code_hash": "b583779816e4165222263f4505f7333f9a9c9213f763e91bc8c0338181bbfe7d",
+      "code_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/programs/20260704_133533/B_P_00050.py",
+      "contact_graph_hash": "76cfe6d87bec9e20",
+      "created_at": "2026-07-04T13:35:56Z",
+      "metadata": {
+        "candidate_metadata": {
+          "llm_used": false,
+          "sigma": 1e-06,
+          "strategy_family": "program_patch_fallback"
+        },
+        "decision_reason": "Self-evolution candidates can replace the final solution only after official evaluator validation and score improvement.",
+        "failure_type": "none",
+        "inspirations": [
+          "OpenEvolve",
+          "ShinkaEvolve",
+          "CodeEvolve"
+        ],
+        "internal_message": "none",
+        "internal_valid": true,
+        "llm_fallback_reason": "LLM program patch disabled for this run.",
+        "llm_used": false,
+        "note": "Deterministic EVOLVE-BLOCK mutation; final solution export still requires official evaluator validity.",
+        "novelty": {
+          "accepted": true,
+          "reasons": {
+            "boundary_pattern_new": true,
+            "centers_rmsd": 3.9223227027274285e-07,
+            "code_hash_new": false,
+            "contact_graph_hash_new": true,
+            "rmsd_component": 0.03268602252272857,
+            "strategy_family_repeated": false,
+            "threshold": 0.25
+          },
+          "score": 0.5326860225227286,
+          "threshold": 0.25
+        },
+        "official_candidate_id": "B_evolve_B_P_00050",
+        "official_runtime_seconds": 0.37244105339050293,
+        "operator_context": {
+          "batch_index": 3,
+          "contact_scale": 0.5,
+          "contact_threshold": 1e-07,
+          "contact_tolerance": 5e-08,
+          "generation": 5,
+          "lp_margin": 1e-10,
+          "operator": "program_patch",
+          "safety": 2e-10,
+          "seed": 5200,
+          "sigma": 1e-06,
+          "solver": "lp_zero_margin",
+          "solver_switch_jitter": 5e-07,
+          "target_delta": 3e-07,
+          "task": "B",
+          "use_llm": false,
+          "width_direction": 1.0,
+          "width_sigma": 1e-06
+        },
+        "parent_code_hash": "8ae9ca7ce63f1701798097a02a180c05e2843491b7265fe01a05ff51c10af168",
+        "prompt_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/prompts/20260704_133533/B_P_00050.md",
+        "score_estimate": 0.9999945347233744,
+        "stage": "E1",
+        "sum_radii": 2.6359755935854676
+      },
+      "novelty_score": 0.5326860225227286,
+      "official_eval_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_133533/outputs/task_B/B_evolve_B_P_00050.txt",
+      "operator": "program_patch",
+      "parent_program_id": "B_P_00002",
+      "program_id": "B_P_00050",
+      "score": 0.9999945347233744,
+      "strategy_family": "program_patch",
+      "sum_radii": 2.6359755935854676,
+      "task": "B",
+      "valid": true
+    }
+  ]
+}

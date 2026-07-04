@@ -21,6 +21,7 @@ from archive import ArchiveManager
 from batch_candidate_runner import BreakthroughConfig, run_breakthrough_search
 from candidate_generators import CandidateGenerator
 from evaluator_adapter import EvaluatorAdapter
+from evolve.evolve_runner import SelfEvolveConfig, run_self_evolution_search
 from geometry_utils import PackingData, safety_metrics
 from lineage import hash_packing_data, hash_text, write_best_lineages
 from llm_reflector import LLMReflector
@@ -57,6 +58,12 @@ def parse_args() -> argparse.Namespace:
                         help="Maximum generated breakthrough candidates across selected tasks")
     parser.add_argument("--target-score-a", type=float, default=1.0)
     parser.add_argument("--target-score-b", type=float, default=1.0)
+    parser.add_argument("--self-evolve-search", action="store_true",
+                        help="Run optional GeoEvolve-lite program self-evolution after the stable loop")
+    parser.add_argument("--evolve-generations", type=int, default=20)
+    parser.add_argument("--evolve-batch-size", type=int, default=4)
+    parser.add_argument("--max-official-evals", type=int, default=40)
+    parser.add_argument("--novelty-threshold", type=float, default=0.25)
     parser.add_argument("--time-limit", type=int, default=None, help="Optional whole-run wall clock limit in seconds")
     parser.add_argument("--use-llm", action="store_true", help="Enable optional LLM strategy reflection")
     parser.add_argument("--llm-base-url", default="https://api.deepseek.com")
@@ -90,6 +97,7 @@ def main() -> int:
         f"use_benchmark_seeds={args.use_benchmark_seeds}, "
         f"refine_benchmark={args.refine_benchmark}, "
         f"breakthrough_search={args.breakthrough_search}, "
+        f"self_evolve_search={args.self_evolve_search}, "
         f"use_llm={args.use_llm}, llm_model={args.llm_model}"
     )
 
@@ -121,6 +129,32 @@ def main() -> int:
                 f"sum={float(best.get('sum_radii') or 0.0):.9f} "
                 f"gap={float(item.get('gap_to_target') or 0.0):.9g} "
                 f"exceeded={item.get('exceeded_target')}"
+            )
+
+    if args.self_evolve_search:
+        self_evolve_summary = run_self_evolution_search(
+            REPO_ROOT,
+            tasks,
+            archive,
+            adapter,
+            SelfEvolveConfig(
+                generations=max(0, int(args.evolve_generations)),
+                batch_size=max(1, int(args.evolve_batch_size)),
+                max_official_evals=max(0, int(args.max_official_evals)),
+                novelty_threshold=float(args.novelty_threshold),
+                seed=int(args.seed),
+                use_benchmark_seeds=bool(args.use_benchmark_seeds),
+                use_llm=bool(args.use_llm),
+            ),
+        )
+        print(f"self_evolution_summary={self_evolve_summary.get('summary_path')}")
+        for task, item in sorted((self_evolve_summary.get("tasks") or {}).items()):
+            after = item.get("best_after") or {}
+            print(
+                f"Self-evolve Task {task}: score={float(after.get('score') or 0.0):.9f} "
+                f"sum={float(after.get('sum_radii') or 0.0):.9f} "
+                f"gap={float(item.get('gap_to_denominator') or 0.0):.9g} "
+                f"improved={item.get('improved_over_start')}"
             )
 
     summary_path = archive.write_summary()

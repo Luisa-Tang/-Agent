@@ -11,6 +11,7 @@ This repository contains a deterministic local Agent system that generates `solu
 - **EvaluatorAdapter**: `agent/evaluator_adapter.py` writes candidates into the official task directories and runs `evaluate.py` as the source of truth.
 - **FeedbackReflector**: `agent/run.py` maps failures and plateau behavior to the next strategy; `agent/llm_reflector.py` can optionally ask a compatible Chat Completions endpoint for a strategy suggestion.
 - **ArchiveManager**: `agent/archive.py` stores metadata, raw evaluator output, code snapshots, and best valid candidates.
+- **GeoEvolve-lite**: optional `agent/evolve/` harness evolves candidate-generating programs, novelty filters them, runs cascade evaluation, and exports only official-valid improvements.
 - **Exporter / Reporter**: `agent/run.py` exports final solutions and `agent/report_data.py` creates this report.
 - **Specialist tools**: `agent/skills/` contains project-local reusable procedures for SLSQP search, repair, evaluator feedback, static export, and archive observability.
 
@@ -65,18 +66,22 @@ Example state paths: `A_000_benchmark_seed_dominikkamp`: observe -> decide -> ac
 The controller scores strategies from archive history, evaluator failures, plateau state, score gap, and remaining budget.
 | Strategy | Attempts | Validity rate | Best score | Avg score delta | Avg runtime | Common failures | Last used |
 |---|---:|---:|---:|---:|---:|---|---:|
-| benchmark_seed_dominikkamp | 2 | 1.000 | 0.999997 | 0.999997 | 0.185 | `{'none': 2}` | 0.000000000 |
-| contact_graph_feasibility_refine | 34 | 1.000 | 0.999997 | -0.0209246 | 0.000 | `{'none': 34}` | 91018.000000000 |
-| hexagonal_or_staggered_initialization | 2 | 1.000 | 0.915143 | -0.129478 | 0.190 | `{'low_score': 1, 'none': 1}` | 1.000000000 |
-| perturb_best_and_repair | 4 | 1.000 | 0.999997 | -8.72406e-06 | 0.175 | `{'plateau': 4}` | 4.000000000 |
-| public_frontier_dominikkamp | 2 | 1.000 | 0.999997 | 0 | 0.000 | `{'none': 2}` | 90001.000000000 |
-| scipy_slsqp_joint | 2 | 1.000 | 0.985362 | -0.0153804 | 0.190 | `{'none': 2}` | 2.000000000 |
+| benchmark_seed_dominikkamp | 2 | 1.000 | 0.999997 | 0.999997 | 0.180 | `{'none': 2}` | 0.000000000 |
+| hexagonal_or_staggered_initialization | 2 | 1.000 | 0.915143 | -0.129478 | 0.185 | `{'low_score': 1, 'none': 1}` | 1.000000000 |
+| perturb_best_and_repair | 4 | 1.000 | 0.999997 | -8.72406e-06 | 0.185 | `{'plateau': 4}` | 4.000000000 |
+| scipy_slsqp_joint | 2 | 1.000 | 0.985362 | -0.0153804 | 0.175 | `{'none': 2}` | 2.000000000 |
+| self_evolve_contact_threshold_mutation | 2 | 1.000 | 0.999997 | -3.33527e-08 | 0.000 | `{'none': 2}` | 99013.000000000 |
+| self_evolve_crossover | 7 | 1.000 | 0.999997 | -3.99546e-06 | 0.000 | `{'none': 7}` | 99023.000000000 |
+| self_evolve_depth_refinement | 4 | 1.000 | 0.999997 | -5.11694e-07 | 0.000 | `{'none': 4}` | 99017.000000000 |
+| self_evolve_parameter_mutation | 10 | 1.000 | 0.999997 | -1.99343e-05 | 0.000 | `{'none': 10}` | 99022.000000000 |
+| self_evolve_program_patch | 9 | 1.000 | 0.999997 | -2.64865e-06 | 0.000 | `{'none': 9}` | 99024.000000000 |
+| self_evolve_solver_switch | 8 | 1.000 | 0.999996 | -1.20086e-05 | 0.000 | `{'none': 8}` | 99024.000000000 |
 
 ### Execution Lineage and Replay
 
 Best-candidate lineage DAGs are emitted as replayable JSON. Each node includes parent, strategy, input/output artifacts, code hash, data hash, official score, and decision reason.
-- Task A: `agent/archive/lineage/task_A_best_lineage.json` best `A_000_benchmark_seed_dominikkamp`, nodes `23`, chain length `1`.
-- Task B: `agent/archive/lineage/task_B_best_lineage.json` best `B_000_benchmark_seed_dominikkamp`, nodes `23`, chain length `1`.
+- Task A: `agent/archive/lineage/task_A_best_lineage.json` best `A_000_benchmark_seed_dominikkamp`, nodes `25`, chain length `1`.
+- Task B: `agent/archive/lineage/task_B_best_lineage.json` best `B_000_benchmark_seed_dominikkamp`, nodes `25`, chain length `1`.
 
 ### Safety Guard and Protected Files
 
@@ -142,6 +147,36 @@ The optional breakthrough harness searches near public frontier seeds and contac
 | A | 0.999996757107 | 2.365832327834 | 3.243e-06 | False | 100 | 18 | 18 |
 | B | 0.999997367453 | 2.635983060632 | 2.633e-06 | False | 100 | 18 | 18 |
 
+### Self-Evolution Harness
+
+The optional GeoEvolve-lite harness follows OpenEvolve/ShinkaEvolve/CodeEvolve-inspired ideas without importing those frameworks: a program database, EVOLVE-BLOCK mutations, novelty rejection, cascade evaluation, and an operator bandit.
+- Detailed report: `submission/self_evolution_report.md`
+- Program DB: `agent/archive/evolve/program_db.jsonl`
+- Program tree: `agent/archive/evolve/program_tree.json`
+- Evolve log: `agent/archive/evolve/evolve_log.jsonl`
+- Operator stats: `agent/archive/evolve/operator_stats.json`
+
+Why programs rather than coordinates: the evolved artifact is a small `propose_candidate(parent, rng, context)` generator/refinement operator. Its output is converted to a static candidate and must pass official `evaluate.py` before it can affect final export.
+
+| Task | Best before | Best after | Improved | Exceeded 1.0 | Gap to 1.0 | Official evals | Valid official |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| A | 0.999996757107 | 0.999996757107 | False | False | 3.243e-06 | 20 | 20 |
+| B | 0.999997367453 | 0.999997367453 | False | False | 2.633e-06 | 20 | 20 |
+
+- Generated programs: `50`
+- Novelty rejected: `8`
+- Official evaluate calls: `40`
+- Accepted improvements: `0`
+
+| Operator | Attempts | Valid | Best delta | Novelty mean | Common failures |
+|---|---:|---:|---:|---:|---|
+| `contact_threshold_mutation` | 5 | 2 | 0.000e+00 | 0.200 | `{'none': 2, 'rejected_novelty': 3}` |
+| `crossover` | 8 | 7 | 0.000e+00 | 0.456 | `{'none': 7, 'rejected_novelty': 1}` |
+| `depth_refinement` | 7 | 4 | 0.000e+00 | 0.322 | `{'none': 4, 'rejected_novelty': 3}` |
+| `parameter_mutation` | 10 | 10 | 0.000e+00 | 0.635 | `{'none': 10}` |
+| `program_patch` | 9 | 9 | 0.000e+00 | 0.552 | `{'none': 9}` |
+| `solver_switch` | 9 | 8 | 0.000e+00 | 0.587 | `{'none': 8, 'rejected_novelty': 1}` |
+
 ## 5. Feedback Utilization
 
 Evaluator output is parsed for score, `sum_radii`, validity, and failure type. Overlap failures trigger more conservative repair. Outside-boundary failures trigger boundary-tight generation. Low but valid scores move the Agent toward multi-start and structured initializations. Plateaued valid runs trigger perturb-and-repair around the current best candidate.
@@ -177,63 +212,71 @@ The loop terminates after the configured iteration budget or time budget. The ar
 | B | 2 | `B_002_scipy_slsqp_joint` | scipy_slsqp_joint | True | 0.983871 | 2.593475 | none |
 | B | 3 | `B_003_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999964 | 2.635894 | plateau |
 | B | 4 | `B_004_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999997 | 2.635982 | plateau |
-| A | 90001 | `A_90001_public_frontier_dominikkamp` | public_frontier_dominikkamp | True | 0.999997 | 2.365832 | none |
-| A | 91002 | `A_91002_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
-| A | 91003 | `A_91003_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
-| A | 91004 | `A_91004_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
-| A | 91005 | `A_91005_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
-| A | 91006 | `A_91006_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.985362 | 2.331209 | none |
-| A | 91007 | `A_91007_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
-| A | 91008 | `A_91008_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.985362 | 2.331209 | none |
-| A | 91009 | `A_91009_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.825896 | 1.953938 | none |
-| A | 91010 | `A_91010_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.985362 | 2.331209 | none |
-| A | 91011 | `A_91011_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.825896 | 1.953938 | none |
-| A | 91012 | `A_91012_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
-| A | 91013 | `A_91013_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.825896 | 1.953938 | none |
-| A | 91014 | `A_91014_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
-| A | 91015 | `A_91015_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
-| A | 91016 | `A_91016_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
-| A | 91017 | `A_91017_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
-| A | 91018 | `A_91018_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
-| B | 90001 | `B_90001_public_frontier_dominikkamp` | public_frontier_dominikkamp | True | 0.999997 | 2.635983 | none |
-| B | 91002 | `B_91002_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.635983 | none |
-| B | 91003 | `B_91003_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.635983 | none |
-| B | 91004 | `B_91004_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.635983 | none |
-| B | 91005 | `B_91005_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.635983 | none |
-| B | 91006 | `B_91006_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999964 | 2.635895 | none |
-| B | 91007 | `B_91007_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.635983 | none |
-| B | 91008 | `B_91008_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999964 | 2.635895 | none |
-| B | 91009 | `B_91009_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
-| B | 91010 | `B_91010_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999964 | 2.635895 | none |
-| B | 91011 | `B_91011_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
-| B | 91012 | `B_91012_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
-| B | 91013 | `B_91013_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
-| B | 91014 | `B_91014_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
-| B | 91015 | `B_91015_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
-| B | 91016 | `B_91016_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
-| B | 91017 | `B_91017_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
-| B | 91018 | `B_91018_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
+| A | 99005 | `A_evolve_A_P_00003` | self_evolve_parameter_mutation | True | 0.999924 | 2.365660 | none |
+| A | 99006 | `A_evolve_A_P_00004` | self_evolve_solver_switch | True | 0.999988 | 2.365812 | none |
+| A | 99007 | `A_evolve_A_P_00005` | self_evolve_contact_threshold_mutation | True | 0.999997 | 2.365832 | none |
+| A | 99008 | `A_evolve_A_P_00006` | self_evolve_program_patch | True | 0.999996 | 2.365831 | none |
+| B | 99005 | `B_evolve_B_P_00007` | self_evolve_crossover | True | 0.999997 | 2.635983 | none |
+| B | 99006 | `B_evolve_B_P_00008` | self_evolve_depth_refinement | True | 0.999997 | 2.635983 | none |
+| B | 99007 | `B_evolve_B_P_00009` | self_evolve_parameter_mutation | True | 0.999989 | 2.635961 | none |
+| B | 99008 | `B_evolve_B_P_00010` | self_evolve_solver_switch | True | 0.999996 | 2.635981 | none |
+| A | 99009 | `A_evolve_A_P_00011` | self_evolve_program_patch | True | 0.999989 | 2.365814 | none |
+| A | 99010 | `A_evolve_A_P_00012` | self_evolve_depth_refinement | True | 0.999996 | 2.365830 | none |
+| A | 99011 | `A_evolve_A_P_00014` | self_evolve_crossover | True | 0.999990 | 2.365816 | none |
+| B | 99009 | `B_evolve_B_P_00015` | self_evolve_parameter_mutation | True | 0.999976 | 2.635926 | none |
+| B | 99010 | `B_evolve_B_P_00016` | self_evolve_solver_switch | True | 0.999976 | 2.635926 | none |
+| B | 99011 | `B_evolve_B_P_00017` | self_evolve_program_patch | True | 0.999996 | 2.635980 | none |
+| B | 99012 | `B_evolve_B_P_00018` | self_evolve_crossover | True | 0.999995 | 2.635978 | none |
+| A | 99012 | `A_evolve_A_P_00019` | self_evolve_depth_refinement | True | 0.999997 | 2.365832 | none |
+| A | 99013 | `A_evolve_A_P_00020` | self_evolve_parameter_mutation | True | 0.999994 | 2.365826 | none |
+| A | 99014 | `A_evolve_A_P_00021` | self_evolve_solver_switch | True | 0.999996 | 2.365831 | none |
+| A | 99015 | `A_evolve_A_P_00022` | self_evolve_program_patch | True | 0.999997 | 2.365832 | none |
+| B | 99013 | `B_evolve_B_P_00023` | self_evolve_contact_threshold_mutation | True | 0.999997 | 2.635983 | none |
+| B | 99014 | `B_evolve_B_P_00024` | self_evolve_crossover | True | 0.999997 | 2.635982 | none |
+| B | 99015 | `B_evolve_B_P_00025` | self_evolve_parameter_mutation | True | 0.999996 | 2.635981 | none |
+| A | 99016 | `A_evolve_A_P_00028` | self_evolve_program_patch | True | 0.999994 | 2.365826 | none |
+| A | 99017 | `A_evolve_A_P_00029` | self_evolve_parameter_mutation | True | 0.999996 | 2.365832 | none |
+| B | 99016 | `B_evolve_B_P_00031` | self_evolve_crossover | True | 0.999979 | 2.635935 | none |
+| B | 99017 | `B_evolve_B_P_00032` | self_evolve_depth_refinement | True | 0.999996 | 2.635981 | none |
+| B | 99018 | `B_evolve_B_P_00033` | self_evolve_program_patch | True | 0.999997 | 2.635983 | none |
+| B | 99019 | `B_evolve_B_P_00034` | self_evolve_solver_switch | True | 0.999961 | 2.635888 | none |
+| A | 99018 | `A_evolve_A_P_00035` | self_evolve_parameter_mutation | True | 0.999996 | 2.365830 | none |
+| A | 99019 | `A_evolve_A_P_00036` | self_evolve_crossover | True | 0.999997 | 2.365832 | none |
+| A | 99020 | `A_evolve_A_P_00037` | self_evolve_solver_switch | True | 0.999971 | 2.365773 | none |
+| B | 99020 | `B_evolve_B_P_00039` | self_evolve_program_patch | True | 0.999997 | 2.635982 | none |
+| B | 99021 | `B_evolve_B_P_00040` | self_evolve_parameter_mutation | True | 0.999997 | 2.635982 | none |
+| A | 99021 | `A_evolve_A_P_00043` | self_evolve_solver_switch | True | 0.999996 | 2.365831 | none |
+| A | 99022 | `A_evolve_A_P_00044` | self_evolve_parameter_mutation | True | 0.999906 | 2.365617 | none |
+| A | 99023 | `A_evolve_A_P_00045` | self_evolve_program_patch | True | 0.999989 | 2.365813 | none |
+| A | 99024 | `A_evolve_A_P_00046` | self_evolve_solver_switch | True | 0.999994 | 2.365826 | none |
+| B | 99022 | `B_evolve_B_P_00047` | self_evolve_parameter_mutation | True | 0.999997 | 2.635982 | none |
+| B | 99023 | `B_evolve_B_P_00049` | self_evolve_crossover | True | 0.999997 | 2.635982 | none |
+| B | 99024 | `B_evolve_B_P_00050` | self_evolve_program_patch | True | 0.999995 | 2.635976 | none |
 
 ### Skill Usage Summary
 
 | Skill | Iteration uses |
 |---|---:|
-| archive-observability | 46 |
-| evaluator-feedback | 46 |
-| packing-repair | 42 |
+| archive-observability | 50 |
+| evaluator-feedback | 50 |
+| packing-repair | 46 |
 | packing-slsqp | 2 |
-| static-export | 2 |
+| static-export | 42 |
 
 ### Strategy Archive Statistics
 
 | Strategy | Attempts | Validity rate | Best score | Avg score improvement |
 |---|---:|---:|---:|---:|
 | benchmark_seed_dominikkamp | 2 | 1.000 | 0.999997 | 0.999997 |
-| contact_graph_feasibility_refine | 34 | 1.000 | 0.999997 | -0.020925 |
 | hexagonal_or_staggered_initialization | 2 | 1.000 | 0.915143 | -0.129478 |
 | perturb_best_and_repair | 4 | 1.000 | 0.999997 | -0.000009 |
-| public_frontier_dominikkamp | 2 | 1.000 | 0.999997 | 0.000000 |
 | scipy_slsqp_joint | 2 | 1.000 | 0.985362 | -0.015380 |
+| self_evolve_contact_threshold_mutation | 2 | 1.000 | 0.999997 | -0.000000 |
+| self_evolve_crossover | 7 | 1.000 | 0.999997 | -0.000004 |
+| self_evolve_depth_refinement | 4 | 1.000 | 0.999997 | -0.000001 |
+| self_evolve_parameter_mutation | 10 | 1.000 | 0.999997 | -0.000020 |
+| self_evolve_program_patch | 9 | 1.000 | 0.999997 | -0.000003 |
+| self_evolve_solver_switch | 8 | 1.000 | 0.999996 | -0.000012 |
 
 ### Best Geometry Safety Metrics
 
@@ -260,7 +303,7 @@ The loop terminates after the configured iteration budget or time budget. The ar
   Circle Packing in Unit Square  (n=26)
   File : /home/wuyou/projects/AlgorithmOptimization/task_B/solution.py
 ============================================================
-  Elapsed : 0.17s
+  Elapsed : 0.19s
   sum_radii : 2.635983
   Target    : 2.635990
   Score     : 0.999997

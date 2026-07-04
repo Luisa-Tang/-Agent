@@ -94,6 +94,13 @@ def build_demo_data() -> Dict[str, Any]:
                     "text": "submission/demo/agent_graph.txt",
                     "node_log": "agent/archive/metrics/langgraph_run_log.jsonl",
                 },
+                "self_evolution": {
+                    "summary": "agent/archive/evolve/self_evolution_summary.json",
+                    "program_db": "agent/archive/evolve/program_db.jsonl",
+                    "program_tree": "agent/archive/evolve/program_tree.json",
+                    "operator_stats": "agent/archive/evolve/operator_stats.json",
+                    "report": "submission/self_evolution_report.md",
+                },
             },
             "tasks": final_tasks,
             "combined_score": (score_a + score_b) / 2.0,
@@ -111,6 +118,7 @@ def build_demo_data() -> Dict[str, Any]:
                 for task in TASKS
             },
             "strategy_portfolio": load_strategy_portfolio(),
+            "self_evolution": load_self_evolution_summary(),
             "safety_guard": load_safety_guard_status(),
             "human_agent_division": load_human_agent_division_summary(),
             "failure_stats": compute_failure_stats(records),
@@ -342,6 +350,56 @@ def load_human_agent_division_summary() -> Dict[str, Any]:
         "best_candidates": payload.get("best_candidates") or {},
         "human_provided": payload.get("human_provided") or [],
         "agent_completed": payload.get("agent_completed") or [],
+    }
+
+
+def load_self_evolution_summary() -> Dict[str, Any]:
+    summary_path = REPO_ROOT / "agent" / "archive" / "evolve" / "self_evolution_summary.json"
+    payload = load_json_file(summary_path)
+    if not payload:
+        return {
+            "path": rel(summary_path),
+            "available": False,
+        }
+    tree_path = REPO_ROOT / "agent" / "archive" / "evolve" / "program_tree.json"
+    tree = load_json_file(tree_path)
+    operator_stats = payload.get("operator_stats") or load_json_file(REPO_ROOT / "agent" / "archive" / "evolve" / "operator_stats.json")
+    tasks = {}
+    for task, item in (payload.get("tasks") or {}).items():
+        before = item.get("best_before") or {}
+        after = item.get("best_after") or {}
+        tasks[task] = {
+            "best_before_score": before.get("score"),
+            "best_after_score": after.get("score"),
+            "best_after_sum_radii": after.get("sum_radii"),
+            "improved_over_start": item.get("improved_over_start"),
+            "exceeded_denominator": item.get("exceeded_denominator"),
+            "gap_to_denominator": item.get("gap_to_denominator"),
+            "official_evals": item.get("official_evals"),
+            "valid_official": item.get("valid_official"),
+            "novelty_rejected": item.get("novelty_rejected"),
+        }
+    best_operator = None
+    if operator_stats:
+        best_operator = max(
+            operator_stats.items(),
+            key=lambda pair: (float(pair[1].get("best_delta") or 0.0), float(pair[1].get("novelty_mean") or 0.0)),
+        )[0]
+    return {
+        "path": rel(summary_path),
+        "available": True,
+        "generated_program_count": payload.get("generated_program_count"),
+        "novelty_rejected_count": payload.get("novelty_rejected_count"),
+        "official_eval_count": payload.get("official_eval_count"),
+        "accepted_improvement_count": payload.get("accepted_improvement_count"),
+        "best_operator": best_operator,
+        "tasks": tasks,
+        "operator_stats": operator_stats,
+        "program_evolution_tree": {
+            "path": rel(tree_path),
+            "node_count": len(tree.get("nodes") or []),
+            "edge_count": len(tree.get("edges") or []),
+        },
     }
 
 

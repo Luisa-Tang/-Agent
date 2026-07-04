@@ -1,0 +1,188 @@
+{
+  "accepted_improvement_count": 0,
+  "config": {
+    "batch_size": 4,
+    "generations": 20,
+    "max_official_evals": 40,
+    "novelty_threshold": 0.25,
+    "seed": 42,
+    "use_benchmark_seeds": true,
+    "use_llm": false
+  },
+  "evolve_log_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/evolve_log.jsonl",
+  "generated_program_count": 50,
+  "novelty_archive_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/metrics/novelty_archive.json",
+  "novelty_rejected_count": 8,
+  "official_eval_count": 40,
+  "operator_stats": {
+    "contact_threshold_mutation": {
+      "accepted": 0,
+      "attempts": 5,
+      "avg_runtime": 0.19933886528015138,
+      "best_delta": 0.0,
+      "common_failure_types": {
+        "none": 2,
+        "rejected_novelty": 3
+      },
+      "mean_delta": -1.3341065008276587e-08,
+      "novelty_mean": 0.20017987559685646,
+      "official_evaluated": 2,
+      "valid_count": 2
+    },
+    "crossover": {
+      "accepted": 0,
+      "attempts": 8,
+      "avg_runtime": 0.38643842935562134,
+      "best_delta": 0.0,
+      "common_failure_types": {
+        "none": 7,
+        "rejected_novelty": 1
+      },
+      "mean_delta": -3.4960305366066313e-06,
+      "novelty_mean": 0.45616824177934434,
+      "official_evaluated": 7,
+      "valid_count": 7
+    },
+    "depth_refinement": {
+      "accepted": 0,
+      "attempts": 7,
+      "avg_runtime": 0.2787454809461321,
+      "best_delta": 0.0,
+      "common_failure_types": {
+        "none": 4,
+        "rejected_novelty": 3
+      },
+      "mean_delta": -2.9239661523762705e-07,
+      "novelty_mean": 0.3217782734524807,
+      "official_evaluated": 4,
+      "valid_count": 4
+    },
+    "parameter_mutation": {
+      "accepted": 0,
+      "attempts": 10,
+      "avg_runtime": 0.44681265354156496,
+      "best_delta": 0.0,
+      "common_failure_types": {
+        "none": 10
+      },
+      "mean_delta": -1.993432331082179e-05,
+      "novelty_mean": 0.6349333362828126,
+      "official_evaluated": 10,
+      "valid_count": 10
+    },
+    "program_patch": {
+      "accepted": 0,
+      "attempts": 9,
+      "avg_runtime": 0.43329646852281356,
+      "best_delta": 0.0,
+      "common_failure_types": {
+        "none": 9
+      },
+      "mean_delta": -2.6486454936710166e-06,
+      "novelty_mean": 0.5517215616128399,
+      "official_evaluated": 9,
+      "valid_count": 9
+    },
+    "solver_switch": {
+      "accepted": 0,
+      "attempts": 9,
+      "avg_runtime": 0.3945353560977512,
+      "best_delta": 0.0,
+      "common_failure_types": {
+        "none": 8,
+        "rejected_novelty": 1
+      },
+      "mean_delta": -1.0674311226785723e-05,
+      "novelty_mean": 0.5865844390562125,
+      "official_evaluated": 8,
+      "valid_count": 8
+    }
+  },
+  "operator_stats_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/operator_stats.json",
+  "program_db_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/program_db.jsonl",
+  "program_tree_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/evolve/program_tree.json",
+  "run_id": "20260704_133533",
+  "stop_reason": "official_eval_budget",
+  "tasks": {
+    "A": {
+      "accepted_improvements": 0,
+      "best_after": {
+        "active_boundary_pattern": null,
+        "candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "contact_graph_hash": null,
+        "height": 1.0232688920031396,
+        "score": 0.9999967571069156,
+        "strategy": "benchmark_seed_dominikkamp",
+        "sum_radii": 2.365832327833825,
+        "width": 0.9767311079968606
+      },
+      "best_before": {
+        "active_boundary_pattern": null,
+        "candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "contact_graph_hash": null,
+        "height": 1.0232688920031396,
+        "score": 0.9999967571069156,
+        "strategy": "benchmark_seed_dominikkamp",
+        "sum_radii": 2.365832327833825,
+        "width": 0.9767311079968606
+      },
+      "exceeded_denominator": false,
+      "gap_to_denominator": 3.2428930843986237e-06,
+      "generated_programs": 25,
+      "improved_over_start": false,
+      "novelty_rejected": 4,
+      "official_evals": 20,
+      "official_skipped": 0,
+      "operator_attempts": {
+        "contact_threshold_mutation": 4,
+        "crossover": 2,
+        "depth_refinement": 2,
+        "parameter_mutation": 5,
+        "program_patch": 5,
+        "solver_switch": 6
+      },
+      "seed_program_id": "A_P_00001",
+      "valid_official": 20
+    },
+    "B": {
+      "accepted_improvements": 0,
+      "best_after": {
+        "active_boundary_pattern": null,
+        "candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "contact_graph_hash": null,
+        "height": null,
+        "score": 0.99999736745286,
+        "strategy": "benchmark_seed_dominikkamp",
+        "sum_radii": 2.6359830606320647,
+        "width": null
+      },
+      "best_before": {
+        "active_boundary_pattern": null,
+        "candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "contact_graph_hash": null,
+        "height": null,
+        "score": 0.99999736745286,
+        "strategy": "benchmark_seed_dominikkamp",
+        "sum_radii": 2.6359830606320647,
+        "width": null
+      },
+      "exceeded_denominator": false,
+      "gap_to_denominator": 2.6325471399468725e-06,
+      "generated_programs": 25,
+      "improved_over_start": false,
+      "novelty_rejected": 4,
+      "official_evals": 20,
+      "official_skipped": 0,
+      "operator_attempts": {
+        "contact_threshold_mutation": 1,
+        "crossover": 6,
+        "depth_refinement": 5,
+        "parameter_mutation": 5,
+        "program_patch": 4,
+        "solver_switch": 3
+      },
+      "seed_program_id": "B_P_00002",
+      "valid_official": 20
+    }
+  }
+}
