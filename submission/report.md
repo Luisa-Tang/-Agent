@@ -33,6 +33,20 @@ The workflow is the fixed reproducible harness: parse context, generate a candid
 
 The `agent/skills/` layer contains reusable procedures, not personas: `packing-slsqp`, `packing-repair`, `evaluator-feedback`, `static-export`, and `archive-observability`. The manager records which procedures were consulted in each iteration through `skills_used`, so the report can audit what specialist workflow shaped each candidate.
 
+### LangGraph Orchestration Layer
+
+`agent/langgraph_runner.py` is an optional orchestration entrypoint. It wraps the existing deterministic pipeline in a LangGraph `StateGraph` without replacing `agent/run.py`.
+State / nodes / conditional edges:
+- State: `GeoOptState` records task, iteration, archive summary, strategy stats, selected strategy, evaluator result, best candidate, skills, and artifacts.
+- Nodes: `load_task`, `observe_archive`, `select_strategy`, `generate_candidate`, `evaluate_candidate`, `parse_feedback`, `update_archive`, `static_export`, and `safety_check`.
+- Conditional edges: after `update_archive`, the graph routes to portfolio selection, direct repair/generation, static export, safety check, or END based on iteration budget, evaluator failure, benchmark availability, plateau, and valid improvement.
+Why this is not role-play multi-agent: the graph is one Agent state machine with explicit nodes and deterministic module calls; it does not introduce persona prompts or separate role-playing agents.
+Reuse: the LangGraph runner calls the same `EvaluatorAdapter`, `CandidateGenerator`, `ArchiveManager`, `StrategyPortfolioController`, and `SafetyGuard` modules used by the stable pipeline.
+Fallback: `agent/run.py` does not import LangGraph and remains runnable when the optional dependency is missing.
+- Mermaid graph: `submission/demo/agent_graph.mmd` exists `True`.
+- Text graph: `submission/demo/agent_graph.txt` exists `True`.
+- LangGraph node log: `agent/archive/metrics/langgraph_run_log.jsonl` records `0` node executions.
+
 ### Explicit Agent State Graph
 
 Each iteration is recorded as `observe -> decide -> act -> evaluate -> archive` using `AgentState` snapshots.
@@ -51,10 +65,10 @@ Example state paths: `A_000_benchmark_seed_dominikkamp`: observe -> decide -> ac
 The controller scores strategies from archive history, evaluator failures, plateau state, score gap, and remaining budget.
 | Strategy | Attempts | Validity rate | Best score | Avg score delta | Avg runtime | Common failures | Last used |
 |---|---:|---:|---:|---:|---:|---|---:|
-| benchmark_seed_dominikkamp | 2 | 1.000 | 0.999997 | 0.999997 | 0.195 | `{'none': 2}` | 0.000000000 |
-| hexagonal_or_staggered_initialization | 2 | 1.000 | 0.915143 | -0.129478 | 0.180 | `{'low_score': 1, 'none': 1}` | 1.000000000 |
-| perturb_best_and_repair | 4 | 1.000 | 0.999996 | -9.40626e-06 | 0.188 | `{'plateau': 4}` | 4.000000000 |
-| scipy_slsqp_joint | 2 | 1.000 | 0.983871 | -0.508024 | 0.195 | `{'low_score': 1, 'none': 1}` | 2.000000000 |
+| benchmark_seed_dominikkamp | 2 | 1.000 | 0.999997 | 0.999997 | 0.190 | `{'none': 2}` | 0.000000000 |
+| hexagonal_or_staggered_initialization | 2 | 1.000 | 0.915143 | -0.129478 | 0.190 | `{'low_score': 1, 'none': 1}` | 1.000000000 |
+| perturb_best_and_repair | 4 | 1.000 | 0.999996 | -1.76903e-05 | 0.185 | `{'plateau': 4}` | 4.000000000 |
+| scipy_slsqp_joint | 2 | 1.000 | 0.983871 | -0.508024 | 0.180 | `{'low_score': 1, 'none': 1}` | 2.000000000 |
 
 ### Execution Lineage and Replay
 
@@ -149,7 +163,7 @@ The loop terminates after the configured iteration budget or time budget. The ar
 | B | 1 | `B_001_hexagonal_or_staggered_initialization` | hexagonal_or_staggered_initialization | True | 0.915143 | 2.412309 | none |
 | B | 2 | `B_002_scipy_slsqp_joint` | scipy_slsqp_joint | True | 0.983871 | 2.593473 | none |
 | B | 3 | `B_003_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999963 | 2.635893 | plateau |
-| B | 4 | `B_004_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999996 | 2.635980 | plateau |
+| B | 4 | `B_004_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999963 | 2.635893 | plateau |
 
 ### Skill Usage Summary
 
@@ -167,7 +181,7 @@ The loop terminates after the configured iteration budget or time budget. The ar
 |---|---:|---:|---:|---:|
 | benchmark_seed_dominikkamp | 2 | 1.000 | 0.999997 | 0.999997 |
 | hexagonal_or_staggered_initialization | 2 | 1.000 | 0.915143 | -0.129478 |
-| perturb_best_and_repair | 4 | 1.000 | 0.999996 | -0.000009 |
+| perturb_best_and_repair | 4 | 1.000 | 0.999996 | -0.000018 |
 | scipy_slsqp_joint | 2 | 1.000 | 0.983871 | -0.508024 |
 
 ### Best Geometry Safety Metrics
@@ -184,7 +198,7 @@ The loop terminates after the configured iteration budget or time budget. The ar
   Circle Packing in Rectangle  (n=21)
   File : /home/wuyou/projects/AlgorithmOptimization/task_A/solution.py
 ============================================================
-  Elapsed : 0.19s
+  Elapsed : 0.17s
   sum_radii : 2.365832
   Target    : 2.365840
   Score     : 0.999997

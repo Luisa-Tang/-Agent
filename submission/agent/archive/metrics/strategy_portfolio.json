@@ -6,7 +6,7 @@
   "strategy_portfolio_stats": {
     "benchmark_seed_dominikkamp": {
       "attempts": 2,
-      "avg_runtime": 0.195,
+      "avg_runtime": 0.19,
       "avg_score_delta": 0.9999970622798878,
       "best_score": 0.99999736745286,
       "common_failure_types": {
@@ -18,7 +18,7 @@
     },
     "hexagonal_or_staggered_initialization": {
       "attempts": 2,
-      "avg_runtime": 0.18,
+      "avg_runtime": 0.19,
       "avg_score_delta": -0.12947775668055317,
       "best_score": 0.9151434423354281,
       "common_failure_types": {
@@ -31,9 +31,9 @@
     },
     "perturb_best_and_repair": {
       "attempts": 4,
-      "avg_runtime": 0.1875,
-      "avg_score_delta": -9.406255919941486e-06,
-      "best_score": 0.9999961903197069,
+      "avg_runtime": 0.18500000000000003,
+      "avg_score_delta": -1.769027539269552e-05,
+      "best_score": 0.9999956897948914,
       "common_failure_types": {
         "plateau": 4
       },
@@ -43,7 +43,7 @@
     },
     "scipy_slsqp_joint": {
       "attempts": 2,
-      "avg_runtime": 0.195,
+      "avg_runtime": 0.18,
       "avg_score_delta": -0.5080237617778021,
       "best_score": 0.9838707306846985,
       "common_failure_types": {

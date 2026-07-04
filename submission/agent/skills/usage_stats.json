@@ -181,7 +181,7 @@
         "static-export"
       ],
       "result": "no_best_improvement",
-      "score_delta_after_use": -1.1771331531740259e-06,
+      "score_delta_after_use": -3.431321104419016e-05,
       "task": "B",
       "triggered_by": "perturb_best_and_repair",
       "used_skills": [
@@ -198,5 +198,5 @@
     "packing-slsqp",
     "static-export"
   ],
-  "run_id": "20260704_120206"
+  "run_id": "20260704_121549"
 }

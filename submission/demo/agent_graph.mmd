@@ -1,0 +1,13 @@
+flowchart TD
+    START([START]) --> load_task
+    load_task --> observe_archive
+    observe_archive --> select_strategy
+    select_strategy --> generate_candidate
+    generate_candidate --> evaluate_candidate
+    evaluate_candidate --> parse_feedback
+    parse_feedback --> update_archive
+    update_archive -->|continue| select_strategy
+    update_archive -->|repair / benchmark / explore / exploit| generate_candidate
+    update_archive -->|iteration >= max_iterations| static_export
+    static_export --> safety_check
+    safety_check --> END([END])

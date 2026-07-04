@@ -74,6 +74,10 @@ def generate_report(repo_root: Path, archive, output_path: Path,
         "what specialist workflow shaped each candidate."
     )
     lines.append("")
+    lines.append("### LangGraph Orchestration Layer")
+    lines.append("")
+    lines.extend(_langgraph_lines(repo_root))
+    lines.append("")
     lines.append("### Explicit Agent State Graph")
     lines.append("")
     lines.extend(_state_graph_lines(repo_root))
@@ -355,6 +359,49 @@ def _load_json(path: Path) -> Optional[Dict]:
         return json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return None
+
+
+def _rel_path(repo_root: Path, path: Path) -> str:
+    try:
+        return str(path.resolve().relative_to(repo_root.resolve()))
+    except ValueError:
+        return str(path)
+
+
+def _langgraph_lines(repo_root: Path) -> List[str]:
+    mmd = repo_root / "submission" / "demo" / "agent_graph.mmd"
+    txt = repo_root / "submission" / "demo" / "agent_graph.txt"
+    log_path = repo_root / "agent" / "archive" / "metrics" / "langgraph_run_log.jsonl"
+    node_counts: Dict[str, int] = {}
+    if log_path.exists():
+        for line in log_path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            try:
+                record = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            node = str(record.get("graph_node") or "unknown")
+            node_counts[node] = node_counts.get(node, 0) + 1
+    lines = [
+        "`agent/langgraph_runner.py` is an optional orchestration entrypoint. It wraps the existing deterministic pipeline in a LangGraph `StateGraph` without replacing `agent/run.py`.",
+        "State / nodes / conditional edges:",
+        "- State: `GeoOptState` records task, iteration, archive summary, strategy stats, selected strategy, evaluator result, best candidate, skills, and artifacts.",
+        "- Nodes: `load_task`, `observe_archive`, `select_strategy`, `generate_candidate`, `evaluate_candidate`, `parse_feedback`, `update_archive`, `static_export`, and `safety_check`.",
+        "- Conditional edges: after `update_archive`, the graph routes to portfolio selection, direct repair/generation, static export, safety check, or END based on iteration budget, evaluator failure, benchmark availability, plateau, and valid improvement.",
+        "Why this is not role-play multi-agent: the graph is one Agent state machine with explicit nodes and deterministic module calls; it does not introduce persona prompts or separate role-playing agents.",
+        "Reuse: the LangGraph runner calls the same `EvaluatorAdapter`, `CandidateGenerator`, `ArchiveManager`, `StrategyPortfolioController`, and `SafetyGuard` modules used by the stable pipeline.",
+        "Fallback: `agent/run.py` does not import LangGraph and remains runnable when the optional dependency is missing.",
+        f"- Mermaid graph: `{_rel_path(repo_root, mmd)}` exists `{mmd.exists()}`.",
+        f"- Text graph: `{_rel_path(repo_root, txt)}` exists `{txt.exists()}`.",
+        f"- LangGraph node log: `{_rel_path(repo_root, log_path)}` records `{sum(node_counts.values())}` node executions.",
+    ]
+    if node_counts:
+        lines.append("| Graph node | Executions |")
+        lines.append("|---|---:|")
+        for node, count in sorted(node_counts.items()):
+            lines.append(f"| {node} | {count} |")
+    return lines
 
 
 def _state_graph_lines(repo_root: Path) -> List[str]:

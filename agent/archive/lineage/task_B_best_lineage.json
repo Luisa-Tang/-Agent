@@ -15,7 +15,7 @@
             "exact_score": 0.99999736745286,
             "exact_sum_radii": 2.6359830606320647,
             "failure_type": "none",
-            "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+            "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
             "returncode": 0,
             "score": 0.99999736745286,
             "sum_radii": 2.6359830606320647,
@@ -31,8 +31,8 @@
       },
       "official_score": 0.99999736745286,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": null,
@@ -73,7 +73,7 @@
             "exact_score": 0.99999736745286,
             "exact_sum_radii": 2.6359830606320647,
             "failure_type": "none",
-            "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+            "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
             "returncode": 0,
             "score": 0.99999736745286,
             "sum_radii": 2.6359830606320647,
@@ -89,8 +89,8 @@
       },
       "official_score": 0.99999736745286,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": null,
@@ -107,8 +107,8 @@
       },
       "official_score": 0.9151434423354281,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/candidates/task_B/B_001_hexagonal_or_staggered_initialization.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/outputs/task_B/B_001_hexagonal_or_staggered_initialization.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/candidates/task_B/B_001_hexagonal_or_staggered_initialization.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_001_hexagonal_or_staggered_initialization.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
@@ -125,8 +125,8 @@
       },
       "official_score": 0.9838707306846985,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/candidates/task_B/B_002_scipy_slsqp_joint.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/outputs/task_B/B_002_scipy_slsqp_joint.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/candidates/task_B/B_002_scipy_slsqp_joint.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_002_scipy_slsqp_joint.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
@@ -143,8 +143,8 @@
       },
       "official_score": 0.9999630542418159,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/candidates/task_B/B_003_perturb_best_and_repair.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/outputs/task_B/B_003_perturb_best_and_repair.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/candidates/task_B/B_003_perturb_best_and_repair.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_003_perturb_best_and_repair.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
@@ -159,10 +159,10 @@
         "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
         "source_metadata": null
       },
-      "official_score": 0.9999961903197069,
+      "official_score": 0.9999630542418159,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/candidates/task_B/B_004_perturb_best_and_repair.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/outputs/task_B/B_004_perturb_best_and_repair.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/candidates/task_B/B_004_perturb_best_and_repair.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_004_perturb_best_and_repair.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",

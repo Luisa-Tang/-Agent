@@ -1,0 +1,16 @@
+GeoOpt LangGraph StateGraph
+
+START -> load_task -> observe_archive -> select_strategy -> generate_candidate
+generate_candidate -> evaluate_candidate -> parse_feedback -> update_archive
+update_archive routes conditionally:
+- select_strategy: normal portfolio decision
+- generate_candidate: repair, benchmark warm-start, plateau exploration, or best-candidate exploitation
+- static_export: iteration budget reached
+static_export -> safety_check -> END
+
+Nodes reuse existing modules:
+- evaluator_adapter.py
+- candidate_generators.py
+- archive.py
+- strategy_controller.py
+- safety_guard.py
