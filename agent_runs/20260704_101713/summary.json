@@ -1,0 +1,41 @@
+{
+  "archive_jsonl": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_101713/archive.jsonl",
+  "best": {
+    "B": {
+      "candidate_id": "B_000_baseline_safe_grid",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_101713/candidates/task_B/B_000_baseline_safe_grid.py",
+      "decision": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
+      "diagnostics": {
+        "boundary_margin": 1.9999999989472883e-09,
+        "internal_message": "none",
+        "internal_valid": true,
+        "overlap_margin": 1.0000000000287557e-07,
+        "score_estimate": 0.8219550380186065,
+        "source": "safe deterministic grid",
+        "sum_radii": 2.1666652606666665
+      },
+      "failure_type": "none",
+      "height": null,
+      "iteration": 0,
+      "llm_decision": {
+        "enabled": true,
+        "error": "missing_api_key",
+        "raw_excerpt": null,
+        "reason": "OPENAI_API_KEY is not set; using deterministic local policy.",
+        "strategy": "baseline_safe_grid",
+        "used": false
+      },
+      "local_policy_strategy": "baseline_safe_grid",
+      "parent_candidate_id": null,
+      "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_101713/outputs/task_B/B_000_baseline_safe_grid.txt",
+      "score": 0.821955,
+      "strategy": "baseline_safe_grid",
+      "sum_radii": 2.166665,
+      "task": "B",
+      "valid": true,
+      "width": null
+    }
+  },
+  "num_records": 1,
+  "run_id": "20260704_101713"
+}

@@ -1,0 +1,73 @@
+{
+  "archive_jsonl": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_100041/archive.jsonl",
+  "best": {
+    "A": {
+      "candidate_id": "A_003_perturb_best_and_repair",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_100041/candidates/task_A/A_003_perturb_best_and_repair.py",
+      "decision": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
+      "diagnostics": {
+        "boundary_margin": 2.0000000000575113e-07,
+        "internal_message": "none",
+        "internal_valid": true,
+        "margin": 2e-07,
+        "maxiter": 120,
+        "message": "Optimization terminated successfully",
+        "nit": 10,
+        "optimizer": "SLSQP",
+        "overlap_margin": 1.9995344291423578e-07,
+        "parent_sum_radii": 2.0999983959999997,
+        "score_estimate": 0.9902222227473237,
+        "seed_offset": 159,
+        "source": "perturbed best valid candidate then SLSQP/LP repair",
+        "success": true,
+        "sum_radii": 2.3427073434645282
+      },
+      "failure_type": "none",
+      "height": 0.9138409972314672,
+      "iteration": 3,
+      "parent_candidate_id": "A_000_baseline_safe_grid",
+      "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_100041/outputs/task_A/A_003_perturb_best_and_repair.txt",
+      "score": 0.990222,
+      "strategy": "perturb_best_and_repair",
+      "sum_radii": 2.342707,
+      "task": "A",
+      "valid": true,
+      "width": 1.0861590027685328
+    },
+    "B": {
+      "candidate_id": "B_004_perturb_best_and_repair",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_100041/candidates/task_B/B_004_perturb_best_and_repair.py",
+      "decision": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
+      "diagnostics": {
+        "boundary_margin": 2.0000000000575113e-07,
+        "internal_message": "none",
+        "internal_valid": true,
+        "margin": 2e-07,
+        "maxiter": 120,
+        "message": "Optimization terminated successfully",
+        "nit": 6,
+        "optimizer": "SLSQP",
+        "overlap_margin": 1.9994806971235235e-07,
+        "parent_sum_radii": 2.6020109982900963,
+        "score_estimate": 0.9871160774599866,
+        "seed_offset": 212,
+        "source": "perturbed best valid candidate then SLSQP/LP repair",
+        "success": true,
+        "sum_radii": 2.6020281090237503
+      },
+      "failure_type": "none",
+      "height": null,
+      "iteration": 4,
+      "parent_candidate_id": "B_003_multi_start_slsqp",
+      "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_100041/outputs/task_B/B_004_perturb_best_and_repair.txt",
+      "score": 0.987116,
+      "strategy": "perturb_best_and_repair",
+      "sum_radii": 2.602028,
+      "task": "B",
+      "valid": true,
+      "width": null
+    }
+  },
+  "num_records": 10,
+  "run_id": "20260704_100041"
+}

@@ -1,0 +1,225 @@
+{
+  "archive_jsonl": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_101732/archive.jsonl",
+  "best": {
+    "A": {
+      "candidate_id": "A_003_multi_start_slsqp",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_101732/candidates/task_A/A_003_multi_start_slsqp.py",
+      "decision": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
+      "diagnostics": {
+        "boundary_margin": 7.99999999995249e-08,
+        "internal_message": "none",
+        "internal_valid": true,
+        "overlap_margin": 7.994841889902293e-08,
+        "score_estimate": 0.9931389509755374,
+        "source": "multi-start SLSQP",
+        "start_details": [
+          {
+            "margin": 8e-08,
+            "maxiter": 360,
+            "message": "Optimization terminated successfully",
+            "nit": 8,
+            "optimizer": "SLSQP",
+            "seed_offset": 111,
+            "success": true
+          },
+          {
+            "margin": 8e-08,
+            "maxiter": 360,
+            "message": "Optimization terminated successfully",
+            "nit": 8,
+            "optimizer": "SLSQP",
+            "seed_offset": 112,
+            "success": true
+          },
+          {
+            "margin": 8e-08,
+            "maxiter": 360,
+            "message": "Optimization terminated successfully",
+            "nit": 8,
+            "optimizer": "SLSQP",
+            "seed_offset": 113,
+            "success": true
+          },
+          {
+            "margin": 8e-08,
+            "maxiter": 360,
+            "message": "Optimization terminated successfully",
+            "nit": 6,
+            "optimizer": "SLSQP",
+            "seed_offset": 114,
+            "success": true
+          },
+          {
+            "margin": 8e-08,
+            "maxiter": 360,
+            "message": "Optimization terminated successfully",
+            "nit": 6,
+            "optimizer": "SLSQP",
+            "seed_offset": 115,
+            "success": true
+          },
+          {
+            "margin": 8e-08,
+            "maxiter": 360,
+            "message": "Optimization terminated successfully",
+            "nit": 8,
+            "optimizer": "SLSQP",
+            "seed_offset": 116,
+            "success": true
+          },
+          {
+            "margin": 8e-08,
+            "maxiter": 360,
+            "message": "Optimization terminated successfully",
+            "nit": 21,
+            "optimizer": "SLSQP",
+            "seed_offset": 117,
+            "success": true
+          },
+          {
+            "margin": 8e-08,
+            "maxiter": 360,
+            "message": "Optimization terminated successfully",
+            "nit": 14,
+            "optimizer": "SLSQP",
+            "seed_offset": 118,
+            "success": true
+          }
+        ],
+        "starts": 8,
+        "sum_radii": 2.3496078557759654
+      },
+      "failure_type": "none",
+      "height": 1.0678391530650968,
+      "iteration": 3,
+      "llm_decision": {
+        "enabled": false,
+        "error": null,
+        "raw_excerpt": null,
+        "reason": "LLM disabled; using deterministic local policy.",
+        "strategy": "multi_start_slsqp",
+        "used": false
+      },
+      "local_policy_strategy": "multi_start_slsqp",
+      "parent_candidate_id": "A_002_scipy_slsqp_joint",
+      "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_101732/outputs/task_A/A_003_multi_start_slsqp.txt",
+      "score": 0.993139,
+      "strategy": "multi_start_slsqp",
+      "sum_radii": 2.349608,
+      "task": "A",
+      "valid": true,
+      "width": 0.9321608469349033
+    },
+    "B": {
+      "candidate_id": "B_003_multi_start_slsqp",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_101732/candidates/task_B/B_003_multi_start_slsqp.py",
+      "decision": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
+      "diagnostics": {
+        "boundary_margin": 7.99999999995249e-08,
+        "internal_message": "none",
+        "internal_valid": true,
+        "overlap_margin": 7.999567824823473e-08,
+        "score_estimate": 0.9893524366048188,
+        "source": "multi-start SLSQP",
+        "start_details": [
+          {
+            "margin": 8e-08,
+            "maxiter": 360,
+            "message": "Optimization terminated successfully",
+            "nit": 13,
+            "optimizer": "SLSQP",
+            "seed_offset": 111,
+            "success": true
+          },
+          {
+            "margin": 8e-08,
+            "maxiter": 360,
+            "message": "Optimization terminated successfully",
+            "nit": 9,
+            "optimizer": "SLSQP",
+            "seed_offset": 112,
+            "success": true
+          },
+          {
+            "margin": 8e-08,
+            "maxiter": 360,
+            "message": "Optimization terminated successfully",
+            "nit": 14,
+            "optimizer": "SLSQP",
+            "seed_offset": 113,
+            "success": true
+          },
+          {
+            "margin": 8e-08,
+            "maxiter": 360,
+            "message": "Optimization terminated successfully",
+            "nit": 8,
+            "optimizer": "SLSQP",
+            "seed_offset": 114,
+            "success": true
+          },
+          {
+            "margin": 8e-08,
+            "maxiter": 360,
+            "message": "Optimization terminated successfully",
+            "nit": 11,
+            "optimizer": "SLSQP",
+            "seed_offset": 115,
+            "success": true
+          },
+          {
+            "margin": 8e-08,
+            "maxiter": 360,
+            "message": "Optimization terminated successfully",
+            "nit": 9,
+            "optimizer": "SLSQP",
+            "seed_offset": 116,
+            "success": true
+          },
+          {
+            "margin": 8e-08,
+            "maxiter": 360,
+            "message": "Optimization terminated successfully",
+            "nit": 7,
+            "optimizer": "SLSQP",
+            "seed_offset": 117,
+            "success": true
+          },
+          {
+            "margin": 8e-08,
+            "maxiter": 360,
+            "message": "Optimization terminated successfully",
+            "nit": 8,
+            "optimizer": "SLSQP",
+            "seed_offset": 118,
+            "success": true
+          }
+        ],
+        "starts": 8,
+        "sum_radii": 2.607923129365936
+      },
+      "failure_type": "none",
+      "height": null,
+      "iteration": 3,
+      "llm_decision": {
+        "enabled": false,
+        "error": null,
+        "raw_excerpt": null,
+        "reason": "LLM disabled; using deterministic local policy.",
+        "strategy": "multi_start_slsqp",
+        "used": false
+      },
+      "local_policy_strategy": "multi_start_slsqp",
+      "parent_candidate_id": "B_002_scipy_slsqp_joint",
+      "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_101732/outputs/task_B/B_003_multi_start_slsqp.txt",
+      "score": 0.989352,
+      "strategy": "multi_start_slsqp",
+      "sum_radii": 2.607923,
+      "task": "B",
+      "valid": true,
+      "width": null
+    }
+  },
+  "num_records": 16,
+  "run_id": "20260704_101732"
+}
