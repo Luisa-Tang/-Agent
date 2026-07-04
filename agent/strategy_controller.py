@@ -45,6 +45,12 @@ class StrategyPortfolioController:
                     "avg_runtime": 0.0,
                     "common_failure_types": {},
                     "last_used_iteration": None,
+                    "expected_improvement": 0.0,
+                    "novelty_bonus": 0.0,
+                    "runtime_penalty": 0.0,
+                    "plateau_penalty": 0.0,
+                    "repeated_code_penalty": 0.0,
+                    "ucb_score": 0.0,
                 },
             )
             deltas.setdefault(strategy, [])
@@ -68,6 +74,19 @@ class StrategyPortfolioController:
             item["avg_score_delta"] = sum(deltas[strategy]) / max(1, len(deltas[strategy]))
             item["avg_runtime"] = sum(runtimes[strategy]) / max(1, len(runtimes[strategy])) if runtimes[strategy] else 0.0
             item["common_failure_types"] = dict(failures[strategy].most_common(4))
+            item["expected_improvement"] = max(0.0, float(item["avg_score_delta"]))
+            item["novelty_bonus"] = _novelty_bonus(strategy, attempts)
+            item["runtime_penalty"] = min(0.2, float(item["avg_runtime"]) / 60.0)
+            item["plateau_penalty"] = 0.05 if item["common_failure_types"].get("plateau") else 0.0
+            item["repeated_code_penalty"] = _repeated_code_penalty(strategy, attempts)
+            item["ucb_score"] = (
+                item["expected_improvement"]
+                + 0.25 * item["validity_rate"]
+                + item["novelty_bonus"]
+                - item["runtime_penalty"]
+                - item["plateau_penalty"]
+                - item["repeated_code_penalty"]
+            )
         return grouped
 
     def decide(self, task: str, iteration: int, records: Iterable[Dict[str, Any]],
@@ -140,9 +159,9 @@ class StrategyPortfolioController:
         def key(strategy: str):
             stat = stats.get(strategy) or {}
             return (
+                float(stat.get("ucb_score") or 0.0),
                 float(stat.get("validity_rate") or 0.0),
-                float(stat.get("best_score") or 0.0),
-                float(stat.get("avg_score_delta") or 0.0),
+                float(stat.get("expected_improvement") or 0.0),
                 -float(stat.get("avg_runtime") or 0.0),
             )
 
@@ -173,3 +192,19 @@ def _parse_elapsed(record: Dict[str, Any]) -> Optional[float]:
         return float(text)
     except ValueError:
         return None
+
+
+def _novelty_bonus(strategy: str, attempts: int) -> float:
+    if attempts == 0:
+        return 0.15
+    if strategy in {"contact_graph_feasibility_refine", "public_frontier_dominikkamp", "public_frontier_fico_task_a"}:
+        return 0.08 / (1.0 + 0.25 * attempts)
+    return 0.03 / (1.0 + attempts)
+
+
+def _repeated_code_penalty(strategy: str, attempts: int) -> float:
+    if attempts <= 2:
+        return 0.0
+    if strategy in {"perturb_best_and_repair", "micro_perturb_lp_refine"}:
+        return min(0.12, 0.01 * (attempts - 2))
+    return min(0.06, 0.005 * (attempts - 2))

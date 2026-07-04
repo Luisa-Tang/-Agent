@@ -2,9 +2,9 @@
   "best_candidates": {
     "A": {
       "candidate_id": "A_000_benchmark_seed_dominikkamp",
-      "code_snapshot": "agent_runs/20260704_121549/candidates/task_A/A_000_benchmark_seed_dominikkamp.py",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_000_benchmark_seed_dominikkamp.py",
       "decision": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
-      "elapsed": "0.19s",
+      "elapsed": "0.18s",
       "failure_type": "none",
       "geometry_metrics": {
         "height": 1.0232688920031396,
@@ -16,7 +16,7 @@
       "iteration": 0,
       "optimizer_or_repair": "public benchmark geometry conversion to static candidate plus official validation",
       "parent_candidate_id": null,
-      "raw_output": "agent_runs/20260704_121549/outputs/task_A/A_000_benchmark_seed_dominikkamp.txt",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_000_benchmark_seed_dominikkamp.txt",
       "score": 0.9999967571069156,
       "score_improvement": 0.9999967571069156,
       "skills_used": [
@@ -32,7 +32,7 @@
     },
     "B": {
       "candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "code_snapshot": "agent_runs/20260704_121549/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
       "decision": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
       "elapsed": "0.19s",
       "failure_type": "none",
@@ -46,7 +46,7 @@
       "iteration": 0,
       "optimizer_or_repair": "public benchmark geometry conversion to static candidate plus official validation",
       "parent_candidate_id": null,
-      "raw_output": "agent_runs/20260704_121549/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
       "score": 0.99999736745286,
       "score_improvement": 0.99999736745286,
       "skills_used": [
@@ -80,11 +80,11 @@
               "local_path": "benchmarks/dominikkamp/rectangle_n21.txt",
               "normalization_scale": 1.0000000008835837,
               "official_evaluator_result": {
-                "elapsed": "0.19s",
+                "elapsed": "0.18s",
                 "exact_score": 0.9999967571069156,
                 "exact_sum_radii": 2.365832327833825,
                 "failure_type": "none",
-                "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_A/A_000_benchmark_seed_dominikkamp.txt",
+                "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_A/A_000_benchmark_seed_dominikkamp.txt",
                 "returncode": 0,
                 "score": 0.9999967571069156,
                 "sum_radii": 2.365832327833825,
@@ -104,8 +104,8 @@
           },
           "official_score": 0.9999967571069156,
           "output_artifacts": {
-            "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/candidates/task_A/A_000_benchmark_seed_dominikkamp.py",
-            "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_A/A_000_benchmark_seed_dominikkamp.txt",
+            "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_000_benchmark_seed_dominikkamp.py",
+            "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_A/A_000_benchmark_seed_dominikkamp.txt",
             "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_A/solution.py"
           },
           "parent_candidate_id": null,
@@ -113,8 +113,8 @@
         }
       ],
       "best_score": 0.9999967571069156,
-      "edge_count": 4,
-      "node_count": 5,
+      "edge_count": 22,
+      "node_count": 23,
       "path": "agent/archive/lineage/task_A_best_lineage.json",
       "replay_hint": "Run the code_snapshot for any node through the corresponding official evaluate.py."
     },
@@ -135,7 +135,7 @@
                 "exact_score": 0.99999736745286,
                 "exact_sum_radii": 2.6359830606320647,
                 "failure_type": "none",
-                "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+                "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
                 "returncode": 0,
                 "score": 0.99999736745286,
                 "sum_radii": 2.6359830606320647,
@@ -151,8 +151,8 @@
           },
           "official_score": 0.99999736745286,
           "output_artifacts": {
-            "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
-            "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+            "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
+            "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
             "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
           },
           "parent_candidate_id": null,
@@ -160,30 +160,30 @@
         }
       ],
       "best_score": 0.99999736745286,
-      "edge_count": 4,
-      "node_count": 5,
+      "edge_count": 22,
+      "node_count": 23,
       "path": "agent/archive/lineage/task_B_best_lineage.json",
       "replay_hint": "Run the code_snapshot for any node through the corresponding official evaluate.py."
     }
   },
   "combined_score": 0.9999970622798878,
   "failure_stats": {
-    "low_score": 2,
-    "none": 4,
+    "low_score": 1,
+    "none": 41,
     "plateau": 4
   },
   "failure_stats_by_task": {
     "A": {
-      "low_score": 2,
-      "none": 1,
+      "low_score": 1,
+      "none": 20,
       "plateau": 2
     },
     "B": {
-      "none": 3,
+      "none": 21,
       "plateau": 2
     }
   },
-  "generated_at": "2026-07-04T12:15:58Z",
+  "generated_at": "2026-07-04T13:06:25Z",
   "human_agent_division": {
     "agent_completed": [
       {
@@ -251,9 +251,9 @@
     "A": [
       {
         "candidate_id": "A_000_benchmark_seed_dominikkamp",
-        "code_snapshot": "agent_runs/20260704_121549/candidates/task_A/A_000_benchmark_seed_dominikkamp.py",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_000_benchmark_seed_dominikkamp.py",
         "decision": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
-        "elapsed": "0.19s",
+        "elapsed": "0.18s",
         "failure_type": "none",
         "geometry_metrics": {
           "height": 1.0232688920031396,
@@ -265,7 +265,7 @@
         "iteration": 0,
         "optimizer_or_repair": "public benchmark geometry conversion to static candidate plus official validation",
         "parent_candidate_id": null,
-        "raw_output": "agent_runs/20260704_121549/outputs/task_A/A_000_benchmark_seed_dominikkamp.txt",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_000_benchmark_seed_dominikkamp.txt",
         "score": 0.9999967571069156,
         "score_improvement": 0.9999967571069156,
         "skills_used": [
@@ -283,7 +283,7 @@
     "B": [
       {
         "candidate_id": "B_000_benchmark_seed_dominikkamp",
-        "code_snapshot": "agent_runs/20260704_121549/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
         "decision": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
         "elapsed": "0.19s",
         "failure_type": "none",
@@ -297,7 +297,7 @@
         "iteration": 0,
         "optimizer_or_repair": "public benchmark geometry conversion to static candidate plus official validation",
         "parent_candidate_id": null,
-        "raw_output": "agent_runs/20260704_121549/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
         "score": 0.99999736745286,
         "score_improvement": 0.99999736745286,
         "skills_used": [
@@ -375,14 +375,38 @@
     "strategy_portfolio_stats": {
       "benchmark_seed_dominikkamp": {
         "attempts": 2,
-        "avg_runtime": 0.19,
+        "avg_runtime": 0.185,
         "avg_score_delta": 0.9999970622798878,
         "best_score": 0.99999736745286,
         "common_failure_types": {
           "none": 2
         },
+        "expected_improvement": 0.9999970622798878,
         "last_used_iteration": 0,
+        "novelty_bonus": 0.01,
+        "plateau_penalty": 0.0,
+        "repeated_code_penalty": 0.0,
+        "runtime_penalty": 0.0030833333333333333,
+        "ucb_score": 1.2569137289465546,
         "valid_count": 2,
+        "validity_rate": 1.0
+      },
+      "contact_graph_feasibility_refine": {
+        "attempts": 34,
+        "avg_runtime": 0.0,
+        "avg_score_delta": -0.020924636651265743,
+        "best_score": 0.999997359453387,
+        "common_failure_types": {
+          "none": 34
+        },
+        "expected_improvement": 0.0,
+        "last_used_iteration": 91018,
+        "novelty_bonus": 0.008421052631578947,
+        "plateau_penalty": 0.0,
+        "repeated_code_penalty": 0.06,
+        "runtime_penalty": 0.0,
+        "ucb_score": 0.19842105263157894,
+        "valid_count": 34,
         "validity_rate": 1.0
       },
       "hexagonal_or_staggered_initialization": {
@@ -394,32 +418,67 @@
           "low_score": 1,
           "none": 1
         },
+        "expected_improvement": 0.0,
         "last_used_iteration": 1,
+        "novelty_bonus": 0.01,
+        "plateau_penalty": 0.0,
+        "repeated_code_penalty": 0.0,
+        "runtime_penalty": 0.0031666666666666666,
+        "ucb_score": 0.25683333333333336,
         "valid_count": 2,
         "validity_rate": 1.0
       },
       "perturb_best_and_repair": {
         "attempts": 4,
-        "avg_runtime": 0.18500000000000003,
-        "avg_score_delta": -1.769027539269552e-05,
-        "best_score": 0.9999956897948914,
+        "avg_runtime": 0.175,
+        "avg_score_delta": -8.724063056103626e-06,
+        "best_score": 0.9999969021274452,
         "common_failure_types": {
           "plateau": 4
         },
+        "expected_improvement": 0.0,
         "last_used_iteration": 4,
+        "novelty_bonus": 0.006,
+        "plateau_penalty": 0.05,
+        "repeated_code_penalty": 0.02,
+        "runtime_penalty": 0.0029166666666666664,
+        "ucb_score": 0.18308333333333335,
         "valid_count": 4,
+        "validity_rate": 1.0
+      },
+      "public_frontier_dominikkamp": {
+        "attempts": 2,
+        "avg_runtime": 0.0,
+        "avg_score_delta": 0.0,
+        "best_score": 0.99999736745286,
+        "common_failure_types": {
+          "none": 2
+        },
+        "expected_improvement": 0.0,
+        "last_used_iteration": 90001,
+        "novelty_bonus": 0.05333333333333334,
+        "plateau_penalty": 0.0,
+        "repeated_code_penalty": 0.0,
+        "runtime_penalty": 0.0,
+        "ucb_score": 0.30333333333333334,
+        "valid_count": 2,
         "validity_rate": 1.0
       },
       "scipy_slsqp_joint": {
         "attempts": 2,
-        "avg_runtime": 0.18,
-        "avg_score_delta": -0.5080237617778021,
-        "best_score": 0.9838707306846985,
+        "avg_runtime": 0.19,
+        "avg_score_delta": -0.015380409120421823,
+        "best_score": 0.9853618657620588,
         "common_failure_types": {
-          "low_score": 1,
-          "none": 1
+          "none": 2
         },
+        "expected_improvement": 0.0,
         "last_used_iteration": 2,
+        "novelty_bonus": 0.01,
+        "plateau_penalty": 0.0,
+        "repeated_code_penalty": 0.0,
+        "runtime_penalty": 0.0031666666666666666,
+        "ucb_score": 0.25683333333333336,
         "valid_count": 2,
         "validity_rate": 1.0
       }
@@ -434,6 +493,14 @@
       "valid_attempts": 2,
       "validity_rate": 1.0
     },
+    "contact_graph_feasibility_refine": {
+      "attempts": 34,
+      "average_score_improvement": -0.020924636651265743,
+      "avg_score": 0.9790724256286221,
+      "best_score": 0.999997359453387,
+      "valid_attempts": 34,
+      "validity_rate": 1.0
+    },
     "hexagonal_or_staggered_initialization": {
       "attempts": 2,
       "average_score_improvement": -0.12947775668055317,
@@ -444,17 +511,25 @@
     },
     "perturb_best_and_repair": {
       "attempts": 4,
-      "average_score_improvement": -1.769027539269552e-05,
-      "avg_score": 0.9999793720044952,
-      "best_score": 0.9999956897948914,
+      "average_score_improvement": -8.724063056103626e-06,
+      "avg_score": 0.9999883382168318,
+      "best_score": 0.9999969021274452,
       "valid_attempts": 4,
+      "validity_rate": 1.0
+    },
+    "public_frontier_dominikkamp": {
+      "attempts": 2,
+      "average_score_improvement": 0.0,
+      "avg_score": 0.9999970622798878,
+      "best_score": 0.99999736745286,
+      "valid_attempts": 2,
       "validity_rate": 1.0
     },
     "scipy_slsqp_joint": {
       "attempts": 2,
-      "average_score_improvement": -0.5080237617778021,
-      "avg_score": 0.4919733005020858,
-      "best_score": 0.9838707306846985,
+      "average_score_improvement": -0.015380409120421823,
+      "avg_score": 0.984616653159466,
+      "best_score": 0.9853618657620588,
       "valid_attempts": 2,
       "validity_rate": 1.0
     }
@@ -469,6 +544,14 @@
         "valid_attempts": 1,
         "validity_rate": 1.0
       },
+      "contact_graph_feasibility_refine": {
+        "attempts": 17,
+        "average_score_improvement": -0.03330624906710953,
+        "avg_score": 0.9666905080398062,
+        "best_score": 0.9999967496208803,
+        "valid_attempts": 17,
+        "validity_rate": 1.0
+      },
       "hexagonal_or_staggered_initialization": {
         "attempts": 1,
         "average_score_improvement": -0.1741015882436744,
@@ -479,17 +562,25 @@
       },
       "perturb_best_and_repair": {
         "attempts": 2,
-        "average_score_improvement": -1.067339741200879e-06,
-        "avg_score": 0.9999956897671745,
-        "best_score": 0.9999956897948914,
+        "average_score_improvement": -4.1475974277283e-07,
+        "avg_score": 0.9999963423471728,
+        "best_score": 0.999996342374872,
         "valid_attempts": 2,
+        "validity_rate": 1.0
+      },
+      "public_frontier_dominikkamp": {
+        "attempts": 1,
+        "average_score_improvement": 0.0,
+        "avg_score": 0.9999967571069156,
+        "best_score": 0.9999967571069156,
+        "valid_attempts": 1,
         "validity_rate": 1.0
       },
       "scipy_slsqp_joint": {
         "attempts": 1,
-        "average_score_improvement": -0.9999208867874425,
-        "avg_score": 7.587031947310046e-05,
-        "best_score": 7.587031947310046e-05,
+        "average_score_improvement": -0.014634891344856849,
+        "avg_score": 0.9853618657620588,
+        "best_score": 0.9853618657620588,
         "valid_attempts": 1,
         "validity_rate": 1.0
       }
@@ -503,6 +594,14 @@
         "valid_attempts": 1,
         "validity_rate": 1.0
       },
+      "contact_graph_feasibility_refine": {
+        "attempts": 17,
+        "average_score_improvement": -0.008543024235421956,
+        "avg_score": 0.9914543432174383,
+        "best_score": 0.999997359453387,
+        "valid_attempts": 17,
+        "validity_rate": 1.0
+      },
       "hexagonal_or_staggered_initialization": {
         "attempts": 1,
         "average_score_improvement": -0.08485392511743195,
@@ -513,17 +612,25 @@
       },
       "perturb_best_and_repair": {
         "attempts": 2,
-        "average_score_improvement": -3.431321104419016e-05,
-        "avg_score": 0.9999630542418159,
-        "best_score": 0.9999630542418159,
+        "average_score_improvement": -1.7033366369434422e-05,
+        "avg_score": 0.9999803340864906,
+        "best_score": 0.9999969021274452,
         "valid_attempts": 2,
+        "validity_rate": 1.0
+      },
+      "public_frontier_dominikkamp": {
+        "attempts": 1,
+        "average_score_improvement": 0.0,
+        "avg_score": 0.99999736745286,
+        "best_score": 0.99999736745286,
+        "valid_attempts": 1,
         "validity_rate": 1.0
       },
       "scipy_slsqp_joint": {
         "attempts": 1,
-        "average_score_improvement": -0.016126636768161506,
-        "avg_score": 0.9838707306846985,
-        "best_score": 0.9838707306846985,
+        "average_score_improvement": -0.016125926895986797,
+        "avg_score": 0.9838714405568733,
+        "best_score": 0.9838714405568733,
         "valid_attempts": 1,
         "validity_rate": 1.0
       }
@@ -820,9 +927,9 @@
   "trajectory": [
     {
       "candidate_id": "A_000_benchmark_seed_dominikkamp",
-      "code_snapshot": "agent_runs/20260704_121549/candidates/task_A/A_000_benchmark_seed_dominikkamp.py",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_000_benchmark_seed_dominikkamp.py",
       "decision": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
-      "elapsed": "0.19s",
+      "elapsed": "0.18s",
       "failure_type": "none",
       "geometry_metrics": {
         "height": 1.0232688920031396,
@@ -834,7 +941,7 @@
       "iteration": 0,
       "optimizer_or_repair": "public benchmark geometry conversion to static candidate plus official validation",
       "parent_candidate_id": null,
-      "raw_output": "agent_runs/20260704_121549/outputs/task_A/A_000_benchmark_seed_dominikkamp.txt",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_000_benchmark_seed_dominikkamp.txt",
       "score": 0.9999967571069156,
       "score_improvement": 0.9999967571069156,
       "skills_used": [
@@ -850,7 +957,7 @@
     },
     {
       "candidate_id": "A_001_hexagonal_or_staggered_initialization",
-      "code_snapshot": "agent_runs/20260704_121549/candidates/task_A/A_001_hexagonal_or_staggered_initialization.py",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_001_hexagonal_or_staggered_initialization.py",
       "decision": "Valid but below the current target band; use multi-start or perturbation to seek higher sum radii.",
       "elapsed": "0.19s",
       "failure_type": "low_score",
@@ -864,7 +971,7 @@
       "iteration": 1,
       "optimizer_or_repair": "structured center generation plus LP radius repair",
       "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
-      "raw_output": "agent_runs/20260704_121549/outputs/task_A/A_001_hexagonal_or_staggered_initialization.txt",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_001_hexagonal_or_staggered_initialization.txt",
       "score": 0.8258951688632412,
       "score_improvement": -0.1741015882436744,
       "skills_used": [
@@ -880,97 +987,637 @@
     },
     {
       "candidate_id": "A_002_scipy_slsqp_joint",
-      "code_snapshot": "agent_runs/20260704_121549/candidates/task_A/A_002_scipy_slsqp_joint.py",
-      "decision": "Valid but below the current target band; use multi-start or perturbation to seek higher sum radii.",
-      "elapsed": "0.17s",
-      "failure_type": "low_score",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_002_scipy_slsqp_joint.py",
+      "decision": "Valid but no improvement; diversify initialization or perturb current best.",
+      "elapsed": "0.19s",
+      "failure_type": "none",
       "geometry_metrics": {
-        "height": 1.2997604782127243,
-        "min_boundary_margin": 2.0000000000000486e-07,
-        "min_pairwise_margin": 3.510833468576701e-16,
-        "width": 0.7002395217872757
+        "height": 0.897608406267923,
+        "min_boundary_margin": 7.99999999995249e-08,
+        "min_pairwise_margin": 7.99999874678825e-08,
+        "width": 1.102391593732077
       },
-      "height": 1.2997604782127243,
+      "height": 0.897608406267923,
       "iteration": 2,
       "optimizer_or_repair": "SLSQP joint optimization followed by LP safety repair",
       "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
-      "raw_output": "agent_runs/20260704_121549/outputs/task_A/A_002_scipy_slsqp_joint.txt",
-      "score": 7.587031947310046e-05,
-      "score_improvement": -0.9999208867874425,
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_002_scipy_slsqp_joint.txt",
+      "score": 0.9853618657620588,
+      "score_improvement": -0.014634891344856849,
       "skills_used": [
         "archive-observability",
         "packing-slsqp",
         "evaluator-feedback"
       ],
       "strategy": "scipy_slsqp_joint",
-      "sum_radii": 0.00017949703662224,
+      "sum_radii": 2.331208516494509,
       "task": "A",
       "valid": true,
-      "width": 0.7002395217872757
+      "width": 1.102391593732077
     },
     {
       "candidate_id": "A_003_perturb_best_and_repair",
-      "code_snapshot": "agent_runs/20260704_121549/candidates/task_A/A_003_perturb_best_and_repair.py",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_003_perturb_best_and_repair.py",
       "decision": "Valid plateau detected; perturb the best candidate or diversify structured starts.",
-      "elapsed": "0.19s",
+      "elapsed": "0.17s",
       "failure_type": "plateau",
       "geometry_metrics": {
-        "height": 1.0232688917914707,
-        "min_boundary_margin": 2.0000000000575113e-07,
-        "min_pairwise_margin": 1.9995595859634285e-07,
-        "width": 0.9767311082085292
+        "height": 1.0232688945837192,
+        "min_boundary_margin": 7.99999999995249e-08,
+        "min_pairwise_margin": 7.995587343601063e-08,
+        "width": 0.9767311054162808
       },
-      "height": 1.0232688917914707,
+      "height": 1.0232688945837192,
       "iteration": 3,
       "optimizer_or_repair": "archive-best perturbation with LP radius recomputation",
       "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
-      "raw_output": "agent_runs/20260704_121549/outputs/task_A/A_003_perturb_best_and_repair.txt",
-      "score": 0.9999956897394574,
-      "score_improvement": -1.0673674581962445e-06,
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_003_perturb_best_and_repair.txt",
+      "score": 0.9999963423194737,
+      "score_improvement": -4.14787441949116e-07,
       "skills_used": [
         "archive-observability",
         "packing-repair",
         "evaluator-feedback"
       ],
       "strategy": "perturb_best_and_repair",
-      "sum_radii": 2.365829802613198,
+      "sum_radii": 2.3658313465131036,
       "task": "A",
       "valid": true,
-      "width": 0.9767311082085292
+      "width": 0.9767311054162808
     },
     {
       "candidate_id": "A_004_perturb_best_and_repair",
-      "code_snapshot": "agent_runs/20260704_121549/candidates/task_A/A_004_perturb_best_and_repair.py",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_004_perturb_best_and_repair.py",
       "decision": "Valid plateau detected; perturb the best candidate or diversify structured starts.",
-      "elapsed": "0.20s",
+      "elapsed": "0.17s",
       "failure_type": "plateau",
       "geometry_metrics": {
-        "height": 1.0232688918161243,
-        "min_boundary_margin": 2.0000000000575113e-07,
-        "min_pairwise_margin": 1.999999638402361e-07,
-        "width": 0.9767311081838755
+        "height": 1.0232688946084267,
+        "min_boundary_margin": 7.99999999995249e-08,
+        "min_pairwise_margin": 7.999969843519583e-08,
+        "width": 0.9767311053915732
       },
-      "height": 1.0232688918161243,
+      "height": 1.0232688946084267,
       "iteration": 4,
       "optimizer_or_repair": "archive-best perturbation with LP radius recomputation",
       "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
-      "raw_output": "agent_runs/20260704_121549/outputs/task_A/A_004_perturb_best_and_repair.txt",
-      "score": 0.9999956897948914,
-      "score_improvement": -1.0673120242055134e-06,
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_004_perturb_best_and_repair.txt",
+      "score": 0.999996342374872,
+      "score_improvement": -4.1473204359654403e-07,
       "skills_used": [
         "archive-observability",
         "packing-repair",
         "evaluator-feedback"
       ],
       "strategy": "perturb_best_and_repair",
-      "sum_radii": 2.365829802744346,
+      "sum_radii": 2.365831346644167,
       "task": "A",
       "valid": true,
-      "width": 0.9767311081838755
+      "width": 0.9767311053915732
+    },
+    {
+      "candidate_id": "A_90001_public_frontier_dominikkamp",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_90001_public_frontier_dominikkamp.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688920031396,
+        "min_boundary_margin": 1.2396125792513146e-11,
+        "min_pairwise_margin": 7.358091080877927e-10,
+        "width": 0.9767311079968606
+      },
+      "height": 1.0232688920031396,
+      "iteration": 90001,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_90001_public_frontier_dominikkamp.txt",
+      "score": 0.9999967571069156,
+      "score_improvement": 0.0,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "public_frontier_dominikkamp",
+      "sum_radii": 2.365832327833825,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311079968606
+    },
+    {
+      "candidate_id": "A_91002_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91002_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688821776397,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": 0.9767311178223602
+      },
+      "height": 1.0232688821776397,
+      "iteration": 91002,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91002_contact_graph_feasibility_refine.txt",
+      "score": 0.9999967369672912,
+      "score_improvement": -2.0139624412607304e-08,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.3658322801866962,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311178223602
+    },
+    {
+      "candidate_id": "A_91003_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91003_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688831230141,
+        "min_boundary_margin": 5.671128289197469e-10,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": 0.9767311168769859
+      },
+      "height": 1.0232688831230141,
+      "iteration": 91003,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91003_contact_graph_feasibility_refine.txt",
+      "score": 0.9999967344006724,
+      "score_improvement": -2.2706243218983957e-08,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.365832274114487,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311168769859
+    },
+    {
+      "candidate_id": "A_91004_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91004_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688821776397,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": 0.9767311178223602
+      },
+      "height": 1.0232688821776397,
+      "iteration": 91004,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91004_contact_graph_feasibility_refine.txt",
+      "score": 0.9999967259473352,
+      "score_improvement": -3.1159580360373695e-08,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.3658322541152437,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311178223602
+    },
+    {
+      "candidate_id": "A_91005_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91005_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688831230141,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": 0.9767311168769859
+      },
+      "height": 1.0232688831230141,
+      "iteration": 91005,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91005_contact_graph_feasibility_refine.txt",
+      "score": 0.9999967302273213,
+      "score_improvement": -2.6879594328121925e-08,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.3658322642410057,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311168769859
+    },
+    {
+      "candidate_id": "A_91006_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91006_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 0.897608406267923,
+        "min_boundary_margin": 2.3999761858406465e-08,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "width": 1.102391593732077
+      },
+      "height": 0.897608406267923,
+      "iteration": 91006,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91006_contact_graph_feasibility_refine.txt",
+      "score": 0.9853621093224529,
+      "score_improvement": -0.014634647784462662,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.331209092719432,
+      "task": "A",
+      "valid": true,
+      "width": 1.102391593732077
+    },
+    {
+      "candidate_id": "A_91007_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91007_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688831230141,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 2.000000026702864e-10,
+        "width": 0.9767311168769859
+      },
+      "height": 1.0232688831230141,
+      "iteration": 91007,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91007_contact_graph_feasibility_refine.txt",
+      "score": 0.9999967210864834,
+      "score_improvement": -3.6020432192529483e-08,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.365832242615246,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311168769859
+    },
+    {
+      "candidate_id": "A_91008_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91008_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 0.897608406267923,
+        "min_boundary_margin": 2.3693542808289614e-08,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "width": 1.102391593732077
+      },
+      "height": 0.897608406267923,
+      "iteration": 91008,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91008_contact_graph_feasibility_refine.txt",
+      "score": 0.9853621138610003,
+      "score_improvement": -0.014634643245915346,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.3312091034569087,
+      "task": "A",
+      "valid": true,
+      "width": 1.102391593732077
+    },
+    {
+      "candidate_id": "A_91009_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91009_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 0.8999999999999999,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "width": 1.1
+      },
+      "height": 0.8999999999999999,
+      "iteration": 91009,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91009_contact_graph_feasibility_refine.txt",
+      "score": 0.8258961846972415,
+      "score_improvement": -0.17410057240967414,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 1.9539382296041217,
+      "task": "A",
+      "valid": true,
+      "width": 1.1
+    },
+    {
+      "candidate_id": "A_91010_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91010_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 0.897608406267923,
+        "min_boundary_margin": 2.3896056841610225e-08,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": 1.102391593732077
+      },
+      "height": 0.897608406267923,
+      "iteration": 91010,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91010_contact_graph_feasibility_refine.txt",
+      "score": 0.9853620774265727,
+      "score_improvement": -0.014634679680342932,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.3312090172588826,
+      "task": "A",
+      "valid": true,
+      "width": 1.102391593732077
+    },
+    {
+      "candidate_id": "A_91011_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91011_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 0.8999999999999999,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "width": 1.1
+      },
+      "height": 0.8999999999999999,
+      "iteration": 91011,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91011_contact_graph_feasibility_refine.txt",
+      "score": 0.82589627786171,
+      "score_improvement": -0.17410047924520555,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 1.9539384500163481,
+      "task": "A",
+      "valid": true,
+      "width": 1.1
+    },
+    {
+      "candidate_id": "A_91012_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91012_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688920031394,
+        "min_boundary_margin": 1.9999998879249858e-10,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": 0.9767311079968606
+      },
+      "height": 1.0232688920031394,
+      "iteration": 91012,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91012_contact_graph_feasibility_refine.txt",
+      "score": 0.9999967486291104,
+      "score_improvement": -8.47780523560715e-09,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.3658323077766945,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311079968606
+    },
+    {
+      "candidate_id": "A_91013_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91013_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 0.8999999999999999,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": 1.1
+      },
+      "height": 0.8999999999999999,
+      "iteration": 91013,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91013_contact_graph_feasibility_refine.txt",
+      "score": 0.8258962818724926,
+      "score_improvement": -0.17410047523442296,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 1.953938459505218,
+      "task": "A",
+      "valid": true,
+      "width": 1.1
+    },
+    {
+      "candidate_id": "A_91014_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91014_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688920031394,
+        "min_boundary_margin": 1.9999998879249858e-10,
+        "min_pairwise_margin": 2.000000026702864e-10,
+        "width": 0.9767311079968606
+      },
+      "height": 1.0232688920031394,
+      "iteration": 91014,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91014_contact_graph_feasibility_refine.txt",
+      "score": 0.9999967496208803,
+      "score_improvement": -7.486035347170628e-09,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.3658323101230634,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311079968606
+    },
+    {
+      "candidate_id": "A_91015_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91015_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688946084267,
+        "min_boundary_margin": 6.49617049042206e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "width": 0.9767311053915732
+      },
+      "height": 1.0232688946084267,
+      "iteration": 91015,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91015_contact_graph_feasibility_refine.txt",
+      "score": 0.9999965579944504,
+      "score_improvement": -1.9911246518233838e-07,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.3658318567655905,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311053915732
+    },
+    {
+      "candidate_id": "A_91016_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91016_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688920031394,
+        "min_boundary_margin": 1.9999998879249858e-10,
+        "min_pairwise_margin": 2.000000026702864e-10,
+        "width": 0.9767311079968606
+      },
+      "height": 1.0232688920031394,
+      "iteration": 91016,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91016_contact_graph_feasibility_refine.txt",
+      "score": 0.9999967423993414,
+      "score_improvement": -1.4707574158556724e-08,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.365832293038058,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311079968606
+    },
+    {
+      "candidate_id": "A_91017_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91017_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688946084267,
+        "min_boundary_margin": 8.171306964399605e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": 0.9767311053915732
+      },
+      "height": 1.0232688946084267,
+      "iteration": 91017,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91017_contact_graph_feasibility_refine.txt",
+      "score": 0.9999965847062928,
+      "score_improvement": -1.7240062277767976e-07,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.365831919961536,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311053915732
+    },
+    {
+      "candidate_id": "A_91018_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91018_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688946084267,
+        "min_boundary_margin": 5.890299442645741e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": 0.9767311053915732
+      },
+      "height": 1.0232688946084267,
+      "iteration": 91018,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91018_contact_graph_feasibility_refine.txt",
+      "score": 0.9999965596560544,
+      "score_improvement": -1.97450861216808e-07,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.3658318606966797,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311053915732
     },
     {
       "candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "code_snapshot": "agent_runs/20260704_121549/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
       "decision": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
       "elapsed": "0.19s",
       "failure_type": "none",
@@ -984,7 +1631,7 @@
       "iteration": 0,
       "optimizer_or_repair": "public benchmark geometry conversion to static candidate plus official validation",
       "parent_candidate_id": null,
-      "raw_output": "agent_runs/20260704_121549/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
       "score": 0.99999736745286,
       "score_improvement": 0.99999736745286,
       "skills_used": [
@@ -1000,7 +1647,7 @@
     },
     {
       "candidate_id": "B_001_hexagonal_or_staggered_initialization",
-      "code_snapshot": "agent_runs/20260704_121549/candidates/task_B/B_001_hexagonal_or_staggered_initialization.py",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_001_hexagonal_or_staggered_initialization.py",
       "decision": "Valid but no improvement; diversify initialization or perturb current best.",
       "elapsed": "0.19s",
       "failure_type": "none",
@@ -1014,7 +1661,7 @@
       "iteration": 1,
       "optimizer_or_repair": "structured center generation plus LP radius repair",
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "raw_output": "agent_runs/20260704_121549/outputs/task_B/B_001_hexagonal_or_staggered_initialization.txt",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_001_hexagonal_or_staggered_initialization.txt",
       "score": 0.9151434423354281,
       "score_improvement": -0.08485392511743195,
       "skills_used": [
@@ -1030,90 +1677,630 @@
     },
     {
       "candidate_id": "B_002_scipy_slsqp_joint",
-      "code_snapshot": "agent_runs/20260704_121549/candidates/task_B/B_002_scipy_slsqp_joint.py",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_002_scipy_slsqp_joint.py",
       "decision": "Valid but no improvement; diversify initialization or perturb current best.",
       "elapsed": "0.19s",
       "failure_type": "none",
       "geometry_metrics": {
         "height": null,
-        "min_boundary_margin": 2.0000000000575113e-07,
-        "min_pairwise_margin": 1.999988636092187e-07,
+        "min_boundary_margin": 7.99999999995249e-08,
+        "min_pairwise_margin": 7.999739622122082e-08,
         "width": null
       },
       "height": null,
       "iteration": 2,
       "optimizer_or_repair": "SLSQP joint optimization followed by LP safety repair",
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "raw_output": "agent_runs/20260704_121549/outputs/task_B/B_002_scipy_slsqp_joint.txt",
-      "score": 0.9838707306846985,
-      "score_improvement": -0.016126636768161506,
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_002_scipy_slsqp_joint.txt",
+      "score": 0.9838714405568733,
+      "score_improvement": -0.016125926895986797,
       "skills_used": [
         "archive-observability",
         "packing-slsqp",
         "evaluator-feedback"
       ],
       "strategy": "scipy_slsqp_joint",
-      "sum_radii": 2.5934734073775587,
+      "sum_radii": 2.5934752785935125,
       "task": "B",
       "valid": true,
       "width": null
     },
     {
       "candidate_id": "B_003_perturb_best_and_repair",
-      "code_snapshot": "agent_runs/20260704_121549/candidates/task_B/B_003_perturb_best_and_repair.py",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_003_perturb_best_and_repair.py",
       "decision": "Valid plateau detected; perturb the best candidate or diversify structured starts.",
-      "elapsed": "0.18s",
+      "elapsed": "0.17s",
       "failure_type": "plateau",
       "geometry_metrics": {
         "height": null,
-        "min_boundary_margin": 2.0000000000575113e-07,
-        "min_pairwise_margin": 1.9999915550072966e-07,
+        "min_boundary_margin": 7.99999999995249e-08,
+        "min_pairwise_margin": 7.999919554579904e-08,
         "width": null
       },
       "height": null,
       "iteration": 3,
       "optimizer_or_repair": "archive-best perturbation with LP radius recomputation",
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "raw_output": "agent_runs/20260704_121549/outputs/task_B/B_003_perturb_best_and_repair.txt",
-      "score": 0.9999630542418159,
-      "score_improvement": -3.431321104419016e-05,
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_003_perturb_best_and_repair.txt",
+      "score": 0.999963766045536,
+      "score_improvement": -3.3601407324002075e-05,
       "skills_used": [
         "archive-observability",
         "packing-repair",
         "evaluator-feedback"
       ],
       "strategy": "perturb_best_and_repair",
-      "sum_radii": 2.6358926113508843,
+      "sum_radii": 2.6358944876583728,
       "task": "B",
       "valid": true,
       "width": null
     },
     {
       "candidate_id": "B_004_perturb_best_and_repair",
-      "code_snapshot": "agent_runs/20260704_121549/candidates/task_B/B_004_perturb_best_and_repair.py",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_004_perturb_best_and_repair.py",
       "decision": "Valid plateau detected; perturb the best candidate or diversify structured starts.",
-      "elapsed": "0.17s",
+      "elapsed": "0.19s",
       "failure_type": "plateau",
       "geometry_metrics": {
         "height": null,
-        "min_boundary_margin": 2.0000000000575113e-07,
-        "min_pairwise_margin": 1.9999986658469915e-07,
+        "min_boundary_margin": 7.99999999995249e-08,
+        "min_pairwise_margin": 7.999995690899375e-08,
         "width": null
       },
       "height": null,
       "iteration": 4,
       "optimizer_or_repair": "archive-best perturbation with LP radius recomputation",
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-      "raw_output": "agent_runs/20260704_121549/outputs/task_B/B_004_perturb_best_and_repair.txt",
-      "score": 0.9999630542418159,
-      "score_improvement": -3.431321104419016e-05,
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_004_perturb_best_and_repair.txt",
+      "score": 0.9999969021274452,
+      "score_improvement": -4.653254148667685e-07,
       "skills_used": [
         "archive-observability",
         "packing-repair",
         "evaluator-feedback"
       ],
       "strategy": "perturb_best_and_repair",
-      "sum_radii": 2.6358926113508843,
+      "sum_radii": 2.6359818340389243,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_90001_public_frontier_dominikkamp",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_90001_public_frontier_dominikkamp.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.328078563262892e-10,
+        "min_pairwise_margin": 3.765848188841403e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 90001,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_90001_public_frontier_dominikkamp.txt",
+      "score": 0.99999736745286,
+      "score_improvement": 0.0,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "public_frontier_dominikkamp",
+      "sum_radii": 2.6359830606320647,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91002_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91002_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91002,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91002_contact_graph_feasibility_refine.txt",
+      "score": 0.999997359453387,
+      "score_improvement": -7.999473083941666e-09,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.6359830395455335,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91003_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91003_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91003,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91003_contact_graph_feasibility_refine.txt",
+      "score": 0.9999973592007317,
+      "score_improvement": -8.252128314012452e-09,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.635983038879537,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91004_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91004_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91004,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91004_contact_graph_feasibility_refine.txt",
+      "score": 0.9999973414693043,
+      "score_improvement": -2.598355575145206e-08,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.6359829921396716,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91005_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91005_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 9.014626684011873e-10,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91005,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91005_contact_graph_feasibility_refine.txt",
+      "score": 0.9999973445155261,
+      "score_improvement": -2.2937333921113634e-08,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.6359830001694817,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91006_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91006_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 1.8260527839819574e-08,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91006,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91006_contact_graph_feasibility_refine.txt",
+      "score": 0.9999639996556264,
+      "score_improvement": -3.336779723361882e-05,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.635895103452235,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91007_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91007_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 2.000000026702864e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91007,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91007_contact_graph_feasibility_refine.txt",
+      "score": 0.9999973399664405,
+      "score_improvement": -2.7486419584832333e-08,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.6359829881781374,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91008_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91008_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 8.998746595101359e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91008,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91008_contact_graph_feasibility_refine.txt",
+      "score": 0.9999640191625531,
+      "score_improvement": -3.334829030698927e-05,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.635895154872298,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91009_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91009_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 3.4790624825475902e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91009,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91009_contact_graph_feasibility_refine.txt",
+      "score": 0.983871672722168,
+      "score_improvement": -0.01612569473069203,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.5934758905789077,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91010_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91010_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 7.55518751727191e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91010,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91010_contact_graph_feasibility_refine.txt",
+      "score": 0.9999640235131652,
+      "score_improvement": -3.334393969489646e-05,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.635895166340468,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91011_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91011_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.6099313682470537e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91011,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91011_contact_graph_feasibility_refine.txt",
+      "score": 0.9838716678884165,
+      "score_improvement": -0.01612569956444354,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.593475877837187,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91012_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91012_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 1.560557394419959e-08,
+        "min_pairwise_margin": 1.9999996103692297e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91012,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91012_contact_graph_feasibility_refine.txt",
+      "score": 0.9838716568032445,
+      "score_improvement": -0.016125710649615543,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.5934758486167846,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91013_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91013_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 1.2381865810429105e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91013,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91013_contact_graph_feasibility_refine.txt",
+      "score": 0.9838716590994654,
+      "score_improvement": -0.016125708353394663,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.5934758546695997,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91014_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91014_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 9.070720841108937e-10,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91014,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91014_contact_graph_feasibility_refine.txt",
+      "score": 0.9838716723494696,
+      "score_improvement": -0.01612569510339046,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.5934758895964785,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91015_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91015_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.0947473602928035e-08,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91015,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91015_contact_graph_feasibility_refine.txt",
+      "score": 0.9838716728527963,
+      "score_improvement": -0.016125694600063745,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.5934758909232425,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91016_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91016_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91016,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91016_contact_graph_feasibility_refine.txt",
+      "score": 0.9838716851609765,
+      "score_improvement": -0.016125682291883603,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.5934759233674822,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91017_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91017_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 1.772721150428147e-08,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91017,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91017_contact_graph_feasibility_refine.txt",
+      "score": 0.9838716896230056,
+      "score_improvement": -0.016125677829854412,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.5934759351293466,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "candidate_id": "B_91018_contact_graph_feasibility_refine",
+      "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91018_contact_graph_feasibility_refine.py",
+      "decision": "official-evaluated breakthrough candidate",
+      "elapsed": null,
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 1.9898246939042963e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "width": null
+      },
+      "height": null,
+      "iteration": 91018,
+      "optimizer_or_repair": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91018_contact_graph_feasibility_refine.txt",
+      "score": 0.9838716712601709,
+      "score_improvement": -0.01612569619268911,
+      "skills_used": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ],
+      "strategy": "contact_graph_feasibility_refine",
+      "sum_radii": 2.593475886725098,
       "task": "B",
       "valid": true,
       "width": null
@@ -1123,9 +2310,9 @@
     "A": [
       {
         "candidate_id": "A_000_benchmark_seed_dominikkamp",
-        "code_snapshot": "agent_runs/20260704_121549/candidates/task_A/A_000_benchmark_seed_dominikkamp.py",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_000_benchmark_seed_dominikkamp.py",
         "decision": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
-        "elapsed": "0.19s",
+        "elapsed": "0.18s",
         "failure_type": "none",
         "geometry_metrics": {
           "height": 1.0232688920031396,
@@ -1137,7 +2324,7 @@
         "iteration": 0,
         "optimizer_or_repair": "public benchmark geometry conversion to static candidate plus official validation",
         "parent_candidate_id": null,
-        "raw_output": "agent_runs/20260704_121549/outputs/task_A/A_000_benchmark_seed_dominikkamp.txt",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_000_benchmark_seed_dominikkamp.txt",
         "score": 0.9999967571069156,
         "score_improvement": 0.9999967571069156,
         "skills_used": [
@@ -1153,7 +2340,7 @@
       },
       {
         "candidate_id": "A_001_hexagonal_or_staggered_initialization",
-        "code_snapshot": "agent_runs/20260704_121549/candidates/task_A/A_001_hexagonal_or_staggered_initialization.py",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_001_hexagonal_or_staggered_initialization.py",
         "decision": "Valid but below the current target band; use multi-start or perturbation to seek higher sum radii.",
         "elapsed": "0.19s",
         "failure_type": "low_score",
@@ -1167,7 +2354,7 @@
         "iteration": 1,
         "optimizer_or_repair": "structured center generation plus LP radius repair",
         "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
-        "raw_output": "agent_runs/20260704_121549/outputs/task_A/A_001_hexagonal_or_staggered_initialization.txt",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_001_hexagonal_or_staggered_initialization.txt",
         "score": 0.8258951688632412,
         "score_improvement": -0.1741015882436744,
         "skills_used": [
@@ -1183,99 +2370,639 @@
       },
       {
         "candidate_id": "A_002_scipy_slsqp_joint",
-        "code_snapshot": "agent_runs/20260704_121549/candidates/task_A/A_002_scipy_slsqp_joint.py",
-        "decision": "Valid but below the current target band; use multi-start or perturbation to seek higher sum radii.",
-        "elapsed": "0.17s",
-        "failure_type": "low_score",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_002_scipy_slsqp_joint.py",
+        "decision": "Valid but no improvement; diversify initialization or perturb current best.",
+        "elapsed": "0.19s",
+        "failure_type": "none",
         "geometry_metrics": {
-          "height": 1.2997604782127243,
-          "min_boundary_margin": 2.0000000000000486e-07,
-          "min_pairwise_margin": 3.510833468576701e-16,
-          "width": 0.7002395217872757
+          "height": 0.897608406267923,
+          "min_boundary_margin": 7.99999999995249e-08,
+          "min_pairwise_margin": 7.99999874678825e-08,
+          "width": 1.102391593732077
         },
-        "height": 1.2997604782127243,
+        "height": 0.897608406267923,
         "iteration": 2,
         "optimizer_or_repair": "SLSQP joint optimization followed by LP safety repair",
         "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
-        "raw_output": "agent_runs/20260704_121549/outputs/task_A/A_002_scipy_slsqp_joint.txt",
-        "score": 7.587031947310046e-05,
-        "score_improvement": -0.9999208867874425,
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_002_scipy_slsqp_joint.txt",
+        "score": 0.9853618657620588,
+        "score_improvement": -0.014634891344856849,
         "skills_used": [
           "archive-observability",
           "packing-slsqp",
           "evaluator-feedback"
         ],
         "strategy": "scipy_slsqp_joint",
-        "sum_radii": 0.00017949703662224,
+        "sum_radii": 2.331208516494509,
         "task": "A",
         "valid": true,
-        "width": 0.7002395217872757
+        "width": 1.102391593732077
       },
       {
         "candidate_id": "A_003_perturb_best_and_repair",
-        "code_snapshot": "agent_runs/20260704_121549/candidates/task_A/A_003_perturb_best_and_repair.py",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_003_perturb_best_and_repair.py",
         "decision": "Valid plateau detected; perturb the best candidate or diversify structured starts.",
-        "elapsed": "0.19s",
+        "elapsed": "0.17s",
         "failure_type": "plateau",
         "geometry_metrics": {
-          "height": 1.0232688917914707,
-          "min_boundary_margin": 2.0000000000575113e-07,
-          "min_pairwise_margin": 1.9995595859634285e-07,
-          "width": 0.9767311082085292
+          "height": 1.0232688945837192,
+          "min_boundary_margin": 7.99999999995249e-08,
+          "min_pairwise_margin": 7.995587343601063e-08,
+          "width": 0.9767311054162808
         },
-        "height": 1.0232688917914707,
+        "height": 1.0232688945837192,
         "iteration": 3,
         "optimizer_or_repair": "archive-best perturbation with LP radius recomputation",
         "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
-        "raw_output": "agent_runs/20260704_121549/outputs/task_A/A_003_perturb_best_and_repair.txt",
-        "score": 0.9999956897394574,
-        "score_improvement": -1.0673674581962445e-06,
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_003_perturb_best_and_repair.txt",
+        "score": 0.9999963423194737,
+        "score_improvement": -4.14787441949116e-07,
         "skills_used": [
           "archive-observability",
           "packing-repair",
           "evaluator-feedback"
         ],
         "strategy": "perturb_best_and_repair",
-        "sum_radii": 2.365829802613198,
+        "sum_radii": 2.3658313465131036,
         "task": "A",
         "valid": true,
-        "width": 0.9767311082085292
+        "width": 0.9767311054162808
       },
       {
         "candidate_id": "A_004_perturb_best_and_repair",
-        "code_snapshot": "agent_runs/20260704_121549/candidates/task_A/A_004_perturb_best_and_repair.py",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_004_perturb_best_and_repair.py",
         "decision": "Valid plateau detected; perturb the best candidate or diversify structured starts.",
-        "elapsed": "0.20s",
+        "elapsed": "0.17s",
         "failure_type": "plateau",
         "geometry_metrics": {
-          "height": 1.0232688918161243,
-          "min_boundary_margin": 2.0000000000575113e-07,
-          "min_pairwise_margin": 1.999999638402361e-07,
-          "width": 0.9767311081838755
+          "height": 1.0232688946084267,
+          "min_boundary_margin": 7.99999999995249e-08,
+          "min_pairwise_margin": 7.999969843519583e-08,
+          "width": 0.9767311053915732
         },
-        "height": 1.0232688918161243,
+        "height": 1.0232688946084267,
         "iteration": 4,
         "optimizer_or_repair": "archive-best perturbation with LP radius recomputation",
         "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
-        "raw_output": "agent_runs/20260704_121549/outputs/task_A/A_004_perturb_best_and_repair.txt",
-        "score": 0.9999956897948914,
-        "score_improvement": -1.0673120242055134e-06,
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_004_perturb_best_and_repair.txt",
+        "score": 0.999996342374872,
+        "score_improvement": -4.1473204359654403e-07,
         "skills_used": [
           "archive-observability",
           "packing-repair",
           "evaluator-feedback"
         ],
         "strategy": "perturb_best_and_repair",
-        "sum_radii": 2.365829802744346,
+        "sum_radii": 2.365831346644167,
         "task": "A",
         "valid": true,
-        "width": 0.9767311081838755
+        "width": 0.9767311053915732
+      },
+      {
+        "candidate_id": "A_90001_public_frontier_dominikkamp",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_90001_public_frontier_dominikkamp.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 1.0232688920031396,
+          "min_boundary_margin": 1.2396125792513146e-11,
+          "min_pairwise_margin": 7.358091080877927e-10,
+          "width": 0.9767311079968606
+        },
+        "height": 1.0232688920031396,
+        "iteration": 90001,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_90001_public_frontier_dominikkamp.txt",
+        "score": 0.9999967571069156,
+        "score_improvement": 0.0,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "public_frontier_dominikkamp",
+        "sum_radii": 2.365832327833825,
+        "task": "A",
+        "valid": true,
+        "width": 0.9767311079968606
+      },
+      {
+        "candidate_id": "A_91002_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91002_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 1.0232688821776397,
+          "min_boundary_margin": 2.000000026702864e-10,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": 0.9767311178223602
+        },
+        "height": 1.0232688821776397,
+        "iteration": 91002,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91002_contact_graph_feasibility_refine.txt",
+        "score": 0.9999967369672912,
+        "score_improvement": -2.0139624412607304e-08,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.3658322801866962,
+        "task": "A",
+        "valid": true,
+        "width": 0.9767311178223602
+      },
+      {
+        "candidate_id": "A_91003_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91003_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 1.0232688831230141,
+          "min_boundary_margin": 5.671128289197469e-10,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": 0.9767311168769859
+        },
+        "height": 1.0232688831230141,
+        "iteration": 91003,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91003_contact_graph_feasibility_refine.txt",
+        "score": 0.9999967344006724,
+        "score_improvement": -2.2706243218983957e-08,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.365832274114487,
+        "task": "A",
+        "valid": true,
+        "width": 0.9767311168769859
+      },
+      {
+        "candidate_id": "A_91004_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91004_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 1.0232688821776397,
+          "min_boundary_margin": 2.000000026702864e-10,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": 0.9767311178223602
+        },
+        "height": 1.0232688821776397,
+        "iteration": 91004,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91004_contact_graph_feasibility_refine.txt",
+        "score": 0.9999967259473352,
+        "score_improvement": -3.1159580360373695e-08,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.3658322541152437,
+        "task": "A",
+        "valid": true,
+        "width": 0.9767311178223602
+      },
+      {
+        "candidate_id": "A_91005_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91005_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 1.0232688831230141,
+          "min_boundary_margin": 2.000000026702864e-10,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": 0.9767311168769859
+        },
+        "height": 1.0232688831230141,
+        "iteration": 91005,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91005_contact_graph_feasibility_refine.txt",
+        "score": 0.9999967302273213,
+        "score_improvement": -2.6879594328121925e-08,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.3658322642410057,
+        "task": "A",
+        "valid": true,
+        "width": 0.9767311168769859
+      },
+      {
+        "candidate_id": "A_91006_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91006_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 0.897608406267923,
+          "min_boundary_margin": 2.3999761858406465e-08,
+          "min_pairwise_margin": 1.9999997491471078e-10,
+          "width": 1.102391593732077
+        },
+        "height": 0.897608406267923,
+        "iteration": 91006,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91006_contact_graph_feasibility_refine.txt",
+        "score": 0.9853621093224529,
+        "score_improvement": -0.014634647784462662,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.331209092719432,
+        "task": "A",
+        "valid": true,
+        "width": 1.102391593732077
+      },
+      {
+        "candidate_id": "A_91007_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91007_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 1.0232688831230141,
+          "min_boundary_margin": 2.000000026702864e-10,
+          "min_pairwise_margin": 2.000000026702864e-10,
+          "width": 0.9767311168769859
+        },
+        "height": 1.0232688831230141,
+        "iteration": 91007,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91007_contact_graph_feasibility_refine.txt",
+        "score": 0.9999967210864834,
+        "score_improvement": -3.6020432192529483e-08,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.365832242615246,
+        "task": "A",
+        "valid": true,
+        "width": 0.9767311168769859
+      },
+      {
+        "candidate_id": "A_91008_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91008_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 0.897608406267923,
+          "min_boundary_margin": 2.3693542808289614e-08,
+          "min_pairwise_margin": 1.9999997491471078e-10,
+          "width": 1.102391593732077
+        },
+        "height": 0.897608406267923,
+        "iteration": 91008,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91008_contact_graph_feasibility_refine.txt",
+        "score": 0.9853621138610003,
+        "score_improvement": -0.014634643245915346,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.3312091034569087,
+        "task": "A",
+        "valid": true,
+        "width": 1.102391593732077
+      },
+      {
+        "candidate_id": "A_91009_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91009_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 0.8999999999999999,
+          "min_boundary_margin": 2.000000026702864e-10,
+          "min_pairwise_margin": 1.9999997491471078e-10,
+          "width": 1.1
+        },
+        "height": 0.8999999999999999,
+        "iteration": 91009,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91009_contact_graph_feasibility_refine.txt",
+        "score": 0.8258961846972415,
+        "score_improvement": -0.17410057240967414,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 1.9539382296041217,
+        "task": "A",
+        "valid": true,
+        "width": 1.1
+      },
+      {
+        "candidate_id": "A_91010_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91010_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 0.897608406267923,
+          "min_boundary_margin": 2.3896056841610225e-08,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": 1.102391593732077
+        },
+        "height": 0.897608406267923,
+        "iteration": 91010,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91010_contact_graph_feasibility_refine.txt",
+        "score": 0.9853620774265727,
+        "score_improvement": -0.014634679680342932,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.3312090172588826,
+        "task": "A",
+        "valid": true,
+        "width": 1.102391593732077
+      },
+      {
+        "candidate_id": "A_91011_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91011_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 0.8999999999999999,
+          "min_boundary_margin": 2.000000026702864e-10,
+          "min_pairwise_margin": 1.9999997491471078e-10,
+          "width": 1.1
+        },
+        "height": 0.8999999999999999,
+        "iteration": 91011,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91011_contact_graph_feasibility_refine.txt",
+        "score": 0.82589627786171,
+        "score_improvement": -0.17410047924520555,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 1.9539384500163481,
+        "task": "A",
+        "valid": true,
+        "width": 1.1
+      },
+      {
+        "candidate_id": "A_91012_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91012_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 1.0232688920031394,
+          "min_boundary_margin": 1.9999998879249858e-10,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": 0.9767311079968606
+        },
+        "height": 1.0232688920031394,
+        "iteration": 91012,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91012_contact_graph_feasibility_refine.txt",
+        "score": 0.9999967486291104,
+        "score_improvement": -8.47780523560715e-09,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.3658323077766945,
+        "task": "A",
+        "valid": true,
+        "width": 0.9767311079968606
+      },
+      {
+        "candidate_id": "A_91013_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91013_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 0.8999999999999999,
+          "min_boundary_margin": 2.000000026702864e-10,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": 1.1
+        },
+        "height": 0.8999999999999999,
+        "iteration": 91013,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91013_contact_graph_feasibility_refine.txt",
+        "score": 0.8258962818724926,
+        "score_improvement": -0.17410047523442296,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 1.953938459505218,
+        "task": "A",
+        "valid": true,
+        "width": 1.1
+      },
+      {
+        "candidate_id": "A_91014_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91014_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 1.0232688920031394,
+          "min_boundary_margin": 1.9999998879249858e-10,
+          "min_pairwise_margin": 2.000000026702864e-10,
+          "width": 0.9767311079968606
+        },
+        "height": 1.0232688920031394,
+        "iteration": 91014,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91014_contact_graph_feasibility_refine.txt",
+        "score": 0.9999967496208803,
+        "score_improvement": -7.486035347170628e-09,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.3658323101230634,
+        "task": "A",
+        "valid": true,
+        "width": 0.9767311079968606
+      },
+      {
+        "candidate_id": "A_91015_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91015_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 1.0232688946084267,
+          "min_boundary_margin": 6.49617049042206e-09,
+          "min_pairwise_margin": 1.9999997491471078e-10,
+          "width": 0.9767311053915732
+        },
+        "height": 1.0232688946084267,
+        "iteration": 91015,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91015_contact_graph_feasibility_refine.txt",
+        "score": 0.9999965579944504,
+        "score_improvement": -1.9911246518233838e-07,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.3658318567655905,
+        "task": "A",
+        "valid": true,
+        "width": 0.9767311053915732
+      },
+      {
+        "candidate_id": "A_91016_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91016_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 1.0232688920031394,
+          "min_boundary_margin": 1.9999998879249858e-10,
+          "min_pairwise_margin": 2.000000026702864e-10,
+          "width": 0.9767311079968606
+        },
+        "height": 1.0232688920031394,
+        "iteration": 91016,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91016_contact_graph_feasibility_refine.txt",
+        "score": 0.9999967423993414,
+        "score_improvement": -1.4707574158556724e-08,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.365832293038058,
+        "task": "A",
+        "valid": true,
+        "width": 0.9767311079968606
+      },
+      {
+        "candidate_id": "A_91017_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91017_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 1.0232688946084267,
+          "min_boundary_margin": 8.171306964399605e-09,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": 0.9767311053915732
+        },
+        "height": 1.0232688946084267,
+        "iteration": 91017,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91017_contact_graph_feasibility_refine.txt",
+        "score": 0.9999965847062928,
+        "score_improvement": -1.7240062277767976e-07,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.365831919961536,
+        "task": "A",
+        "valid": true,
+        "width": 0.9767311053915732
+      },
+      {
+        "candidate_id": "A_91018_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_A/A_91018_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": 1.0232688946084267,
+          "min_boundary_margin": 5.890299442645741e-09,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": 0.9767311053915732
+        },
+        "height": 1.0232688946084267,
+        "iteration": 91018,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_A/A_91018_contact_graph_feasibility_refine.txt",
+        "score": 0.9999965596560544,
+        "score_improvement": -1.97450861216808e-07,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.3658318606966797,
+        "task": "A",
+        "valid": true,
+        "width": 0.9767311053915732
       }
     ],
     "B": [
       {
         "candidate_id": "B_000_benchmark_seed_dominikkamp",
-        "code_snapshot": "agent_runs/20260704_121549/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
         "decision": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
         "elapsed": "0.19s",
         "failure_type": "none",
@@ -1289,7 +3016,7 @@
         "iteration": 0,
         "optimizer_or_repair": "public benchmark geometry conversion to static candidate plus official validation",
         "parent_candidate_id": null,
-        "raw_output": "agent_runs/20260704_121549/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
         "score": 0.99999736745286,
         "score_improvement": 0.99999736745286,
         "skills_used": [
@@ -1305,7 +3032,7 @@
       },
       {
         "candidate_id": "B_001_hexagonal_or_staggered_initialization",
-        "code_snapshot": "agent_runs/20260704_121549/candidates/task_B/B_001_hexagonal_or_staggered_initialization.py",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_001_hexagonal_or_staggered_initialization.py",
         "decision": "Valid but no improvement; diversify initialization or perturb current best.",
         "elapsed": "0.19s",
         "failure_type": "none",
@@ -1319,7 +3046,7 @@
         "iteration": 1,
         "optimizer_or_repair": "structured center generation plus LP radius repair",
         "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-        "raw_output": "agent_runs/20260704_121549/outputs/task_B/B_001_hexagonal_or_staggered_initialization.txt",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_001_hexagonal_or_staggered_initialization.txt",
         "score": 0.9151434423354281,
         "score_improvement": -0.08485392511743195,
         "skills_used": [
@@ -1335,90 +3062,630 @@
       },
       {
         "candidate_id": "B_002_scipy_slsqp_joint",
-        "code_snapshot": "agent_runs/20260704_121549/candidates/task_B/B_002_scipy_slsqp_joint.py",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_002_scipy_slsqp_joint.py",
         "decision": "Valid but no improvement; diversify initialization or perturb current best.",
         "elapsed": "0.19s",
         "failure_type": "none",
         "geometry_metrics": {
           "height": null,
-          "min_boundary_margin": 2.0000000000575113e-07,
-          "min_pairwise_margin": 1.999988636092187e-07,
+          "min_boundary_margin": 7.99999999995249e-08,
+          "min_pairwise_margin": 7.999739622122082e-08,
           "width": null
         },
         "height": null,
         "iteration": 2,
         "optimizer_or_repair": "SLSQP joint optimization followed by LP safety repair",
         "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-        "raw_output": "agent_runs/20260704_121549/outputs/task_B/B_002_scipy_slsqp_joint.txt",
-        "score": 0.9838707306846985,
-        "score_improvement": -0.016126636768161506,
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_002_scipy_slsqp_joint.txt",
+        "score": 0.9838714405568733,
+        "score_improvement": -0.016125926895986797,
         "skills_used": [
           "archive-observability",
           "packing-slsqp",
           "evaluator-feedback"
         ],
         "strategy": "scipy_slsqp_joint",
-        "sum_radii": 2.5934734073775587,
+        "sum_radii": 2.5934752785935125,
         "task": "B",
         "valid": true,
         "width": null
       },
       {
         "candidate_id": "B_003_perturb_best_and_repair",
-        "code_snapshot": "agent_runs/20260704_121549/candidates/task_B/B_003_perturb_best_and_repair.py",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_003_perturb_best_and_repair.py",
         "decision": "Valid plateau detected; perturb the best candidate or diversify structured starts.",
-        "elapsed": "0.18s",
+        "elapsed": "0.17s",
         "failure_type": "plateau",
         "geometry_metrics": {
           "height": null,
-          "min_boundary_margin": 2.0000000000575113e-07,
-          "min_pairwise_margin": 1.9999915550072966e-07,
+          "min_boundary_margin": 7.99999999995249e-08,
+          "min_pairwise_margin": 7.999919554579904e-08,
           "width": null
         },
         "height": null,
         "iteration": 3,
         "optimizer_or_repair": "archive-best perturbation with LP radius recomputation",
         "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-        "raw_output": "agent_runs/20260704_121549/outputs/task_B/B_003_perturb_best_and_repair.txt",
-        "score": 0.9999630542418159,
-        "score_improvement": -3.431321104419016e-05,
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_003_perturb_best_and_repair.txt",
+        "score": 0.999963766045536,
+        "score_improvement": -3.3601407324002075e-05,
         "skills_used": [
           "archive-observability",
           "packing-repair",
           "evaluator-feedback"
         ],
         "strategy": "perturb_best_and_repair",
-        "sum_radii": 2.6358926113508843,
+        "sum_radii": 2.6358944876583728,
         "task": "B",
         "valid": true,
         "width": null
       },
       {
         "candidate_id": "B_004_perturb_best_and_repair",
-        "code_snapshot": "agent_runs/20260704_121549/candidates/task_B/B_004_perturb_best_and_repair.py",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_004_perturb_best_and_repair.py",
         "decision": "Valid plateau detected; perturb the best candidate or diversify structured starts.",
-        "elapsed": "0.17s",
+        "elapsed": "0.19s",
         "failure_type": "plateau",
         "geometry_metrics": {
           "height": null,
-          "min_boundary_margin": 2.0000000000575113e-07,
-          "min_pairwise_margin": 1.9999986658469915e-07,
+          "min_boundary_margin": 7.99999999995249e-08,
+          "min_pairwise_margin": 7.999995690899375e-08,
           "width": null
         },
         "height": null,
         "iteration": 4,
         "optimizer_or_repair": "archive-best perturbation with LP radius recomputation",
         "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
-        "raw_output": "agent_runs/20260704_121549/outputs/task_B/B_004_perturb_best_and_repair.txt",
-        "score": 0.9999630542418159,
-        "score_improvement": -3.431321104419016e-05,
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_004_perturb_best_and_repair.txt",
+        "score": 0.9999969021274452,
+        "score_improvement": -4.653254148667685e-07,
         "skills_used": [
           "archive-observability",
           "packing-repair",
           "evaluator-feedback"
         ],
         "strategy": "perturb_best_and_repair",
-        "sum_radii": 2.6358926113508843,
+        "sum_radii": 2.6359818340389243,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_90001_public_frontier_dominikkamp",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_90001_public_frontier_dominikkamp.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 2.328078563262892e-10,
+          "min_pairwise_margin": 3.765848188841403e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 90001,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_90001_public_frontier_dominikkamp.txt",
+        "score": 0.99999736745286,
+        "score_improvement": 0.0,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "public_frontier_dominikkamp",
+        "sum_radii": 2.6359830606320647,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91002_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91002_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 2.000000026702864e-10,
+          "min_pairwise_margin": 1.9999997491471078e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91002,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91002_contact_graph_feasibility_refine.txt",
+        "score": 0.999997359453387,
+        "score_improvement": -7.999473083941666e-09,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.6359830395455335,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91003_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91003_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 2.000000026702864e-10,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91003,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91003_contact_graph_feasibility_refine.txt",
+        "score": 0.9999973592007317,
+        "score_improvement": -8.252128314012452e-09,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.635983038879537,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91004_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91004_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 2.000000026702864e-10,
+          "min_pairwise_margin": 1.9999997491471078e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91004,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91004_contact_graph_feasibility_refine.txt",
+        "score": 0.9999973414693043,
+        "score_improvement": -2.598355575145206e-08,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.6359829921396716,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91005_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91005_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 9.014626684011873e-10,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91005,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91005_contact_graph_feasibility_refine.txt",
+        "score": 0.9999973445155261,
+        "score_improvement": -2.2937333921113634e-08,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.6359830001694817,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91006_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91006_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 1.8260527839819574e-08,
+          "min_pairwise_margin": 1.9999997491471078e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91006,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91006_contact_graph_feasibility_refine.txt",
+        "score": 0.9999639996556264,
+        "score_improvement": -3.336779723361882e-05,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.635895103452235,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91007_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91007_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 2.000000026702864e-10,
+          "min_pairwise_margin": 2.000000026702864e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91007,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91007_contact_graph_feasibility_refine.txt",
+        "score": 0.9999973399664405,
+        "score_improvement": -2.7486419584832333e-08,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.6359829881781374,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91008_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91008_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 8.998746595101359e-09,
+          "min_pairwise_margin": 1.9999997491471078e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91008,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91008_contact_graph_feasibility_refine.txt",
+        "score": 0.9999640191625531,
+        "score_improvement": -3.334829030698927e-05,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.635895154872298,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91009_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91009_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 3.4790624825475902e-09,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91009,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91009_contact_graph_feasibility_refine.txt",
+        "score": 0.983871672722168,
+        "score_improvement": -0.01612569473069203,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.5934758905789077,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91010_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91010_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 7.55518751727191e-09,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91010,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91010_contact_graph_feasibility_refine.txt",
+        "score": 0.9999640235131652,
+        "score_improvement": -3.334393969489646e-05,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.635895166340468,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91011_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91011_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 2.6099313682470537e-09,
+          "min_pairwise_margin": 1.9999997491471078e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91011,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91011_contact_graph_feasibility_refine.txt",
+        "score": 0.9838716678884165,
+        "score_improvement": -0.01612569956444354,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.593475877837187,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91012_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91012_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 1.560557394419959e-08,
+          "min_pairwise_margin": 1.9999996103692297e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91012,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91012_contact_graph_feasibility_refine.txt",
+        "score": 0.9838716568032445,
+        "score_improvement": -0.016125710649615543,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.5934758486167846,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91013_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91013_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 1.2381865810429105e-09,
+          "min_pairwise_margin": 1.9999997491471078e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91013,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91013_contact_graph_feasibility_refine.txt",
+        "score": 0.9838716590994654,
+        "score_improvement": -0.016125708353394663,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.5934758546695997,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91014_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91014_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 9.070720841108937e-10,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91014,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91014_contact_graph_feasibility_refine.txt",
+        "score": 0.9838716723494696,
+        "score_improvement": -0.01612569510339046,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.5934758895964785,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91015_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91015_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 2.0947473602928035e-08,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91015,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91015_contact_graph_feasibility_refine.txt",
+        "score": 0.9838716728527963,
+        "score_improvement": -0.016125694600063745,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.5934758909232425,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91016_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91016_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 2.000000026702864e-10,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91016,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91016_contact_graph_feasibility_refine.txt",
+        "score": 0.9838716851609765,
+        "score_improvement": -0.016125682291883603,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.5934759233674822,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91017_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91017_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 1.772721150428147e-08,
+          "min_pairwise_margin": 1.9999998879249858e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91017,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91017_contact_graph_feasibility_refine.txt",
+        "score": 0.9838716896230056,
+        "score_improvement": -0.016125677829854412,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.5934759351293466,
+        "task": "B",
+        "valid": true,
+        "width": null
+      },
+      {
+        "candidate_id": "B_91018_contact_graph_feasibility_refine",
+        "code_snapshot": "agent_runs/20260704_130508/candidates/task_B/B_91018_contact_graph_feasibility_refine.py",
+        "decision": "official-evaluated breakthrough candidate",
+        "elapsed": null,
+        "failure_type": "none",
+        "geometry_metrics": {
+          "height": null,
+          "min_boundary_margin": 1.9898246939042963e-09,
+          "min_pairwise_margin": 1.9999997491471078e-10,
+          "width": null
+        },
+        "height": null,
+        "iteration": 91018,
+        "optimizer_or_repair": null,
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "raw_output": "agent_runs/20260704_130508/outputs/task_B/B_91018_contact_graph_feasibility_refine.txt",
+        "score": 0.9838716712601709,
+        "score_improvement": -0.01612569619268911,
+        "skills_used": [
+          "archive-observability",
+          "packing-repair",
+          "evaluator-feedback"
+        ],
+        "strategy": "contact_graph_feasibility_refine",
+        "sum_radii": 2.593475886725098,
         "task": "B",
         "valid": true,
         "width": null

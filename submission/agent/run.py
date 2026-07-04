@@ -18,6 +18,7 @@ if str(THIS_DIR) not in sys.path:
     sys.path.insert(0, str(THIS_DIR))
 
 from archive import ArchiveManager
+from batch_candidate_runner import BreakthroughConfig, run_breakthrough_search
 from candidate_generators import CandidateGenerator
 from evaluator_adapter import EvaluatorAdapter
 from geometry_utils import PackingData, safety_metrics
@@ -48,6 +49,14 @@ def parse_args() -> argparse.Namespace:
                         help="Allow public external benchmark warm-start candidates")
     parser.add_argument("--refine-benchmark", action="store_true",
                         help="Run lightweight benchmark-neighborhood LP refinements")
+    parser.add_argument("--breakthrough-search", action="store_true",
+                        help="Run optional score breakthrough harness after the stable agent loop")
+    parser.add_argument("--batch-size", type=int, default=8,
+                        help="Batch size for breakthrough candidate generation")
+    parser.add_argument("--max-breakthrough-candidates", type=int, default=200,
+                        help="Maximum generated breakthrough candidates across selected tasks")
+    parser.add_argument("--target-score-a", type=float, default=1.0)
+    parser.add_argument("--target-score-b", type=float, default=1.0)
     parser.add_argument("--time-limit", type=int, default=None, help="Optional whole-run wall clock limit in seconds")
     parser.add_argument("--use-llm", action="store_true", help="Enable optional LLM strategy reflection")
     parser.add_argument("--llm-base-url", default="https://api.deepseek.com")
@@ -80,6 +89,7 @@ def main() -> int:
         f"tasks={tasks}, iterations={args.iterations}, fast={args.fast}, seed={args.seed}, "
         f"use_benchmark_seeds={args.use_benchmark_seeds}, "
         f"refine_benchmark={args.refine_benchmark}, "
+        f"breakthrough_search={args.breakthrough_search}, "
         f"use_llm={args.use_llm}, llm_model={args.llm_model}"
     )
 
@@ -87,6 +97,31 @@ def main() -> int:
     for task in tasks:
         read_task_context(task)
         run_task_loop(task, args, generator, adapter, archive, reflector, controller, start)
+
+    if args.breakthrough_search:
+        breakthrough_summary = run_breakthrough_search(
+            REPO_ROOT,
+            tasks,
+            archive,
+            adapter,
+            BreakthroughConfig(
+                batch_size=max(1, int(args.batch_size)),
+                max_candidates=max(0, int(args.max_breakthrough_candidates)),
+                seed=int(args.seed),
+                use_benchmark_seeds=bool(args.use_benchmark_seeds),
+                target_score_a=float(args.target_score_a),
+                target_score_b=float(args.target_score_b),
+            ),
+        )
+        print(f"breakthrough_summary={REPO_ROOT / 'agent' / 'archive' / 'metrics' / 'breakthrough_summary.json'}")
+        for task, item in sorted((breakthrough_summary.get("tasks") or {}).items()):
+            best = item.get("best_after") or {}
+            print(
+                f"Breakthrough Task {task}: score={float(best.get('score') or 0.0):.9f} "
+                f"sum={float(best.get('sum_radii') or 0.0):.9f} "
+                f"gap={float(item.get('gap_to_target') or 0.0):.9g} "
+                f"exceeded={item.get('exceeded_target')}"
+            )
 
     summary_path = archive.write_summary()
     lineage_paths = write_best_lineages(REPO_ROOT, archive.records)

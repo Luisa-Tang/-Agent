@@ -65,16 +65,18 @@ Example state paths: `A_000_benchmark_seed_dominikkamp`: observe -> decide -> ac
 The controller scores strategies from archive history, evaluator failures, plateau state, score gap, and remaining budget.
 | Strategy | Attempts | Validity rate | Best score | Avg score delta | Avg runtime | Common failures | Last used |
 |---|---:|---:|---:|---:|---:|---|---:|
-| benchmark_seed_dominikkamp | 2 | 1.000 | 0.999997 | 0.999997 | 0.190 | `{'none': 2}` | 0.000000000 |
+| benchmark_seed_dominikkamp | 2 | 1.000 | 0.999997 | 0.999997 | 0.185 | `{'none': 2}` | 0.000000000 |
+| contact_graph_feasibility_refine | 34 | 1.000 | 0.999997 | -0.0209246 | 0.000 | `{'none': 34}` | 91018.000000000 |
 | hexagonal_or_staggered_initialization | 2 | 1.000 | 0.915143 | -0.129478 | 0.190 | `{'low_score': 1, 'none': 1}` | 1.000000000 |
-| perturb_best_and_repair | 4 | 1.000 | 0.999996 | -1.76903e-05 | 0.185 | `{'plateau': 4}` | 4.000000000 |
-| scipy_slsqp_joint | 2 | 1.000 | 0.983871 | -0.508024 | 0.180 | `{'low_score': 1, 'none': 1}` | 2.000000000 |
+| perturb_best_and_repair | 4 | 1.000 | 0.999997 | -8.72406e-06 | 0.175 | `{'plateau': 4}` | 4.000000000 |
+| public_frontier_dominikkamp | 2 | 1.000 | 0.999997 | 0 | 0.000 | `{'none': 2}` | 90001.000000000 |
+| scipy_slsqp_joint | 2 | 1.000 | 0.985362 | -0.0153804 | 0.190 | `{'none': 2}` | 2.000000000 |
 
 ### Execution Lineage and Replay
 
 Best-candidate lineage DAGs are emitted as replayable JSON. Each node includes parent, strategy, input/output artifacts, code hash, data hash, official score, and decision reason.
-- Task A: `agent/archive/lineage/task_A_best_lineage.json` best `A_000_benchmark_seed_dominikkamp`, nodes `5`, chain length `1`.
-- Task B: `agent/archive/lineage/task_B_best_lineage.json` best `B_000_benchmark_seed_dominikkamp`, nodes `5`, chain length `1`.
+- Task A: `agent/archive/lineage/task_A_best_lineage.json` best `A_000_benchmark_seed_dominikkamp`, nodes `23`, chain length `1`.
+- Task B: `agent/archive/lineage/task_B_best_lineage.json` best `B_000_benchmark_seed_dominikkamp`, nodes `23`, chain length `1`.
 
 ### Safety Guard and Protected Files
 
@@ -129,6 +131,17 @@ After a public benchmark seed is available, the Agent can run three small neighb
 
 No benchmark-neighborhood refinement candidate was evaluated in this run.
 
+### Score Breakthrough Harness
+
+The optional breakthrough harness searches near public frontier seeds and contact graph neighborhoods without modifying official evaluators.
+- Detailed report: `submission/breakthrough_report.md`
+- Candidate log: `agent/archive/metrics/breakthrough_log.jsonl`
+- Novelty archive: `agent/archive/metrics/novelty_archive.json`
+| Task | Best score | Best sum radii | Gap to 1.0 | Exceeded 1.0 | Generated | Official evals | Valid |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| A | 0.999996757107 | 2.365832327834 | 3.243e-06 | False | 100 | 18 | 18 |
+| B | 0.999997367453 | 2.635983060632 | 2.633e-06 | False | 100 | 18 | 18 |
+
 ## 5. Feedback Utilization
 
 Evaluator output is parsed for score, `sum_radii`, validity, and failure type. Overlap failures trigger more conservative repair. Outside-boundary failures trigger boundary-tight generation. Low but valid scores move the Agent toward multi-start and structured initializations. Plateaued valid runs trigger perturb-and-repair around the current best candidate.
@@ -156,22 +169,58 @@ The loop terminates after the configured iteration budget or time budget. The ar
 |---|---:|---|---|---:|---:|---:|---|
 | A | 0 | `A_000_benchmark_seed_dominikkamp` | benchmark_seed_dominikkamp | True | 0.999997 | 2.365832 | none |
 | A | 1 | `A_001_hexagonal_or_staggered_initialization` | hexagonal_or_staggered_initialization | True | 0.825895 | 1.953936 | low_score |
-| A | 2 | `A_002_scipy_slsqp_joint` | scipy_slsqp_joint | True | 0.000076 | 0.000179 | low_score |
-| A | 3 | `A_003_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999996 | 2.365830 | plateau |
-| A | 4 | `A_004_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999996 | 2.365830 | plateau |
+| A | 2 | `A_002_scipy_slsqp_joint` | scipy_slsqp_joint | True | 0.985362 | 2.331209 | none |
+| A | 3 | `A_003_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999996 | 2.365831 | plateau |
+| A | 4 | `A_004_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999996 | 2.365831 | plateau |
 | B | 0 | `B_000_benchmark_seed_dominikkamp` | benchmark_seed_dominikkamp | True | 0.999997 | 2.635983 | none |
 | B | 1 | `B_001_hexagonal_or_staggered_initialization` | hexagonal_or_staggered_initialization | True | 0.915143 | 2.412309 | none |
-| B | 2 | `B_002_scipy_slsqp_joint` | scipy_slsqp_joint | True | 0.983871 | 2.593473 | none |
-| B | 3 | `B_003_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999963 | 2.635893 | plateau |
-| B | 4 | `B_004_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999963 | 2.635893 | plateau |
+| B | 2 | `B_002_scipy_slsqp_joint` | scipy_slsqp_joint | True | 0.983871 | 2.593475 | none |
+| B | 3 | `B_003_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999964 | 2.635894 | plateau |
+| B | 4 | `B_004_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999997 | 2.635982 | plateau |
+| A | 90001 | `A_90001_public_frontier_dominikkamp` | public_frontier_dominikkamp | True | 0.999997 | 2.365832 | none |
+| A | 91002 | `A_91002_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
+| A | 91003 | `A_91003_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
+| A | 91004 | `A_91004_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
+| A | 91005 | `A_91005_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
+| A | 91006 | `A_91006_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.985362 | 2.331209 | none |
+| A | 91007 | `A_91007_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
+| A | 91008 | `A_91008_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.985362 | 2.331209 | none |
+| A | 91009 | `A_91009_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.825896 | 1.953938 | none |
+| A | 91010 | `A_91010_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.985362 | 2.331209 | none |
+| A | 91011 | `A_91011_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.825896 | 1.953938 | none |
+| A | 91012 | `A_91012_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
+| A | 91013 | `A_91013_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.825896 | 1.953938 | none |
+| A | 91014 | `A_91014_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
+| A | 91015 | `A_91015_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
+| A | 91016 | `A_91016_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
+| A | 91017 | `A_91017_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
+| A | 91018 | `A_91018_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.365832 | none |
+| B | 90001 | `B_90001_public_frontier_dominikkamp` | public_frontier_dominikkamp | True | 0.999997 | 2.635983 | none |
+| B | 91002 | `B_91002_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.635983 | none |
+| B | 91003 | `B_91003_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.635983 | none |
+| B | 91004 | `B_91004_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.635983 | none |
+| B | 91005 | `B_91005_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.635983 | none |
+| B | 91006 | `B_91006_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999964 | 2.635895 | none |
+| B | 91007 | `B_91007_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999997 | 2.635983 | none |
+| B | 91008 | `B_91008_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999964 | 2.635895 | none |
+| B | 91009 | `B_91009_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
+| B | 91010 | `B_91010_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.999964 | 2.635895 | none |
+| B | 91011 | `B_91011_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
+| B | 91012 | `B_91012_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
+| B | 91013 | `B_91013_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
+| B | 91014 | `B_91014_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
+| B | 91015 | `B_91015_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
+| B | 91016 | `B_91016_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
+| B | 91017 | `B_91017_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
+| B | 91018 | `B_91018_contact_graph_feasibility_refine` | contact_graph_feasibility_refine | True | 0.983872 | 2.593476 | none |
 
 ### Skill Usage Summary
 
 | Skill | Iteration uses |
 |---|---:|
-| archive-observability | 10 |
-| evaluator-feedback | 10 |
-| packing-repair | 6 |
+| archive-observability | 46 |
+| evaluator-feedback | 46 |
+| packing-repair | 42 |
 | packing-slsqp | 2 |
 | static-export | 2 |
 
@@ -180,9 +229,11 @@ The loop terminates after the configured iteration budget or time budget. The ar
 | Strategy | Attempts | Validity rate | Best score | Avg score improvement |
 |---|---:|---:|---:|---:|
 | benchmark_seed_dominikkamp | 2 | 1.000 | 0.999997 | 0.999997 |
+| contact_graph_feasibility_refine | 34 | 1.000 | 0.999997 | -0.020925 |
 | hexagonal_or_staggered_initialization | 2 | 1.000 | 0.915143 | -0.129478 |
-| perturb_best_and_repair | 4 | 1.000 | 0.999996 | -0.000018 |
-| scipy_slsqp_joint | 2 | 1.000 | 0.983871 | -0.508024 |
+| perturb_best_and_repair | 4 | 1.000 | 0.999997 | -0.000009 |
+| public_frontier_dominikkamp | 2 | 1.000 | 0.999997 | 0.000000 |
+| scipy_slsqp_joint | 2 | 1.000 | 0.985362 | -0.015380 |
 
 ### Best Geometry Safety Metrics
 
@@ -198,7 +249,7 @@ The loop terminates after the configured iteration budget or time budget. The ar
   Circle Packing in Rectangle  (n=21)
   File : /home/wuyou/projects/AlgorithmOptimization/task_A/solution.py
 ============================================================
-  Elapsed : 0.17s
+  Elapsed : 0.18s
   sum_radii : 2.365832
   Target    : 2.365840
   Score     : 0.999997

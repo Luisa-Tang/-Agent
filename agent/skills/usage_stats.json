@@ -48,7 +48,7 @@
         "static-export"
       ],
       "result": "no_best_improvement",
-      "score_delta_after_use": -0.9999208867874425,
+      "score_delta_after_use": -0.014634891344856849,
       "task": "A",
       "triggered_by": "scipy_slsqp_joint",
       "used_skills": [
@@ -67,7 +67,7 @@
         "static-export"
       ],
       "result": "no_best_improvement",
-      "score_delta_after_use": -1.0673674581962445e-06,
+      "score_delta_after_use": -4.14787441949116e-07,
       "task": "A",
       "triggered_by": "perturb_best_and_repair",
       "used_skills": [
@@ -86,7 +86,7 @@
         "static-export"
       ],
       "result": "no_best_improvement",
-      "score_delta_after_use": -1.0673120242055134e-06,
+      "score_delta_after_use": -4.1473204359654403e-07,
       "task": "A",
       "triggered_by": "perturb_best_and_repair",
       "used_skills": [
@@ -143,7 +143,7 @@
         "static-export"
       ],
       "result": "no_best_improvement",
-      "score_delta_after_use": -0.016126636768161506,
+      "score_delta_after_use": -0.016125926895986797,
       "task": "B",
       "triggered_by": "scipy_slsqp_joint",
       "used_skills": [
@@ -162,7 +162,7 @@
         "static-export"
       ],
       "result": "no_best_improvement",
-      "score_delta_after_use": -3.431321104419016e-05,
+      "score_delta_after_use": -3.3601407324002075e-05,
       "task": "B",
       "triggered_by": "perturb_best_and_repair",
       "used_skills": [
@@ -181,7 +181,7 @@
         "static-export"
       ],
       "result": "no_best_improvement",
-      "score_delta_after_use": -3.431321104419016e-05,
+      "score_delta_after_use": -4.653254148667685e-07,
       "task": "B",
       "triggered_by": "perturb_best_and_repair",
       "used_skills": [
@@ -198,5 +198,5 @@
     "packing-slsqp",
     "static-export"
   ],
-  "run_id": "20260704_121549"
+  "run_id": "20260704_130508"
 }

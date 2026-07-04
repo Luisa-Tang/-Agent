@@ -15,7 +15,7 @@
             "exact_score": 0.99999736745286,
             "exact_sum_radii": 2.6359830606320647,
             "failure_type": "none",
-            "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+            "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
             "returncode": 0,
             "score": 0.99999736745286,
             "sum_radii": 2.6359830606320647,
@@ -31,8 +31,8 @@
       },
       "official_score": 0.99999736745286,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": null,
@@ -56,6 +56,78 @@
     {
       "from": "B_000_benchmark_seed_dominikkamp",
       "to": "B_004_perturb_best_and_repair"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_90001_public_frontier_dominikkamp"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91002_contact_graph_feasibility_refine"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91003_contact_graph_feasibility_refine"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91004_contact_graph_feasibility_refine"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91005_contact_graph_feasibility_refine"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91006_contact_graph_feasibility_refine"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91007_contact_graph_feasibility_refine"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91008_contact_graph_feasibility_refine"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91009_contact_graph_feasibility_refine"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91010_contact_graph_feasibility_refine"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91011_contact_graph_feasibility_refine"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91012_contact_graph_feasibility_refine"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91013_contact_graph_feasibility_refine"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91014_contact_graph_feasibility_refine"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91015_contact_graph_feasibility_refine"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91016_contact_graph_feasibility_refine"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91017_contact_graph_feasibility_refine"
+    },
+    {
+      "from": "B_000_benchmark_seed_dominikkamp",
+      "to": "B_91018_contact_graph_feasibility_refine"
     }
   ],
   "nodes": [
@@ -73,7 +145,7 @@
             "exact_score": 0.99999736745286,
             "exact_sum_radii": 2.6359830606320647,
             "failure_type": "none",
-            "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+            "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
             "returncode": 0,
             "score": 0.99999736745286,
             "sum_radii": 2.6359830606320647,
@@ -89,8 +161,8 @@
       },
       "official_score": 0.99999736745286,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_000_benchmark_seed_dominikkamp.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": null,
@@ -107,8 +179,8 @@
       },
       "official_score": 0.9151434423354281,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/candidates/task_B/B_001_hexagonal_or_staggered_initialization.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_001_hexagonal_or_staggered_initialization.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_001_hexagonal_or_staggered_initialization.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_001_hexagonal_or_staggered_initialization.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
@@ -116,17 +188,17 @@
     },
     {
       "candidate_id": "B_002_scipy_slsqp_joint",
-      "code_hash": "ed37e06bbf7658e1768e94c8556453bd11a18547c8b374261dd8bb0cde18c241",
-      "data_hash": "553ede72cae236be8b635bfb686d12502f6aa0772e9bd73f10a8e7075f072393",
+      "code_hash": "28e4f3a9ae0bace1fbda457a85a9af08afb0f93e37668e85b3713086a06dcaad",
+      "data_hash": "144e65f9c2c4002944668456ff8874aeb38db8692a76bff207b3febd7151a7cf",
       "decision_reason": "Valid but no improvement; diversify initialization or perturb current best.",
       "input_artifacts": {
         "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
         "source_metadata": null
       },
-      "official_score": 0.9838707306846985,
+      "official_score": 0.9838714405568733,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/candidates/task_B/B_002_scipy_slsqp_joint.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_002_scipy_slsqp_joint.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_002_scipy_slsqp_joint.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_002_scipy_slsqp_joint.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
@@ -134,17 +206,17 @@
     },
     {
       "candidate_id": "B_003_perturb_best_and_repair",
-      "code_hash": "28993bfd4fef1bc5dcf69ca1be5643fcdc3d6a2e5368f2fcf2f67a5442705d50",
-      "data_hash": "d7c02736b71f923ec0da0fbcce3904cfe8a2c99c8fd973ece2f61af805e5fa1c",
+      "code_hash": "95d72893e8d0c455fed60a79a030929165c242fcb22b358940ec0bcb2f882c88",
+      "data_hash": "87e3d7b92aedceb393034ad2ddc4b53326a2f18ba7011c0d9a6da400b291b9de",
       "decision_reason": "Valid plateau detected; perturb the best candidate or diversify structured starts.",
       "input_artifacts": {
         "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
         "source_metadata": null
       },
-      "official_score": 0.9999630542418159,
+      "official_score": 0.999963766045536,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/candidates/task_B/B_003_perturb_best_and_repair.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_003_perturb_best_and_repair.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_003_perturb_best_and_repair.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_003_perturb_best_and_repair.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
@@ -152,21 +224,346 @@
     },
     {
       "candidate_id": "B_004_perturb_best_and_repair",
-      "code_hash": "bb77821494a790d050a741c72b3ee0179d781b5fcddf87fb93301c33b4a3a258",
-      "data_hash": "e66ae18253295dfcfa172caf7aa4224978864563ecae4c269c61bd3332528393",
+      "code_hash": "c946d949870db201846b1bb928bc7823911c1dfe5c2510c4b35cc5c19ab4132d",
+      "data_hash": "e9011f56e4d52d747b4ab1e8e10d489d4032d82bf92c48499abb30b11bc700ba",
       "decision_reason": "Valid plateau detected; perturb the best candidate or diversify structured starts.",
       "input_artifacts": {
         "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
         "source_metadata": null
       },
-      "official_score": 0.9999630542418159,
+      "official_score": 0.9999969021274452,
       "output_artifacts": {
-        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/candidates/task_B/B_004_perturb_best_and_repair.py",
-        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_121549/outputs/task_B/B_004_perturb_best_and_repair.txt",
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_004_perturb_best_and_repair.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_004_perturb_best_and_repair.txt",
         "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_B/solution.py"
       },
       "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
       "strategy": "perturb_best_and_repair"
+    },
+    {
+      "candidate_id": "B_90001_public_frontier_dominikkamp",
+      "code_hash": "cfa4d9e2a854f632e364a2c0c6e31fe9506e354c283f179fbee7523ca1f69ecc",
+      "data_hash": "08b61905298929ec6de561c814c269d6f0d44354f721b30a263b21ce116a0350",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": {
+          "frontier_strategy": "public_frontier_dominikkamp",
+          "local_path": "benchmarks/dominikkamp/square_n26.txt",
+          "official_evaluator_result": {
+            "exact_score": 0.99999736745286,
+            "exact_sum_radii": 2.6359830606320647,
+            "failure_type": "none",
+            "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_90001_public_frontier_dominikkamp.txt",
+            "returncode": 0,
+            "score": 0.99999736745286,
+            "sum_radii": 2.6359830606320647,
+            "valid": true
+          },
+          "raw_sum_radii": 2.635983060895661,
+          "safety_shrink": 0.9999999999,
+          "source": "DominikKamp/Packing",
+          "source_file": "square/n26/circlepacking_n26.txt",
+          "source_url": "https://github.com/DominikKamp/Packing",
+          "upstream_url": "https://raw.githubusercontent.com/DominikKamp/Packing/main/square/n26/circlepacking_n26.txt"
+        }
+      },
+      "official_score": 0.99999736745286,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_90001_public_frontier_dominikkamp.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_90001_public_frontier_dominikkamp.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "public_frontier_dominikkamp"
+    },
+    {
+      "candidate_id": "B_91002_contact_graph_feasibility_refine",
+      "code_hash": "d0890d5fd0aaaf046840e345b195738628dc1293d5204aac73281ef13d7c5da7",
+      "data_hash": "c3203167be52a1959ff81e037ddcc895c079772140d2f9679d0a57a96df3d188",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.999997359453387,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91002_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91002_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
+    },
+    {
+      "candidate_id": "B_91003_contact_graph_feasibility_refine",
+      "code_hash": "b82338bf89bb556831c62c7c5bfb72e5200a7f7e285e907c59b3af6be0ccfce2",
+      "data_hash": "131f08a5fa8d66a9a26bc78a17e7f2c882db7ab9e4fbd0fa9bfa586d4432efa0",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9999973592007317,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91003_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91003_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
+    },
+    {
+      "candidate_id": "B_91004_contact_graph_feasibility_refine",
+      "code_hash": "71f31d19c3da86843eccdeb9279e78d563a11412d8bf7ca227a7d0b1564d5db2",
+      "data_hash": "54da0388812bba54e6cc4747bf64fa293cf027d7a1443bf38a89f198376ab6e5",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9999973414693043,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91004_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91004_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
+    },
+    {
+      "candidate_id": "B_91005_contact_graph_feasibility_refine",
+      "code_hash": "b1275478d07a5eaf09d6279b02c1709fb6306599a7344290904b330379c6a22f",
+      "data_hash": "c9794ead5b3f78a12c4e7f218b61d9278cd6cf3655581263737bdb2f19d01715",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9999973445155261,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91005_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91005_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
+    },
+    {
+      "candidate_id": "B_91006_contact_graph_feasibility_refine",
+      "code_hash": "45e60db3bf9ed5d3de612600272bc6a280d5ede7872c3f2ecd07542c5d980cdd",
+      "data_hash": "b7ea11e6f1ecf69b05e0e4b2a41e449f5c045ea3a26e5206771b72c9f5252579",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9999639996556264,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91006_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91006_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
+    },
+    {
+      "candidate_id": "B_91007_contact_graph_feasibility_refine",
+      "code_hash": "cf1922e701f15125abfc6dcb6f498492c0b5f9464801b623f3690e4e7049211b",
+      "data_hash": "fabb075b404a335c00c8a5a074b4d3e65f40f7e90c22a28e9dbd3909eb21dcb5",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9999973399664405,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91007_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91007_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
+    },
+    {
+      "candidate_id": "B_91008_contact_graph_feasibility_refine",
+      "code_hash": "4f9df47374ec0e435059767f9003c78fe46f5d6c58fdaca387b26ceed0ad449f",
+      "data_hash": "13ce33983b2954020800dfc9dec459da6c10179f703b48d2f7269dc13e04781a",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9999640191625531,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91008_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91008_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
+    },
+    {
+      "candidate_id": "B_91009_contact_graph_feasibility_refine",
+      "code_hash": "293fc37e48d188bb4fe63828ad245bf2dd89beb2b3cad1a8159fb1aa20e02b5d",
+      "data_hash": "7e87cfb7258efcf065636555c474c981d1595ceddcb1c23872475ff13752fd93",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.983871672722168,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91009_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91009_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
+    },
+    {
+      "candidate_id": "B_91010_contact_graph_feasibility_refine",
+      "code_hash": "d3a70f64e3d1f01f5b2c6daa02ad7cb66e105b8ab6dc5fb4fac7af70db6b3f72",
+      "data_hash": "77843f553ecdd8d3a28b62ad1a77daac956f35285d2a12e5f8c22a0288897206",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9999640235131652,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91010_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91010_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
+    },
+    {
+      "candidate_id": "B_91011_contact_graph_feasibility_refine",
+      "code_hash": "a4f217a948228d29ac33ec76219b372d63039453df020bc5ab53d255d10d6d88",
+      "data_hash": "9da744e59a113ee0ee706436725618155876ff9e5d44a970376eb602c4ca8d3e",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9838716678884165,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91011_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91011_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
+    },
+    {
+      "candidate_id": "B_91012_contact_graph_feasibility_refine",
+      "code_hash": "409b55fb43ff11e3fd633719adc2c142cace9ba1bf2c0937fa051428bf082e80",
+      "data_hash": "d0a5fcd9a257833c303d1f2902e974d2aa156732d8b47eb409c787fb7e44b0ca",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9838716568032445,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91012_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91012_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
+    },
+    {
+      "candidate_id": "B_91013_contact_graph_feasibility_refine",
+      "code_hash": "9fe28406241c080e6a48bf6295ccb68f07205ea68ec1e364dc48782ba9757b40",
+      "data_hash": "cce58a27d3088a17296392f1c937e1eb2c2164bd2ea9bb2932e3cc248b402eaf",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9838716590994654,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91013_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91013_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
+    },
+    {
+      "candidate_id": "B_91014_contact_graph_feasibility_refine",
+      "code_hash": "897f4ec5295431b9ff40b99de81adfddbd316a261dd185b29c96a25e649c554e",
+      "data_hash": "14dbfb0623509188a69d1e6b785b92809f749fdd1e5e9282fc669dcae28fc091",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9838716723494696,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91014_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91014_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
+    },
+    {
+      "candidate_id": "B_91015_contact_graph_feasibility_refine",
+      "code_hash": "127fa565e2d584a53400aa28e1126f03856f86786675bbbe66cb7e938634a444",
+      "data_hash": "9417a74e9cf53c222c121f9d6c5aa76e96bf2429cf1195e9b80b757f2f968e76",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9838716728527963,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91015_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91015_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
+    },
+    {
+      "candidate_id": "B_91016_contact_graph_feasibility_refine",
+      "code_hash": "96e377f7f61518144e965521d97b96ed8fd182833f19ebe4a2550e33bf8fd4cc",
+      "data_hash": "096e754133800a665b6d3e9618f794e829b42a1d14f89185fd036bd91b0fa629",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9838716851609765,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91016_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91016_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
+    },
+    {
+      "candidate_id": "B_91017_contact_graph_feasibility_refine",
+      "code_hash": "d5a1aa1b4076b2a11c4c16c5bde5b28eda35f16ee91d604f3ad1bb10a73015f9",
+      "data_hash": "9d2a3c6c8779f68eaaf33380ac4540e01c6d0a389ff369a2523ddd8022d480fa",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9838716896230056,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91017_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91017_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
+    },
+    {
+      "candidate_id": "B_91018_contact_graph_feasibility_refine",
+      "code_hash": "ba914639b52ef6a66ae73093509dd70cdb108dd9be30f7e9f04c2b9efabc2795",
+      "data_hash": "6bc572c60e2de4896667010bee753a6171ac91f8d317736f533559261add7440",
+      "decision_reason": "Breakthrough harness never accepts a candidate unless the official evaluator validates it.",
+      "input_artifacts": {
+        "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9838716712601709,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91018_contact_graph_feasibility_refine.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_91018_contact_graph_feasibility_refine.txt"
+      },
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "strategy": "contact_graph_feasibility_refine"
     }
   ],
   "replay_hint": "Run the code_snapshot for any node through the corresponding official evaluate.py.",

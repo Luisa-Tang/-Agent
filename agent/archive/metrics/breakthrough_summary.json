@@ -1,0 +1,214 @@
+{
+  "config": {
+    "batch_size": 8,
+    "max_candidates": 200,
+    "seed": 42,
+    "target_score_a": 1.0,
+    "target_score_b": 1.0,
+    "use_benchmark_seeds": true
+  },
+  "frontier_sources": {
+    "claudeevolve_circle_packing": {
+      "availability": "unavailable_no_local_coordinates",
+      "license_note": "No local raw coordinates or license file are present in this repository.",
+      "local_artifacts": [],
+      "name": "ClaudeEvolve circle_packing result",
+      "raw_objective_claim": "Not used; no locally available coordinate/code artifact was found.",
+      "retrieval_time_utc": "2026-07-04T20:30:00Z",
+      "source_id": "claudeevolve_circle_packing",
+      "url": "https://github.com/search?q=ClaudeEvolve+circle_packing&type=repositories"
+    },
+    "dominikkamp_packing": {
+      "availability": "coordinates_available_locally",
+      "license_note": "Public GitHub repository; local raw coordinate copies are tracked under benchmarks/dominikkamp with explicit source attribution.",
+      "local_artifacts": [
+        "benchmarks/dominikkamp/rectangle_n21.txt",
+        "benchmarks/dominikkamp/square_n26.txt"
+      ],
+      "name": "DominikKamp/Packing",
+      "raw_objective_claim": "rectangle/n21 raw sum 2.365832326862653; square/n26 raw sum 2.635983060895661.",
+      "retrieval_time_utc": "2026-07-04T20:30:00Z",
+      "source_id": "dominikkamp_packing",
+      "url": "https://github.com/DominikKamp/Packing"
+    },
+    "fico_task_a": {
+      "availability": "optional_local_file",
+      "license_note": "Optional public seed support only; no dependency on a network fetch.",
+      "local_artifacts": [
+        "benchmarks/fico/SOURCE.md"
+      ],
+      "name": "FICO public Task A solution if coordinates are available",
+      "raw_objective_claim": "Only used when a local newsolutions.txt Problem 13 coordinate copy is available.",
+      "retrieval_time_utc": "2026-07-04T20:30:00Z",
+      "source_id": "fico_task_a",
+      "url": "https://www.fico.com/en/products/fico-xpress-optimization"
+    },
+    "openevolve_issue_156": {
+      "availability": "unavailable_no_local_extract",
+      "license_note": "Issue/code content is not vendored here; no local extractable coordinates were found.",
+      "local_artifacts": [],
+      "name": "OpenEvolve issue #156 code if extractable",
+      "raw_objective_claim": "Not used as a score claim; only local official evaluator results can validate a seed.",
+      "retrieval_time_utc": "2026-07-04T20:30:00Z",
+      "source_id": "openevolve_issue_156",
+      "url": "https://github.com/codelion/openevolve/issues/156"
+    },
+    "thetaevolve_circle_packing": {
+      "availability": "unavailable_no_local_coordinates",
+      "license_note": "No local raw coordinates or license file are present in this repository.",
+      "local_artifacts": [],
+      "name": "ThetaEvolve circle packing result",
+      "raw_objective_claim": "Not used; no locally available coordinate/code artifact was found.",
+      "retrieval_time_utc": "2026-07-04T20:30:00Z",
+      "source_id": "thetaevolve_circle_packing",
+      "url": "https://github.com/search?q=ThetaEvolve+circle+packing&type=repositories"
+    }
+  },
+  "novelty_archive_path": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/metrics/novelty_archive.json",
+  "run_id": "20260704_130508",
+  "tasks": {
+    "A": {
+      "best_after": {
+        "active_boundary_pattern": null,
+        "candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "contact_graph_hash": null,
+        "height": 1.0232688920031396,
+        "score": 0.9999967571069156,
+        "strategy": "benchmark_seed_dominikkamp",
+        "sum_radii": 2.365832327833825,
+        "width": 0.9767311079968606
+      },
+      "best_before": {
+        "active_boundary_pattern": null,
+        "candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "contact_graph_hash": null,
+        "height": 1.0232688920031396,
+        "score": 0.9999967571069156,
+        "strategy": "benchmark_seed_dominikkamp",
+        "sum_radii": 2.365832327833825,
+        "width": 0.9767311079968606
+      },
+      "best_score_after": 0.9999967571069156,
+      "best_score_before": 0.9999967571069156,
+      "exceeded_target": false,
+      "frontier_failures": [],
+      "frontier_verified": [
+        {
+          "active_boundary_pattern": "left:15,16,19,20|right:0,4,8,11,13|bottom:0,3,9,20|top:5,11,15,17",
+          "archived": true,
+          "candidate_id": "A_90001_public_frontier_dominikkamp",
+          "contact_graph_hash": "736cb82a03549e01",
+          "failure_type": "none",
+          "improved": false,
+          "score": 0.9999967571069156,
+          "source_metadata": {
+            "converted_width_height": {
+              "height": 1.0232688920031396,
+              "width": 0.9767311079968606
+            },
+            "frontier_strategy": "public_frontier_dominikkamp",
+            "local_path": "benchmarks/dominikkamp/rectangle_n21.txt",
+            "normalization_scale": 1.0000000008835837,
+            "official_evaluator_result": {
+              "exact_score": 0.9999967571069156,
+              "exact_sum_radii": 2.365832327833825,
+              "failure_type": "none",
+              "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_A/A_90001_public_frontier_dominikkamp.txt",
+              "returncode": 0,
+              "score": 0.9999967571069156,
+              "sum_radii": 2.365832327833825,
+              "valid": true
+            },
+            "raw_sum_radii": 2.365832326862653,
+            "raw_width_height": {
+              "height": 1.023268891098996,
+              "width": 0.9767311071338369
+            },
+            "safety_shrink": 0.9999999999,
+            "source": "DominikKamp/Packing",
+            "source_file": "rectangle/n21/rectangle_n21.txt",
+            "source_url": "https://github.com/DominikKamp/Packing",
+            "upstream_url": "https://raw.githubusercontent.com/DominikKamp/Packing/main/rectangle/n21/rectangle_n21.txt"
+          },
+          "strategy": "public_frontier_dominikkamp",
+          "sum_radii": 2.365832327833825,
+          "valid": true
+        }
+      ],
+      "gap_to_target": 3.2428930843986237e-06,
+      "generated_count": 100,
+      "improvements": 0,
+      "official_evaluated_count": 18,
+      "target_score": 1.0,
+      "task": "A",
+      "valid_count": 18
+    },
+    "B": {
+      "best_after": {
+        "active_boundary_pattern": null,
+        "candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "contact_graph_hash": null,
+        "height": null,
+        "score": 0.99999736745286,
+        "strategy": "benchmark_seed_dominikkamp",
+        "sum_radii": 2.6359830606320647,
+        "width": null
+      },
+      "best_before": {
+        "active_boundary_pattern": null,
+        "candidate_id": "B_000_benchmark_seed_dominikkamp",
+        "contact_graph_hash": null,
+        "height": null,
+        "score": 0.99999736745286,
+        "strategy": "benchmark_seed_dominikkamp",
+        "sum_radii": 2.6359830606320647,
+        "width": null
+      },
+      "best_score_after": 0.99999736745286,
+      "best_score_before": 0.99999736745286,
+      "exceeded_target": false,
+      "frontier_failures": [],
+      "frontier_verified": [
+        {
+          "active_boundary_pattern": "left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22",
+          "archived": true,
+          "candidate_id": "B_90001_public_frontier_dominikkamp",
+          "contact_graph_hash": "8dae3c4e6bea6bd1",
+          "failure_type": "none",
+          "improved": false,
+          "score": 0.99999736745286,
+          "source_metadata": {
+            "frontier_strategy": "public_frontier_dominikkamp",
+            "local_path": "benchmarks/dominikkamp/square_n26.txt",
+            "official_evaluator_result": {
+              "exact_score": 0.99999736745286,
+              "exact_sum_radii": 2.6359830606320647,
+              "failure_type": "none",
+              "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/outputs/task_B/B_90001_public_frontier_dominikkamp.txt",
+              "returncode": 0,
+              "score": 0.99999736745286,
+              "sum_radii": 2.6359830606320647,
+              "valid": true
+            },
+            "raw_sum_radii": 2.635983060895661,
+            "safety_shrink": 0.9999999999,
+            "source": "DominikKamp/Packing",
+            "source_file": "square/n26/circlepacking_n26.txt",
+            "source_url": "https://github.com/DominikKamp/Packing",
+            "upstream_url": "https://raw.githubusercontent.com/DominikKamp/Packing/main/square/n26/circlepacking_n26.txt"
+          },
+          "strategy": "public_frontier_dominikkamp",
+          "sum_radii": 2.6359830606320647,
+          "valid": true
+        }
+      ],
+      "gap_to_target": 2.6325471399468725e-06,
+      "generated_count": 100,
+      "improvements": 0,
+      "official_evaluated_count": 18,
+      "target_score": 1.0,
+      "task": "B",
+      "valid_count": 18
+    }
+  }
+}

@@ -1,0 +1,7762 @@
+{
+  "bucket_count": 32,
+  "buckets": {
+    "task=A|family=benchmark_seed_dominikkamp|cg=none|boundary=none|score=0.99999-1.0|safety=tight|aspect=0.9-1.1": {
+      "bucket_key": "task=A|family=benchmark_seed_dominikkamp|cg=none|boundary=none|score=0.99999-1.0|safety=tight|aspect=0.9-1.1",
+      "candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_000_benchmark_seed_dominikkamp.py",
+      "contact_graph": {},
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688920031396,
+        "min_boundary_margin": 1.2396125792513146e-11,
+        "min_pairwise_margin": 7.358091080877927e-10,
+        "score": 0.9999967574799993,
+        "sum_radii": 2.3658323287164813,
+        "width": 0.9767311079968606
+      },
+      "height": 1.0232688920031396,
+      "parent_candidate_id": null,
+      "score": 0.9999967571069156,
+      "strategy": "benchmark_seed_dominikkamp",
+      "strategy_family": "benchmark_seed_dominikkamp",
+      "sum_radii": 2.365832327833825,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311079968606
+    },
+    "task=A|family=contact_graph_refinement|cg=3b83964c|boundary=bottom:0,1,2,3,4|top:17,18,19,20|score=<0.9|safety=near|aspect=1.1-1.3": {
+      "bucket_key": "task=A|family=contact_graph_refinement|cg=3b83964c|boundary=bottom:0,1,2,3,4|top:17,18,19,20|score=<0.9|safety=near|aspect=1.1-1.3",
+      "candidate_id": "A_91013_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_91013_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 9,
+        "active_boundary_pattern": "bottom:0,1,2,3,4|top:17,18,19,20",
+        "active_edge_count": 12,
+        "active_edges": [
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            13
+          ],
+          [
+            10,
+            14
+          ],
+          [
+            11,
+            15
+          ],
+          [
+            12,
+            16
+          ],
+          [
+            13,
+            17
+          ],
+          [
+            16,
+            20
+          ]
+        ],
+        "contact_graph_hash": "3b83964c1132d924",
+        "median_pairwise_margin": 0.3516755999761476,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 0.8999999999999999,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "score": 0.8258962818724926,
+        "sum_radii": 1.953938459505218,
+        "width": 1.1
+      },
+      "height": 0.8999999999999999,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.8258962818724926,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 1.953938459505218,
+      "task": "A",
+      "valid": true,
+      "width": 1.1
+    },
+    "task=A|family=contact_graph_refinement|cg=736cb82a|boundary=left:15,16,19,20|right:0,4,8,11,13|bottom:0,3,9,20|top:5,11,15,17|score=0.99999-1.0|safety=near|aspect=0.9-1.1": {
+      "bucket_key": "task=A|family=contact_graph_refinement|cg=736cb82a|boundary=left:15,16,19,20|right:0,4,8,11,13|bottom:0,3,9,20|top:5,11,15,17|score=0.99999-1.0|safety=near|aspect=0.9-1.1",
+      "candidate_id": "A_91014_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_91014_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 17,
+        "active_boundary_pattern": "left:15,16,19,20|right:0,4,8,11,13|bottom:0,3,9,20|top:5,11,15,17",
+        "active_edge_count": 47,
+        "active_edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            15
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            1,
+            19
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            5,
+            17
+          ],
+          [
+            5,
+            18
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            6,
+            17
+          ],
+          [
+            6,
+            18
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            7,
+            16
+          ],
+          [
+            7,
+            18
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            14
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            15,
+            19
+          ],
+          [
+            16,
+            19
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            17,
+            18
+          ]
+        ],
+        "contact_graph_hash": "736cb82a03549e01",
+        "median_pairwise_margin": 0.2559697383455876,
+        "min_boundary_margin": 1.9999998879249858e-10,
+        "min_pairwise_margin": 2.000000026702864e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688920031394,
+        "min_boundary_margin": 1.9999998879249858e-10,
+        "min_pairwise_margin": 2.000000026702864e-10,
+        "score": 0.9999967496208803,
+        "sum_radii": 2.3658323101230634,
+        "width": 0.9767311079968606
+      },
+      "height": 1.0232688920031394,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9999967496208803,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.3658323101230634,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311079968606
+    },
+    "task=A|family=contact_graph_refinement|cg=894e635d|boundary=left:0,10,20|right:4,9,19|bottom:0,3,4|top:17,19,20|score=0.9-0.99|safety=near|aspect=1.1-1.3": {
+      "bucket_key": "task=A|family=contact_graph_refinement|cg=894e635d|boundary=left:0,10,20|right:4,9,19|bottom:0,3,4|top:17,19,20|score=0.9-0.99|safety=near|aspect=1.1-1.3",
+      "candidate_id": "A_91010_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_91010_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 12,
+        "active_boundary_pattern": "left:0,10,20|right:4,9,19|bottom:0,3,4|top:17,19,20",
+        "active_edge_count": 31,
+        "active_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            16
+          ],
+          [
+            12,
+            17
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            18,
+            19
+          ]
+        ],
+        "contact_graph_hash": "894e635df19c49f1",
+        "median_pairwise_margin": 0.2888083966438352,
+        "min_boundary_margin": 2.3896056841610225e-08,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 0.897608406267923,
+        "min_boundary_margin": 2.3896056841610225e-08,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "score": 0.9853620774265727,
+        "sum_radii": 2.3312090172588826,
+        "width": 1.102391593732077
+      },
+      "height": 0.897608406267923,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9853620774265727,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.3312090172588826,
+      "task": "A",
+      "valid": true,
+      "width": 1.102391593732077
+    },
+    "task=A|family=contact_graph_refinement|cg=9a0d23d2|boundary=left:19,20|right:0,8,13|bottom:0,20|top:5,17|score=0.99999-1.0|safety=near|aspect=0.9-1.1": {
+      "bucket_key": "task=A|family=contact_graph_refinement|cg=9a0d23d2|boundary=left:19,20|right:0,8,13|bottom:0,20|top:5,17|score=0.99999-1.0|safety=near|aspect=0.9-1.1",
+      "candidate_id": "A_91015_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_91015_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 9,
+        "active_boundary_pattern": "left:19,20|right:0,8,13|bottom:0,20|top:5,17",
+        "active_edge_count": 36,
+        "active_edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            1,
+            19
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            5,
+            17
+          ],
+          [
+            5,
+            18
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            7,
+            18
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            14
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            15,
+            19
+          ],
+          [
+            16,
+            19
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            17,
+            18
+          ]
+        ],
+        "contact_graph_hash": "9a0d23d264413ee3",
+        "median_pairwise_margin": 0.25596973302507864,
+        "min_boundary_margin": 6.49617049042206e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688946084267,
+        "min_boundary_margin": 6.49617049042206e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "score": 0.9999965579944504,
+        "sum_radii": 2.3658318567655905,
+        "width": 0.9767311053915732
+      },
+      "height": 1.0232688946084267,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9999965579944504,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.3658318567655905,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311053915732
+    },
+    "task=A|family=contact_graph_refinement|cg=b274757b|boundary=left:19,20|right:0,8,13|bottom:0,20|top:5,17|score=0.99999-1.0|safety=near|aspect=0.9-1.1": {
+      "bucket_key": "task=A|family=contact_graph_refinement|cg=b274757b|boundary=left:19,20|right:0,8,13|bottom:0,20|top:5,17|score=0.99999-1.0|safety=near|aspect=0.9-1.1",
+      "candidate_id": "A_91018_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_91018_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 9,
+        "active_boundary_pattern": "left:19,20|right:0,8,13|bottom:0,20|top:5,17",
+        "active_edge_count": 37,
+        "active_edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            1,
+            19
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            5,
+            17
+          ],
+          [
+            5,
+            18
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            7,
+            18
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            14
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            15,
+            19
+          ],
+          [
+            16,
+            19
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            17,
+            18
+          ]
+        ],
+        "contact_graph_hash": "b274757b12e26191",
+        "median_pairwise_margin": 0.25596972873470514,
+        "min_boundary_margin": 5.890299442645741e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688946084267,
+        "min_boundary_margin": 5.890299442645741e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "score": 0.9999965596560544,
+        "sum_radii": 2.3658318606966797,
+        "width": 0.9767311053915732
+      },
+      "height": 1.0232688946084267,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9999965596560544,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.3658318606966797,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311053915732
+    },
+    "task=A|family=contact_graph_refinement|cg=da628bc7|boundary=left:0,10,20|right:4,9,19|bottom:0,2,4|top:17,19,20|score=0.9-0.99|safety=near|aspect=1.1-1.3": {
+      "bucket_key": "task=A|family=contact_graph_refinement|cg=da628bc7|boundary=left:0,10,20|right:4,9,19|bottom:0,2,4|top:17,19,20|score=0.9-0.99|safety=near|aspect=1.1-1.3",
+      "candidate_id": "A_91008_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_91008_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 12,
+        "active_boundary_pattern": "left:0,10,20|right:4,9,19|bottom:0,2,4|top:17,19,20",
+        "active_edge_count": 38,
+        "active_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            16
+          ],
+          [
+            12,
+            17
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            17
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            18,
+            19
+          ]
+        ],
+        "contact_graph_hash": "da628bc733e52f22",
+        "median_pairwise_margin": 0.2888083832356277,
+        "min_boundary_margin": 2.3693542808289614e-08,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 0.897608406267923,
+        "min_boundary_margin": 2.3693542808289614e-08,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "score": 0.9853621138610003,
+        "sum_radii": 2.3312091034569087,
+        "width": 1.102391593732077
+      },
+      "height": 0.897608406267923,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9853621138610003,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.3312091034569087,
+      "task": "A",
+      "valid": true,
+      "width": 1.102391593732077
+    },
+    "task=A|family=contact_graph_refinement|cg=df348287|boundary=left:15,19,20|right:0,8,13|bottom:0,20|top:5,15,17|score=0.99999-1.0|safety=near|aspect=0.9-1.1": {
+      "bucket_key": "task=A|family=contact_graph_refinement|cg=df348287|boundary=left:15,19,20|right:0,8,13|bottom:0,20|top:5,15,17|score=0.99999-1.0|safety=near|aspect=0.9-1.1",
+      "candidate_id": "A_91017_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_91017_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 11,
+        "active_boundary_pattern": "left:15,19,20|right:0,8,13|bottom:0,20|top:5,15,17",
+        "active_edge_count": 40,
+        "active_edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            15
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            1,
+            19
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            5,
+            17
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            6,
+            17
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            7,
+            16
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            14
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            15,
+            19
+          ],
+          [
+            16,
+            19
+          ],
+          [
+            16,
+            20
+          ]
+        ],
+        "contact_graph_hash": "df348287e733b2df",
+        "median_pairwise_margin": 0.25596971973331234,
+        "min_boundary_margin": 8.171306964399605e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688946084267,
+        "min_boundary_margin": 8.171306964399605e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "score": 0.9999965847062928,
+        "sum_radii": 2.365831919961536,
+        "width": 0.9767311053915732
+      },
+      "height": 1.0232688946084267,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9999965847062928,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.365831919961536,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311053915732
+    },
+    "task=A|family=contact_graph_refinement|cg=fe09b60f|boundary=left:0,10,20|right:4,9,19|bottom:0,4|top:17,19,20|score=0.9-0.99|safety=near|aspect=1.1-1.3": {
+      "bucket_key": "task=A|family=contact_graph_refinement|cg=fe09b60f|boundary=left:0,10,20|right:4,9,19|bottom:0,4|top:17,19,20|score=0.9-0.99|safety=near|aspect=1.1-1.3",
+      "candidate_id": "A_91006_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_91006_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 11,
+        "active_boundary_pattern": "left:0,10,20|right:4,9,19|bottom:0,4|top:17,19,20",
+        "active_edge_count": 37,
+        "active_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            16
+          ],
+          [
+            12,
+            17
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            17
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            18,
+            19
+          ]
+        ],
+        "contact_graph_hash": "fe09b60f79dffcf1",
+        "median_pairwise_margin": 0.2888083852139909,
+        "min_boundary_margin": 2.3999761858406465e-08,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 0.897608406267923,
+        "min_boundary_margin": 2.3999761858406465e-08,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "score": 0.9853621093224529,
+        "sum_radii": 2.331209092719432,
+        "width": 1.102391593732077
+      },
+      "height": 0.897608406267923,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9853621093224529,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.331209092719432,
+      "task": "A",
+      "valid": true,
+      "width": 1.102391593732077
+    },
+    "task=A|family=hexagonal_or_staggered_initialization|cg=none|boundary=none|score=<0.9|safety=slack|aspect=1.1-1.3": {
+      "bucket_key": "task=A|family=hexagonal_or_staggered_initialization|cg=none|boundary=none|score=<0.9|safety=slack|aspect=1.1-1.3",
+      "candidate_id": "A_001_hexagonal_or_staggered_initialization",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_001_hexagonal_or_staggered_initialization.py",
+      "contact_graph": {},
+      "failure_type": "low_score",
+      "geometry_metrics": {
+        "height": 0.8999999999999999,
+        "min_boundary_margin": 1.0000000000287557e-07,
+        "min_pairwise_margin": 1.0000000000287557e-07,
+        "score": 0.8258951688632412,
+        "sum_radii": 1.9539358263034106,
+        "width": 1.1
+      },
+      "height": 0.8999999999999999,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.8258951688632412,
+      "strategy": "hexagonal_or_staggered_initialization",
+      "strategy_family": "hexagonal_or_staggered_initialization",
+      "sum_radii": 1.9539358263034106,
+      "task": "A",
+      "valid": true,
+      "width": 1.1
+    },
+    "task=A|family=perturb_best_and_repair|cg=none|boundary=none|score=0.99999-1.0|safety=near|aspect=0.9-1.1": {
+      "bucket_key": "task=A|family=perturb_best_and_repair|cg=none|boundary=none|score=0.99999-1.0|safety=near|aspect=0.9-1.1",
+      "candidate_id": "A_004_perturb_best_and_repair",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_004_perturb_best_and_repair.py",
+      "contact_graph": {},
+      "failure_type": "plateau",
+      "geometry_metrics": {
+        "height": 1.0232688946084267,
+        "min_boundary_margin": 7.99999999995249e-08,
+        "min_pairwise_margin": 7.999969843519583e-08,
+        "score": 0.999996342374872,
+        "sum_radii": 2.365831346644167,
+        "width": 0.9767311053915732
+      },
+      "height": 1.0232688946084267,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.999996342374872,
+      "strategy": "perturb_best_and_repair",
+      "strategy_family": "perturb_best_and_repair",
+      "sum_radii": 2.365831346644167,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311053915732
+    },
+    "task=A|family=public_frontier_seed|cg=736cb82a|boundary=left:15,16,19,20|right:0,4,8,11,13|bottom:0,3,9,20|top:5,11,15,17|score=0.99999-1.0|safety=tight|aspect=0.9-1.1": {
+      "bucket_key": "task=A|family=public_frontier_seed|cg=736cb82a|boundary=left:15,16,19,20|right:0,4,8,11,13|bottom:0,3,9,20|top:5,11,15,17|score=0.99999-1.0|safety=tight|aspect=0.9-1.1",
+      "candidate_id": "A_90001_public_frontier_dominikkamp",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_90001_public_frontier_dominikkamp.py",
+      "contact_graph": {
+        "active_boundary_count": 17,
+        "active_boundary_pattern": "left:15,16,19,20|right:0,4,8,11,13|bottom:0,3,9,20|top:5,11,15,17",
+        "active_edge_count": 47,
+        "active_edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            15
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            1,
+            19
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            5,
+            17
+          ],
+          [
+            5,
+            18
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            6,
+            17
+          ],
+          [
+            6,
+            18
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            7,
+            16
+          ],
+          [
+            7,
+            18
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            14
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            15,
+            19
+          ],
+          [
+            16,
+            19
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            17,
+            18
+          ]
+        ],
+        "contact_graph_hash": "736cb82a03549e01",
+        "median_pairwise_margin": 0.2559697330763576,
+        "min_boundary_margin": 1.2396125792513146e-11,
+        "min_pairwise_margin": 7.358091080877927e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688920031396,
+        "min_boundary_margin": 1.2396125792513146e-11,
+        "min_pairwise_margin": 7.358091080877927e-10,
+        "score": 0.9999967574799993,
+        "sum_radii": 2.3658323287164813,
+        "width": 0.9767311079968606
+      },
+      "height": 1.0232688920031396,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9999967571069156,
+      "strategy": "public_frontier_dominikkamp",
+      "strategy_family": "public_frontier_seed",
+      "sum_radii": 2.365832327833825,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311079968606
+    },
+    "task=A|family=scipy_slsqp_joint|cg=none|boundary=none|score=0.9-0.99|safety=near|aspect=1.1-1.3": {
+      "bucket_key": "task=A|family=scipy_slsqp_joint|cg=none|boundary=none|score=0.9-0.99|safety=near|aspect=1.1-1.3",
+      "candidate_id": "A_002_scipy_slsqp_joint",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_002_scipy_slsqp_joint.py",
+      "contact_graph": {},
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 0.897608406267923,
+        "min_boundary_margin": 7.99999999995249e-08,
+        "min_pairwise_margin": 7.99999874678825e-08,
+        "score": 0.9853618657620588,
+        "sum_radii": 2.331208516494509,
+        "width": 1.102391593732077
+      },
+      "height": 0.897608406267923,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9853618657620588,
+      "strategy": "scipy_slsqp_joint",
+      "strategy_family": "scipy_slsqp_joint",
+      "sum_radii": 2.331208516494509,
+      "task": "A",
+      "valid": true,
+      "width": 1.102391593732077
+    },
+    "task=B|family=benchmark_seed_dominikkamp|cg=none|boundary=none|score=0.99999-1.0|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=benchmark_seed_dominikkamp|cg=none|boundary=none|score=0.99999-1.0|safety=near|aspect=unit",
+      "candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
+      "contact_graph": {},
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.328078563262892e-10,
+        "min_pairwise_margin": 3.765848188841403e-10,
+        "score": 0.99999736745286,
+        "sum_radii": 2.6359830606320647,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": null,
+      "score": 0.99999736745286,
+      "strategy": "benchmark_seed_dominikkamp",
+      "strategy_family": "benchmark_seed_dominikkamp",
+      "sum_radii": 2.6359830606320647,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=contact_graph_refinement|cg=01d893f5|boundary=left:0,6,24|right:5,23|bottom:0,1,4|top:21,23,24|score=0.9-0.99|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=01d893f5|boundary=left:0,6,24|right:5,23|bottom:0,1,4|top:21,23,24|score=0.9-0.99|safety=near|aspect=unit",
+      "candidate_id": "B_91014_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91014_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 11,
+        "active_boundary_pattern": "left:0,6,24|right:5,23|bottom:0,1,4|top:21,23,24",
+        "active_edge_count": 40,
+        "active_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            15
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            9,
+            11
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            13,
+            19
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            15,
+            19
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            22
+          ],
+          [
+            17,
+            23
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            19,
+            20
+          ],
+          [
+            20,
+            21
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            21,
+            23
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            22,
+            23
+          ]
+        ],
+        "contact_graph_hash": "01d893f596742456",
+        "median_pairwise_margin": 0.30568748952784286,
+        "min_boundary_margin": 9.070720841108937e-10,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 9.070720841108937e-10,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "score": 0.9838716723494696,
+        "sum_radii": 2.5934758895964785,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9838716723494696,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.5934758895964785,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=contact_graph_refinement|cg=04120fc5|boundary=left:6,24|right:5,11,17,23|bottom:2,5|top:21,23,24|score=0.9-0.99|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=04120fc5|boundary=left:6,24|right:5,11,17,23|bottom:2,5|top:21,23,24|score=0.9-0.99|safety=near|aspect=unit",
+      "candidate_id": "B_91017_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91017_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 11,
+        "active_boundary_pattern": "left:6,24|right:5,11,17,23|bottom:2,5|top:21,23,24",
+        "active_edge_count": 43,
+        "active_edges": [
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            15
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            15,
+            19
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            22
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            22
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            17,
+            23
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            18,
+            25
+          ],
+          [
+            19,
+            20
+          ],
+          [
+            19,
+            25
+          ],
+          [
+            20,
+            21
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            20,
+            25
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            21,
+            23
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            22,
+            23
+          ],
+          [
+            24,
+            25
+          ]
+        ],
+        "contact_graph_hash": "04120fc55d4d0b07",
+        "median_pairwise_margin": 0.3056875119946748,
+        "min_boundary_margin": 1.772721150428147e-08,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 1.772721150428147e-08,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "score": 0.9838716896230056,
+        "sum_radii": 2.5934759351293466,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9838716896230056,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.5934759351293466,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=contact_graph_refinement|cg=332a627f|boundary=left:22,23,25|right:13,16|bottom:15|top:22|score=0.9999-0.99999|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=332a627f|boundary=left:22,23,25|right:13,16|bottom:15|top:22|score=0.9999-0.99999|safety=near|aspect=unit",
+      "candidate_id": "B_91006_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91006_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 7,
+        "active_boundary_pattern": "left:22,23,25|right:13,16|bottom:15|top:22",
+        "active_edge_count": 41,
+        "active_edges": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            23
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            16
+          ],
+          [
+            1,
+            24
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            19
+          ],
+          [
+            2,
+            24
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            4,
+            16
+          ],
+          [
+            4,
+            20
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            5,
+            24
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            23
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            7,
+            22
+          ],
+          [
+            8,
+            19
+          ],
+          [
+            8,
+            24
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            9,
+            20
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            10,
+            24
+          ],
+          [
+            11,
+            21
+          ],
+          [
+            11,
+            25
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            16
+          ],
+          [
+            14,
+            23
+          ],
+          [
+            14,
+            25
+          ],
+          [
+            15,
+            18
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            21
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            19,
+            24
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            23,
+            25
+          ]
+        ],
+        "contact_graph_hash": "332a627fe8731bab",
+        "median_pairwise_margin": 0.3278199712033191,
+        "min_boundary_margin": 1.8260527839819574e-08,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 1.8260527839819574e-08,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "score": 0.9999639996556264,
+        "sum_radii": 2.635895103452235,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9999639996556264,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.635895103452235,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=contact_graph_refinement|cg=363b03c1|boundary=left:0,22,23,25|right:12,16|bottom:3,15|top:12,22|score=0.9999-0.99999|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=363b03c1|boundary=left:0,22,23,25|right:12,16|bottom:3,15|top:12,22|score=0.9999-0.99999|safety=near|aspect=unit",
+      "candidate_id": "B_91010_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91010_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 10,
+        "active_boundary_pattern": "left:0,22,23,25|right:12,16|bottom:3,15|top:12,22",
+        "active_edge_count": 41,
+        "active_edges": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            17
+          ],
+          [
+            0,
+            23
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            16
+          ],
+          [
+            1,
+            24
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            19
+          ],
+          [
+            2,
+            24
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            16
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            5,
+            14
+          ],
+          [
+            5,
+            24
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            6,
+            23
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            7,
+            22
+          ],
+          [
+            8,
+            17
+          ],
+          [
+            8,
+            19
+          ],
+          [
+            8,
+            24
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            9,
+            20
+          ],
+          [
+            11,
+            21
+          ],
+          [
+            11,
+            25
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            16
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            14,
+            21
+          ],
+          [
+            14,
+            23
+          ],
+          [
+            14,
+            25
+          ],
+          [
+            15,
+            18
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            21
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            19,
+            24
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            23,
+            25
+          ]
+        ],
+        "contact_graph_hash": "363b03c1d6d9faea",
+        "median_pairwise_margin": 0.327819980893616,
+        "min_boundary_margin": 7.55518751727191e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 7.55518751727191e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "score": 0.9999640235131652,
+        "sum_radii": 2.635895166340468,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9999640235131652,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.635895166340468,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=contact_graph_refinement|cg=3abcc6c7|boundary=left:0,6,12,24|right:5,23|bottom:0,4|top:23,24,25|score=0.9-0.99|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=3abcc6c7|boundary=left:0,6,12,24|right:5,23|bottom:0,4|top:23,24,25|score=0.9-0.99|safety=near|aspect=unit",
+      "candidate_id": "B_91016_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91016_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 11,
+        "active_boundary_pattern": "left:0,6,12,24|right:5,23|bottom:0,4|top:23,24,25",
+        "active_edge_count": 40,
+        "active_edges": [
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            15
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            9,
+            11
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            19
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            15,
+            19
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            22
+          ],
+          [
+            17,
+            23
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            19,
+            20
+          ],
+          [
+            19,
+            25
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            20,
+            25
+          ],
+          [
+            21,
+            23
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            22,
+            23
+          ],
+          [
+            24,
+            25
+          ]
+        ],
+        "contact_graph_hash": "3abcc6c70c3228a1",
+        "median_pairwise_margin": 0.3056874920334419,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "score": 0.9838716851609765,
+        "sum_radii": 2.5934759233674822,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9838716851609765,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.5934759233674822,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=contact_graph_refinement|cg=53794059|boundary=left:12,24|right:5,23|bottom:0,2,5|top:21,23,24,25|score=0.9-0.99|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=53794059|boundary=left:12,24|right:5,23|bottom:0,2,5|top:21,23,24,25|score=0.9-0.99|safety=near|aspect=unit",
+      "candidate_id": "B_91012_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91012_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 11,
+        "active_boundary_pattern": "left:12,24|right:5,23|bottom:0,2,5|top:21,23,24,25",
+        "active_edge_count": 37,
+        "active_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            13
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            9,
+            11
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            22
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            17,
+            23
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            18,
+            25
+          ],
+          [
+            19,
+            20
+          ],
+          [
+            19,
+            25
+          ],
+          [
+            20,
+            21
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            20,
+            25
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            21,
+            23
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            22,
+            23
+          ],
+          [
+            24,
+            25
+          ]
+        ],
+        "contact_graph_hash": "5379405974a3bc84",
+        "median_pairwise_margin": 0.3056875189144265,
+        "min_boundary_margin": 1.560557394419959e-08,
+        "min_pairwise_margin": 1.9999996103692297e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 1.560557394419959e-08,
+        "min_pairwise_margin": 1.9999996103692297e-10,
+        "score": 0.9838716568032445,
+        "sum_radii": 2.5934758486167846,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9838716568032445,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.5934758486167846,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=contact_graph_refinement|cg=8dae3c4e|boundary=left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22|score=0.99999-1.0|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=8dae3c4e|boundary=left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22|score=0.99999-1.0|safety=near|aspect=unit",
+      "candidate_id": "B_91002_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91002_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 20,
+        "active_boundary_pattern": "left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22",
+        "active_edge_count": 58,
+        "active_edges": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            17
+          ],
+          [
+            0,
+            22
+          ],
+          [
+            0,
+            23
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            10
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            16
+          ],
+          [
+            1,
+            24
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            19
+          ],
+          [
+            2,
+            24
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            4,
+            16
+          ],
+          [
+            4,
+            18
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            5,
+            14
+          ],
+          [
+            5,
+            18
+          ],
+          [
+            5,
+            24
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            6,
+            17
+          ],
+          [
+            6,
+            23
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            17
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            7,
+            22
+          ],
+          [
+            8,
+            17
+          ],
+          [
+            8,
+            19
+          ],
+          [
+            8,
+            24
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            9,
+            20
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            10,
+            24
+          ],
+          [
+            11,
+            21
+          ],
+          [
+            11,
+            25
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            16
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            14,
+            21
+          ],
+          [
+            14,
+            23
+          ],
+          [
+            14,
+            25
+          ],
+          [
+            15,
+            18
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            21
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            18,
+            20
+          ],
+          [
+            18,
+            21
+          ],
+          [
+            19,
+            24
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            23,
+            25
+          ]
+        ],
+        "contact_graph_hash": "8dae3c4e6bea6bd1",
+        "median_pairwise_margin": 0.32498037881041647,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "score": 0.999997359453387,
+        "sum_radii": 2.6359830395455335,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.999997359453387,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.6359830395455335,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=contact_graph_refinement|cg=a3be4bfe|boundary=left:0,12,24|right:5,17|bottom:0,2,5|top:21,24|score=0.9-0.99|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=a3be4bfe|boundary=left:0,12,24|right:5,17|bottom:0,2,5|top:21,24|score=0.9-0.99|safety=near|aspect=unit",
+      "candidate_id": "B_91013_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91013_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 10,
+        "active_boundary_pattern": "left:0,12,24|right:5,17|bottom:0,2,5|top:21,24",
+        "active_edge_count": 37,
+        "active_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            15
+          ],
+          [
+            9,
+            11
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            22
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            22
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            17,
+            23
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            18,
+            25
+          ],
+          [
+            19,
+            25
+          ],
+          [
+            20,
+            21
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            21,
+            23
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            24,
+            25
+          ]
+        ],
+        "contact_graph_hash": "a3be4bfef84d3655",
+        "median_pairwise_margin": 0.3056875637909011,
+        "min_boundary_margin": 1.2381865810429105e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 1.2381865810429105e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "score": 0.9838716590994654,
+        "sum_radii": 2.5934758546695997,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9838716590994654,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.5934758546695997,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=contact_graph_refinement|cg=abb547bd|boundary=left:0,12,18,24|right:10,11,23|bottom:0,1,2|top:21,23,24,25|score=0.9-0.99|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=abb547bd|boundary=left:0,12,18,24|right:10,11,23|bottom:0,1,2|top:21,23,24,25|score=0.9-0.99|safety=near|aspect=unit",
+      "candidate_id": "B_91018_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91018_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 14,
+        "active_boundary_pattern": "left:0,12,18,24|right:10,11,23|bottom:0,1,2|top:21,23,24,25",
+        "active_edge_count": 38,
+        "active_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            15
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            9,
+            11
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            13,
+            19
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            22
+          ],
+          [
+            17,
+            23
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            18,
+            25
+          ],
+          [
+            19,
+            20
+          ],
+          [
+            19,
+            25
+          ],
+          [
+            20,
+            21
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            20,
+            25
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            21,
+            23
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            22,
+            23
+          ],
+          [
+            24,
+            25
+          ]
+        ],
+        "contact_graph_hash": "abb547bd5b325231",
+        "median_pairwise_margin": 0.30568749177178456,
+        "min_boundary_margin": 1.9898246939042963e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 1.9898246939042963e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "score": 0.9838716712601709,
+        "sum_radii": 2.593475886725098,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9838716712601709,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.593475886725098,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=contact_graph_refinement|cg=afb71e70|boundary=left:0,22,23,25|right:12,13,16|bottom:3,15|top:12,22|score=0.9999-0.99999|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=afb71e70|boundary=left:0,22,23,25|right:12,13,16|bottom:3,15|top:12,22|score=0.9999-0.99999|safety=near|aspect=unit",
+      "candidate_id": "B_91008_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91008_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 11,
+        "active_boundary_pattern": "left:0,22,23,25|right:12,13,16|bottom:3,15|top:12,22",
+        "active_edge_count": 42,
+        "active_edges": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            17
+          ],
+          [
+            0,
+            23
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            16
+          ],
+          [
+            1,
+            24
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            19
+          ],
+          [
+            2,
+            24
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            16
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            5,
+            14
+          ],
+          [
+            5,
+            24
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            6,
+            23
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            7,
+            22
+          ],
+          [
+            8,
+            17
+          ],
+          [
+            8,
+            19
+          ],
+          [
+            8,
+            24
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            9,
+            20
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            11,
+            21
+          ],
+          [
+            11,
+            25
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            16
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            14,
+            21
+          ],
+          [
+            14,
+            23
+          ],
+          [
+            14,
+            25
+          ],
+          [
+            15,
+            18
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            21
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            19,
+            24
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            23,
+            25
+          ]
+        ],
+        "contact_graph_hash": "afb71e705d516739",
+        "median_pairwise_margin": 0.3278199800574494,
+        "min_boundary_margin": 8.998746595101359e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 8.998746595101359e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "score": 0.9999640191625531,
+        "sum_radii": 2.635895154872298,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9999640191625531,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.635895154872298,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=contact_graph_refinement|cg=bd8bbcd0|boundary=left:0,12,24|right:5,10,11,23|bottom:2,5|top:21,23,24|score=0.9-0.99|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=bd8bbcd0|boundary=left:0,12,24|right:5,10,11,23|bottom:2,5|top:21,23,24|score=0.9-0.99|safety=near|aspect=unit",
+      "candidate_id": "B_91015_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91015_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 12,
+        "active_boundary_pattern": "left:0,12,24|right:5,10,11,23|bottom:2,5|top:21,23,24",
+        "active_edge_count": 44,
+        "active_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            13
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            15
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            9,
+            11
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            22
+          ],
+          [
+            16,
+            22
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            17,
+            23
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            19,
+            20
+          ],
+          [
+            20,
+            21
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            20,
+            25
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            21,
+            23
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            22,
+            23
+          ],
+          [
+            24,
+            25
+          ]
+        ],
+        "contact_graph_hash": "bd8bbcd00d2f680a",
+        "median_pairwise_margin": 0.30568752306457825,
+        "min_boundary_margin": 2.0947473602928035e-08,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.0947473602928035e-08,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "score": 0.9838716728527963,
+        "sum_radii": 2.5934758909232425,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9838716728527963,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.5934758909232425,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=contact_graph_refinement|cg=ccfd94fc|boundary=left:12,24|right:5,10,17|bottom:4,5|top:21,24|score=0.9-0.99|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=ccfd94fc|boundary=left:12,24|right:5,10,17|bottom:4,5|top:21,24|score=0.9-0.99|safety=near|aspect=unit",
+      "candidate_id": "B_91009_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91009_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 9,
+        "active_boundary_pattern": "left:12,24|right:5,10,17|bottom:4,5|top:21,24",
+        "active_edge_count": 46,
+        "active_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            13
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            15
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            9,
+            11
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            19
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            15,
+            19
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            22
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            22
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            17,
+            23
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            19,
+            20
+          ],
+          [
+            19,
+            25
+          ],
+          [
+            20,
+            21
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            21,
+            23
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            22,
+            23
+          ],
+          [
+            24,
+            25
+          ]
+        ],
+        "contact_graph_hash": "ccfd94fc93fc5c5f",
+        "median_pairwise_margin": 0.3056876233107021,
+        "min_boundary_margin": 3.4790624825475902e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 3.4790624825475902e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "score": 0.983871672722168,
+        "sum_radii": 2.5934758905789077,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.983871672722168,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.5934758905789077,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=contact_graph_refinement|cg=ee617a85|boundary=left:0,12,24|right:5,10,17|bottom:0,2,4,5|top:21,24,25|score=0.9-0.99|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=ee617a85|boundary=left:0,12,24|right:5,10,17|bottom:0,2,4,5|top:21,24,25|score=0.9-0.99|safety=near|aspect=unit",
+      "candidate_id": "B_91011_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91011_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 13,
+        "active_boundary_pattern": "left:0,12,24|right:5,10,17|bottom:0,2,4,5|top:21,24,25",
+        "active_edge_count": 39,
+        "active_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            15
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            9,
+            11
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            22
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            22
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            17,
+            23
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            18,
+            25
+          ],
+          [
+            20,
+            21
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            20,
+            25
+          ],
+          [
+            21,
+            23
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            24,
+            25
+          ]
+        ],
+        "contact_graph_hash": "ee617a85bf6972a3",
+        "median_pairwise_margin": 0.30568754196379294,
+        "min_boundary_margin": 2.6099313682470537e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.6099313682470537e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "score": 0.9838716678884165,
+        "sum_radii": 2.593475877837187,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9838716678884165,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.593475877837187,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=hexagonal_or_staggered_initialization|cg=none|boundary=none|score=0.9-0.99|safety=slack|aspect=unit": {
+      "bucket_key": "task=B|family=hexagonal_or_staggered_initialization|cg=none|boundary=none|score=0.9-0.99|safety=slack|aspect=unit",
+      "candidate_id": "B_001_hexagonal_or_staggered_initialization",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_001_hexagonal_or_staggered_initialization.py",
+      "contact_graph": {},
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 1.0000000000287557e-07,
+        "min_pairwise_margin": 1.0000000000287557e-07,
+        "score": 0.9151434423354281,
+        "sum_radii": 2.4123089625617653,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9151434423354281,
+      "strategy": "hexagonal_or_staggered_initialization",
+      "strategy_family": "hexagonal_or_staggered_initialization",
+      "sum_radii": 2.4123089625617653,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=perturb_best_and_repair|cg=none|boundary=none|score=0.9999-0.99999|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=perturb_best_and_repair|cg=none|boundary=none|score=0.9999-0.99999|safety=near|aspect=unit",
+      "candidate_id": "B_003_perturb_best_and_repair",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_003_perturb_best_and_repair.py",
+      "contact_graph": {},
+      "failure_type": "plateau",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 7.99999999995249e-08,
+        "min_pairwise_margin": 7.999919554579904e-08,
+        "score": 0.999963766045536,
+        "sum_radii": 2.6358944876583728,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.999963766045536,
+      "strategy": "perturb_best_and_repair",
+      "strategy_family": "perturb_best_and_repair",
+      "sum_radii": 2.6358944876583728,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=perturb_best_and_repair|cg=none|boundary=none|score=0.99999-1.0|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=perturb_best_and_repair|cg=none|boundary=none|score=0.99999-1.0|safety=near|aspect=unit",
+      "candidate_id": "B_004_perturb_best_and_repair",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_004_perturb_best_and_repair.py",
+      "contact_graph": {},
+      "failure_type": "plateau",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 7.99999999995249e-08,
+        "min_pairwise_margin": 7.999995690899375e-08,
+        "score": 0.9999969021274452,
+        "sum_radii": 2.6359818340389243,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9999969021274452,
+      "strategy": "perturb_best_and_repair",
+      "strategy_family": "perturb_best_and_repair",
+      "sum_radii": 2.6359818340389243,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=public_frontier_seed|cg=8dae3c4e|boundary=left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22|score=0.99999-1.0|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=public_frontier_seed|cg=8dae3c4e|boundary=left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22|score=0.99999-1.0|safety=near|aspect=unit",
+      "candidate_id": "B_90001_public_frontier_dominikkamp",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_90001_public_frontier_dominikkamp.py",
+      "contact_graph": {
+        "active_boundary_count": 20,
+        "active_boundary_pattern": "left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22",
+        "active_edge_count": 58,
+        "active_edges": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            17
+          ],
+          [
+            0,
+            22
+          ],
+          [
+            0,
+            23
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            10
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            16
+          ],
+          [
+            1,
+            24
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            19
+          ],
+          [
+            2,
+            24
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            4,
+            16
+          ],
+          [
+            4,
+            18
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            5,
+            14
+          ],
+          [
+            5,
+            18
+          ],
+          [
+            5,
+            24
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            6,
+            17
+          ],
+          [
+            6,
+            23
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            17
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            7,
+            22
+          ],
+          [
+            8,
+            17
+          ],
+          [
+            8,
+            19
+          ],
+          [
+            8,
+            24
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            9,
+            20
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            10,
+            24
+          ],
+          [
+            11,
+            21
+          ],
+          [
+            11,
+            25
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            16
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            14,
+            21
+          ],
+          [
+            14,
+            23
+          ],
+          [
+            14,
+            25
+          ],
+          [
+            15,
+            18
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            21
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            18,
+            20
+          ],
+          [
+            18,
+            21
+          ],
+          [
+            19,
+            24
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            23,
+            25
+          ]
+        ],
+        "contact_graph_hash": "8dae3c4e6bea6bd1",
+        "median_pairwise_margin": 0.3249803759038832,
+        "min_boundary_margin": 2.328078563262892e-10,
+        "min_pairwise_margin": 3.765848188841403e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.328078563262892e-10,
+        "min_pairwise_margin": 3.765848188841403e-10,
+        "score": 0.99999736745286,
+        "sum_radii": 2.6359830606320647,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.99999736745286,
+      "strategy": "public_frontier_dominikkamp",
+      "strategy_family": "public_frontier_seed",
+      "sum_radii": 2.6359830606320647,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    "task=B|family=scipy_slsqp_joint|cg=none|boundary=none|score=0.9-0.99|safety=near|aspect=unit": {
+      "bucket_key": "task=B|family=scipy_slsqp_joint|cg=none|boundary=none|score=0.9-0.99|safety=near|aspect=unit",
+      "candidate_id": "B_002_scipy_slsqp_joint",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_002_scipy_slsqp_joint.py",
+      "contact_graph": {},
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 7.99999999995249e-08,
+        "min_pairwise_margin": 7.999739622122082e-08,
+        "score": 0.9838714405568733,
+        "sum_radii": 2.5934752785935125,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9838714405568733,
+      "strategy": "scipy_slsqp_joint",
+      "strategy_family": "scipy_slsqp_joint",
+      "sum_radii": 2.5934752785935125,
+      "task": "B",
+      "valid": true,
+      "width": null
+    }
+  },
+  "top_elites": [
+    {
+      "bucket_key": "task=B|family=benchmark_seed_dominikkamp|cg=none|boundary=none|score=0.99999-1.0|safety=near|aspect=unit",
+      "candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_000_benchmark_seed_dominikkamp.py",
+      "contact_graph": {},
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.328078563262892e-10,
+        "min_pairwise_margin": 3.765848188841403e-10,
+        "score": 0.99999736745286,
+        "sum_radii": 2.6359830606320647,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": null,
+      "score": 0.99999736745286,
+      "strategy": "benchmark_seed_dominikkamp",
+      "strategy_family": "benchmark_seed_dominikkamp",
+      "sum_radii": 2.6359830606320647,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "bucket_key": "task=B|family=public_frontier_seed|cg=8dae3c4e|boundary=left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22|score=0.99999-1.0|safety=near|aspect=unit",
+      "candidate_id": "B_90001_public_frontier_dominikkamp",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_90001_public_frontier_dominikkamp.py",
+      "contact_graph": {
+        "active_boundary_count": 20,
+        "active_boundary_pattern": "left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22",
+        "active_edge_count": 58,
+        "active_edges": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            17
+          ],
+          [
+            0,
+            22
+          ],
+          [
+            0,
+            23
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            10
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            16
+          ],
+          [
+            1,
+            24
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            19
+          ],
+          [
+            2,
+            24
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            4,
+            16
+          ],
+          [
+            4,
+            18
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            5,
+            14
+          ],
+          [
+            5,
+            18
+          ],
+          [
+            5,
+            24
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            6,
+            17
+          ],
+          [
+            6,
+            23
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            17
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            7,
+            22
+          ],
+          [
+            8,
+            17
+          ],
+          [
+            8,
+            19
+          ],
+          [
+            8,
+            24
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            9,
+            20
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            10,
+            24
+          ],
+          [
+            11,
+            21
+          ],
+          [
+            11,
+            25
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            16
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            14,
+            21
+          ],
+          [
+            14,
+            23
+          ],
+          [
+            14,
+            25
+          ],
+          [
+            15,
+            18
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            21
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            18,
+            20
+          ],
+          [
+            18,
+            21
+          ],
+          [
+            19,
+            24
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            23,
+            25
+          ]
+        ],
+        "contact_graph_hash": "8dae3c4e6bea6bd1",
+        "median_pairwise_margin": 0.3249803759038832,
+        "min_boundary_margin": 2.328078563262892e-10,
+        "min_pairwise_margin": 3.765848188841403e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.328078563262892e-10,
+        "min_pairwise_margin": 3.765848188841403e-10,
+        "score": 0.99999736745286,
+        "sum_radii": 2.6359830606320647,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.99999736745286,
+      "strategy": "public_frontier_dominikkamp",
+      "strategy_family": "public_frontier_seed",
+      "sum_radii": 2.6359830606320647,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=8dae3c4e|boundary=left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22|score=0.99999-1.0|safety=near|aspect=unit",
+      "candidate_id": "B_91002_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91002_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 20,
+        "active_boundary_pattern": "left:0,11,22,23,25|right:3,9,12,13,16|bottom:3,11,15,20,21|top:2,7,12,19,22",
+        "active_edge_count": 58,
+        "active_edges": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            17
+          ],
+          [
+            0,
+            22
+          ],
+          [
+            0,
+            23
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            10
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            16
+          ],
+          [
+            1,
+            24
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            19
+          ],
+          [
+            2,
+            24
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            4,
+            16
+          ],
+          [
+            4,
+            18
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            5,
+            14
+          ],
+          [
+            5,
+            18
+          ],
+          [
+            5,
+            24
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            6,
+            17
+          ],
+          [
+            6,
+            23
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            17
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            7,
+            22
+          ],
+          [
+            8,
+            17
+          ],
+          [
+            8,
+            19
+          ],
+          [
+            8,
+            24
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            9,
+            20
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            10,
+            24
+          ],
+          [
+            11,
+            21
+          ],
+          [
+            11,
+            25
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            16
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            14,
+            21
+          ],
+          [
+            14,
+            23
+          ],
+          [
+            14,
+            25
+          ],
+          [
+            15,
+            18
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            21
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            18,
+            20
+          ],
+          [
+            18,
+            21
+          ],
+          [
+            19,
+            24
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            23,
+            25
+          ]
+        ],
+        "contact_graph_hash": "8dae3c4e6bea6bd1",
+        "median_pairwise_margin": 0.32498037881041647,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 2.000000026702864e-10,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "score": 0.999997359453387,
+        "sum_radii": 2.6359830395455335,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.999997359453387,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.6359830395455335,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "bucket_key": "task=B|family=perturb_best_and_repair|cg=none|boundary=none|score=0.99999-1.0|safety=near|aspect=unit",
+      "candidate_id": "B_004_perturb_best_and_repair",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_004_perturb_best_and_repair.py",
+      "contact_graph": {},
+      "failure_type": "plateau",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 7.99999999995249e-08,
+        "min_pairwise_margin": 7.999995690899375e-08,
+        "score": 0.9999969021274452,
+        "sum_radii": 2.6359818340389243,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9999969021274452,
+      "strategy": "perturb_best_and_repair",
+      "strategy_family": "perturb_best_and_repair",
+      "sum_radii": 2.6359818340389243,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "bucket_key": "task=A|family=benchmark_seed_dominikkamp|cg=none|boundary=none|score=0.99999-1.0|safety=tight|aspect=0.9-1.1",
+      "candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_000_benchmark_seed_dominikkamp.py",
+      "contact_graph": {},
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688920031396,
+        "min_boundary_margin": 1.2396125792513146e-11,
+        "min_pairwise_margin": 7.358091080877927e-10,
+        "score": 0.9999967574799993,
+        "sum_radii": 2.3658323287164813,
+        "width": 0.9767311079968606
+      },
+      "height": 1.0232688920031396,
+      "parent_candidate_id": null,
+      "score": 0.9999967571069156,
+      "strategy": "benchmark_seed_dominikkamp",
+      "strategy_family": "benchmark_seed_dominikkamp",
+      "sum_radii": 2.365832327833825,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311079968606
+    },
+    {
+      "bucket_key": "task=A|family=public_frontier_seed|cg=736cb82a|boundary=left:15,16,19,20|right:0,4,8,11,13|bottom:0,3,9,20|top:5,11,15,17|score=0.99999-1.0|safety=tight|aspect=0.9-1.1",
+      "candidate_id": "A_90001_public_frontier_dominikkamp",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_90001_public_frontier_dominikkamp.py",
+      "contact_graph": {
+        "active_boundary_count": 17,
+        "active_boundary_pattern": "left:15,16,19,20|right:0,4,8,11,13|bottom:0,3,9,20|top:5,11,15,17",
+        "active_edge_count": 47,
+        "active_edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            15
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            1,
+            19
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            5,
+            17
+          ],
+          [
+            5,
+            18
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            6,
+            17
+          ],
+          [
+            6,
+            18
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            7,
+            16
+          ],
+          [
+            7,
+            18
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            14
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            15,
+            19
+          ],
+          [
+            16,
+            19
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            17,
+            18
+          ]
+        ],
+        "contact_graph_hash": "736cb82a03549e01",
+        "median_pairwise_margin": 0.2559697330763576,
+        "min_boundary_margin": 1.2396125792513146e-11,
+        "min_pairwise_margin": 7.358091080877927e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688920031396,
+        "min_boundary_margin": 1.2396125792513146e-11,
+        "min_pairwise_margin": 7.358091080877927e-10,
+        "score": 0.9999967574799993,
+        "sum_radii": 2.3658323287164813,
+        "width": 0.9767311079968606
+      },
+      "height": 1.0232688920031396,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9999967571069156,
+      "strategy": "public_frontier_dominikkamp",
+      "strategy_family": "public_frontier_seed",
+      "sum_radii": 2.365832327833825,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311079968606
+    },
+    {
+      "bucket_key": "task=A|family=contact_graph_refinement|cg=736cb82a|boundary=left:15,16,19,20|right:0,4,8,11,13|bottom:0,3,9,20|top:5,11,15,17|score=0.99999-1.0|safety=near|aspect=0.9-1.1",
+      "candidate_id": "A_91014_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_91014_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 17,
+        "active_boundary_pattern": "left:15,16,19,20|right:0,4,8,11,13|bottom:0,3,9,20|top:5,11,15,17",
+        "active_edge_count": 47,
+        "active_edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            15
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            1,
+            19
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            5,
+            17
+          ],
+          [
+            5,
+            18
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            6,
+            17
+          ],
+          [
+            6,
+            18
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            7,
+            16
+          ],
+          [
+            7,
+            18
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            14
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            15,
+            19
+          ],
+          [
+            16,
+            19
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            17,
+            18
+          ]
+        ],
+        "contact_graph_hash": "736cb82a03549e01",
+        "median_pairwise_margin": 0.2559697383455876,
+        "min_boundary_margin": 1.9999998879249858e-10,
+        "min_pairwise_margin": 2.000000026702864e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688920031394,
+        "min_boundary_margin": 1.9999998879249858e-10,
+        "min_pairwise_margin": 2.000000026702864e-10,
+        "score": 0.9999967496208803,
+        "sum_radii": 2.3658323101230634,
+        "width": 0.9767311079968606
+      },
+      "height": 1.0232688920031394,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9999967496208803,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.3658323101230634,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311079968606
+    },
+    {
+      "bucket_key": "task=A|family=contact_graph_refinement|cg=df348287|boundary=left:15,19,20|right:0,8,13|bottom:0,20|top:5,15,17|score=0.99999-1.0|safety=near|aspect=0.9-1.1",
+      "candidate_id": "A_91017_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_91017_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 11,
+        "active_boundary_pattern": "left:15,19,20|right:0,8,13|bottom:0,20|top:5,15,17",
+        "active_edge_count": 40,
+        "active_edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            15
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            1,
+            19
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            5,
+            17
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            6,
+            17
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            7,
+            16
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            14
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            15,
+            19
+          ],
+          [
+            16,
+            19
+          ],
+          [
+            16,
+            20
+          ]
+        ],
+        "contact_graph_hash": "df348287e733b2df",
+        "median_pairwise_margin": 0.25596971973331234,
+        "min_boundary_margin": 8.171306964399605e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688946084267,
+        "min_boundary_margin": 8.171306964399605e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "score": 0.9999965847062928,
+        "sum_radii": 2.365831919961536,
+        "width": 0.9767311053915732
+      },
+      "height": 1.0232688946084267,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9999965847062928,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.365831919961536,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311053915732
+    },
+    {
+      "bucket_key": "task=A|family=contact_graph_refinement|cg=b274757b|boundary=left:19,20|right:0,8,13|bottom:0,20|top:5,17|score=0.99999-1.0|safety=near|aspect=0.9-1.1",
+      "candidate_id": "A_91018_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_91018_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 9,
+        "active_boundary_pattern": "left:19,20|right:0,8,13|bottom:0,20|top:5,17",
+        "active_edge_count": 37,
+        "active_edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            1,
+            19
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            5,
+            17
+          ],
+          [
+            5,
+            18
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            7,
+            18
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            14
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            15,
+            19
+          ],
+          [
+            16,
+            19
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            17,
+            18
+          ]
+        ],
+        "contact_graph_hash": "b274757b12e26191",
+        "median_pairwise_margin": 0.25596972873470514,
+        "min_boundary_margin": 5.890299442645741e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688946084267,
+        "min_boundary_margin": 5.890299442645741e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "score": 0.9999965596560544,
+        "sum_radii": 2.3658318606966797,
+        "width": 0.9767311053915732
+      },
+      "height": 1.0232688946084267,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9999965596560544,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.3658318606966797,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311053915732
+    },
+    {
+      "bucket_key": "task=A|family=contact_graph_refinement|cg=9a0d23d2|boundary=left:19,20|right:0,8,13|bottom:0,20|top:5,17|score=0.99999-1.0|safety=near|aspect=0.9-1.1",
+      "candidate_id": "A_91015_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_91015_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 9,
+        "active_boundary_pattern": "left:19,20|right:0,8,13|bottom:0,20|top:5,17",
+        "active_edge_count": 36,
+        "active_edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            1,
+            19
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            5,
+            17
+          ],
+          [
+            5,
+            18
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            7,
+            18
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            12,
+            14
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            15,
+            19
+          ],
+          [
+            16,
+            19
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            17,
+            18
+          ]
+        ],
+        "contact_graph_hash": "9a0d23d264413ee3",
+        "median_pairwise_margin": 0.25596973302507864,
+        "min_boundary_margin": 6.49617049042206e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 1.0232688946084267,
+        "min_boundary_margin": 6.49617049042206e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "score": 0.9999965579944504,
+        "sum_radii": 2.3658318567655905,
+        "width": 0.9767311053915732
+      },
+      "height": 1.0232688946084267,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9999965579944504,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.3658318567655905,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311053915732
+    },
+    {
+      "bucket_key": "task=A|family=perturb_best_and_repair|cg=none|boundary=none|score=0.99999-1.0|safety=near|aspect=0.9-1.1",
+      "candidate_id": "A_004_perturb_best_and_repair",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_004_perturb_best_and_repair.py",
+      "contact_graph": {},
+      "failure_type": "plateau",
+      "geometry_metrics": {
+        "height": 1.0232688946084267,
+        "min_boundary_margin": 7.99999999995249e-08,
+        "min_pairwise_margin": 7.999969843519583e-08,
+        "score": 0.999996342374872,
+        "sum_radii": 2.365831346644167,
+        "width": 0.9767311053915732
+      },
+      "height": 1.0232688946084267,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.999996342374872,
+      "strategy": "perturb_best_and_repair",
+      "strategy_family": "perturb_best_and_repair",
+      "sum_radii": 2.365831346644167,
+      "task": "A",
+      "valid": true,
+      "width": 0.9767311053915732
+    },
+    {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=363b03c1|boundary=left:0,22,23,25|right:12,16|bottom:3,15|top:12,22|score=0.9999-0.99999|safety=near|aspect=unit",
+      "candidate_id": "B_91010_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91010_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 10,
+        "active_boundary_pattern": "left:0,22,23,25|right:12,16|bottom:3,15|top:12,22",
+        "active_edge_count": 41,
+        "active_edges": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            17
+          ],
+          [
+            0,
+            23
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            16
+          ],
+          [
+            1,
+            24
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            19
+          ],
+          [
+            2,
+            24
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            16
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            5,
+            14
+          ],
+          [
+            5,
+            24
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            6,
+            23
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            7,
+            22
+          ],
+          [
+            8,
+            17
+          ],
+          [
+            8,
+            19
+          ],
+          [
+            8,
+            24
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            9,
+            20
+          ],
+          [
+            11,
+            21
+          ],
+          [
+            11,
+            25
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            16
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            14,
+            21
+          ],
+          [
+            14,
+            23
+          ],
+          [
+            14,
+            25
+          ],
+          [
+            15,
+            18
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            21
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            19,
+            24
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            23,
+            25
+          ]
+        ],
+        "contact_graph_hash": "363b03c1d6d9faea",
+        "median_pairwise_margin": 0.327819980893616,
+        "min_boundary_margin": 7.55518751727191e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 7.55518751727191e-09,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "score": 0.9999640235131652,
+        "sum_radii": 2.635895166340468,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9999640235131652,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.635895166340468,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=afb71e70|boundary=left:0,22,23,25|right:12,13,16|bottom:3,15|top:12,22|score=0.9999-0.99999|safety=near|aspect=unit",
+      "candidate_id": "B_91008_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91008_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 11,
+        "active_boundary_pattern": "left:0,22,23,25|right:12,13,16|bottom:3,15|top:12,22",
+        "active_edge_count": 42,
+        "active_edges": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            17
+          ],
+          [
+            0,
+            23
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            16
+          ],
+          [
+            1,
+            24
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            19
+          ],
+          [
+            2,
+            24
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            16
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            5,
+            14
+          ],
+          [
+            5,
+            24
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            6,
+            23
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            7,
+            22
+          ],
+          [
+            8,
+            17
+          ],
+          [
+            8,
+            19
+          ],
+          [
+            8,
+            24
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            9,
+            20
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            11,
+            21
+          ],
+          [
+            11,
+            25
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            16
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            14,
+            21
+          ],
+          [
+            14,
+            23
+          ],
+          [
+            14,
+            25
+          ],
+          [
+            15,
+            18
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            21
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            19,
+            24
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            23,
+            25
+          ]
+        ],
+        "contact_graph_hash": "afb71e705d516739",
+        "median_pairwise_margin": 0.3278199800574494,
+        "min_boundary_margin": 8.998746595101359e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 8.998746595101359e-09,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "score": 0.9999640191625531,
+        "sum_radii": 2.635895154872298,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9999640191625531,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.635895154872298,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=332a627f|boundary=left:22,23,25|right:13,16|bottom:15|top:22|score=0.9999-0.99999|safety=near|aspect=unit",
+      "candidate_id": "B_91006_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91006_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 7,
+        "active_boundary_pattern": "left:22,23,25|right:13,16|bottom:15|top:22",
+        "active_edge_count": 41,
+        "active_edges": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            23
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            16
+          ],
+          [
+            1,
+            24
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            2,
+            19
+          ],
+          [
+            2,
+            24
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            4,
+            16
+          ],
+          [
+            4,
+            20
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            5,
+            24
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            23
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            19
+          ],
+          [
+            7,
+            22
+          ],
+          [
+            8,
+            19
+          ],
+          [
+            8,
+            24
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            9,
+            20
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            10,
+            24
+          ],
+          [
+            11,
+            21
+          ],
+          [
+            11,
+            25
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            16
+          ],
+          [
+            14,
+            23
+          ],
+          [
+            14,
+            25
+          ],
+          [
+            15,
+            18
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            21
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            19,
+            24
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            23,
+            25
+          ]
+        ],
+        "contact_graph_hash": "332a627fe8731bab",
+        "median_pairwise_margin": 0.3278199712033191,
+        "min_boundary_margin": 1.8260527839819574e-08,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 1.8260527839819574e-08,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "score": 0.9999639996556264,
+        "sum_radii": 2.635895103452235,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9999639996556264,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.635895103452235,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "bucket_key": "task=B|family=perturb_best_and_repair|cg=none|boundary=none|score=0.9999-0.99999|safety=near|aspect=unit",
+      "candidate_id": "B_003_perturb_best_and_repair",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_003_perturb_best_and_repair.py",
+      "contact_graph": {},
+      "failure_type": "plateau",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 7.99999999995249e-08,
+        "min_pairwise_margin": 7.999919554579904e-08,
+        "score": 0.999963766045536,
+        "sum_radii": 2.6358944876583728,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.999963766045536,
+      "strategy": "perturb_best_and_repair",
+      "strategy_family": "perturb_best_and_repair",
+      "sum_radii": 2.6358944876583728,
+      "task": "B",
+      "valid": true,
+      "width": null
+    },
+    {
+      "bucket_key": "task=A|family=contact_graph_refinement|cg=da628bc7|boundary=left:0,10,20|right:4,9,19|bottom:0,2,4|top:17,19,20|score=0.9-0.99|safety=near|aspect=1.1-1.3",
+      "candidate_id": "A_91008_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_91008_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 12,
+        "active_boundary_pattern": "left:0,10,20|right:4,9,19|bottom:0,2,4|top:17,19,20",
+        "active_edge_count": 38,
+        "active_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            16
+          ],
+          [
+            12,
+            17
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            17
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            18,
+            19
+          ]
+        ],
+        "contact_graph_hash": "da628bc733e52f22",
+        "median_pairwise_margin": 0.2888083832356277,
+        "min_boundary_margin": 2.3693542808289614e-08,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 0.897608406267923,
+        "min_boundary_margin": 2.3693542808289614e-08,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "score": 0.9853621138610003,
+        "sum_radii": 2.3312091034569087,
+        "width": 1.102391593732077
+      },
+      "height": 0.897608406267923,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9853621138610003,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.3312091034569087,
+      "task": "A",
+      "valid": true,
+      "width": 1.102391593732077
+    },
+    {
+      "bucket_key": "task=A|family=contact_graph_refinement|cg=fe09b60f|boundary=left:0,10,20|right:4,9,19|bottom:0,4|top:17,19,20|score=0.9-0.99|safety=near|aspect=1.1-1.3",
+      "candidate_id": "A_91006_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_91006_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 11,
+        "active_boundary_pattern": "left:0,10,20|right:4,9,19|bottom:0,4|top:17,19,20",
+        "active_edge_count": 37,
+        "active_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            16
+          ],
+          [
+            12,
+            17
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            17
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            18,
+            19
+          ]
+        ],
+        "contact_graph_hash": "fe09b60f79dffcf1",
+        "median_pairwise_margin": 0.2888083852139909,
+        "min_boundary_margin": 2.3999761858406465e-08,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 0.897608406267923,
+        "min_boundary_margin": 2.3999761858406465e-08,
+        "min_pairwise_margin": 1.9999997491471078e-10,
+        "score": 0.9853621093224529,
+        "sum_radii": 2.331209092719432,
+        "width": 1.102391593732077
+      },
+      "height": 0.897608406267923,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9853621093224529,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.331209092719432,
+      "task": "A",
+      "valid": true,
+      "width": 1.102391593732077
+    },
+    {
+      "bucket_key": "task=A|family=contact_graph_refinement|cg=894e635d|boundary=left:0,10,20|right:4,9,19|bottom:0,3,4|top:17,19,20|score=0.9-0.99|safety=near|aspect=1.1-1.3",
+      "candidate_id": "A_91010_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_91010_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 12,
+        "active_boundary_pattern": "left:0,10,20|right:4,9,19|bottom:0,3,4|top:17,19,20",
+        "active_edge_count": 31,
+        "active_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            16
+          ],
+          [
+            12,
+            17
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            18,
+            19
+          ]
+        ],
+        "contact_graph_hash": "894e635df19c49f1",
+        "median_pairwise_margin": 0.2888083966438352,
+        "min_boundary_margin": 2.3896056841610225e-08,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 0.897608406267923,
+        "min_boundary_margin": 2.3896056841610225e-08,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "score": 0.9853620774265727,
+        "sum_radii": 2.3312090172588826,
+        "width": 1.102391593732077
+      },
+      "height": 0.897608406267923,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9853620774265727,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.3312090172588826,
+      "task": "A",
+      "valid": true,
+      "width": 1.102391593732077
+    },
+    {
+      "bucket_key": "task=A|family=scipy_slsqp_joint|cg=none|boundary=none|score=0.9-0.99|safety=near|aspect=1.1-1.3",
+      "candidate_id": "A_002_scipy_slsqp_joint",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_A/A_002_scipy_slsqp_joint.py",
+      "contact_graph": {},
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": 0.897608406267923,
+        "min_boundary_margin": 7.99999999995249e-08,
+        "min_pairwise_margin": 7.99999874678825e-08,
+        "score": 0.9853618657620588,
+        "sum_radii": 2.331208516494509,
+        "width": 1.102391593732077
+      },
+      "height": 0.897608406267923,
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "score": 0.9853618657620588,
+      "strategy": "scipy_slsqp_joint",
+      "strategy_family": "scipy_slsqp_joint",
+      "sum_radii": 2.331208516494509,
+      "task": "A",
+      "valid": true,
+      "width": 1.102391593732077
+    },
+    {
+      "bucket_key": "task=B|family=contact_graph_refinement|cg=04120fc5|boundary=left:6,24|right:5,11,17,23|bottom:2,5|top:21,23,24|score=0.9-0.99|safety=near|aspect=unit",
+      "candidate_id": "B_91017_contact_graph_feasibility_refine",
+      "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_130508/candidates/task_B/B_91017_contact_graph_feasibility_refine.py",
+      "contact_graph": {
+        "active_boundary_count": 11,
+        "active_boundary_pattern": "left:6,24|right:5,11,17,23|bottom:2,5|top:21,23,24",
+        "active_edge_count": 43,
+        "active_edges": [
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            15
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            15,
+            19
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            15,
+            22
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            22
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            17,
+            23
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            18,
+            25
+          ],
+          [
+            19,
+            20
+          ],
+          [
+            19,
+            25
+          ],
+          [
+            20,
+            21
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            20,
+            25
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            21,
+            23
+          ],
+          [
+            21,
+            25
+          ],
+          [
+            22,
+            23
+          ],
+          [
+            24,
+            25
+          ]
+        ],
+        "contact_graph_hash": "04120fc55d4d0b07",
+        "median_pairwise_margin": 0.3056875119946748,
+        "min_boundary_margin": 1.772721150428147e-08,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "tolerance": 5e-08
+      },
+      "failure_type": "none",
+      "geometry_metrics": {
+        "height": null,
+        "min_boundary_margin": 1.772721150428147e-08,
+        "min_pairwise_margin": 1.9999998879249858e-10,
+        "score": 0.9838716896230056,
+        "sum_radii": 2.5934759351293466,
+        "width": null
+      },
+      "height": null,
+      "parent_candidate_id": "B_000_benchmark_seed_dominikkamp",
+      "score": 0.9838716896230056,
+      "strategy": "contact_graph_feasibility_refine",
+      "strategy_family": "contact_graph_refinement",
+      "sum_radii": 2.5934759351293466,
+      "task": "B",
+      "valid": true,
+      "width": null
+    }
+  ]
+}

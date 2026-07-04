@@ -154,6 +154,10 @@ def generate_report(repo_root: Path, archive, output_path: Path,
     lines.append("")
     lines.extend(_refinement_lines(records))
     lines.append("")
+    lines.append("### Score Breakthrough Harness")
+    lines.append("")
+    lines.extend(_breakthrough_lines(repo_root))
+    lines.append("")
     lines.append("## 5. Feedback Utilization")
     lines.append("")
     lines.append(
@@ -339,6 +343,32 @@ def _refinement_lines(records: Iterable[Dict]) -> List[str]:
             f"{float(metrics.get('min_boundary_margin') or 0.0):.3e} | "
             f"{rec.get('failure_type')} | "
             f"{rec.get('decision_reason') or rec.get('decision') or ''} |"
+        )
+    return lines
+
+
+def _breakthrough_lines(repo_root: Path) -> List[str]:
+    payload = _load_json(repo_root / "agent" / "archive" / "metrics" / "breakthrough_summary.json")
+    if not payload:
+        return ["Breakthrough search was not run for this report. Optional mode: `--breakthrough-search`."]
+    lines = [
+        "The optional breakthrough harness searches near public frontier seeds and contact graph neighborhoods without modifying official evaluators.",
+        "- Detailed report: `submission/breakthrough_report.md`",
+        "- Candidate log: `agent/archive/metrics/breakthrough_log.jsonl`",
+        "- Novelty archive: `agent/archive/metrics/novelty_archive.json`",
+        "| Task | Best score | Best sum radii | Gap to 1.0 | Exceeded 1.0 | Generated | Official evals | Valid |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|",
+    ]
+    for task, item in sorted((payload.get("tasks") or {}).items()):
+        best = item.get("best_after") or {}
+        lines.append(
+            f"| {task} | {float(best.get('score') or 0.0):.12f} | "
+            f"{float(best.get('sum_radii') or 0.0):.12f} | "
+            f"{float(item.get('gap_to_target') or 0.0):.3e} | "
+            f"{item.get('exceeded_target')} | "
+            f"{int(item.get('generated_count') or 0)} | "
+            f"{int(item.get('official_evaluated_count') or 0)} | "
+            f"{int(item.get('valid_count') or 0)} |"
         )
     return lines
 

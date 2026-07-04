@@ -1,0 +1,57 @@
+[
+  {
+    "availability": "coordinates_available_locally",
+    "license_note": "Public GitHub repository; local raw coordinate copies are tracked under benchmarks/dominikkamp with explicit source attribution.",
+    "local_artifacts": [
+      "benchmarks/dominikkamp/rectangle_n21.txt",
+      "benchmarks/dominikkamp/square_n26.txt"
+    ],
+    "name": "DominikKamp/Packing",
+    "raw_objective_claim": "rectangle/n21 raw sum 2.365832326862653; square/n26 raw sum 2.635983060895661.",
+    "retrieval_time_utc": "2026-07-04T20:30:00Z",
+    "source_id": "dominikkamp_packing",
+    "url": "https://github.com/DominikKamp/Packing"
+  },
+  {
+    "availability": "unavailable_no_local_coordinates",
+    "license_note": "No local raw coordinates or license file are present in this repository.",
+    "local_artifacts": [],
+    "name": "ClaudeEvolve circle_packing result",
+    "raw_objective_claim": "Not used; no locally available coordinate/code artifact was found.",
+    "retrieval_time_utc": "2026-07-04T20:30:00Z",
+    "source_id": "claudeevolve_circle_packing",
+    "url": "https://github.com/search?q=ClaudeEvolve+circle_packing&type=repositories"
+  },
+  {
+    "availability": "unavailable_no_local_coordinates",
+    "license_note": "No local raw coordinates or license file are present in this repository.",
+    "local_artifacts": [],
+    "name": "ThetaEvolve circle packing result",
+    "raw_objective_claim": "Not used; no locally available coordinate/code artifact was found.",
+    "retrieval_time_utc": "2026-07-04T20:30:00Z",
+    "source_id": "thetaevolve_circle_packing",
+    "url": "https://github.com/search?q=ThetaEvolve+circle+packing&type=repositories"
+  },
+  {
+    "availability": "unavailable_no_local_extract",
+    "license_note": "Issue/code content is not vendored here; no local extractable coordinates were found.",
+    "local_artifacts": [],
+    "name": "OpenEvolve issue #156 code if extractable",
+    "raw_objective_claim": "Not used as a score claim; only local official evaluator results can validate a seed.",
+    "retrieval_time_utc": "2026-07-04T20:30:00Z",
+    "source_id": "openevolve_issue_156",
+    "url": "https://github.com/codelion/openevolve/issues/156"
+  },
+  {
+    "availability": "optional_local_file",
+    "license_note": "Optional public seed support only; no dependency on a network fetch.",
+    "local_artifacts": [
+      "benchmarks/fico/SOURCE.md"
+    ],
+    "name": "FICO public Task A solution if coordinates are available",
+    "raw_objective_claim": "Only used when a local newsolutions.txt Problem 13 coordinate copy is available.",
+    "retrieval_time_utc": "2026-07-04T20:30:00Z",
+    "source_id": "fico_task_a",
+    "url": "https://www.fico.com/en/products/fico-xpress-optimization"
+  }
+]

@@ -6,14 +6,38 @@
   "strategy_portfolio_stats": {
     "benchmark_seed_dominikkamp": {
       "attempts": 2,
-      "avg_runtime": 0.19,
+      "avg_runtime": 0.185,
       "avg_score_delta": 0.9999970622798878,
       "best_score": 0.99999736745286,
       "common_failure_types": {
         "none": 2
       },
+      "expected_improvement": 0.9999970622798878,
       "last_used_iteration": 0,
+      "novelty_bonus": 0.01,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.0,
+      "runtime_penalty": 0.0030833333333333333,
+      "ucb_score": 1.2569137289465546,
       "valid_count": 2,
+      "validity_rate": 1.0
+    },
+    "contact_graph_feasibility_refine": {
+      "attempts": 34,
+      "avg_runtime": 0.0,
+      "avg_score_delta": -0.020924636651265743,
+      "best_score": 0.999997359453387,
+      "common_failure_types": {
+        "none": 34
+      },
+      "expected_improvement": 0.0,
+      "last_used_iteration": 91018,
+      "novelty_bonus": 0.008421052631578947,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.06,
+      "runtime_penalty": 0.0,
+      "ucb_score": 0.19842105263157894,
+      "valid_count": 34,
       "validity_rate": 1.0
     },
     "hexagonal_or_staggered_initialization": {
@@ -25,32 +49,67 @@
         "low_score": 1,
         "none": 1
       },
+      "expected_improvement": 0.0,
       "last_used_iteration": 1,
+      "novelty_bonus": 0.01,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.0,
+      "runtime_penalty": 0.0031666666666666666,
+      "ucb_score": 0.25683333333333336,
       "valid_count": 2,
       "validity_rate": 1.0
     },
     "perturb_best_and_repair": {
       "attempts": 4,
-      "avg_runtime": 0.18500000000000003,
-      "avg_score_delta": -1.769027539269552e-05,
-      "best_score": 0.9999956897948914,
+      "avg_runtime": 0.175,
+      "avg_score_delta": -8.724063056103626e-06,
+      "best_score": 0.9999969021274452,
       "common_failure_types": {
         "plateau": 4
       },
+      "expected_improvement": 0.0,
       "last_used_iteration": 4,
+      "novelty_bonus": 0.006,
+      "plateau_penalty": 0.05,
+      "repeated_code_penalty": 0.02,
+      "runtime_penalty": 0.0029166666666666664,
+      "ucb_score": 0.18308333333333335,
       "valid_count": 4,
+      "validity_rate": 1.0
+    },
+    "public_frontier_dominikkamp": {
+      "attempts": 2,
+      "avg_runtime": 0.0,
+      "avg_score_delta": 0.0,
+      "best_score": 0.99999736745286,
+      "common_failure_types": {
+        "none": 2
+      },
+      "expected_improvement": 0.0,
+      "last_used_iteration": 90001,
+      "novelty_bonus": 0.05333333333333334,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.0,
+      "runtime_penalty": 0.0,
+      "ucb_score": 0.30333333333333334,
+      "valid_count": 2,
       "validity_rate": 1.0
     },
     "scipy_slsqp_joint": {
       "attempts": 2,
-      "avg_runtime": 0.18,
-      "avg_score_delta": -0.5080237617778021,
-      "best_score": 0.9838707306846985,
+      "avg_runtime": 0.19,
+      "avg_score_delta": -0.015380409120421823,
+      "best_score": 0.9853618657620588,
       "common_failure_types": {
-        "low_score": 1,
-        "none": 1
+        "none": 2
       },
+      "expected_improvement": 0.0,
       "last_used_iteration": 2,
+      "novelty_bonus": 0.01,
+      "plateau_penalty": 0.0,
+      "repeated_code_penalty": 0.0,
+      "runtime_penalty": 0.0031666666666666666,
+      "ucb_score": 0.25683333333333336,
       "valid_count": 2,
       "validity_rate": 1.0
     }
