@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import argparse
+import json
 import shutil
+import subprocess
 import sys
 import time
 from datetime import datetime
@@ -19,9 +21,21 @@ from archive import ArchiveManager
 from candidate_generators import CandidateGenerator
 from evaluator_adapter import EvaluatorAdapter
 from geometry_utils import PackingData, safety_metrics
+from lineage import hash_packing_data, hash_text, write_best_lineages
 from llm_reflector import LLMReflector
 from log_utils import append_final_summary, append_human_iteration, reset_human_log
 from report_data import generate_report
+from safety_guard import SafetyGuard
+from state import AgentState
+from strategy_controller import StrategyPortfolioController
+
+
+BENCHMARK_SEED_STRATEGY = "benchmark_seed_dominikkamp"
+REFINEMENT_STRATEGIES = {
+    "fixed_centers_radius_lp",
+    "micro_perturb_lp_refine",
+    "optional_fico_task_a_seed",
+}
 
 
 def parse_args() -> argparse.Namespace:
@@ -30,10 +44,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--iterations", type=int, default=5)
     parser.add_argument("--fast", action="store_true", help="Use fewer starts and lower optimizer iteration budgets")
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--use-benchmark-seeds", action="store_true",
+                        help="Allow public external benchmark warm-start candidates")
+    parser.add_argument("--refine-benchmark", action="store_true",
+                        help="Run lightweight benchmark-neighborhood LP refinements")
     parser.add_argument("--time-limit", type=int, default=None, help="Optional whole-run wall clock limit in seconds")
     parser.add_argument("--use-llm", action="store_true", help="Enable optional LLM strategy reflection")
-    parser.add_argument("--llm-base-url", default="http://10.12.111.139/v1")
-    parser.add_argument("--llm-model", default="glm-5.2")
+    parser.add_argument("--llm-base-url", default="https://api.deepseek.com")
+    parser.add_argument("--llm-model", default="deepseek-v4-pro")
     return parser.parse_args()
 
 
@@ -43,6 +61,10 @@ def main() -> int:
     archive = ArchiveManager(REPO_ROOT, run_id)
     adapter = EvaluatorAdapter(REPO_ROOT, python_executable=sys.executable)
     generator = CandidateGenerator(seed=args.seed, fast=args.fast)
+    controller = StrategyPortfolioController()
+    safety_guard = SafetyGuard(REPO_ROOT)
+    safety_guard.capture_pre_run()
+    reset_skill_usage(REPO_ROOT, run_id)
     reflector = LLMReflector(
         enabled=args.use_llm,
         repo_root=REPO_ROOT,
@@ -56,15 +78,19 @@ def main() -> int:
     print(f"python={sys.executable}")
     print(
         f"tasks={tasks}, iterations={args.iterations}, fast={args.fast}, seed={args.seed}, "
+        f"use_benchmark_seeds={args.use_benchmark_seeds}, "
+        f"refine_benchmark={args.refine_benchmark}, "
         f"use_llm={args.use_llm}, llm_model={args.llm_model}"
     )
 
     start = time.time()
     for task in tasks:
         read_task_context(task)
-        run_task_loop(task, args, generator, adapter, archive, reflector, start)
+        run_task_loop(task, args, generator, adapter, archive, reflector, controller, start)
 
     summary_path = archive.write_summary()
+    lineage_paths = write_best_lineages(REPO_ROOT, archive.records)
+    write_strategy_portfolio_metrics(REPO_ROOT, controller.stats(archive.records), lineage_paths)
     evaluate_all_proc = adapter.run_evaluate_all(filename="solution.py")
     evaluate_all_output = evaluate_all_proc.stdout
     if evaluate_all_proc.stderr:
@@ -72,7 +98,7 @@ def main() -> int:
     print(evaluate_all_output)
     print(f"archive_summary={summary_path}")
 
-    create_submission(REPO_ROOT, archive, evaluate_all_output)
+    create_submission(REPO_ROOT, archive, evaluate_all_output, safety_guard)
     print(f"submission_dir={REPO_ROOT / 'submission'}")
     return 0 if evaluate_all_proc.returncode == 0 else evaluate_all_proc.returncode
 
@@ -89,6 +115,7 @@ def read_task_context(task: str) -> None:
 def run_task_loop(task: str, args: argparse.Namespace, generator: CandidateGenerator,
                   adapter: EvaluatorAdapter, archive: ArchiveManager,
                   reflector: LLMReflector,
+                  controller: StrategyPortfolioController,
                   run_start: float) -> None:
     task_dir = adapter.task_dir(task)
     human_log = task_dir / ("run_log_a.log" if task == "A" else "run_log_b.log")
@@ -103,7 +130,41 @@ def run_task_loop(task: str, args: argparse.Namespace, generator: CandidateGener
             break
         previous_best = archive.best_record(task)
         observation = build_observation(task, iteration, previous_best, last_record, no_improve, archive)
-        local_strategy = choose_strategy(iteration, archive.best_record(task), last_record, no_improve)
+        budget = {
+            "iteration_limit": int(args.iterations),
+            "remaining_iterations": max(0, int(args.iterations) - iteration - 1),
+            "time_limit_seconds": args.time_limit,
+            "elapsed_seconds": time.time() - run_start,
+            "remaining_seconds": None if args.time_limit is None else max(0.0, float(args.time_limit) - (time.time() - run_start)),
+            "fast": bool(args.fast),
+        }
+        state = AgentState(
+            task,
+            iteration,
+            archive_summary={
+                "best": compact_record(previous_best),
+                "strategy_stats": archive.strategy_stats(task),
+                "num_records_for_task": len(archive.records_for_task(task)),
+                "no_improve_count": no_improve,
+            },
+            last_eval=compact_record(last_record),
+            best_candidate_id=previous_best.get("candidate_id") if previous_best else None,
+            budget=budget,
+            next_action="decide",
+        )
+        state_flow = [state.snapshot("observe")]
+        portfolio_decision = controller.decide(
+            task=task,
+            iteration=iteration,
+            records=archive.records_for_task(task),
+            best_record=previous_best,
+            last_record=last_record,
+            no_improve=no_improve,
+            budget=budget,
+            use_benchmark_seeds=args.use_benchmark_seeds,
+            refine_benchmark=args.refine_benchmark,
+        )
+        local_strategy = portfolio_decision.strategy
         llm_decision = reflector.decide(
             task=task,
             iteration=iteration,
@@ -113,11 +174,25 @@ def run_task_loop(task: str, args: argparse.Namespace, generator: CandidateGener
             local_strategy=local_strategy,
             recent_records=archive.records_for_task(task),
         )
-        strategy = llm_decision.strategy or local_strategy
+        strategy = local_strategy if local_strategy == BENCHMARK_SEED_STRATEGY else (llm_decision.strategy or local_strategy)
+        decision_reason = strategy_reason(strategy, observation, llm_decision.reason)
+        if strategy == local_strategy and (not llm_decision.used):
+            decision_reason = portfolio_decision.decision_reason
+        state.selected_strategy = strategy
+        state.decision_reason = decision_reason
+        state.next_action = "act"
+        state.artifacts["portfolio_factors"] = portfolio_decision.factors
+        state.artifacts["portfolio_stats"] = portfolio_decision.portfolio_stats
+        state_flow.append(state.snapshot("decide"))
         thought = {
             "selected_strategy": strategy,
             "local_policy_strategy": local_strategy,
-            "reason": strategy_reason(strategy, observation, llm_decision.reason),
+            "reason": decision_reason,
+            "portfolio_decision": {
+                "strategy": portfolio_decision.strategy,
+                "decision_reason": portfolio_decision.decision_reason,
+                "factors": portfolio_decision.factors,
+            },
             "llm_decision": llm_decision.to_record(),
         }
         candidate = generator.generate(
@@ -128,6 +203,13 @@ def run_task_loop(task: str, args: argparse.Namespace, generator: CandidateGener
             feedback=last_record,
         )
         metrics = safety_metrics(candidate.data)
+        code_hash = hash_text(candidate.code)
+        data_hash = hash_packing_data(candidate.data)
+        source_metadata = candidate.diagnostics.get("source_metadata")
+        if isinstance(source_metadata, dict):
+            source_metadata = dict(source_metadata)
+        else:
+            source_metadata = None
         skills_used = skills_for_iteration(strategy, eval_result=None)
         action = {
             "strategy": strategy,
@@ -136,16 +218,47 @@ def run_task_loop(task: str, args: argparse.Namespace, generator: CandidateGener
             "generated_code_bytes": len(candidate.code.encode("utf-8")),
             "geometry_metrics": metrics,
             "diagnostics": candidate.diagnostics,
+            "source_metadata": source_metadata,
+            "code_hash": code_hash,
+            "data_hash": data_hash,
         }
         candidate_id = archive.make_candidate_id(task, iteration, strategy)
+        state.skills_used = skills_used
+        state.artifacts.update({
+            "candidate_id": candidate_id,
+            "code_hash": code_hash,
+            "data_hash": data_hash,
+            "generated_code_bytes": len(candidate.code.encode("utf-8")),
+            "source_metadata": source_metadata,
+        })
+        state.next_action = "evaluate"
+        state_flow.append(state.snapshot("act"))
         eval_result = adapter.evaluate_task(task, candidate.code)
         code_snapshot = archive.save_candidate_code(task, candidate_id, candidate.code)
         raw_output = archive.save_raw_output(task, candidate_id, eval_result.raw_output)
+
+        if source_metadata is not None:
+            source_metadata["official_evaluator_result"] = {
+                "valid": eval_result.valid,
+                "score": eval_result.score,
+                "sum_radii": eval_result.sum_radii,
+                "failure_type": eval_result.failure_type,
+                "returncode": eval_result.returncode,
+                "elapsed": eval_result.elapsed_text,
+                "raw_output_path": str(raw_output),
+                "exact_sum_radii": eval_result.exact_sum_radii,
+                "exact_score": eval_result.exact_score,
+            }
+            candidate.diagnostics["source_metadata"] = source_metadata
+            candidate.diagnostics["official_evaluator_result"] = source_metadata["official_evaluator_result"]
+            action["source_metadata"] = source_metadata
 
         score_improvement = float(eval_result.score) - float(previous_best.get("score") or 0.0) if previous_best else float(eval_result.score)
         effective_failure = effective_failure_type(eval_result, score_improvement, no_improve)
         skills_used = skills_for_iteration(strategy, eval_result=eval_result, effective_failure=effective_failure)
         action["skills_used"] = skills_used
+        result_decision_reason = decision_after_result(eval_result.valid, effective_failure,
+                                                       eval_result.score, previous_best)
         next_observation = {
             "valid": eval_result.valid,
             "score": eval_result.score,
@@ -154,6 +267,25 @@ def run_task_loop(task: str, args: argparse.Namespace, generator: CandidateGener
             "raw_output": raw_output,
             "returncode": eval_result.returncode,
             "elapsed": eval_result.elapsed_text,
+        }
+        state.skills_used = skills_used
+        state.last_eval = next_observation
+        state.artifacts.update({
+            "code_snapshot": str(code_snapshot),
+            "raw_output": str(raw_output),
+            "official_score": eval_result.score,
+            "official_sum_radii": eval_result.sum_radii,
+        })
+        state.next_action = "archive"
+        state_flow.append(state.snapshot("evaluate"))
+        input_artifacts = {
+            "parent_candidate_id": previous_best.get("candidate_id") if previous_best else None,
+            "source_metadata": source_metadata,
+        }
+        output_artifacts = {
+            "code_snapshot": str(code_snapshot),
+            "raw_output": str(raw_output),
+            "solution_path": str(adapter.solution_path(task)),
         }
         record = {
             "task": task,
@@ -169,15 +301,22 @@ def run_task_loop(task: str, args: argparse.Namespace, generator: CandidateGener
             "failure_type": effective_failure,
             "raw_failure_type": eval_result.failure_type,
             "score_improvement": score_improvement,
-            "decision": decision_after_result(eval_result.valid, effective_failure,
-                                              eval_result.score, previous_best),
+            "decision": result_decision_reason,
+            "decision_reason": result_decision_reason,
             "raw_output": raw_output,
             "code_snapshot": code_snapshot,
+            "code_hash": code_hash,
+            "data_hash": data_hash,
+            "input_artifacts": input_artifacts,
+            "output_artifacts": output_artifacts,
             "diagnostics": candidate.diagnostics,
             "geometry_metrics": metrics,
+            "source_metadata": source_metadata,
             "local_policy_strategy": local_strategy,
             "llm_decision": llm_decision.to_record(),
             "skills_used": skills_used,
+            "state": state.snapshot("archive_pending"),
+            "state_flow": state_flow,
             "trace": {
                 "observation": observation,
                 "thought_decision": thought,
@@ -185,6 +324,10 @@ def run_task_loop(task: str, args: argparse.Namespace, generator: CandidateGener
                 "next_observation": next_observation,
             },
         }
+        state.best_candidate_id = candidate_id if eval_result.valid and score_improvement > 0.0 else state.best_candidate_id
+        state.next_action = "next_iteration"
+        state.artifacts["archive_decision"] = result_decision_reason
+        record["state_flow"].append(state.snapshot("archive"))
         archive.add_record(record)
         current_best = archive.best_record(task)
         improved = bool(current_best and current_best.get("candidate_id") == candidate_id)
@@ -194,6 +337,16 @@ def run_task_loop(task: str, args: argparse.Namespace, generator: CandidateGener
         else:
             no_improve += 1
         append_human_iteration(human_log, record, improved=improved)
+        append_skill_usage(
+            REPO_ROOT,
+            task=task,
+            iteration=iteration,
+            loaded_skills=loaded_skills(REPO_ROOT),
+            used_skills=skills_used,
+            triggered_by=strategy,
+            result="new_best" if improved else "no_best_improvement",
+            score_delta_after_use=score_improvement,
+        )
         last_record = record
         print(
             f"Task {task} iter {iteration}: {strategy} "
@@ -222,8 +375,17 @@ def skills_for_iteration(strategy: str, eval_result=None, effective_failure: Opt
     skills = ["archive-observability"]
     if strategy in {"scipy_slsqp_joint", "multi_start_slsqp"}:
         skills.append("packing-slsqp")
-    if strategy in {"perturb_best_and_repair", "baseline_safe_grid", "hexagonal_or_staggered_initialization"}:
+    if strategy in {
+        "perturb_best_and_repair",
+        "baseline_safe_grid",
+        "hexagonal_or_staggered_initialization",
+        "fixed_centers_radius_lp",
+        "micro_perturb_lp_refine",
+        "optional_fico_task_a_seed",
+    }:
         skills.append("packing-repair")
+    if strategy == BENCHMARK_SEED_STRATEGY:
+        skills.append("static-export")
     skills.append("evaluator-feedback")
     if effective_failure in {"overlap", "boundary_violation", "negative_radius", "nonfinite", "perimeter_error"}:
         if "packing-repair" not in skills:
@@ -231,8 +393,25 @@ def skills_for_iteration(strategy: str, eval_result=None, effective_failure: Opt
     return skills
 
 
-def choose_strategy(iteration: int, best_record: Optional[Dict],
-                    last_record: Optional[Dict], no_improve: int) -> str:
+def choose_strategy(task: str, iteration: int, best_record: Optional[Dict],
+                    last_record: Optional[Dict], no_improve: int,
+                    use_benchmark_seeds: bool = False,
+                    benchmark_attempted: bool = False,
+                    refine_benchmark: bool = False,
+                    strategy_counts: Optional[Dict[str, int]] = None) -> str:
+    strategy_counts = strategy_counts or {}
+    best_score = float(best_record.get("score") or 0.0) if best_record else 0.0
+    plateau = no_improve >= 2
+    if (not benchmark_attempted) and (use_benchmark_seeds or best_score < 0.999 or plateau):
+        return BENCHMARK_SEED_STRATEGY
+    if refine_benchmark and best_record is not None:
+        if int(strategy_counts.get("fixed_centers_radius_lp") or 0) == 0:
+            return "fixed_centers_radius_lp"
+        if int(strategy_counts.get("micro_perturb_lp_refine") or 0) == 0:
+            return "micro_perturb_lp_refine"
+        if task == "A" and int(strategy_counts.get("optional_fico_task_a_seed") or 0) == 0:
+            return "optional_fico_task_a_seed"
+        return "micro_perturb_lp_refine"
     if iteration == 0:
         return "baseline_safe_grid"
     if best_record is None:
@@ -316,6 +495,14 @@ def strategy_reason(strategy: str, observation: Dict, llm_reason: str) -> str:
         return "Run multiple deterministic starts because current archive can be improved."
     if strategy == "perturb_best_and_repair":
         return "Exploit the best archive candidate after plateau or no-improvement rounds."
+    if strategy == BENCHMARK_SEED_STRATEGY:
+        return "Use public DominikKamp/Packing geometry as an external benchmark warm-start candidate, then rely on the official evaluator."
+    if strategy == "fixed_centers_radius_lp":
+        return "Hold the current best centers fixed and solve the radius LP, accepting only official-evaluator-valid improvements."
+    if strategy == "micro_perturb_lp_refine":
+        return "Try tiny perturbations around the current best geometry, solve a radius LP, and rely on official validation."
+    if strategy == "optional_fico_task_a_seed":
+        return "Try the optional public FICO Problem 13 Task A seed if a local copy is available, then rely on official validation."
     return f"Selected by policy from last failure {last.get('failure_type', 'none')}."
 
 
@@ -326,6 +513,10 @@ def action_summary(strategy: str) -> str:
         "scipy_slsqp_joint": "SLSQP joint optimization followed by LP safety repair",
         "multi_start_slsqp": "deterministic multi-start SLSQP and best-valid export",
         "perturb_best_and_repair": "archive-best perturbation with LP radius recomputation",
+        BENCHMARK_SEED_STRATEGY: "public benchmark geometry conversion to static candidate plus official validation",
+        "fixed_centers_radius_lp": "fixed-center LP radius maximization near the benchmark candidate",
+        "micro_perturb_lp_refine": "tiny center/width perturbation followed by fixed-center LP",
+        "optional_fico_task_a_seed": "optional public FICO Problem 13 seed conversion plus official validation",
     }
     return mapping.get(strategy, "candidate generation and official evaluator validation")
 
@@ -340,7 +531,136 @@ def effective_failure_type(eval_result, score_improvement: float, no_improve: in
     return "none"
 
 
-def create_submission(repo_root: Path, archive: ArchiveManager, evaluate_all_output: str) -> None:
+def reset_skill_usage(repo_root: Path, run_id: str) -> None:
+    path = repo_root / "agent" / "skills" / "usage_stats.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(
+            {
+                "run_id": run_id,
+                "loaded_skills": loaded_skills(repo_root),
+                "iterations": [],
+            },
+            indent=2,
+            sort_keys=True,
+        ) + "\n",
+        encoding="utf-8",
+    )
+
+
+def loaded_skills(repo_root: Path) -> list:
+    skills_dir = repo_root / "agent" / "skills"
+    if not skills_dir.exists():
+        return []
+    return sorted(path.parent.name for path in skills_dir.glob("*/SKILL.md"))
+
+
+def append_skill_usage(repo_root: Path, task: str, iteration: int, loaded_skills: list,
+                       used_skills: list, triggered_by: str, result: str,
+                       score_delta_after_use: float) -> None:
+    path = repo_root / "agent" / "skills" / "usage_stats.json"
+    if path.exists():
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    else:
+        payload = {"loaded_skills": loaded_skills, "iterations": []}
+    payload["loaded_skills"] = loaded_skills
+    payload.setdefault("iterations", []).append(
+        {
+            "task": task,
+            "iteration": int(iteration),
+            "loaded_skills": loaded_skills,
+            "used_skills": used_skills,
+            "triggered_by": triggered_by,
+            "result": result,
+            "score_delta_after_use": float(score_delta_after_use),
+        }
+    )
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def write_strategy_portfolio_metrics(repo_root: Path, stats: Dict, lineage_paths: Dict[str, str]) -> Path:
+    path = repo_root / "agent" / "archive" / "metrics" / "strategy_portfolio.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "strategy_portfolio_stats": stats,
+        "lineage_paths": lineage_paths,
+    }
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    return path
+
+
+def write_human_agent_division(repo_root: Path, archive: ArchiveManager) -> None:
+    summary = {
+        "human_provided": [
+            {
+                "item": "Problem understanding and scoring constraints",
+                "evidence_artifacts": ["task_A/task_description.md", "task_B/task_description.md"],
+            },
+            {
+                "item": "Architecture preferences: no large frameworks, no role-play personas, preserve official evaluators",
+                "evidence_artifacts": ["submission/report.md", "agent/run.py"],
+            },
+            {
+                "item": "Permission to use public benchmark seed data",
+                "evidence_artifacts": ["benchmarks/dominikkamp/SOURCE.md"],
+            },
+        ],
+        "agent_completed": [
+            {
+                "item": "Candidate code generation and static export",
+                "evidence_artifacts": ["task_A/solution.py", "task_B/solution.py"],
+            },
+            {
+                "item": "Official evaluator invocation and raw output archival",
+                "evidence_artifacts": ["submission/agent/run_archive.jsonl", "agent/archive/metrics/run_log.jsonl"],
+            },
+            {
+                "item": "Benchmark seed conversion and metadata tracking",
+                "evidence_artifacts": ["agent/benchmark_seeds.py", "benchmarks/dominikkamp/"],
+            },
+            {
+                "item": "Best-valid export, lineage DAG, strategy portfolio, and safety audit",
+                "evidence_artifacts": [
+                    "agent/archive/lineage/task_A_best_lineage.json",
+                    "agent/archive/lineage/task_B_best_lineage.json",
+                    "agent/archive/metrics/strategy_portfolio.json",
+                    "submission/safety_report.json",
+                ],
+            },
+        ],
+        "best_candidates": {
+            task: (archive.best_record(task) or {}).get("candidate_id")
+            for task in ("A", "B")
+        },
+    }
+    json_path = repo_root / "submission" / "human_agent_division.json"
+    md_path = repo_root / "submission" / "human_agent_division.md"
+    json_path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    lines = ["# Human-Agent Division Audit", ""]
+    lines.append("## Human Provided")
+    for item in summary["human_provided"]:
+        lines.append(f"- {item['item']} Evidence: {', '.join(item['evidence_artifacts'])}")
+    lines.append("")
+    lines.append("## Agent Completed")
+    for item in summary["agent_completed"]:
+        lines.append(f"- {item['item']} Evidence: {', '.join(item['evidence_artifacts'])}")
+    lines.append("")
+    lines.append("## Best Candidates")
+    for task, candidate_id in summary["best_candidates"].items():
+        lines.append(f"- Task {task}: `{candidate_id}`")
+    lines.append("")
+    md_path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def run_demo_builder(repo_root: Path) -> None:
+    script = repo_root / "scripts" / "build_demo_data.py"
+    if not script.exists():
+        return
+    subprocess.run([sys.executable, str(script)], cwd=str(repo_root), check=False)
+
+
+def create_submission(repo_root: Path, archive: ArchiveManager, evaluate_all_output: str,
+                      safety_guard: SafetyGuard) -> None:
     submission = repo_root / "submission"
     submission.mkdir(exist_ok=True)
 
@@ -362,6 +682,9 @@ def create_submission(repo_root: Path, archive: ArchiveManager, evaluate_all_out
     requirements = repo_root / "requirements.txt"
     if requirements.exists():
         shutil.copyfile(requirements, submission / "requirements.txt")
+    benchmarks_src = repo_root / "benchmarks"
+    if benchmarks_src.exists():
+        shutil.copytree(benchmarks_src, submission / "benchmarks", dirs_exist_ok=True)
     shutil.copyfile(archive.archive_jsonl, agent_dst / "run_archive.jsonl")
     summary = archive.root / "summary.json"
     if summary.exists():
@@ -376,7 +699,12 @@ def create_submission(repo_root: Path, archive: ArchiveManager, evaluate_all_out
         if (src_dir / log_name).exists():
             shutil.copyfile(src_dir / log_name, dst_dir / log_name)
 
+    write_human_agent_division(repo_root, archive)
     generate_report(repo_root, archive, submission / "report.md", evaluate_all_output)
+    safety_guard.check_post_run(archive.run_id, write_submission=True)
+    generate_report(repo_root, archive, submission / "report.md", evaluate_all_output)
+    run_demo_builder(repo_root)
+    safety_guard.check_post_run(archive.run_id, write_submission=True)
 
 
 if __name__ == "__main__":

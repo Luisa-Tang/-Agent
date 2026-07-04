@@ -1,0 +1,60 @@
+{
+  "agent_completed": [
+    {
+      "evidence_artifacts": [
+        "task_A/solution.py",
+        "task_B/solution.py"
+      ],
+      "item": "Candidate code generation and static export"
+    },
+    {
+      "evidence_artifacts": [
+        "submission/agent/run_archive.jsonl",
+        "agent/archive/metrics/run_log.jsonl"
+      ],
+      "item": "Official evaluator invocation and raw output archival"
+    },
+    {
+      "evidence_artifacts": [
+        "agent/benchmark_seeds.py",
+        "benchmarks/dominikkamp/"
+      ],
+      "item": "Benchmark seed conversion and metadata tracking"
+    },
+    {
+      "evidence_artifacts": [
+        "agent/archive/lineage/task_A_best_lineage.json",
+        "agent/archive/lineage/task_B_best_lineage.json",
+        "agent/archive/metrics/strategy_portfolio.json",
+        "submission/safety_report.json"
+      ],
+      "item": "Best-valid export, lineage DAG, strategy portfolio, and safety audit"
+    }
+  ],
+  "best_candidates": {
+    "A": "A_000_benchmark_seed_dominikkamp",
+    "B": "B_000_benchmark_seed_dominikkamp"
+  },
+  "human_provided": [
+    {
+      "evidence_artifacts": [
+        "task_A/task_description.md",
+        "task_B/task_description.md"
+      ],
+      "item": "Problem understanding and scoring constraints"
+    },
+    {
+      "evidence_artifacts": [
+        "submission/report.md",
+        "agent/run.py"
+      ],
+      "item": "Architecture preferences: no large frameworks, no role-play personas, preserve official evaluators"
+    },
+    {
+      "evidence_artifacts": [
+        "benchmarks/dominikkamp/SOURCE.md"
+      ],
+      "item": "Permission to use public benchmark seed data"
+    }
+  ]
+}

@@ -39,12 +39,26 @@ def append_human_iteration(path: Path, record: Dict[str, Any], improved: bool) -
     action = trace.get("action") or {}
     next_observation = trace.get("next_observation") or {}
     metrics = record.get("geometry_metrics") or {}
+    source = record.get("source_metadata") or {}
+    source_line = "  source_metadata: none"
+    if source:
+        official = source.get("official_evaluator_result") or {}
+        source_line = (
+            f"  source_metadata: source={source.get('source')} | file={source.get('source_file')} | "
+            f"raw_sum={float(source.get('raw_sum_radii') or 0.0):.12f} | "
+            f"official_valid={official.get('valid')} | official_score={float(official.get('score') or 0.0):.6f}"
+        )
+    state_flow = record.get("state_flow") or []
+    phase_names = " -> ".join(str(item.get("phase")) for item in state_flow if item.get("phase"))
+    state_line = f"  state_flow: {phase_names}" if phase_names else "  state_flow: not recorded"
     lines = [
         f"Iteration {record['iteration']} | candidate {record['candidate_id']}",
+        state_line,
         f"  observe: last={observation.get('last_evaluator_result')} | best={observation.get('best_archive_state')}",
         f"  think: selected={thought.get('selected_strategy', record['strategy'])} | reason={thought.get('reason', record.get('decision', ''))}",
         f"  act: {action.get('optimizer_or_repair', record['strategy'])} | code_bytes={action.get('generated_code_bytes', 0)}",
         f"  skills_used: {', '.join(record.get('skills_used') or action.get('skills_used') or [])}",
+        source_line,
         f"  next_observe: valid={next_observation.get('valid', record['valid'])} | score={float(next_observation.get('score') or 0.0):.6f} | failure={next_observation.get('failure_type', record.get('failure_type'))}",
         f"  strategy: {record['strategy']}",
         f"  local_policy_strategy: {record.get('local_policy_strategy', record['strategy'])}",

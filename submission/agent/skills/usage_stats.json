@@ -1,0 +1,202 @@
+{
+  "iterations": [
+    {
+      "iteration": 0,
+      "loaded_skills": [
+        "archive-observability",
+        "evaluator-feedback",
+        "packing-repair",
+        "packing-slsqp",
+        "static-export"
+      ],
+      "result": "new_best",
+      "score_delta_after_use": 0.9999967571069156,
+      "task": "A",
+      "triggered_by": "benchmark_seed_dominikkamp",
+      "used_skills": [
+        "archive-observability",
+        "static-export",
+        "evaluator-feedback"
+      ]
+    },
+    {
+      "iteration": 1,
+      "loaded_skills": [
+        "archive-observability",
+        "evaluator-feedback",
+        "packing-repair",
+        "packing-slsqp",
+        "static-export"
+      ],
+      "result": "no_best_improvement",
+      "score_delta_after_use": -0.1741015882436744,
+      "task": "A",
+      "triggered_by": "hexagonal_or_staggered_initialization",
+      "used_skills": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ]
+    },
+    {
+      "iteration": 2,
+      "loaded_skills": [
+        "archive-observability",
+        "evaluator-feedback",
+        "packing-repair",
+        "packing-slsqp",
+        "static-export"
+      ],
+      "result": "no_best_improvement",
+      "score_delta_after_use": -0.9999208867874425,
+      "task": "A",
+      "triggered_by": "scipy_slsqp_joint",
+      "used_skills": [
+        "archive-observability",
+        "packing-slsqp",
+        "evaluator-feedback"
+      ]
+    },
+    {
+      "iteration": 3,
+      "loaded_skills": [
+        "archive-observability",
+        "evaluator-feedback",
+        "packing-repair",
+        "packing-slsqp",
+        "static-export"
+      ],
+      "result": "no_best_improvement",
+      "score_delta_after_use": -1.0673674581962445e-06,
+      "task": "A",
+      "triggered_by": "perturb_best_and_repair",
+      "used_skills": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ]
+    },
+    {
+      "iteration": 4,
+      "loaded_skills": [
+        "archive-observability",
+        "evaluator-feedback",
+        "packing-repair",
+        "packing-slsqp",
+        "static-export"
+      ],
+      "result": "no_best_improvement",
+      "score_delta_after_use": -1.0673120242055134e-06,
+      "task": "A",
+      "triggered_by": "perturb_best_and_repair",
+      "used_skills": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ]
+    },
+    {
+      "iteration": 0,
+      "loaded_skills": [
+        "archive-observability",
+        "evaluator-feedback",
+        "packing-repair",
+        "packing-slsqp",
+        "static-export"
+      ],
+      "result": "new_best",
+      "score_delta_after_use": 0.99999736745286,
+      "task": "B",
+      "triggered_by": "benchmark_seed_dominikkamp",
+      "used_skills": [
+        "archive-observability",
+        "static-export",
+        "evaluator-feedback"
+      ]
+    },
+    {
+      "iteration": 1,
+      "loaded_skills": [
+        "archive-observability",
+        "evaluator-feedback",
+        "packing-repair",
+        "packing-slsqp",
+        "static-export"
+      ],
+      "result": "no_best_improvement",
+      "score_delta_after_use": -0.08485392511743195,
+      "task": "B",
+      "triggered_by": "hexagonal_or_staggered_initialization",
+      "used_skills": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ]
+    },
+    {
+      "iteration": 2,
+      "loaded_skills": [
+        "archive-observability",
+        "evaluator-feedback",
+        "packing-repair",
+        "packing-slsqp",
+        "static-export"
+      ],
+      "result": "no_best_improvement",
+      "score_delta_after_use": -0.016126636768161506,
+      "task": "B",
+      "triggered_by": "scipy_slsqp_joint",
+      "used_skills": [
+        "archive-observability",
+        "packing-slsqp",
+        "evaluator-feedback"
+      ]
+    },
+    {
+      "iteration": 3,
+      "loaded_skills": [
+        "archive-observability",
+        "evaluator-feedback",
+        "packing-repair",
+        "packing-slsqp",
+        "static-export"
+      ],
+      "result": "no_best_improvement",
+      "score_delta_after_use": -3.431321104419016e-05,
+      "task": "B",
+      "triggered_by": "perturb_best_and_repair",
+      "used_skills": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ]
+    },
+    {
+      "iteration": 4,
+      "loaded_skills": [
+        "archive-observability",
+        "evaluator-feedback",
+        "packing-repair",
+        "packing-slsqp",
+        "static-export"
+      ],
+      "result": "no_best_improvement",
+      "score_delta_after_use": -1.1771331531740259e-06,
+      "task": "B",
+      "triggered_by": "perturb_best_and_repair",
+      "used_skills": [
+        "archive-observability",
+        "packing-repair",
+        "evaluator-feedback"
+      ]
+    }
+  ],
+  "loaded_skills": [
+    "archive-observability",
+    "evaluator-feedback",
+    "packing-repair",
+    "packing-slsqp",
+    "static-export"
+  ],
+  "run_id": "20260704_120206"
+}

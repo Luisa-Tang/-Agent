@@ -1,0 +1,58 @@
+{
+  "lineage_paths": {
+    "A": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/lineage/task_A_best_lineage.json",
+    "B": "/home/wuyou/projects/AlgorithmOptimization/agent/archive/lineage/task_B_best_lineage.json"
+  },
+  "strategy_portfolio_stats": {
+    "benchmark_seed_dominikkamp": {
+      "attempts": 2,
+      "avg_runtime": 0.195,
+      "avg_score_delta": 0.9999970622798878,
+      "best_score": 0.99999736745286,
+      "common_failure_types": {
+        "none": 2
+      },
+      "last_used_iteration": 0,
+      "valid_count": 2,
+      "validity_rate": 1.0
+    },
+    "hexagonal_or_staggered_initialization": {
+      "attempts": 2,
+      "avg_runtime": 0.18,
+      "avg_score_delta": -0.12947775668055317,
+      "best_score": 0.9151434423354281,
+      "common_failure_types": {
+        "low_score": 1,
+        "none": 1
+      },
+      "last_used_iteration": 1,
+      "valid_count": 2,
+      "validity_rate": 1.0
+    },
+    "perturb_best_and_repair": {
+      "attempts": 4,
+      "avg_runtime": 0.1875,
+      "avg_score_delta": -9.406255919941486e-06,
+      "best_score": 0.9999961903197069,
+      "common_failure_types": {
+        "plateau": 4
+      },
+      "last_used_iteration": 4,
+      "valid_count": 4,
+      "validity_rate": 1.0
+    },
+    "scipy_slsqp_joint": {
+      "attempts": 2,
+      "avg_runtime": 0.195,
+      "avg_score_delta": -0.5080237617778021,
+      "best_score": 0.9838707306846985,
+      "common_failure_types": {
+        "low_score": 1,
+        "none": 1
+      },
+      "last_used_iteration": 2,
+      "valid_count": 2,
+      "validity_rate": 1.0
+    }
+  }
+}

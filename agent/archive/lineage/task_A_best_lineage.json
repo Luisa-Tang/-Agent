@@ -1,0 +1,192 @@
+{
+  "best_candidate_id": "A_000_benchmark_seed_dominikkamp",
+  "best_chain": [
+    {
+      "candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "code_hash": "fc2228cdd6947d5b72bb8fa2d168f785e5a00581165fcfb51f39f67565e1b5ab",
+      "data_hash": "fbc221a13f2132d19ae6e4fe2ceed8acc52ffca212d276c531361b842a76dedf",
+      "decision_reason": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
+      "input_artifacts": {
+        "parent_candidate_id": null,
+        "source_metadata": {
+          "converted_width_height": {
+            "height": 1.0232688920031396,
+            "width": 0.9767311079968606
+          },
+          "local_path": "benchmarks/dominikkamp/rectangle_n21.txt",
+          "normalization_scale": 1.0000000008835837,
+          "official_evaluator_result": {
+            "elapsed": "0.20s",
+            "exact_score": 0.9999967571069156,
+            "exact_sum_radii": 2.365832327833825,
+            "failure_type": "none",
+            "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/outputs/task_A/A_000_benchmark_seed_dominikkamp.txt",
+            "returncode": 0,
+            "score": 0.9999967571069156,
+            "sum_radii": 2.365832327833825,
+            "valid": true
+          },
+          "raw_sum_radii": 2.365832326862653,
+          "raw_width_height": {
+            "height": 1.023268891098996,
+            "width": 0.9767311071338369
+          },
+          "safety_shrink": 0.9999999999,
+          "source": "DominikKamp/Packing",
+          "source_file": "rectangle/n21/rectangle_n21.txt",
+          "source_url": "https://github.com/DominikKamp/Packing",
+          "upstream_url": "https://raw.githubusercontent.com/DominikKamp/Packing/main/rectangle/n21/rectangle_n21.txt"
+        }
+      },
+      "official_score": 0.9999967571069156,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/candidates/task_A/A_000_benchmark_seed_dominikkamp.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/outputs/task_A/A_000_benchmark_seed_dominikkamp.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_A/solution.py"
+      },
+      "parent_candidate_id": null,
+      "strategy": "benchmark_seed_dominikkamp"
+    }
+  ],
+  "best_score": 0.9999967571069156,
+  "edges": [
+    {
+      "from": "A_000_benchmark_seed_dominikkamp",
+      "to": "A_001_hexagonal_or_staggered_initialization"
+    },
+    {
+      "from": "A_000_benchmark_seed_dominikkamp",
+      "to": "A_002_scipy_slsqp_joint"
+    },
+    {
+      "from": "A_000_benchmark_seed_dominikkamp",
+      "to": "A_003_perturb_best_and_repair"
+    },
+    {
+      "from": "A_000_benchmark_seed_dominikkamp",
+      "to": "A_004_perturb_best_and_repair"
+    }
+  ],
+  "nodes": [
+    {
+      "candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "code_hash": "fc2228cdd6947d5b72bb8fa2d168f785e5a00581165fcfb51f39f67565e1b5ab",
+      "data_hash": "fbc221a13f2132d19ae6e4fe2ceed8acc52ffca212d276c531361b842a76dedf",
+      "decision_reason": "Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start.",
+      "input_artifacts": {
+        "parent_candidate_id": null,
+        "source_metadata": {
+          "converted_width_height": {
+            "height": 1.0232688920031396,
+            "width": 0.9767311079968606
+          },
+          "local_path": "benchmarks/dominikkamp/rectangle_n21.txt",
+          "normalization_scale": 1.0000000008835837,
+          "official_evaluator_result": {
+            "elapsed": "0.20s",
+            "exact_score": 0.9999967571069156,
+            "exact_sum_radii": 2.365832327833825,
+            "failure_type": "none",
+            "raw_output_path": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/outputs/task_A/A_000_benchmark_seed_dominikkamp.txt",
+            "returncode": 0,
+            "score": 0.9999967571069156,
+            "sum_radii": 2.365832327833825,
+            "valid": true
+          },
+          "raw_sum_radii": 2.365832326862653,
+          "raw_width_height": {
+            "height": 1.023268891098996,
+            "width": 0.9767311071338369
+          },
+          "safety_shrink": 0.9999999999,
+          "source": "DominikKamp/Packing",
+          "source_file": "rectangle/n21/rectangle_n21.txt",
+          "source_url": "https://github.com/DominikKamp/Packing",
+          "upstream_url": "https://raw.githubusercontent.com/DominikKamp/Packing/main/rectangle/n21/rectangle_n21.txt"
+        }
+      },
+      "official_score": 0.9999967571069156,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/candidates/task_A/A_000_benchmark_seed_dominikkamp.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/outputs/task_A/A_000_benchmark_seed_dominikkamp.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_A/solution.py"
+      },
+      "parent_candidate_id": null,
+      "strategy": "benchmark_seed_dominikkamp"
+    },
+    {
+      "candidate_id": "A_001_hexagonal_or_staggered_initialization",
+      "code_hash": "ab997f5544c8b6826f178c69c5857b6fc327fd3aa8b0a79f73c5a0e22a11968e",
+      "data_hash": "cb89957b3dab5da9a0193dceb102c1dff00bbf884793305137b408fd3f867cf6",
+      "decision_reason": "Valid but below the current target band; use multi-start or perturbation to seek higher sum radii.",
+      "input_artifacts": {
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.8258951688632412,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/candidates/task_A/A_001_hexagonal_or_staggered_initialization.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/outputs/task_A/A_001_hexagonal_or_staggered_initialization.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_A/solution.py"
+      },
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "strategy": "hexagonal_or_staggered_initialization"
+    },
+    {
+      "candidate_id": "A_002_scipy_slsqp_joint",
+      "code_hash": "ef725046f270085ba618c9b7dacaea485923bcb805dc5511bfffa6eaebc4ca46",
+      "data_hash": "78690fa79a45cb7b7901670ca4be24a86f44cacf3358028ed9dc456c1eead0d1",
+      "decision_reason": "Valid but below the current target band; use multi-start or perturbation to seek higher sum radii.",
+      "input_artifacts": {
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 7.587031947310046e-05,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/candidates/task_A/A_002_scipy_slsqp_joint.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/outputs/task_A/A_002_scipy_slsqp_joint.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_A/solution.py"
+      },
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "strategy": "scipy_slsqp_joint"
+    },
+    {
+      "candidate_id": "A_003_perturb_best_and_repair",
+      "code_hash": "8497d50dbcdc09cceb70cdb8d218fd3109356234c26098af6ac621a067fbfa43",
+      "data_hash": "c95199d0b93c46bcac7f43a61637942ef2178fecc767b5301395635df4db5101",
+      "decision_reason": "Valid plateau detected; perturb the best candidate or diversify structured starts.",
+      "input_artifacts": {
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9999956897394574,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/candidates/task_A/A_003_perturb_best_and_repair.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/outputs/task_A/A_003_perturb_best_and_repair.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_A/solution.py"
+      },
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "strategy": "perturb_best_and_repair"
+    },
+    {
+      "candidate_id": "A_004_perturb_best_and_repair",
+      "code_hash": "d67e32bb94c291cf2e96cf8661cde40ff52aa750809a46d77150170384e35f7b",
+      "data_hash": "b62bef3b9ae893d855b841ac4809b371c49f59d928f6259f392a51620aacd01b",
+      "decision_reason": "Valid plateau detected; perturb the best candidate or diversify structured starts.",
+      "input_artifacts": {
+        "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+        "source_metadata": null
+      },
+      "official_score": 0.9999956897948914,
+      "output_artifacts": {
+        "code_snapshot": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/candidates/task_A/A_004_perturb_best_and_repair.py",
+        "raw_output": "/home/wuyou/projects/AlgorithmOptimization/agent_runs/20260704_120206/outputs/task_A/A_004_perturb_best_and_repair.txt",
+        "solution_path": "/home/wuyou/projects/AlgorithmOptimization/task_A/solution.py"
+      },
+      "parent_candidate_id": "A_000_benchmark_seed_dominikkamp",
+      "strategy": "perturb_best_and_repair"
+    }
+  ],
+  "replay_hint": "Run the code_snapshot for any node through the corresponding official evaluate.py.",
+  "task": "A"
+}

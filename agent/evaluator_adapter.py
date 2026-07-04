@@ -11,9 +11,18 @@ import os
 import re
 import subprocess
 import sys
+import uuid
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional
+from typing import Dict, Optional
+
+import numpy as np
+
+
+TASK_EXACT_SPECS = {
+    "A": {"n": 21, "target": 2.365840},
+    "B": {"n": 26, "target": 2.635990},
+}
 
 
 @dataclass
@@ -27,6 +36,10 @@ class EvalResult:
     stderr: str
     returncode: int
     elapsed_text: Optional[str] = None
+    exact_sum_radii: Optional[float] = None
+    exact_score: Optional[float] = None
+    exact_width: Optional[float] = None
+    exact_height: Optional[float] = None
 
     @property
     def raw_output(self) -> str:
@@ -94,7 +107,17 @@ class EvaluatorAdapter:
                 returncode=124,
             )
 
-        return self.parse_result(task, stdout, stderr, returncode)
+        result = self.parse_result(task, stdout, stderr, returncode)
+        if result.valid:
+            exact = self._solution_exact_metrics(task, solution)
+            if exact:
+                result.exact_sum_radii = exact.get("sum_radii")
+                result.exact_score = exact.get("score")
+                result.exact_width = exact.get("width")
+                result.exact_height = exact.get("height")
+                result.sum_radii = result.exact_sum_radii
+                result.score = float(result.exact_score or result.score)
+        return result
 
     def parse_result(self, task: str, stdout: str, stderr: str,
                      returncode: int) -> EvalResult:
@@ -128,6 +151,39 @@ class EvaluatorAdapter:
             stderr=subprocess.PIPE,
             timeout=self.timeout * 2,
         )
+
+    def _solution_exact_metrics(self, task: str, solution: Path) -> Dict[str, Optional[float]]:
+        task = task.upper()
+        spec_data = TASK_EXACT_SPECS[task]
+        module_name = f"_agent_exact_{task}_{uuid.uuid4().hex}"
+        try:
+            import importlib.util
+
+            spec = importlib.util.spec_from_file_location(module_name, str(solution))
+            if spec is None or spec.loader is None:
+                return {}
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            result = module.run_packing(int(spec_data["n"]))
+            if task == "A":
+                _centers, radii, width, height = result
+                sum_radii = float(np.sum(np.asarray(radii, dtype=float)))
+                return {
+                    "sum_radii": sum_radii,
+                    "score": sum_radii / float(spec_data["target"]),
+                    "width": float(width),
+                    "height": float(height),
+                }
+            _centers, radii, _reported_sum = result
+            sum_radii = float(np.sum(np.asarray(radii, dtype=float)))
+            return {
+                "sum_radii": sum_radii,
+                "score": sum_radii / float(spec_data["target"]),
+                "width": None,
+                "height": None,
+            }
+        except Exception:
+            return {}
 
 
 def _last_float_for_label(text: str, label: str) -> Optional[float]:

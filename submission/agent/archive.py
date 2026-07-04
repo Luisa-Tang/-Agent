@@ -17,6 +17,10 @@ class ArchiveManager:
         self.root = self.repo_root / "agent_runs" / run_id
         self.root.mkdir(parents=True, exist_ok=True)
         self.archive_jsonl = self.root / "archive.jsonl"
+        self.metrics_root = self.repo_root / "agent" / "archive" / "metrics"
+        self.metrics_root.mkdir(parents=True, exist_ok=True)
+        self.metrics_run_log = self.metrics_root / "run_log.jsonl"
+        self.metrics_run_log.write_text("", encoding="utf-8")
         self.records: List[Dict[str, Any]] = []
         self.best: Dict[str, Dict[str, Any]] = {}
         for task in ("A", "B"):
@@ -41,6 +45,8 @@ class ArchiveManager:
         record = sanitize_json(record)
         self.records.append(record)
         with self.archive_jsonl.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps(record, sort_keys=True) + "\n")
+        with self.metrics_run_log.open("a", encoding="utf-8") as fh:
             fh.write(json.dumps(record, sort_keys=True) + "\n")
         if record.get("valid"):
             task = str(record["task"]).upper()

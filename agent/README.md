@@ -31,10 +31,10 @@ The final exported `task_A/solution.py` and `task_B/solution.py` are standalone 
 The Agent can connect to an OpenAI-compatible Chat Completions endpoint for strategy reflection. It only chooses among the built-in deterministic strategies; generated final solutions remain offline.
 
 ```bash
-export OPENAI_API_KEY="..."
+export DEEPSEEK_API_KEY="..."
 python agent/run.py --task both --iterations 5 --fast --use-llm \
-  --llm-base-url http://10.12.111.139/v1 \
-  --llm-model glm-5.2
+  --llm-base-url https://api.deepseek.com \
+  --llm-model deepseek-v4-pro
 ```
 
-If `OPENAI_API_KEY` is absent or the endpoint is unavailable, the loop records the failure and falls back to the local deterministic policy.
+If `DEEPSEEK_API_KEY`/`OPENAI_API_KEY` is absent or the endpoint is unavailable, the loop records the failure and falls back to the local deterministic policy.

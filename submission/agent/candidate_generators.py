@@ -7,6 +7,12 @@ from typing import Dict, List, Optional
 
 import numpy as np
 
+from benchmark_seeds import (
+    STRATEGY_NAME as BENCHMARK_SEED_STRATEGY,
+    make_task_a_solution_from_seed,
+    make_task_b_solution_from_seed,
+    make_optional_fico_task_a_solution_from_seed,
+)
 from geometry_utils import (
     PackingData,
     TASK_SPECS,
@@ -25,6 +31,10 @@ STRATEGIES = [
     "multi_start_slsqp",
     "hexagonal_or_staggered_initialization",
     "perturb_best_and_repair",
+    "benchmark_seed_dominikkamp",
+    "fixed_centers_radius_lp",
+    "micro_perturb_lp_refine",
+    "optional_fico_task_a_seed",
 ]
 
 
@@ -64,6 +74,40 @@ class CandidateGenerator:
             if parent_data is None:
                 parent_data = self._structured_candidate(task, iteration, "hexagonal_or_staggered_initialization")
             data, diag = self._perturb_and_repair(task, parent_data, iteration)
+        elif strategy == BENCHMARK_SEED_STRATEGY:
+            seed_solution = (
+                make_task_a_solution_from_seed()
+                if task == "A"
+                else make_task_b_solution_from_seed()
+            )
+            return GeneratedCandidate(
+                task=task,
+                strategy=strategy,
+                code=seed_solution.code,
+                data=seed_solution.data,
+                diagnostics=seed_solution.diagnostics,
+            )
+        elif strategy == "fixed_centers_radius_lp":
+            if parent_data is None:
+                parent_data = self._structured_candidate(task, iteration, "hexagonal_or_staggered_initialization")
+            data, diag = self._fixed_centers_radius_lp(task, parent_data)
+        elif strategy == "micro_perturb_lp_refine":
+            if parent_data is None:
+                parent_data = self._structured_candidate(task, iteration, "hexagonal_or_staggered_initialization")
+            data, diag = self._micro_perturb_lp_refine(task, parent_data, iteration)
+        elif strategy == "optional_fico_task_a_seed":
+            if task == "A":
+                seed_solution = make_optional_fico_task_a_solution_from_seed(parent_data=parent_data)
+                return GeneratedCandidate(
+                    task=task,
+                    strategy=strategy,
+                    code=seed_solution.code,
+                    data=seed_solution.data,
+                    diagnostics=seed_solution.diagnostics,
+                )
+            if parent_data is None:
+                parent_data = self._structured_candidate(task, iteration, "hexagonal_or_staggered_initialization")
+            data, diag = self._fixed_centers_radius_lp(task, parent_data, source="FICO seed not applicable to Task B")
         else:
             data = structured_initial_data(task, "baseline_safe_grid", self.seed + iteration)
             diag = {"source": "fallback"}
@@ -158,6 +202,94 @@ class CandidateGenerator:
         diag["source"] = "perturbed best valid candidate then SLSQP/LP repair"
         diag["parent_sum_radii"] = parent_data.sum_radii
         return data, diag
+
+    def _fixed_centers_radius_lp(self, task: str, parent_data: PackingData,
+                                 source: str = "archive best centers") -> tuple[PackingData, dict]:
+        centers = np.asarray(parent_data.centers, dtype=float).copy()
+        if task == "A":
+            width = float(parent_data.width)
+            height = 2.0 - width
+            centers = clip_centers(task, centers, width, height, eps=2e-10)
+            radii = solve_radii_lp(task, centers, width, height, margin=0.0)
+            centers, radii = safety_repair(task, centers, radii, width, height, safety=2e-10)
+            data = PackingData(task=task, centers=centers, radii=radii, width=width, height=height)
+        else:
+            centers = clip_centers(task, centers, eps=2e-10)
+            radii = solve_radii_lp(task, centers, margin=0.0)
+            centers, radii = safety_repair(task, centers, radii, safety=2e-10)
+            data = PackingData(task=task, centers=centers, radii=radii)
+
+        return data, {
+            "source": "benchmark-neighborhood refinement",
+            "source_metadata": {
+                "source": source,
+                "source_type": "fixed_centers_radius_lp",
+                "parent_sum_radii": parent_data.sum_radii,
+                "lp_margin": 0.0,
+                "safety_repair": 2e-10,
+            },
+            "refinement_type": "fixed_centers_radius_lp",
+            "parent_sum_radii": parent_data.sum_radii,
+            "lp_margin": 0.0,
+            "radii_only": True,
+        }
+
+    def _micro_perturb_lp_refine(self, task: str, parent_data: PackingData,
+                                 iteration: int) -> tuple[PackingData, dict]:
+        rng = np.random.default_rng(self.seed + 15485863 * (iteration + 1))
+        sigmas = [1e-5, 3e-6, 1e-6, 3e-7]
+        trials_per_sigma = 1 if self.fast else 6
+        if self.fast:
+            sigmas = [3e-6, 1e-6]
+
+        best_data: Optional[PackingData] = None
+        best_sigma: Optional[float] = None
+        attempts = 0
+        width_scale = min(float(parent_data.width or 1.0), float(parent_data.height or 1.0))
+        for sigma in sigmas:
+            for _ in range(trials_per_sigma):
+                attempts += 1
+                centers = np.asarray(parent_data.centers, dtype=float).copy()
+                centers += rng.normal(0.0, sigma, size=centers.shape)
+                if task == "A":
+                    width = float(parent_data.width) + float(rng.normal(0.0, sigma * max(width_scale, 1e-6)))
+                    width = float(np.clip(width, 0.28, 1.72))
+                    height = 2.0 - width
+                    centers = clip_centers(task, centers, width, height, eps=2e-10)
+                    radii = solve_radii_lp(task, centers, width, height, margin=0.0)
+                    centers, radii = safety_repair(task, centers, radii, width, height, safety=2e-10)
+                    data = PackingData(task=task, centers=centers, radii=radii, width=width, height=height)
+                else:
+                    centers = clip_centers(task, centers, eps=2e-10)
+                    radii = solve_radii_lp(task, centers, margin=0.0)
+                    centers, radii = safety_repair(task, centers, radii, safety=2e-10)
+                    data = PackingData(task=task, centers=centers, radii=radii)
+                if best_data is None or data.sum_radii > best_data.sum_radii:
+                    best_data = data
+                    best_sigma = sigma
+
+        assert best_data is not None
+        return best_data, {
+            "source": "benchmark-neighborhood refinement",
+            "source_metadata": {
+                "source": "archive best geometry plus micro perturbation",
+                "source_type": "micro_perturb_lp_refine",
+                "parent_sum_radii": parent_data.sum_radii,
+                "sigmas": sigmas,
+                "trials_per_sigma": trials_per_sigma,
+                "attempts": attempts,
+                "best_sigma": best_sigma,
+                "lp_margin": 0.0,
+                "safety_repair": 2e-10,
+            },
+            "refinement_type": "micro_perturb_lp_refine",
+            "parent_sum_radii": parent_data.sum_radii,
+            "sigmas": sigmas,
+            "trials_per_sigma": trials_per_sigma,
+            "attempts": attempts,
+            "best_sigma": best_sigma,
+            "lp_margin": 0.0,
+        }
 
     def _optimize_candidate(self, task: str, init: PackingData, maxiter: int,
                             seed_offset: int = 0) -> tuple[PackingData, dict]:

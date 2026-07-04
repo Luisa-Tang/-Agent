@@ -7,7 +7,7 @@ This repository contains a deterministic local Agent system that generates `solu
 ## 2. System Architecture
 
 - **ProblemParser**: `agent/run.py` reads task descriptions and evaluator files before the loop starts.
-- **CandidateGenerator**: `agent/candidate_generators.py` creates standalone solution code from safe grids, staggered starts, SLSQP search, multi-start search, and perturb-and-repair.
+- **CandidateGenerator**: `agent/candidate_generators.py` creates standalone solution code from safe grids, staggered starts, SLSQP search, multi-start search, perturb-and-repair, and external benchmark warm-start seeds.
 - **EvaluatorAdapter**: `agent/evaluator_adapter.py` writes candidates into the official task directories and runs `evaluate.py` as the source of truth.
 - **FeedbackReflector**: `agent/run.py` maps failures and plateau behavior to the next strategy; `agent/llm_reflector.py` can optionally ask a compatible Chat Completions endpoint for a strategy suggestion.
 - **ArchiveManager**: `agent/archive.py` stores metadata, raw evaluator output, code snapshots, and best valid candidates.
@@ -33,79 +33,149 @@ The workflow is the fixed reproducible harness: parse context, generate a candid
 
 The `agent/skills/` layer contains reusable procedures, not personas: `packing-slsqp`, `packing-repair`, `evaluator-feedback`, `static-export`, and `archive-observability`. The manager records which procedures were consulted in each iteration through `skills_used`, so the report can audit what specialist workflow shaped each candidate.
 
+### Explicit Agent State Graph
+
+Each iteration is recorded as `observe -> decide -> act -> evaluate -> archive` using `AgentState` snapshots.
+| Phase | Recorded snapshots |
+|---|---:|
+| observe | 10 |
+| decide | 10 |
+| act | 10 |
+| evaluate | 10 |
+| archive | 10 |
+
+Example state paths: `A_000_benchmark_seed_dominikkamp`: observe -> decide -> act -> evaluate -> archive; `A_001_hexagonal_or_staggered_initialization`: observe -> decide -> act -> evaluate -> archive; `A_002_scipy_slsqp_joint`: observe -> decide -> act -> evaluate -> archive
+
+### Strategy Portfolio Controller
+
+The controller scores strategies from archive history, evaluator failures, plateau state, score gap, and remaining budget.
+| Strategy | Attempts | Validity rate | Best score | Avg score delta | Avg runtime | Common failures | Last used |
+|---|---:|---:|---:|---:|---:|---|---:|
+| benchmark_seed_dominikkamp | 2 | 1.000 | 0.999997 | 0.999997 | 0.195 | `{'none': 2}` | 0.000000000 |
+| hexagonal_or_staggered_initialization | 2 | 1.000 | 0.915143 | -0.129478 | 0.180 | `{'low_score': 1, 'none': 1}` | 1.000000000 |
+| perturb_best_and_repair | 4 | 1.000 | 0.999996 | -9.40626e-06 | 0.188 | `{'plateau': 4}` | 4.000000000 |
+| scipy_slsqp_joint | 2 | 1.000 | 0.983871 | -0.508024 | 0.195 | `{'low_score': 1, 'none': 1}` | 2.000000000 |
+
+### Execution Lineage and Replay
+
+Best-candidate lineage DAGs are emitted as replayable JSON. Each node includes parent, strategy, input/output artifacts, code hash, data hash, official score, and decision reason.
+- Task A: `agent/archive/lineage/task_A_best_lineage.json` best `A_000_benchmark_seed_dominikkamp`, nodes `5`, chain length `1`.
+- Task B: `agent/archive/lineage/task_B_best_lineage.json` best `B_000_benchmark_seed_dominikkamp`, nodes `5`, chain length `1`.
+
+### Safety Guard and Protected Files
+
+- Overall safety status: `True`
+- Protected files unchanged: `True`
+- Protected git diff entries: `[]`
+- API key pattern matches: `0`
+- `task_A/solution.py` imports `['numpy']`; network matches `[]`; passed `True`.
+- `task_B/solution.py` imports `['numpy']`; network matches `[]`; passed `True`.
+
+### Skill Usage Statistics
+
+- Loaded skills: `['archive-observability', 'evaluator-feedback', 'packing-repair', 'packing-slsqp', 'static-export']`
+- Iteration records: `10`
+| Skill | Uses |
+|---|---:|
+| archive-observability | 10 |
+| evaluator-feedback | 10 |
+| packing-repair | 6 |
+| packing-slsqp | 2 |
+| static-export | 2 |
+
+### Human-Agent Division Audit
+
+Human contributions and Agent actions are audited with evidence artifacts.
+- Human-provided items: `3`
+- Agent-completed items: `4`
+- Audit files: `submission/human_agent_division.md`, `submission/human_agent_division.json`
+
 ## 3. Code Generation Strategy
 
-The Agent uses template-based generation. Each candidate is a complete Python module with literal NumPy arrays for centers and radii, plus a small safety repair routine. Candidate search combines conservative grid layouts, hexagonal/staggered initializations, SLSQP joint optimization over centers and radii, multi-start SLSQP, and local perturbation around the best valid candidate. For fixed centers, the Agent solves a linear program to maximize radii under boundary and pairwise non-overlap constraints, then applies a tiny final shrink/repair.
+The Agent uses template-based generation. Each candidate is a complete Python module with literal NumPy arrays for centers and radii, plus a small safety repair routine. Candidate search combines conservative grid layouts, hexagonal/staggered initializations, SLSQP joint optimization over centers and radii, multi-start SLSQP, and local perturbation around the best valid candidate. It can also convert tracked public benchmark geometry into static candidates and submit them to the same official evaluator path. For fixed centers, the Agent solves a linear program to maximize radii under boundary and pairwise non-overlap constraints, then applies a tiny final shrink/repair.
 
 LLM use is optional. When `--use-llm` is passed and `OPENAI_API_KEY` is set, the Agent asks a configured Chat Completions-compatible endpoint to choose among the existing deterministic strategies. The LLM is not allowed to modify official evaluators, and final exported `solution.py` files remain standalone with no network or LLM dependency.
 
-## 4. Feedback Utilization
+## 4. External Benchmark Warm-start
+
+The Agent can use public DominikKamp/Packing geometry files as external benchmark warm-start candidates. This is a seed source inside the Agent search space, not hidden data and not manually hand-written coordinates. Each converted seed is emitted as a standalone `solution.py` candidate, then accepted or rejected only by the official `evaluate.py` scripts.
+
+- Source: https://github.com/DominikKamp/Packing
+- Task B seed: `benchmarks/dominikkamp/square_n26.txt` from `square/n26/circlepacking_n26.txt`
+- Task A seed: `benchmarks/dominikkamp/rectangle_n21.txt` from `rectangle/n21/rectangle_n21.txt`
+
+| Task | Candidate | Source file | Raw sum radii | Official valid | Official score | Official sum radii | Decision |
+|---|---|---|---:|---:|---:|---:|---|
+| A | `A_000_benchmark_seed_dominikkamp` | `rectangle/n21/rectangle_n21.txt` | 2.365832326863 | True | 0.999997 | 2.365832 | Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start. |
+| B | `B_000_benchmark_seed_dominikkamp` | `square/n26/circlepacking_n26.txt` | 2.635983060896 | True | 0.999997 | 2.635983 | Archive improved; next step can exploit this candidate with perturbation or diversify with multi-start. |
+
+### Benchmark-Neighborhood Refinement
+
+After a public benchmark seed is available, the Agent can run three small neighborhood refinements: fixed-center radius LP, micro center/width perturbation followed by radius LP, and an optional FICO Problem 13 Task A seed if a local public copy is available. These are lightweight local candidate generators, not a new framework. Every candidate still goes through the official evaluator before it can replace the best valid archive entry.
+
+No benchmark-neighborhood refinement candidate was evaluated in this run.
+
+## 5. Feedback Utilization
 
 Evaluator output is parsed for score, `sum_radii`, validity, and failure type. Overlap failures trigger more conservative repair. Outside-boundary failures trigger boundary-tight generation. Low but valid scores move the Agent toward multi-start and structured initializations. Plateaued valid runs trigger perturb-and-repair around the current best candidate.
 
 Failure classification uses the explicit taxonomy: `shape_error`, `nonfinite`, `negative_radius`, `perimeter_error`, `boundary_violation`, `overlap`, `timeout`, `low_score`, `plateau`, and `unknown`.
 
-## 5. Termination and Decision Mechanism
+## 6. Termination and Decision Mechanism
 
 The loop terminates after the configured iteration budget or time budget. The archive keeps every candidate, but only official-evaluator-valid candidates can become final exports. If no valid optimized candidate is available, the deterministic safe grid fallback remains valid.
 
-## 6. Results
+## 7. Results
 
-- Task A best candidate: `A_003_multi_start_slsqp`
-- Task A sum_radii: `2.349608`
-- Task A score: `0.993139` using denominator `2.365840`
-- Task A width/height: `0.932160847` / `1.067839153`
-- Task B best candidate: `B_003_multi_start_slsqp`
-- Task B sum_radii: `2.607923`
-- Task B score: `0.989352` using denominator `2.635990`
-- Combined best-valid score: `0.991246`
+- Task A best candidate: `A_000_benchmark_seed_dominikkamp`
+- Task A sum_radii: `2.365832`
+- Task A score: `0.999997` using denominator `2.365840`
+- Task A width/height: `0.976731108` / `1.023268892`
+- Task B best candidate: `B_000_benchmark_seed_dominikkamp`
+- Task B sum_radii: `2.635983`
+- Task B score: `0.999997` using denominator `2.635990`
+- Combined best-valid score: `0.999997`
 
 ### Iteration Trajectory
 
 | Task | Iteration | Candidate | Strategy | Valid | Score | Sum radii | Failure |
 |---|---:|---|---|---:|---:|---:|---|
-| A | 0 | `A_000_baseline_safe_grid` | baseline_safe_grid | True | 0.887633 | 2.099998 | low_score |
+| A | 0 | `A_000_benchmark_seed_dominikkamp` | benchmark_seed_dominikkamp | True | 0.999997 | 2.365832 | none |
 | A | 1 | `A_001_hexagonal_or_staggered_initialization` | hexagonal_or_staggered_initialization | True | 0.825895 | 1.953936 | low_score |
-| A | 2 | `A_002_scipy_slsqp_joint` | scipy_slsqp_joint | True | 0.990479 | 2.343314 | none |
-| A | 3 | `A_003_multi_start_slsqp` | multi_start_slsqp | True | 0.993139 | 2.349608 | none |
-| A | 4 | `A_004_perturb_best_and_repair` | perturb_best_and_repair | True | 0.993139 | 2.349608 | none |
-| A | 5 | `A_005_hexagonal_or_staggered_initialization` | hexagonal_or_staggered_initialization | True | 0.743962 | 1.760095 | low_score |
-| A | 6 | `A_006_perturb_best_and_repair` | perturb_best_and_repair | True | 0.993139 | 2.349608 | plateau |
-| A | 7 | `A_007_perturb_best_and_repair` | perturb_best_and_repair | True | 0.993139 | 2.349608 | plateau |
-| B | 0 | `B_000_baseline_safe_grid` | baseline_safe_grid | True | 0.821955 | 2.166665 | low_score |
+| A | 2 | `A_002_scipy_slsqp_joint` | scipy_slsqp_joint | True | 0.000076 | 0.000179 | low_score |
+| A | 3 | `A_003_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999996 | 2.365830 | plateau |
+| A | 4 | `A_004_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999996 | 2.365830 | plateau |
+| B | 0 | `B_000_benchmark_seed_dominikkamp` | benchmark_seed_dominikkamp | True | 0.999997 | 2.635983 | none |
 | B | 1 | `B_001_hexagonal_or_staggered_initialization` | hexagonal_or_staggered_initialization | True | 0.915143 | 2.412309 | none |
-| B | 2 | `B_002_scipy_slsqp_joint` | scipy_slsqp_joint | True | 0.979240 | 2.581266 | none |
-| B | 3 | `B_003_multi_start_slsqp` | multi_start_slsqp | True | 0.989352 | 2.607923 | none |
-| B | 4 | `B_004_perturb_best_and_repair` | perturb_best_and_repair | True | 0.989352 | 2.607923 | none |
-| B | 5 | `B_005_hexagonal_or_staggered_initialization` | hexagonal_or_staggered_initialization | True | 0.915143 | 2.412309 | none |
-| B | 6 | `B_006_perturb_best_and_repair` | perturb_best_and_repair | True | 0.989352 | 2.607923 | plateau |
-| B | 7 | `B_007_perturb_best_and_repair` | perturb_best_and_repair | True | 0.989352 | 2.607923 | plateau |
+| B | 2 | `B_002_scipy_slsqp_joint` | scipy_slsqp_joint | True | 0.983871 | 2.593473 | none |
+| B | 3 | `B_003_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999963 | 2.635893 | plateau |
+| B | 4 | `B_004_perturb_best_and_repair` | perturb_best_and_repair | True | 0.999996 | 2.635980 | plateau |
 
 ### Skill Usage Summary
 
 | Skill | Iteration uses |
 |---|---:|
-| archive-observability | 16 |
-| evaluator-feedback | 16 |
-| packing-repair | 12 |
-| packing-slsqp | 4 |
+| archive-observability | 10 |
+| evaluator-feedback | 10 |
+| packing-repair | 6 |
+| packing-slsqp | 2 |
+| static-export | 2 |
 
 ### Strategy Archive Statistics
 
 | Strategy | Attempts | Validity rate | Best score | Avg score improvement |
 |---|---:|---:|---:|---:|
-| baseline_safe_grid | 2 | 1.000 | 0.887633 | 0.854794 |
-| hexagonal_or_staggered_initialization | 4 | 1.000 | 0.915143 | -0.072984 |
-| multi_start_slsqp | 2 | 1.000 | 0.993139 | 0.006386 |
-| perturb_best_and_repair | 6 | 1.000 | 0.993139 | 0.000000 |
-| scipy_slsqp_joint | 2 | 1.000 | 0.990479 | 0.083471 |
+| benchmark_seed_dominikkamp | 2 | 1.000 | 0.999997 | 0.999997 |
+| hexagonal_or_staggered_initialization | 2 | 1.000 | 0.915143 | -0.129478 |
+| perturb_best_and_repair | 4 | 1.000 | 0.999996 | -0.000009 |
+| scipy_slsqp_joint | 2 | 1.000 | 0.983871 | -0.508024 |
 
 ### Best Geometry Safety Metrics
 
 | Task | Min pairwise margin | Min boundary margin | Sum radii | Score | Width | Height |
 |---|---:|---:|---:|---:|---:|---:|
-| A | 7.995e-08 | 8.000e-08 | 2.349608 | 0.993139 | 0.932160847 | 1.067839153 |
-| B | 8.000e-08 | 8.000e-08 | 2.607923 | 0.989352 |  |  |
+| A | 7.358e-10 | 1.240e-11 | 2.365832 | 0.999997 | 0.976731108 | 1.023268892 |
+| B | 3.766e-10 | 2.328e-10 | 2.635983 | 0.999997 |  |  |
 
 ### Final Evaluator Output
 
@@ -114,10 +184,10 @@ The loop terminates after the configured iteration budget or time budget. The ar
   Circle Packing in Rectangle  (n=21)
   File : /home/wuyou/projects/AlgorithmOptimization/task_A/solution.py
 ============================================================
-  Elapsed : 0.18s
-  sum_radii : 2.349608
+  Elapsed : 0.19s
+  sum_radii : 2.365832
   Target    : 2.365840
-  Score     : 0.993139
+  Score     : 0.999997
 ============================================================
 
 
@@ -126,25 +196,25 @@ The loop terminates after the configured iteration budget or time budget. The ar
   File : /home/wuyou/projects/AlgorithmOptimization/task_B/solution.py
 ============================================================
   Elapsed : 0.17s
-  sum_radii : 2.607923
+  sum_radii : 2.635983
   Target    : 2.635990
-  Score     : 0.989352
+  Score     : 0.999997
 ============================================================
 
 ============================================================
   Final Score
 ============================================================
-  task_A (Circle Packing in Rectangle)   :  0.993139
-  task_B (Circle Packing in Unit Square) :  0.989352
-  Combined                               :  0.991246
+  task_A (Circle Packing in Rectangle)   :  0.999997
+  task_B (Circle Packing in Unit Square) :  0.999997
+  Combined                               :  0.999997
 ============================================================
 ```
 
-## 7. Human-Agent Division
+## 8. Human-Agent Division
 
 The human provided the high-level system design, constraints, required interfaces, and quality bar. The Agent implemented the framework, ran the local evaluator loop, generated candidate solution files, selected the best valid candidates, exported artifacts, and produced logs. Optional LLM connectivity is supported but the recorded run may use deterministic fallback unless `--use-llm` and credentials are provided. The main manual assumption was using the local conda Python environment when the system `python` command was unavailable.
 
-## 8. Limitations and Future Work
+## 9. Limitations and Future Work
 
 - Add broader global search and population-based evolution.
 - Add more diverse initialization families and symmetry-breaking operators.

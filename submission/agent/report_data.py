@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional
 
@@ -35,7 +36,7 @@ def generate_report(repo_root: Path, archive, output_path: Path,
     lines.append("## 2. System Architecture")
     lines.append("")
     lines.append("- **ProblemParser**: `agent/run.py` reads task descriptions and evaluator files before the loop starts.")
-    lines.append("- **CandidateGenerator**: `agent/candidate_generators.py` creates standalone solution code from safe grids, staggered starts, SLSQP search, multi-start search, and perturb-and-repair.")
+    lines.append("- **CandidateGenerator**: `agent/candidate_generators.py` creates standalone solution code from safe grids, staggered starts, SLSQP search, multi-start search, perturb-and-repair, and external benchmark warm-start seeds.")
     lines.append("- **EvaluatorAdapter**: `agent/evaluator_adapter.py` writes candidates into the official task directories and runs `evaluate.py` as the source of truth.")
     lines.append("- **FeedbackReflector**: `agent/run.py` maps failures and plateau behavior to the next strategy; `agent/llm_reflector.py` can optionally ask a compatible Chat Completions endpoint for a strategy suggestion.")
     lines.append("- **ArchiveManager**: `agent/archive.py` stores metadata, raw evaluator output, code snapshots, and best valid candidates.")
@@ -73,6 +74,30 @@ def generate_report(repo_root: Path, archive, output_path: Path,
         "what specialist workflow shaped each candidate."
     )
     lines.append("")
+    lines.append("### Explicit Agent State Graph")
+    lines.append("")
+    lines.extend(_state_graph_lines(repo_root))
+    lines.append("")
+    lines.append("### Strategy Portfolio Controller")
+    lines.append("")
+    lines.extend(_strategy_portfolio_lines(repo_root))
+    lines.append("")
+    lines.append("### Execution Lineage and Replay")
+    lines.append("")
+    lines.extend(_lineage_lines(repo_root))
+    lines.append("")
+    lines.append("### Safety Guard and Protected Files")
+    lines.append("")
+    lines.extend(_safety_lines(repo_root))
+    lines.append("")
+    lines.append("### Skill Usage Statistics")
+    lines.append("")
+    lines.extend(_skill_usage_lines(repo_root))
+    lines.append("")
+    lines.append("### Human-Agent Division Audit")
+    lines.append("")
+    lines.extend(_human_agent_lines(repo_root))
+    lines.append("")
     lines.append("## 3. Code Generation Strategy")
     lines.append("")
     lines.append(
@@ -81,7 +106,9 @@ def generate_report(repo_root: Path, archive, output_path: Path,
         "small safety repair routine. Candidate search combines conservative "
         "grid layouts, hexagonal/staggered initializations, SLSQP joint "
         "optimization over centers and radii, multi-start SLSQP, and local "
-        "perturbation around the best valid candidate. For fixed centers, the "
+        "perturbation around the best valid candidate. It can also convert "
+        "tracked public benchmark geometry into static candidates and submit "
+        "them to the same official evaluator path. For fixed centers, the "
         "Agent solves a linear program to maximize radii under boundary and "
         "pairwise non-overlap constraints, then applies a tiny final shrink/repair."
     )
@@ -94,7 +121,36 @@ def generate_report(repo_root: Path, archive, output_path: Path,
         "standalone with no network or LLM dependency."
     )
     lines.append("")
-    lines.append("## 4. Feedback Utilization")
+    lines.append("## 4. External Benchmark Warm-start")
+    lines.append("")
+    lines.append(
+        "The Agent can use public DominikKamp/Packing geometry files as external "
+        "benchmark warm-start candidates. This is a seed source inside the Agent "
+        "search space, not hidden data and not manually hand-written coordinates. "
+        "Each converted seed is emitted as a standalone `solution.py` candidate, "
+        "then accepted or rejected only by the official `evaluate.py` scripts."
+    )
+    lines.append("")
+    lines.append("- Source: https://github.com/DominikKamp/Packing")
+    lines.append("- Task B seed: `benchmarks/dominikkamp/square_n26.txt` from `square/n26/circlepacking_n26.txt`")
+    lines.append("- Task A seed: `benchmarks/dominikkamp/rectangle_n21.txt` from `rectangle/n21/rectangle_n21.txt`")
+    lines.append("")
+    lines.extend(_external_benchmark_lines(records))
+    lines.append("")
+    lines.append("### Benchmark-Neighborhood Refinement")
+    lines.append("")
+    lines.append(
+        "After a public benchmark seed is available, the Agent can run three small "
+        "neighborhood refinements: fixed-center radius LP, micro center/width "
+        "perturbation followed by radius LP, and an optional FICO Problem 13 Task A "
+        "seed if a local public copy is available. These are lightweight local "
+        "candidate generators, not a new framework. Every candidate still goes "
+        "through the official evaluator before it can replace the best valid archive entry."
+    )
+    lines.append("")
+    lines.extend(_refinement_lines(records))
+    lines.append("")
+    lines.append("## 5. Feedback Utilization")
     lines.append("")
     lines.append(
         "Evaluator output is parsed for score, `sum_radii`, validity, and failure "
@@ -109,7 +165,7 @@ def generate_report(repo_root: Path, archive, output_path: Path,
         "`boundary_violation`, `overlap`, `timeout`, `low_score`, `plateau`, and `unknown`."
     )
     lines.append("")
-    lines.append("## 5. Termination and Decision Mechanism")
+    lines.append("## 6. Termination and Decision Mechanism")
     lines.append("")
     lines.append(
         "The loop terminates after the configured iteration budget or time budget. "
@@ -118,7 +174,7 @@ def generate_report(repo_root: Path, archive, output_path: Path,
         "available, the deterministic safe grid fallback remains valid."
     )
     lines.append("")
-    lines.append("## 6. Results")
+    lines.append("## 7. Results")
     lines.append("")
     lines.extend(_best_lines("A", best_a))
     lines.extend(_best_lines("B", best_b))
@@ -181,7 +237,7 @@ def generate_report(repo_root: Path, archive, output_path: Path,
         lines.append(evaluate_all_output.strip())
         lines.append("```")
         lines.append("")
-    lines.append("## 7. Human-Agent Division")
+    lines.append("## 8. Human-Agent Division")
     lines.append("")
     lines.append(
         "The human provided the high-level system design, constraints, required "
@@ -194,7 +250,7 @@ def generate_report(repo_root: Path, archive, output_path: Path,
         "`python` command was unavailable."
     )
     lines.append("")
-    lines.append("## 8. Limitations and Future Work")
+    lines.append("## 9. Limitations and Future Work")
     lines.append("")
     lines.append("- Add broader global search and population-based evolution.")
     lines.append("- Add more diverse initialization families and symmetry-breaking operators.")
@@ -228,6 +284,61 @@ def _best_lines(task: str, record: Optional[Dict]) -> List[str]:
     return lines
 
 
+def _external_benchmark_lines(records: Iterable[Dict]) -> List[str]:
+    benchmark_records = [
+        rec for rec in records
+        if rec.get("strategy") == "benchmark_seed_dominikkamp"
+    ]
+    if not benchmark_records:
+        return ["No external benchmark warm-start candidate was evaluated in this run."]
+    lines = [
+        "| Task | Candidate | Source file | Raw sum radii | Official valid | Official score | Official sum radii | Decision |",
+        "|---|---|---|---:|---:|---:|---:|---|",
+    ]
+    for rec in benchmark_records:
+        source = rec.get("source_metadata") or {}
+        official = source.get("official_evaluator_result") or {}
+        lines.append(
+            f"| {rec.get('task')} | `{rec.get('candidate_id')}` | "
+            f"`{source.get('source_file', '')}` | "
+            f"{float(source.get('raw_sum_radii') or 0.0):.12f} | "
+            f"{official.get('valid')} | "
+            f"{float(official.get('score') or 0.0):.6f} | "
+            f"{float(official.get('sum_radii') or rec.get('sum_radii') or 0.0):.6f} | "
+            f"{rec.get('decision_reason') or rec.get('decision') or ''} |"
+        )
+    return lines
+
+
+def _refinement_lines(records: Iterable[Dict]) -> List[str]:
+    strategies = {
+        "fixed_centers_radius_lp",
+        "micro_perturb_lp_refine",
+        "optional_fico_task_a_seed",
+    }
+    refinement_records = [rec for rec in records if rec.get("strategy") in strategies]
+    if not refinement_records:
+        return ["No benchmark-neighborhood refinement candidate was evaluated in this run."]
+    lines = [
+        "| Task | Candidate | Strategy | Parent | Valid | Score | Sum radii | Min pairwise margin | Min boundary margin | Failure | Decision |",
+        "|---|---|---|---|---:|---:|---:|---:|---:|---|---|",
+    ]
+    for rec in refinement_records:
+        metrics = rec.get("geometry_metrics") or {}
+        lines.append(
+            f"| {rec.get('task')} | `{rec.get('candidate_id')}` | "
+            f"{rec.get('strategy')} | `{rec.get('parent_candidate_id')}` | "
+            f"{rec.get('valid')} | "
+            f"{float(rec.get('score') or 0.0):.12f} | "
+            f"{float(rec.get('sum_radii') or 0.0):.12f} | "
+            f"{float(metrics.get('min_pairwise_margin') or 0.0):.3e} | "
+            f"{float(metrics.get('min_boundary_margin') or 0.0):.3e} | "
+            f"{rec.get('failure_type')} | "
+            f"{rec.get('decision_reason') or rec.get('decision') or ''} |"
+        )
+    return lines
+
+
 def _fmt_optional(value) -> str:
     if value is None:
         return ""
@@ -235,3 +346,135 @@ def _fmt_optional(value) -> str:
         return f"{float(value):.9f}"
     except (TypeError, ValueError):
         return ""
+
+
+def _load_json(path: Path) -> Optional[Dict]:
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def _state_graph_lines(repo_root: Path) -> List[str]:
+    path = repo_root / "agent" / "archive" / "metrics" / "run_log.jsonl"
+    if not path.exists():
+        return ["No explicit AgentState log has been generated yet."]
+    phase_counts: Dict[str, int] = {}
+    examples = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        try:
+            record = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        phases = [item.get("phase") for item in record.get("state_flow") or [] if item.get("phase")]
+        for phase in phases:
+            phase_counts[phase] = phase_counts.get(phase, 0) + 1
+        if phases and len(examples) < 3:
+            examples.append(f"`{record.get('candidate_id')}`: " + " -> ".join(phases))
+    lines = [
+        "Each iteration is recorded as `observe -> decide -> act -> evaluate -> archive` using `AgentState` snapshots.",
+        "| Phase | Recorded snapshots |",
+        "|---|---:|",
+    ]
+    for phase in ["observe", "decide", "act", "evaluate", "archive"]:
+        lines.append(f"| {phase} | {int(phase_counts.get(phase) or 0)} |")
+    if examples:
+        lines.append("")
+        lines.append("Example state paths: " + "; ".join(examples))
+    return lines
+
+
+def _strategy_portfolio_lines(repo_root: Path) -> List[str]:
+    payload = _load_json(repo_root / "agent" / "archive" / "metrics" / "strategy_portfolio.json")
+    stats = (payload or {}).get("strategy_portfolio_stats") or {}
+    if not stats:
+        return ["No strategy portfolio metrics have been generated yet."]
+    lines = [
+        "The controller scores strategies from archive history, evaluator failures, plateau state, score gap, and remaining budget.",
+        "| Strategy | Attempts | Validity rate | Best score | Avg score delta | Avg runtime | Common failures | Last used |",
+        "|---|---:|---:|---:|---:|---:|---|---:|",
+    ]
+    for strategy, stat in sorted(stats.items()):
+        lines.append(
+            f"| {strategy} | {int(stat.get('attempts') or 0)} | "
+            f"{float(stat.get('validity_rate') or 0.0):.3f} | "
+            f"{float(stat.get('best_score') or 0.0):.6f} | "
+            f"{float(stat.get('avg_score_delta') or 0.0):.6g} | "
+            f"{float(stat.get('avg_runtime') or 0.0):.3f} | "
+            f"`{stat.get('common_failure_types') or {}}` | "
+            f"{_fmt_optional(stat.get('last_used_iteration'))} |"
+        )
+    return lines
+
+
+def _lineage_lines(repo_root: Path) -> List[str]:
+    lines = [
+        "Best-candidate lineage DAGs are emitted as replayable JSON. Each node includes parent, strategy, input/output artifacts, code hash, data hash, official score, and decision reason.",
+    ]
+    for task in ("A", "B"):
+        rel = f"agent/archive/lineage/task_{task}_best_lineage.json"
+        payload = _load_json(repo_root / rel)
+        if not payload:
+            lines.append(f"- Task {task}: `{rel}` not generated yet.")
+            continue
+        lines.append(
+            f"- Task {task}: `{rel}` best `{payload.get('best_candidate_id')}`, "
+            f"nodes `{len(payload.get('nodes') or [])}`, chain length `{len(payload.get('best_chain') or [])}`."
+        )
+    return lines
+
+
+def _safety_lines(repo_root: Path) -> List[str]:
+    payload = _load_json(repo_root / "submission" / "safety_report.json") or _load_json(repo_root / "agent" / "archive" / "metrics" / "safety_report.json")
+    if not payload:
+        return ["Safety guard has not produced a report yet."]
+    protected = payload.get("protected_files") or {}
+    secret = payload.get("secret_scan") or {}
+    lines = [
+        f"- Overall safety status: `{payload.get('passed')}`",
+        f"- Protected files unchanged: `{protected.get('unchanged')}`",
+        f"- Protected git diff entries: `{protected.get('git_diff_protected_files') or []}`",
+        f"- API key pattern matches: `{len(secret.get('matches') or [])}`",
+    ]
+    for path, check in sorted((payload.get("final_solutions") or {}).items()):
+        lines.append(
+            f"- `{path}` imports `{check.get('imports')}`; network matches `{check.get('network_call_matches')}`; passed `{check.get('passed')}`."
+        )
+    return lines
+
+
+def _skill_usage_lines(repo_root: Path) -> List[str]:
+    payload = _load_json(repo_root / "agent" / "skills" / "usage_stats.json")
+    if not payload:
+        return ["No skill usage stats have been generated yet."]
+    iterations = payload.get("iterations") or []
+    counts: Dict[str, int] = {}
+    for item in iterations:
+        for skill in item.get("used_skills") or []:
+            counts[skill] = counts.get(skill, 0) + 1
+    lines = [
+        f"- Loaded skills: `{payload.get('loaded_skills') or []}`",
+        f"- Iteration records: `{len(iterations)}`",
+        "| Skill | Uses |",
+        "|---|---:|",
+    ]
+    for skill, count in sorted(counts.items()):
+        lines.append(f"| {skill} | {count} |")
+    return lines
+
+
+def _human_agent_lines(repo_root: Path) -> List[str]:
+    payload = _load_json(repo_root / "submission" / "human_agent_division.json")
+    if not payload:
+        return ["Human-agent division audit has not been generated yet."]
+    lines = [
+        "Human contributions and Agent actions are audited with evidence artifacts.",
+        f"- Human-provided items: `{len(payload.get('human_provided') or [])}`",
+        f"- Agent-completed items: `{len(payload.get('agent_completed') or [])}`",
+        f"- Audit files: `submission/human_agent_division.md`, `submission/human_agent_division.json`",
+    ]
+    return lines

@@ -55,7 +55,12 @@ class LLMReflector:
         self.model = model
         self.base_url = base_url
         self.timeout = timeout
-        self.api_key_env = "OPENAI_API_KEY"
+        if base_url and "deepseek" in base_url.lower():
+            self.api_key_env = "DEEPSEEK_API_KEY"
+            self.fallback_api_key_env = "OPENAI_API_KEY"
+        else:
+            self.api_key_env = "OPENAI_API_KEY"
+            self.fallback_api_key_env = "DEEPSEEK_API_KEY"
         self._client = None
 
     def decide(self, task: str, iteration: int, best_record: Optional[Dict[str, Any]],
@@ -63,10 +68,10 @@ class LLMReflector:
                local_strategy: str, recent_records: Iterable[Dict[str, Any]]) -> LLMDecision:
         if not self.enabled:
             return LLMDecision(local_strategy, "LLM disabled; using deterministic local policy.", False, False)
-        if not os.environ.get(self.api_key_env):
+        if not self._api_key():
             return LLMDecision(
                 local_strategy,
-                "OPENAI_API_KEY is not set; using deterministic local policy.",
+                f"{self.api_key_env} or {self.fallback_api_key_env} is not set; using deterministic local policy.",
                 True,
                 False,
                 error="missing_api_key",
@@ -99,6 +104,14 @@ class LLMReflector:
                 error=type(exc).__name__,
             )
 
+    def _api_key(self) -> Optional[str]:
+        return os.environ.get(self.api_key_env) or os.environ.get(self.fallback_api_key_env)
+
+    def _request_extra_body(self) -> Dict[str, Any]:
+        if self.model == "deepseek-v4-pro":
+            return {"thinking": {"type": "enabled"}, "reasoning_effort": "high"}
+        return {}
+
     def _get_client(self):
         if self._client is not None:
             return self._client
@@ -108,7 +121,7 @@ class LLMReflector:
             self._client = "stdlib_http"
             return self._client
 
-        kwargs = {"api_key": os.environ[self.api_key_env]}
+        kwargs = {"api_key": self._api_key()}
         if self.base_url:
             kwargs["base_url"] = self.base_url
         self._client = OpenAI(**kwargs)
@@ -117,24 +130,31 @@ class LLMReflector:
     def _complete(self, client: Any, messages: List[Dict[str, str]]) -> str:
         if client == "stdlib_http":
             return self._complete_with_urllib(messages)
-        response = client.chat.completions.create(
-            model=self.model,
-            messages=messages,
-            temperature=0,
-            timeout=self.timeout,
-        )
+        request = {
+            "model": self.model,
+            "messages": messages,
+            "temperature": 0,
+            "timeout": self.timeout,
+            "max_tokens": 512,
+        }
+        extra_body = self._request_extra_body()
+        if extra_body:
+            request["extra_body"] = extra_body
+        response = client.chat.completions.create(**request)
         return response.choices[0].message.content or ""
 
     def _complete_with_urllib(self, messages: List[Dict[str, str]]) -> str:
         if not self.base_url:
             raise RuntimeError("base_url is required when the openai SDK is not installed")
         url = self.base_url.rstrip("/") + "/chat/completions"
-        body = json.dumps({"model": self.model, "messages": messages, "temperature": 0}).encode("utf-8")
+        payload = {"model": self.model, "messages": messages, "temperature": 0, "max_tokens": 512}
+        payload.update(self._request_extra_body())
+        body = json.dumps(payload).encode("utf-8")
         request = urllib.request.Request(
             url,
             data=body,
             headers={
-                "Authorization": f"Bearer {os.environ[self.api_key_env]}",
+                "Authorization": f"Bearer {self._api_key()}",
                 "Content-Type": "application/json",
             },
             method="POST",
